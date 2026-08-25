@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# aset uji, bukan bagian dari situs
+media-uji/
+
+# hasil encode sementara
+media/.*.png

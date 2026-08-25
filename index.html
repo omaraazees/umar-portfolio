@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio — UI/UX Designer</title>
+<meta name="description" content="Portfolio UI/UX designer.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- navigasi teks untuk screen reader & crawler, tidak terlihat -->
+  <nav class="sr-only" aria-label="Utama">
+    <ul>
+      <li><a href="#/">Home</a></li>
+      <li><a href="#/about">About</a></li>
+      <li><a href="#/project/cv-lite">CV-Lite</a></li>
+      <li><a href="#/project/northline">Northline</a></li>
+      <li><a href="#/project/kelvin">Kelvin</a></li>
+      <li><a href="#/project/salt">Salt</a></li>
+    </ul>
+  </nav>
+
+  <div id="app" class="app">
+    <!-- kolom kiri: identitas + aksi. Tetap di tempat lintas halaman -->
+    <aside class="rail" id="rail"></aside>
+
+    <!-- kolom kanan: panggung. Isinya berganti per halaman -->
+    <main class="stage" id="stage" tabindex="-1"></main>
+
+    <!-- indikator titik di tepi kanan, hanya di home -->
+    <div class="dots" id="dots" hidden></div>
+  </div>
+
+  <!-- globe-data.js dan globe.js sengaja tidak dimuat di sini. Keduanya
+       hanya dipakai halaman about, jadi diambil saat halaman itu dibuka.
+       Lihat ensureGlobe() di app.js. -->
+  <script src="sound.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

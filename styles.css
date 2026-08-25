@@ -1,0 +1,1126 @@
+/* =========================================================
+   Portfolio UI/UX — sistem visual
+   Monokrom. Aset project jadi satu-satunya sumber warna.
+
+   SISTEM SPASI
+   Sama seperti situs referensi: seluruh tata letak dinyatakan dalam rem,
+   dan ukuran 1rem ikut lebar layar. Jadi proporsinya tetap identik di
+   layar mana pun, tidak perlu belasan breakpoint.
+
+   Desktop  1rem = 100vw / 144   (di 1440px jadi 10px, sama persis referensi)
+   Phone    1rem = 100vw / 40
+
+   Bedanya dengan referensi, ada batas bawah dan atas. Referensi murni vw,
+   akibatnya di tablet judulnya menyusut sampai 18px dan tombolnya di bawah
+   ukuran sentuh yang layak. Batas bawah menahan itu.
+
+   Yang tetap dalam vw hanya posisi horizontal kolom, supaya perbandingan
+   kiri-kanannya persis mengikuti referensi.
+   ========================================================= */
+
+html {
+  font-size: clamp(8.6px, 0.6944vw, 15px);
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: clamp(11px, 2.5vw, 19.5px);
+  }
+}
+
+:root {
+  /* Suisse Intl kalau terpasang, kalau tidak jatuh ke Helvetica Neue
+     yang bentuk hurufnya paling dekat. */
+  --font: "Suisse Intl", "Helvetica Neue", Helvetica, Inter, system-ui, sans-serif;
+
+  --bg: #f6f6f6;
+  --ink: #111111;
+  --ink-2: #6f6f6f;
+  --ink-3: #a3a3a3;
+  --ink-4: #c9c9c9;
+  --surface: #ffffff;
+  --card: #e8e8e8;
+  --line: rgba(17, 17, 17, 0.08);
+
+  --shadow-sm: 0 0.1rem 0.2rem rgba(17, 17, 17, 0.05), 0 0.4rem 1.4rem rgba(17, 17, 17, 0.04);
+  --shadow-md: 0 0.2rem 0.6rem rgba(17, 17, 17, 0.05), 0 1.6rem 3.6rem rgba(17, 17, 17, 0.07);
+
+  --r-card: 3.2rem;
+  --r-media: 2.4rem;
+  --r-btn: 1.5rem;
+
+  --title-fs: 3.2rem;
+
+  /* --- geometri, diambil dari pengukuran referensi di 1440px --- */
+  --rail-x: 17.85vw;      /* 257px di 1440 */
+  --deck-x: 70.5vw;       /* titik tengah kartu */
+  --deck-size: 33.5rem;   /* 335px di 1440 */
+
+  /* Dek disusun seperti drum: kartu tetangga diputar di sumbu X sampai
+     hampir rebah, jadi bentuknya trapesium bukan persegi yang diperkecil.
+     Jaraknya kelipatan ukuran kartu supaya konsisten di semua layar. */
+  --deck-gap-1: 0.83;
+  --deck-gap-2: 1.05;
+  --deck-tilt-1: 66deg;
+  --deck-tilt-2: 80deg;
+  --dots-x: 5.76vw;       /* jarak titik indikator dari tepi kanan */
+  --split-x: 50.5vw;      /* batas kolom di halaman project */
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  /* sedikit melewati tujuan lalu balik, biar perpindahan kartu terasa memantul */
+  --ease-bounce: cubic-bezier(0.22, 1.14, 0.36, 1);
+  --dur: 0.82s;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body { min-height: 100vh; }
+body.no-scroll { overflow: hidden; }
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+:focus-visible {
+  outline: 0.2rem solid var(--ink);
+  outline-offset: 0.3rem;
+  border-radius: 0.4rem;
+}
+
+/* =========================================================
+   Kolom kiri
+   ========================================================= */
+
+.rail {
+  position: fixed;
+  left: var(--rail-x);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
+  pointer-events: none;
+}
+.rail > * { pointer-events: auto; }
+
+/* Di about, rail dikosongkan. Nama, tombol, dan teksnya jadi satu aliran
+   di dalam kolom .about supaya semuanya ikut ter-scroll bersama. */
+.rail--about { display: none; }
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+/* Kotak masker untuk animasi reveal. Kalau tingginya persis setinggi baris,
+   ekor huruf seperti g dan y ikut terpotong. Jadi kotaknya dilonggarkan ke
+   atas dan bawah, lalu ditarik balik dengan margin negatif supaya posisi
+   tata letaknya tidak bergeser sedikit pun. */
+.title-line {
+  overflow: hidden;
+  font-size: var(--title-fs);
+  padding: 0.34em 0;
+  margin: -0.34em 0;
+}
+
+.title,
+.subtitle {
+  margin: 0;
+  font-size: var(--title-fs);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.title { color: var(--ink); }
+.subtitle { color: var(--ink-3); }
+
+/* masking reveal saat halaman masuk */
+.title-line > span {
+  display: block;
+  will-change: transform;
+  animation: line-up 0.9s var(--ease) both;
+}
+.title-line:nth-child(2) > span { animation-delay: 0.06s; }
+/* geseran awal harus melewati padding masker, kalau tidak teksnya
+   sudah kelihatan mengintip sebelum animasinya mulai */
+@keyframes line-up {
+  from { transform: translateY(calc(100% + 0.45em)); }
+  to   { transform: translateY(0); }
+}
+
+/* --- tombol ikon yang melebar jadi pil saat hover --- */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  animation: fade-up 0.9s var(--ease) 0.18s both;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(0.8rem); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  height: 5.4rem;
+  padding: 0 1.65rem;
+  background: var(--surface);
+  border-radius: var(--r-btn);
+  box-shadow: var(--shadow-sm);
+  transition:
+    gap 0.5s var(--ease),
+    border-radius 0.5s var(--ease),
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pill .ico {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  flex: none;
+}
+.pill .ico svg { width: 100%; height: 100%; display: block; }
+
+/* dua ikon ditumpuk di posisi yang sama lalu ditukar dengan putaran */
+.ico-swap { position: relative; }
+.ico-swap > span {
+  position: absolute;
+  inset: 0;
+  display: block;
+  transition:
+    opacity 0.25s ease,
+    transform 0.45s var(--ease);
+}
+.ico-swap .ico-b {
+  opacity: 0;
+  transform: rotate(-70deg) scale(0.6);
+}
+.contact.is-open .ico-swap .ico-a,
+.pill.is-alt .ico-swap .ico-a {
+  opacity: 0;
+  transform: rotate(70deg) scale(0.6);
+}
+.contact.is-open .ico-swap .ico-b,
+.pill.is-alt .ico-swap .ico-b {
+  opacity: 1;
+  transform: none;
+}
+
+/* label disembunyikan lewat lebar 0, bukan display:none, supaya bisa dianimasi */
+.pill .lbl {
+  display: block;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.55rem;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  transition:
+    max-width 0.55s var(--ease),
+    opacity 0.35s ease;
+}
+
+.pill:hover,
+.pill:focus-visible {
+  gap: 0.85rem;
+  border-radius: 999px;
+}
+.pill:hover .lbl,
+.pill:focus-visible .lbl {
+  max-width: 16rem;
+  opacity: 1;
+}
+
+.pill.is-dark {
+  background: var(--ink);
+  color: var(--surface);
+}
+.pill.is-round { border-radius: 999px; }
+.pill.rev { flex-direction: row-reverse; }
+
+/* pil yang labelnya selalu tampil, tidak menunggu hover */
+.pill.is-static { gap: 0.85rem; }
+.pill.is-static .lbl { max-width: 16rem; opacity: 1; }
+
+/* --- kelompok tombol contact --- */
+
+/* Tanpa gap. Kalau wadah ini punya gap sendiri, jaraknya tetap terhitung
+   meski daftar kontaknya sedang tertutup dan berlebar nol, akibatnya tombol
+   sesudahnya terdorong dua kali lebih jauh dari tombol sebelumnya.
+   Jaraknya diurus lewat margin .socials yang ikut dianimasikan. */
+.contact {
+  position: relative;   /* acuan posisi daftar kontak yang ditumpuk */
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* padding lalu margin negatif supaya bayangan pil tidak ikut terpotong
+   saat lebarnya dianimasi */
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  overflow: hidden;
+  padding: 0.9rem;
+  margin: -0.9rem;
+  max-width: 0;
+  transition:
+    max-width 0.6s var(--ease),
+    margin-left 0.6s var(--ease);
+}
+.socials .pill {
+  opacity: 0;
+  transform: translateX(-1rem);
+  transition:
+    opacity 0.35s ease,
+    transform 0.5s var(--ease),
+    background 0.3s ease,
+    color 0.3s ease;
+}
+/* 1,1rem jarak dikurangi 0,9rem padding, supaya celah terlihatnya
+   sama persis dengan jarak antar tombol lain */
+.contact.is-open .socials {
+  max-width: 46rem;
+  margin-left: 0.2rem;
+}
+.contact.is-open .socials .pill {
+  opacity: 1;
+  transform: none;
+}
+
+/* =========================================================
+   Daftar kontak yang ditumpuk
+
+   Kalau tidak muat ke samping, daftarnya ditumpuk. Kelas .is-stack dan arah
+   naik/turunnya dipasang app.js setelah mengukur ruang nyata sampai halangan
+   terdekat di kanan, bukan dari lebar layar. Dengan begitu tetap benar berapa
+   pun jumlah kontak yang ditambahkan ke PROFILE.contacts.
+   ========================================================= */
+
+.contact.is-stack .socials {
+  position: absolute;
+  z-index: 60;          /* di about, teksnya datang sesudah di DOM jadi menimpa */
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  gap: 1.1rem;
+  max-width: none;
+  overflow: visible;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+}
+.contact.is-stack.stack-down .socials {
+  top: 100%;
+  margin-top: 1.1rem;
+  flex-direction: column;
+}
+.contact.is-stack.stack-up .socials {
+  bottom: 100%;
+  margin-bottom: 1.1rem;
+  flex-direction: column-reverse;
+}
+.contact.is-stack.stack-down .socials .pill { transform: translateY(-0.9rem); }
+.contact.is-stack.stack-up .socials .pill { transform: translateY(0.9rem); }
+.contact.is-stack.is-open .socials { pointer-events: auto; }
+.contact.is-stack.is-open .socials .pill { transform: none; }
+
+/* =========================================================
+   Home — dek kartu vertikal
+   ========================================================= */
+
+.stage { position: relative; }
+
+/* Lapisan dek menutupi seluruh layar supaya roda mouse dan geseran
+   bekerja di mana saja, bukan cuma tepat di atas kartunya. */
+.deck {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  touch-action: pan-x;
+  perspective: 118rem;
+  perspective-origin: var(--deck-x) 50%;
+}
+.deck.is-dragging { cursor: grabbing; }
+
+.deck-card {
+  position: absolute;
+  left: var(--deck-x);
+  top: 50%;
+  width: var(--deck-size);
+  height: var(--deck-size);
+  margin: calc(var(--deck-size) / -2) 0 0 calc(var(--deck-size) / -2);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  background: linear-gradient(180deg, #f1f1f1 0%, #e6e6e6 100%);
+  box-shadow: var(--shadow-md);
+  transform-origin: 50% 50%;
+  will-change: transform, opacity, filter;
+  pointer-events: none;
+  backface-visibility: hidden;
+  /* Hanya transform yang boleh pelan. Bayangan dan blur harus cepat selesai.
+     Kalau bayangan ikut beranimasi selama 0,55 detik, di tengah jalan dia
+     kena filter blur milik kartu yang sedang rebah dan hasilnya jadi gumpalan
+     gelap besar yang mengikuti kartu. Itu yang kelihatan seperti bug. */
+  transition:
+    transform var(--dur) var(--ease-bounce),
+    opacity 0.4s var(--ease),
+    box-shadow 0.16s ease-out;
+}
+
+/* Posisi relatif terhadap kartu aktif. Jaraknya kelipatan ukuran kartu,
+   jadi susunannya tetap sama di semua ukuran layar. Referensi memberi
+   jarak besar sehingga tetangganya cuma mengintip sedikit di tepi. */
+/* transition di sini yang berlaku saat kartu MENJADI aktif: bayangannya
+   masuk pelan dan diberi jeda, jadi kartunya mendarat dulu baru terangkat */
+.deck-card[data-pos="0"] {
+  transition:
+    transform var(--dur) var(--ease-bounce),
+    opacity 0.4s var(--ease),
+    box-shadow 0.45s var(--ease) 0.22s;
+  transform: translateY(0) rotateX(0deg);
+  opacity: 1; z-index: 3;
+  pointer-events: auto;
+  cursor: pointer;
+}
+/* di atas kartu aktif, sisi atasnya yang menjauh */
+/* Tanpa blur sama sekali. Dulu kartu tetangga di-blur untuk menyamarkan
+   isinya, tapi isinya sekarang memang tidak dirender jadi tidak ada yang perlu
+   disamarkan. Yang tersisa cuma kerugiannya: slab abu berpinggir lembut
+   terbaca sebagai halo gelap, dan karena blur ikut beranimasi halonya bergerak
+   mengikuti kartu. Itu yang terasa seperti bug saat kartu bergeser. Bentuk
+   trapesium dan opasitas sudah cukup memberi kesan kedalaman.
+
+   Kartu tetangga hanya menyisakan badan kartunya. Isinya disembunyikan
+   supaya yang terlihat cuma slab abu-abu, sama seperti referensi. Media
+   yang ikut dirender di posisi rebah justru bikin tampilannya ramai. */
+.deck-card:not([data-pos="0"]) .mock,
+.deck-card:not([data-pos="0"]) .card-name {
+  opacity: 0;
+}
+
+/* Tanpa bayangan. Pada slab yang hampir rata, drop shadow bikin halo gelap
+   yang menarik mata, padahal tugasnya cuma jadi latar. Blur dan opasitas
+   sudah cukup memisahkannya dari kartu aktif. */
+.deck-card:not([data-pos="0"]) {
+  box-shadow: none;
+}
+.deck-card .mock,
+.deck-card .card-name {
+  transition: opacity 0.25s var(--ease);
+}
+
+.deck-card[data-pos="-1"] {
+  transform:
+    translateY(calc(var(--deck-size) * var(--deck-gap-1) * -1))
+    rotateX(var(--deck-tilt-1));
+  opacity: 1; z-index: 2;
+}
+/* di bawah kartu aktif, sisi bawahnya yang menjauh */
+.deck-card[data-pos="1"] {
+  transform:
+    translateY(calc(var(--deck-size) * var(--deck-gap-1)))
+    rotateX(calc(var(--deck-tilt-1) * -1));
+  opacity: 1; z-index: 2;
+}
+.deck-card[data-pos="-2"] {
+  transform:
+    translateY(calc(var(--deck-size) * var(--deck-gap-2) * -1))
+    rotateX(var(--deck-tilt-2));
+  opacity: 0.72; z-index: 1;
+}
+.deck-card[data-pos="2"] {
+  transform:
+    translateY(calc(var(--deck-size) * var(--deck-gap-2)))
+    rotateX(calc(var(--deck-tilt-2) * -1));
+  opacity: 0.72; z-index: 1;
+}
+.deck-card[data-pos="x"] {
+  transform: translateY(0) rotateX(88deg);
+  opacity: 0; z-index: 0;
+}
+
+.deck-card .card-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.deck-card .card-name {
+  position: absolute;
+  left: 3rem;
+  bottom: 2.8rem;
+  z-index: 4;
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  transition: transform 0.5s var(--ease);
+}
+
+/* Di kartu yang medianya sudah ada, namanya dibalik jadi putih. Video isinya
+   tidak bisa dijamin, dan tepi bawahnya sering kena bidang terang. Teks gelap
+   di sana hilang. Putih di atas peredam gelap terbaca di isi apa pun. */
+.deck-card.has-media .card-name { color: var(--surface); }
+.deck-card[data-pos="0"]:hover .card-name { transform: translateX(0.4rem); }
+
+.deck.is-intro .deck-card { animation: deck-in 1s var(--ease) both; }
+@keyframes deck-in {
+  from { opacity: 0; }
+}
+
+/* --- titik indikator --- */
+
+.dots {
+  position: fixed;
+  right: var(--dots-x);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.15rem;
+  animation: fade-in 0.9s var(--ease) 0.3s both;
+}
+.dots[hidden] { display: none; }
+
+.dot {
+  width: 0.9rem;
+  height: 0.9rem;
+  display: grid;
+  place-items: center;
+}
+.dot::after {
+  content: "";
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 999px;
+  background: var(--ink-4);
+  transition: all 0.45s var(--ease);
+}
+.dot:hover::after { background: var(--ink-3); }
+.dot[aria-current="true"]::after {
+  width: 0.55rem;
+  height: 0.55rem;
+  background: var(--ink);
+}
+
+/* =========================================================
+   Halaman project
+   ========================================================= */
+
+.media {
+  margin-left: var(--split-x);
+  padding: 2rem 2rem 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.media-item {
+  position: relative;
+  height: 88vh;
+  min-height: 30rem;
+  border-radius: var(--r-media);
+  overflow: hidden;
+  background: var(--card);
+  animation: media-in 0.9s var(--ease) both;
+}
+@keyframes media-in {
+  from { opacity: 0; transform: translateY(2rem); }
+}
+
+/* kartu teks case study, menggantikan media saat mode info menyala */
+.note {
+  position: relative;
+  min-height: 88vh;
+  border-radius: var(--r-media);
+  background: var(--surface);
+  padding: 6rem 5.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6rem;
+  animation: media-in 0.7s var(--ease) both;
+}
+
+.note-label {
+  font-size: 1.35rem;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.note-body {
+  margin: 0;
+  font-size: 2.4rem;
+  line-height: 1.32;
+  letter-spacing: -0.018em;
+  color: var(--ink);
+  max-width: 40ch;
+}
+
+.note-list {
+  margin: 2.8rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 2.4rem;
+  line-height: 1.32;
+  letter-spacing: -0.018em;
+  color: var(--ink-3);
+}
+
+.note-credit {
+  margin-top: 2.8rem;
+  font-size: 1.35rem;
+  color: var(--ink-3);
+}
+
+/* tombol tutup di garis batas dua kolom */
+.edge-btn {
+  position: fixed;
+  left: calc(var(--split-x) - 7.4rem);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 60;
+  width: 5.4rem;
+  height: 5.4rem;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  border-radius: var(--r-btn);
+  box-shadow: var(--shadow-sm);
+  transition: border-radius 0.45s var(--ease);
+}
+.edge-btn:hover { border-radius: 999px; }
+.edge-btn svg { width: 2rem; height: 2rem; }
+
+/* =========================================================
+   Halaman about
+   ========================================================= */
+
+.about {
+  padding: 22vh var(--rail-x) 24vh;
+  max-width: 116rem;
+}
+
+/* Nama dan tombol duduk di atas teks, ikut ter-scroll. Jaraknya lebar
+   supaya layar pertama cuma berisi identitas, teksnya baru menyusul
+   saat di-scroll. Pola ini diambil dari referensi. */
+.about-head {
+  /* position + z-index wajib. Tanpa ini daftar kontak yang ditumpuk tertimpa
+     teks di bawahnya, karena teksnya datang belakangan di DOM sementara
+     .about-head cuma elemen statis biasa. */
+  position: relative;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
+  margin-bottom: 18vh;
+  animation: fade-up 0.9s var(--ease) both;
+}
+
+.prose {
+  font-size: 3rem;
+  line-height: 1.28;
+  letter-spacing: -0.022em;
+  color: var(--ink-3);
+  /* dijaga tetap sempit supaya tidak menabrak globe di kanan */
+  max-width: 17em;
+}
+.prose p { margin: 0 0 4.4rem; }
+.about > *:last-child .prose p:last-child { margin-bottom: 0; }
+
+/* kata kunci dinaikkan kontrasnya. Ini trik skimming dari referensi. */
+.prose strong { font-weight: 500; color: var(--ink); }
+.prose a { font-weight: 500; color: var(--ink); border-bottom: 1px solid var(--line); }
+.prose a:hover { border-bottom-color: var(--ink); }
+
+.awards-label {
+  font-size: 1.35rem;
+  color: var(--ink);
+  margin: 0 0 1.6rem;
+}
+.awards {
+  margin: 0 0 4.4rem;
+  padding: 0;
+  list-style: none;
+  font-size: 3rem;
+  line-height: 1.28;
+  letter-spacing: -0.022em;
+  color: var(--ink);
+}
+.awards span { color: var(--ink-3); }
+
+.about-block { animation: fade-up 0.9s var(--ease) both; }
+
+/* =========================================================
+   Globe clay di halaman about
+   ========================================================= */
+
+.globe {
+  position: fixed;
+  right: 8vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(30vw, 46rem);
+  aspect-ratio: 1 / 1;
+  z-index: 20;
+  cursor: grab;
+  touch-action: none;
+}
+.globe.is-dragging { cursor: grabbing; }
+
+.globe-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.globe-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: -1.5rem 0 0 0.7rem;
+  padding: 0.5rem 1.1rem;
+  background: var(--surface);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  font-size: 1.35rem;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* =========================================================
+   Placeholder aset — mock UI abu-abu
+   Ganti seluruh blok .mock dengan <video> atau <img> asli nanti.
+   ========================================================= */
+
+/* Slot berisi media asli: gradien dan animasi drift dimatikan karena
+   videonya menutupi seluruh kotak. */
+.mock.has-media {
+  background: #e2e2e2;
+  animation: none;
+}
+
+/* Peredam hanya dipasang di tepi yang memang ada teksnya. Video apa pun bisa
+   kebetulan terang atau gelap di titik itu, jadi keterbacaan tidak boleh
+   bergantung pada isi video. Di tepi yang tidak ada teksnya, peredam cuma
+   memucatkan gambar tanpa memberi apa pun. */
+.mock.has-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Halaman project: media tanpa label sama sekali, jadi tidak diredam.
+   Peredam atas baru menyala kalau labelnya memang dirender. */
+.mock.has-media.has-tag::after {
+  background: linear-gradient(180deg, rgba(246, 246, 246, 0.78) 0%, rgba(246, 246, 246, 0) 16%);
+}
+
+/* Kartu home kebalikannya: nama project di sudut bawah warnanya putih,
+   jadi peredamnya gelap dan hanya di tepi bawah.
+
+   Kekuatannya diukur, bukan dikira-kira. Nama duduk di 8,4% sampai 14,1% dari
+   tepi bawah. Gradien yang langsung meluruh dari tepi hanya memberi sekitar
+   0,25 alpha di batas atas teks, dan di frame yang bidang bawahnya putih itu
+   cuma menghasilkan kontras 1,8:1 — nama praktis hilang selama beberapa detik.
+   Jadi peredamnya dibuat penuh dulu sampai melewati teks, baru meluruh. */
+.deck-card .mock.has-media::after {
+  background: linear-gradient(
+    0deg,
+    rgba(17, 17, 17, 0.62) 0%,
+    rgba(17, 17, 17, 0.62) 17%,
+    rgba(17, 17, 17, 0) 38%
+  );
+}
+
+/* label harus di atas peredamnya, dan warnanya dinaikkan karena abu muda
+   kalah kontras di atas video */
+.mock-tag {
+  position: absolute;
+  z-index: 2;
+}
+.mock.has-media .mock-tag { color: var(--ink); }
+
+.mock-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mock {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(150deg, #efefef 0%, #dcdcdc 45%, #e7e7e7 100%);
+  background-size: 200% 200%;
+  animation: drift 18s ease-in-out infinite alternate;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+@keyframes drift {
+  from { background-position: 0% 0%; }
+  to   { background-position: 100% 100%; }
+}
+
+.mock-frame {
+  width: 74%;
+  background: var(--surface);
+  border-radius: 0.8rem;
+  box-shadow: 0 1rem 3rem rgba(17, 17, 17, 0.1);
+  overflow: hidden;
+  font-size: 0;
+}
+.media-item .mock-frame { width: 62%; }
+
+.mock-bar {
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 0.8rem;
+  border-bottom: 1px solid #ececec;
+}
+.mock-bar i {
+  width: 0.4rem; height: 0.4rem;
+  border-radius: 999px;
+  background: #d8d8d8;
+  display: block;
+}
+.mock-body { display: flex; min-height: 13rem; }
+.media-item .mock-body { min-height: 22rem; }
+
+.mock-side {
+  width: 20%;
+  padding: 1rem 0.8rem;
+  border-right: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.mock-main {
+  flex: 1;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.mock-row { height: 0.6rem; border-radius: 999px; background: #ededed; }
+.mock-row.w80 { width: 80%; }
+.mock-row.w60 { width: 60%; }
+.mock-row.w40 { width: 40%; }
+.mock-row.tall { height: 0.8rem; background: #e2e2e2; }
+
+.mock-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-top: 0.4rem;
+}
+.mock-tile {
+  aspect-ratio: 4 / 3;
+  border-radius: 0.4rem;
+  background: #f0f0f0;
+}
+.mock-tile:nth-child(2) { background: #e6e6e6; }
+.mock-tile:nth-child(3) { background: #ededed; }
+
+.mock-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  height: 6.4rem;
+  margin-top: 0.6rem;
+}
+.mock-chart i {
+  flex: 1;
+  border-radius: 0.2rem 0.2rem 0 0;
+  background: #e4e4e4;
+  display: block;
+  animation: bar 4s ease-in-out infinite alternate;
+}
+.mock-chart i:nth-child(1) { height: 40%; animation-delay: 0s; }
+.mock-chart i:nth-child(2) { height: 68%; animation-delay: .3s; }
+.mock-chart i:nth-child(3) { height: 52%; animation-delay: .6s; }
+.mock-chart i:nth-child(4) { height: 84%; background: #cfcfcf; animation-delay: .9s; }
+.mock-chart i:nth-child(5) { height: 60%; animation-delay: 1.2s; }
+.mock-chart i:nth-child(6) { height: 34%; animation-delay: 1.5s; }
+@keyframes bar { to { transform: scaleY(0.82); transform-origin: bottom; } }
+
+.mock-phone {
+  width: 42%;
+  max-width: 17rem;
+  aspect-ratio: 9 / 17;
+  background: var(--surface);
+  border-radius: 2rem;
+  box-shadow: 0 1.2rem 3.4rem rgba(17, 17, 17, 0.12);
+  padding: 1.6rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.mock-notch {
+  width: 32%;
+  height: 0.4rem;
+  border-radius: 999px;
+  background: #e6e6e6;
+  margin: 0 auto 0.8rem;
+}
+
+.mock-tag {
+  position: absolute;
+  left: 3rem;
+  top: 2.8rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+}
+
+/* =========================================================
+   Transisi antar halaman
+   ========================================================= */
+
+.app.is-leaving .rail,
+.app.is-leaving .stage,
+.app.is-leaving .dots {
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+/* Elemen bayangan yang terbang dari kartu ke media, dan sebaliknya. */
+.morph {
+  position: fixed;
+  z-index: 200;
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: var(--shadow-md);
+  pointer-events: none;
+  will-change: left, top, width, height;
+}
+
+/* dipakai sesaat untuk mengukur posisi akhir kartu tanpa terganggu animasi */
+.deck.is-instant .deck-card {
+  transition: none !important;
+  animation: none !important;
+}
+
+.media-item.is-morph-target {
+  visibility: hidden;
+  animation: none !important;
+}
+
+/* =========================================================
+   Tablet — 769 sampai 1100
+   Tata letaknya masih terbelah dua kolom seperti desktop, tapi kolom kiri
+   ditarik mendekat dan kartunya dikecilkan supaya keduanya tidak berhimpit.
+   ========================================================= */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  :root {
+    --rail-x: 8vw;
+    --deck-x: 68vw;
+    --deck-size: 30rem;
+    --dots-x: 4vw;
+    --split-x: 47vw;
+  }
+
+  .rail { gap: 4.5rem; }
+  .note { padding: 4.5rem 4rem; gap: 4rem; }
+  .note-body, .note-list { font-size: 2.1rem; }
+  .about { padding: 18vh var(--rail-x) 24vh; }
+  .prose, .awards { font-size: 2.6rem; max-width: 18em; }
+  .globe { right: 5vw; width: min(34vw, 40rem); }
+}
+
+/* =========================================================
+   Phone — 768 ke bawah
+   Kolom kiri jadi lapisan penuh layar: judul menempel di atas, tombol di
+   bawah, kartu di tengah. Ini pola yang sama dengan referensi.
+   ========================================================= */
+
+@media (max-width: 768px) {
+  :root {
+    --deck-x: 50vw;
+    --deck-size: min(70vw, 48vh);
+    /* di layar kecil putarannya sedikit dikurangi supaya tetangganya
+       masih terbaca sebagai kartu, bukan garis */
+    --deck-tilt-1: 60deg;
+    --deck-tilt-2: 76deg;
+    --deck-gap-1: 0.86;
+    --deck-gap-2: 1.09;
+    --r-card: 2.4rem;
+    --r-media: 1.8rem;
+    --r-btn: 1.2rem;
+  }
+
+  .rail {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    padding: 2.6rem 2rem 4rem;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    gap: 0;
+  }
+
+  /* diubah lewat variabel supaya kotak masker ikut menyesuaikan */
+  :root { --title-fs: 1.95rem; }
+  .title-block { align-items: center; }
+
+  .pill { height: 4.8rem; padding: 0 1.5rem; }
+  .pill .ico { width: 2rem; height: 2rem; }
+  .pill .lbl { font-size: 1.4rem; }
+  .actions { gap: 1rem; }
+  .socials { gap: 1rem; }
+
+  .deck-card .card-name { left: 2rem; bottom: 1.8rem; font-size: 1.4rem; }
+  .mock-tag { left: 2rem; top: 1.8rem; font-size: 1.15rem; }
+
+  .dots { right: 4vw; gap: 1rem; }
+
+  /* peredam di tepi atas dan bawah supaya nama dan tombol tidak
+     bertabrakan dengan kartu yang lewat di belakangnya */
+  .rail::before,
+  .rail::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 9rem;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .rail::before { top: 0;    background: linear-gradient(180deg, var(--bg) 28%, rgba(246, 246, 246, 0)); }
+  .rail::after  { bottom: 0; background: linear-gradient(0deg,   var(--bg) 28%, rgba(246, 246, 246, 0)); }
+
+  /* project: media turun ke bawah judul */
+  .media {
+    margin-left: 0;
+    padding: 24vh 1.6rem 12rem;
+    gap: 1.6rem;
+  }
+  .media-item { height: 58vh; min-height: 26rem; }
+  .note {
+    min-height: auto;
+    padding: 3.2rem 2.4rem;
+    gap: 3.2rem;
+  }
+  .note-body, .note-list { font-size: 1.8rem; max-width: none; }
+  .note-label, .note-credit { font-size: 1.25rem; }
+
+  /* sejajar dengan tombol di rail yang jaraknya 4rem dari bawah */
+  .edge-btn {
+    left: auto;
+    right: 2rem;
+    top: auto;
+    bottom: 4rem;
+    transform: none;
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .about { padding: 17vh 2rem 11rem; max-width: none; }
+  .prose, .awards { font-size: 1.95rem; max-width: none; }
+  .prose p { margin-bottom: 2.8rem; }
+  .awards { margin-bottom: 2.8rem; }
+  .awards-label { font-size: 1.25rem; }
+
+  /* Di layar kecil about berbalik dari desktop: nama dipaku di atas dan
+     tombol dipaku di bawah, cuma teksnya yang ter-scroll dan lewat di
+     belakang keduanya. Pola ini diambil dari referensi, alasannya tombol
+     jadi tetap terjangkau ibu jari sepanjang halaman. */
+  .about-head {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    margin: 0;
+    padding: 2.6rem 2rem 4rem;
+    gap: 0;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    pointer-events: none;
+  }
+  .about-head > * { pointer-events: auto; }
+  .about-head .title-block { align-items: center; }
+
+  /* peredam di tepi atas dan bawah, sama seperti di home. Tombol berupa pil
+     putih bershadow sebenarnya sudah terbaca di atas apa pun, tapi nama itu
+     teks polos jadi butuh alasnya. */
+  .about-head::before,
+  .about-head::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 9rem;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .about-head::before { top: 0;    background: linear-gradient(180deg, var(--bg) 34%, rgba(246, 246, 246, 0)); }
+  .about-head::after  { bottom: 0; background: linear-gradient(0deg,   var(--bg) 24%, rgba(246, 246, 246, 0)); }
+
+  /* di layar kecil globe ikut alur teks, bukan menempel di kanan */
+  .globe {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: min(72vw, 34rem);
+    margin: 2rem auto 0;
+  }
+  .globe-label { font-size: 1.25rem; }
+}
+
+/* =========================================================
+   Hormati preferensi gerak minimal
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .deck-card { filter: none !important; }
+}
