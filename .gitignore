@@ -6,3 +6,10 @@ media-uji/
 
 # hasil encode sementara
 media/.*.png
+
+# hasil render demo, bisa dibuat ulang dengan demo/build.sh
+demo/frames/
+demo/screens/
+demo/checks/
+demo/stills/
+demo/*.log

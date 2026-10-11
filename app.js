@@ -23,7 +23,7 @@
    - live      : URL project. Isi "" kalau tidak ada, tombolnya otomatis hilang.
    - card      : media untuk kartu di home. Kosongkan kalau belum ada, nanti
                  dipakai placeholder CSS. Bentuknya:
-                 { mp4, webm, poster }  — rasio 1:1, encode 1080x1080
+                 { mp4, webm, poster }, rasio 1:1, encode 1080x1080
    - scenes    : isi kolom kanan di halaman project. Tiap entri boleh berupa
                  string placeholder ("dashboard", "landing", "mobile", "editor")
                  atau objek media { mp4, webm, poster } seperti di atas.
@@ -43,125 +43,19 @@ const PROFILE = {
   ]
 };
 
-/* Dipakai dua kali, di kartu home dan di slot media pertama. Ditaruh di satu
-   variabel supaya tidak ada kemungkinan keduanya jadi beda tanpa sengaja.
-
-   Soal format: webm berisi AV1, mp4 berisi H.264 sebagai cadangan. Browser
-   memilih sendiri sumber pertama yang bisa dimainkannya. AV1 dipilih setelah
-   diukur, bukan dikira: pada rekaman ini AV1 CRF 48 menghasilkan SSIM 0,992
-   di 2,6 MB, sedangkan H.264 CRF 30 cuma 0,977 di 3,4 MB. Lebih tajam dan
-   lebih kecil sekaligus. WebP animasi sempat dipertimbangkan dan dibuang:
-   untuk klip puluhan detik ukurannya justru berlipat, tidak bisa di-seek,
-   dan harus terunduh penuh sebelum mulai. */
-const CV_LITE_01 = {
-  mp4: "media/cv-lite-card.mp4",
-  webm: "media/cv-lite-card.webm",
-  poster: "media/cv-lite-card-poster.webp"
-};
-
-const PROJECTS = [
-  {
-    slug: "cv-lite",
-    name: "CV-Lite",
-    role: "AI Headshots Generator",
-    live: "",
-    /* Kartu di home dan slot media pertama menunjuk ke BERKAS YANG SAMA,
-       bukan dua encode terpisah. Dua untungnya:
-       - pindah dari home ke halaman project tidak mengunduh apa pun lagi,
-         berkasnya sudah ada di cache, jadi transisinya langsung
-       - satu berkas lebih sedikit untuk dirawat
-       1080 dipilih karena kartu cuma tampil 335px dan kolom media 678px di
-       layar 1440. Di layar 2560 kolomnya 1222px, jadi naik tipis 13 persen,
-       dan itu tidak terlihat pada video. */
-    card: CV_LITE_01,
-    scenes: [
-      CV_LITE_01,
-      {
-        mp4: "media/cv-lite-media-02.mp4",
-        webm: "media/cv-lite-media-02.webm",
-        poster: "media/cv-lite-media-02-poster.webp"
-      },
-      "editor", "mobile"
-    ],
-    credit: "Studio, 2025",
-    mandate:
-      "Tulis di sini apa yang klien minta dan seperti apa kondisi produk sebelum kamu masuk. " +
-      "Sebutkan satu keterbatasan nyata: alurnya terlalu panjang, datanya tidak terbaca, " +
-      "atau tim tidak punya sistem yang bisa dipakai ulang.",
-    challenge:
-      "Jelaskan tegangan yang harus kamu selesaikan. Dua kelompok pengguna dengan kebutuhan " +
-      "bertolak belakang, informasi teknis yang harus terasa sederhana, atau kategori produk " +
-      "yang belum punya pembanding di kepala orang.",
-    solution:
-      "Ceritakan keputusan desainnya, bukan daftar fiturnya. Bagaimana kamu menyusun arsitektur " +
-      "informasinya, kenapa satu jalur dipilih dan jalur lain dibuang, dan bagian mana yang " +
-      "dirancang supaya bisa tumbuh tanpa dibongkar ulang.",
-    results:
-      "Sejak rilis, sebutkan angkanya. Konversi, waktu penyelesaian tugas, jumlah tiket support " +
-      "yang turun. Satu kalimat, angka di depan.",
-    awards: []
-  },
-  {
-    slug: "northline",
-    name: "Northline",
-    role: "Design System",
-    live: "",
-    scenes: ["editor", "dashboard", "landing"],
-    credit: "Studio, 2025",
-    mandate:
-      "Ganti dengan konteks project kedua. Jaga panjangnya tetap sekitar empat kalimat " +
-      "supaya kartu teksnya tidak perlu di-scroll.",
-    challenge:
-      "Satu masalah utama saja. Kalau ada tiga, pilih yang paling sulit dan buang sisanya.",
-    solution:
-      "Fokus ke prinsip yang kamu pegang selama mengerjakan, lalu satu contoh konkret " +
-      "bagaimana prinsip itu terlihat di layar.",
-    results:
-      "Kalau tidak ada angka, sebutkan adopsi: berapa tim yang memakai, berapa komponen " +
-      "yang dipakai ulang, berapa lama waktu build berkurang.",
-    awards: []
-  },
-  {
-    slug: "kelvin",
-    name: "Kelvin",
-    role: "End-to-end UX",
-    live: "",
-    scenes: ["mobile", "landing", "dashboard"],
-    credit: "Freelance, 2024",
-    mandate: "Konteks project ketiga.",
-    challenge: "Tegangan utama project ketiga.",
-    solution: "Keputusan desain project ketiga.",
-    results: "Hasil project ketiga.",
-    awards: []
-  },
-  {
-    slug: "salt",
-    name: "Salt",
-    role: "Interface Design",
-    live: "",
-    scenes: ["landing", "editor", "mobile"],
-    credit: "Freelance, 2024",
-    mandate: "Konteks project keempat.",
-    challenge: "Tegangan utama project keempat.",
-    solution: "Keputusan desain project keempat.",
-    results: "Hasil project keempat.",
-    awards: []
-  }
-];
+/* Kosong. Tambah project di sini, satu objek per project, ikuti panduan field
+   di atas. Contoh bentuk lengkap ada di README, bagian "Cara memasang aset".
+   Selama array ini kosong, home cuma menampilkan nama dan tombol. */
+const PROJECTS = [];
 
 /* Teks About. Bungkus kata kunci dengan <strong> supaya naik kontrasnya.
    Jangan lebih dari empat paragraf, halaman ini bukan CV. */
 const ABOUT = {
-  intro:
-    "Ganti paragraf ini dengan satu kalimat yang menjelaskan apa yang kamu kerjakan " +
-    "dan untuk siapa. Bukan gelar, tapi hasil.",
-  body:
-    "Sebutkan di mana kamu belajar, di mana kamu pernah bekerja, dan jenis produk apa " +
-    "yang paling sering kamu pegang.",
+  intro: "",
+  body: "",
   awardsLabel: "Recognitions:",
   awards: [],
-  closing:
-    "Status kerja sekarang, dan kota tempat kamu berada.",
+  closing: "",
 
   /* Titik di globe. Ganti lat dan lon kalau pindah kota.
      Yogyakarta -7.80, 110.37. Jakarta -6.21, 106.85. Bandung -6.91, 107.61.
@@ -337,7 +231,7 @@ function contactGroup() {
      bahwa klik berikutnya menutup, bukan membuka sesuatu yang lain */
   const toggle = `
     <button type="button" class="pill" id="contact-toggle"
-            aria-label="Buka daftar kontak" aria-expanded="false">
+            aria-label="Open contact list" aria-expanded="false">
       <span class="ico ico-swap">
         <span class="ico-a">${ICON.chat}</span>
         <span class="ico-b">${ICON.close}</span>
@@ -359,7 +253,7 @@ function soundToggle() {
   const off = !Sfx.isEnabled();
   return `
     <button type="button" class="pill${off ? " is-alt" : ""}" id="sound-toggle"
-            aria-label="${off ? "Nyalakan suara" : "Matikan suara"}"
+            aria-label="${off ? "Turn sound on" : "Turn sound off"}"
             aria-pressed="${!off}">
       <span class="ico ico-swap">
         <span class="ico-a">${ICON.sound}</span>
@@ -377,7 +271,7 @@ function bindSound(scope) {
     Sfx.setEnabled(next);
     btn.classList.toggle("is-alt", !next);
     btn.setAttribute("aria-pressed", String(next));
-    btn.setAttribute("aria-label", next ? "Matikan suara" : "Nyalakan suara");
+    btn.setAttribute("aria-label", next ? "Turn sound off" : "Turn sound on");
   });
 }
 
@@ -423,7 +317,7 @@ function bindContact(scope) {
     btn.classList.toggle("is-dark", open);
     btn.classList.toggle("is-round", open);
     btn.setAttribute("aria-expanded", String(open));
-    btn.setAttribute("aria-label", open ? "Tutup daftar kontak" : "Buka daftar kontak");
+    btn.setAttribute("aria-label", open ? "Close contact list" : "Open contact list");
     Sfx.play(open ? "on" : "off");
   }
 
@@ -444,6 +338,32 @@ function bindContact(scope) {
   });
 }
 
+/* Judul dan peran selalu satu baris. Kalau salah satunya lebih lebar dari
+   kolom kiri, ukuran keduanya diperkecil bersama dengan rasio yang sama,
+   supaya pasangan nama dan peran tetap terbaca sebagai satu blok. Ruang
+   diukur dari wadahnya, bukan dari lebar layar, karena panjang teksnya
+   bisa berubah kapan saja. */
+function pasJudul() {
+  document.querySelectorAll(".title-block").forEach((blok) => {
+    blok.style.removeProperty("--title-fs");
+    const wadah = blok.parentElement;
+    const gaya = getComputedStyle(wadah);
+    const ruang =
+      wadah.clientWidth - parseFloat(gaya.paddingLeft) - parseFloat(gaya.paddingRight);
+    const baris = [...blok.querySelectorAll(".title, .subtitle")];
+    const lebar = Math.max(...baris.map((el) => el.scrollWidth));
+    if (!ruang || lebar <= ruang) return;
+    const ukuran = parseFloat(getComputedStyle(baris[0]).fontSize);
+    blok.style.setProperty("--title-fs", Math.floor((ukuran * ruang) / lebar) + "px");
+  });
+}
+
+let antreUkur = 0;
+window.addEventListener("resize", () => {
+  cancelAnimationFrame(antreUkur);
+  antreUkur = requestAnimationFrame(pasJudul);
+});
+
 function titleBlock(a, b) {
   return `
     <div class="title-block">
@@ -453,7 +373,7 @@ function titleBlock(a, b) {
 }
 
 /* ---------------------------------------------------------
-   5. HALAMAN HOME — dek kartu
+   5. HALAMAN HOME: dek kartu
    --------------------------------------------------------- */
 
 const deckState = {
@@ -478,6 +398,15 @@ function renderHome(rail, stage, dots) {
   bindContact(rail);
   bindSound(rail);
 
+  /* Tanpa project, dek tidak dirender sama sekali. Kalau dipaksa jalan,
+     posisi kartu dihitung modulo nol dan hasilnya NaN. */
+  if (!PROJECTS.length) {
+    stage.innerHTML = "";
+    dots.hidden = true;
+    document.body.classList.add("no-scroll");
+    return;
+  }
+
   /* Kartu digandakan supaya loop-nya simetris di atas dan bawah.
      Referensi aslinya juga pakai trik ini. */
   deckState.slots = PROJECTS.concat(PROJECTS);
@@ -491,7 +420,7 @@ function renderHome(rail, stage, dots) {
   }
 
   stage.innerHTML = `
-    <div class="deck${back ? "" : " is-intro"}" id="deck" role="group" aria-roledescription="carousel" aria-label="Daftar project">
+    <div class="deck${back ? "" : " is-intro"}" id="deck" role="group" aria-roledescription="carousel" aria-label="Projects">
       ${deckState.slots
         .map((p, i) => {
           /* Label peran tidak dirender di kartu. Di halaman project labelnya masih
@@ -502,7 +431,7 @@ function renderHome(rail, stage, dots) {
           return `
         <article class="deck-card${hasMedia ? " has-media" : ""}" data-slot="${i}" data-pos="x" style="animation-delay:${Math.min(i, 3) * 0.08}s">
           ${scene(media, "", i === 0)}
-          <a class="card-link" href="#/project/${p.slug}" aria-label="Buka project ${p.name}"></a>
+          <a class="card-link" href="#/project/${p.slug}" aria-label="Open project ${p.name}"></a>
           <span class="card-name">${p.name}</span>
         </article>`;
         })
@@ -512,7 +441,7 @@ function renderHome(rail, stage, dots) {
   dots.hidden = false;
   dots.innerHTML = PROJECTS.map(
     (p, i) =>
-      `<button class="dot" type="button" data-index="${i}" aria-label="Ke project ${p.name}" aria-current="${i === 0}"></button>`
+      `<button class="dot" type="button" data-index="${i}" aria-label="Go to project ${p.name}" aria-current="${i === 0}"></button>`
   ).join("");
 
   const deck = document.getElementById("deck");
@@ -858,6 +787,7 @@ let currentSlug = null;
 function renderProject(rail, stage, dots, slug) {
   const p = PROJECTS.find((x) => x.slug === slug);
   if (!p) return renderHome(rail, stage, dots);
+  rail.classList.add("rail--project");
 
   dots.hidden = true;
   currentSlug = slug;
@@ -870,14 +800,15 @@ function renderProject(rail, stage, dots, slug) {
   rail.innerHTML =
     titleBlock(p.name, p.role) +
     `<div class="actions">
-       ${pill({ icon: ICON.info, label: "Case study", id: "info-toggle", dark: infoOpen, round: infoOpen, aria: "Tampilkan case study" })}
+       ${pill({ icon: ICON.info, label: "Case study", id: "info-toggle", dark: infoOpen, round: infoOpen, aria: "Show case study" })}
        ${liveBtn}
        ${soundToggle()}
      </div>`;
   bindSound(rail);
+  pasJudul();
 
   stage.innerHTML =
-    `<a class="edge-btn" href="#/" aria-label="Kembali ke daftar project">${ICON.collapse}</a>` +
+    `<a class="edge-btn" href="#/" aria-label="Back to projects">${ICON.collapse}</a>` +
     `<div class="media" id="media">${infoOpen ? notesHTML(p) : mediaHTML(p)}</div>`;
 
   window.scrollTo(0, 0);
@@ -990,7 +921,7 @@ function renderAbout(rail, stage, dots) {
       <div class="about-head">
         ${titleBlock(PROFILE.name, PROFILE.role)}
         <div class="actions">
-          ${pill({ href: "#/", icon: ICON.back, label: "Back", dark: true, round: true, aria: "Kembali" })}
+          ${pill({ href: "#/", icon: ICON.back, label: "Back", dark: true, round: true, aria: "Back" })}
           ${contactGroup()}
           ${soundToggle()}
         </div>
@@ -1047,7 +978,7 @@ function render() {
     activeGlobe = null;
   }
 
-  rail.classList.remove("rail--about");
+  rail.classList.remove("rail--about", "rail--project");
 
   if (path.startsWith("/project/")) {
     renderProject(rail, stage, dots, path.split("/")[2]);
@@ -1059,6 +990,7 @@ function render() {
     infoOpen = false;
     renderHome(rail, stage, dots);
   }
+  pasJudul();
 }
 
 function navigate() {

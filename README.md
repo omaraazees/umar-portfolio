@@ -125,10 +125,10 @@ ffmpeg -i sumber.mov -vf "fps=30,scale=1440:1440:flags=lanczos" \
 
 Yang wajib, bukan pilihan gaya:
 
-- `-pix_fmt yuv420p` — tanpa ini Safari dan QuickTime menolak memutar.
-- `-profile:v high -level 4.0` — profil yang didukung semua perangkat.
-- `-movflags +faststart` — video mulai jalan sebelum unduhannya selesai.
-- `-an` — buang audio. Ini syarat autoplay, bukan sekadar penghemat.
+- `-pix_fmt yuv420p`: tanpa ini Safari dan QuickTime menolak memutar.
+- `-profile:v high -level 4.0`: profil yang didukung semua perangkat.
+- `-movflags +faststart`: video mulai jalan sebelum unduhannya selesai.
+- `-an`: buang audio. Ini syarat autoplay, bukan sekadar penghemat.
 - **Encode WebM dari sumber asli, bukan dari MP4 hasil encode.** Dan skala CRF
   VP9 beda jauh dari x264: crf 42 VP9 kira-kira setara crf 28 x264. Kalau
   disamakan angkanya, WebM justru keluar lebih besar dari MP4.

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI Headshots · demo stage</title>
+<!--
+  Panggung video demo AI Headshots untuk portfolio.
+  ?comp=cover|desktop|mobile|still3|still4   pilih komposisi
+  ?render=1                                  dikendalikan render.js lewat window.render(t)
+  Tanpa render=1 halaman memutar sendiri (preview).
+-->
+<style>
+  html, body { margin: 0; background: #ECECEA; }
+  #stage {
+    position: relative; overflow: hidden;
+    width: var(--W); height: var(--H);
+    background: radial-gradient(120% 95% at 50% 38%, #FBFBFA 0%, #F1F1EF 62%, #E9E9E6 100%);
+  }
+  .cam { position: absolute; inset: 0; perspective: 2600px; perspective-origin: 50% 50%; }
+  .world { position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform-style: preserve-3d; }
+  .grp { position: absolute; left: 0; top: 0; transform-style: preserve-3d; }
+  .el { position: absolute; left: 0; top: 0; transform-origin: 50% 50%; will-change: transform, opacity; }
+
+  .win {
+    border-radius: 16px; overflow: hidden; background: #fff;
+    box-shadow: 0 0 0 1px rgba(17, 24, 39, .06), 0 2px 4px rgba(17, 24, 39, .04), 0 28px 70px rgba(17, 24, 39, .13);
+  }
+  .win .bar { height: 30px; background: #F5F5F6; border-bottom: 1px solid #EAEAED; display: flex; gap: 7px; align-items: center; padding-left: 15px; }
+  .win .bar i { width: 10px; height: 10px; border-radius: 50%; background: #DCDCE0; }
+  .win img, .phone img, .tile img { display: block; width: 100%; height: auto; }
+
+  .phone {
+    border-radius: 42px; overflow: hidden; background: #fff;
+    box-shadow: 0 0 0 1px rgba(17, 24, 39, .07), 0 2px 4px rgba(17, 24, 39, .04), 0 30px 70px rgba(17, 24, 39, .16);
+  }
+  .phone .scr { position: relative; }
+  .phone .scr img { position: absolute; left: 0; top: 0; }
+  .phone .scr img:first-child { position: relative; }
+
+  .tile { border-radius: 12px; overflow: hidden; background: #fff;
+    box-shadow: 0 0 0 1px rgba(17, 24, 39, .06), 0 18px 40px rgba(17, 24, 39, .10); }
+</style>
+</head>
+<body>
+<div id="stage"><div class="cam"><div class="world" id="world"></div></div></div>
+<script>
+const Q = new URLSearchParams(location.search);
+const COMP = Q.get("comp") || "desktop";
+const RENDER = Q.get("render") === "1";
+
+const D = "screens/desktop/", M = "screens/mobile/";
+const SCR = {
+  landing: D + "r4rJr.png", gender: D + "BJqwc.png", outfits: D + "C15kO.png", background: D + "qv2J8.png",
+  upload: D + "kwWTC.png", account: D + "DZdwj.png", paywall: D + "cFFJA.png", payment: D + "lZ1Es.png",
+  preparing: D + "xU9Ux.png", results: D + "qX4Jo.png", library: D + "l0MBQ8.png",
+  mLanding: M + "u7PYv.png", mGender: M + "HKS7B.png", mOutfits: M + "l6XHVi.png", mBackground: M + "S3yoB.png",
+  mUpload: M + "TPll4.png", mPaywall: M + "oSjmm.png", mPreparing: M + "RPOyL.png", mResults: M + "TTRmk.png", mLibrary: M + "uZVWw.png"
+};
+
+/* ---------- waktu dan easing ---------- */
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const seg = (t, a, b) => clamp((t - a) / (b - a));
+const lerp = (a, b, p) => a + (b - a) * p;
+const E = {
+  io: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  out: x => 1 - Math.pow(1 - x, 3),
+  quint: x => x < .5 ? 16 * x ** 5 : 1 - Math.pow(-2 * x + 2, 5) / 2,
+  sine: x => -(Math.cos(Math.PI * x) - 1) / 2,
+  lin: x => x
+};
+/* K(t, [[t0,v0],[t1,v1],...], easing) : nilai di antara kunci, easing per segmen */
+function K(t, keys, e = E.quint) {
+  if (t <= keys[0][0]) return keys[0][1];
+  for (let i = 1; i < keys.length; i++) {
+    const [t1, v1] = keys[i], [t0, v0] = keys[i - 1];
+    if (t <= t1) { const p = e(seg(t, t0, t1)); return lerp(v0, v1, p); }
+  }
+  return keys[keys.length - 1][1];
+}
+
+/* ---------- elemen ---------- */
+const world = document.getElementById("world");
+const stage = document.getElementById("stage");
+function mk(cls, parent = world) { const d = document.createElement("div"); d.className = cls; parent.appendChild(d); return d; }
+function win(src, w, ratio = 900 / 1920) {
+  const el = mk("el win"); el.style.width = w + "px";
+  el.innerHTML = `<div class="bar"><i></i><i></i><i></i></div><img src="${src}">`;
+  el._w = w; el._h = 30 + w * ratio; return el;
+}
+function phone(srcs, w) {
+  const el = mk("el phone"); el.style.width = w + "px";
+  el.innerHTML = `<div class="scr">${srcs.map(s => `<img src="${s}">`).join("")}</div>`;
+  el._w = w; el._h = w * 1992 / 1170; el._imgs = [...el.querySelectorAll("img")]; return el;
+}
+/* letakkan elemen: titik tengahnya di (x,y,z) ruang dunia */
+function put(el, o) {
+  const { x = 0, y = 0, z = 0, rx = 0, ry = 0, rz = 0, s = 1, op = 1 } = o;
+  el.style.transform = `translate3d(${x - el._w / 2}px,${y - el._h / 2}px,${z}px) rotateX(${rx}deg) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${s})`;
+  el.style.opacity = op;
+  el.style.visibility = op <= 0.001 ? "hidden" : "visible";
+}
+/* kamera: zoom s ke titik (px,py) dunia, plus putaran ringan */
+function cam(o) {
+  const { s = 1, px = 0, py = 0, rx = 0, ry = 0, z = 0 } = o;
+  world.style.transform = `translateZ(${z}px) rotateX(${rx}deg) rotateY(${ry}deg) scale(${s}) translate(${-px}px,${-py}px)`;
+}
+/* titik pada layar desktop: fx,fy = fraksi gambar (0..1), relatif ke pusat jendela */
+const pt = (el, fx, fy) => [(fx - .5) * el._w, -el._h / 2 + 30 + fy * (el._h - 30)];
+
+/* ---------- komposisi ---------- */
+const COMPS = {};
+
+/* DEMO DESKTOP 1440 x 1440, 24 detik, loop dari latar kosong ke latar kosong */
+COMPS.desktop = {
+  W: 1440, H: 1440, DUR: 24,
+  build() {
+    const W = 1200;
+    this.landing = win(SCR.landing, W);
+    this.steps = ["gender", "outfits", "background", "upload"].map(k => win(SCR[k], W));
+    this.paywall = win(SCR.paywall, W);
+    this.payment = win(SCR.payment, W, 900 / 1924);
+    this.preparing = win(SCR.preparing, W);
+    this.results = win(SCR.results, W);
+    this.library = win(SCR.library, W);
+  },
+  render(t) {
+    const L = this.landing;
+    /* 1. landing: rebah 3D lalu tegak, kamera masuk ke hero before/after */
+    const hero = pt(L, .69, .47);
+    put(L, {
+      rx: K(t, [[0, 22], [2.8, 0]]), ry: K(t, [[0, -20], [2.8, 0], [4.8, -4]]), rz: K(t, [[0, 4], [2.8, 0]]),
+      z: K(t, [[0, -420], [2.8, 0]]), op: K(t, [[0, 0], [.8, 1], [5.2, 1], [5.9, 0]], E.sine)
+    });
+    /* 2. langkah funnel: empat jendela berderet miring, kamera berpindah dari satu ke berikutnya */
+    const GAP = 1240, focus = K(t, [[5.6, 0], [7.1, 0], [7.8, 1], [9.0, 1], [9.7, 2], [10.9, 2], [11.6, 3]]);
+    const sIn = K(t, [[5.3, 0], [6.1, 1], [11.9, 1], [12.45, 0]], E.sine);
+    this.steps.forEach((el, i) => {
+      const r = i - focus, d = Math.abs(r), near = 1 - clamp(d);
+      put(el, { x: Math.sign(r) * Math.min(d, 1.6) * 640, z: -Math.min(d, 1.6) * 560 + near * 30,
+        ry: -clamp(r, -1.2, 1.2) * 30, op: sIn * clamp(1 - .62 * clamp(d, 0, 1) - .38 * clamp(d - 1, 0, 1)) });
+    });
+    /* 3. paywall, zoom ke kartu harga, lalu payment masuk dari kanan */
+    const price = pt(this.paywall, .72, .30);
+    const pIn = K(t, [[12.45, 0], [13.1, 1]], E.sine), pOut = K(t, [[16.0, 1], [16.8, 0]], E.sine);
+    put(this.paywall, { s: K(t, [[12.5, .95], [13.4, 1]]), x: K(t, [[15.0, 0], [16.2, -220]]), z: K(t, [[15.0, 0], [16.2, -420]]), ry: K(t, [[15.0, 0], [16.2, 10]]), op: pIn * pOut });
+    const payIn = K(t, [[15.0, 0], [15.8, 1]], E.sine), payOut = K(t, [[17.1, 1], [17.7, 0]], E.sine);
+    put(this.payment, { x: K(t, [[15.0, 760], [16.4, 40]]), z: K(t, [[15.0, 160], [16.4, 0]]), ry: K(t, [[15.0, -24], [16.4, -3]]), op: payIn * payOut });
+    /* 4. preparing lalu results, dorong pelan ke deretan foto */
+    const prepOp = K(t, [[17.3, 0], [17.9, 1], [19.0, 1], [19.5, 0]], E.sine);
+    put(this.preparing, { s: K(t, [[17.3, .96], [19.4, 1.04]], E.sine), op: prepOp });
+    const resOp = K(t, [[19.0, 0], [19.6, 1], [20.9, 1], [21.4, 0]], E.sine);
+    put(this.results, { s: K(t, [[19.0, 1.02], [19.6, 1]], E.sine), op: resOp });
+    /* 5. photo library: mulai dekat, mundur dan miring jadi overview, lalu hilang ke latar */
+    put(this.library, {
+      rx: K(t, [[21.6, 0], [23.1, 16]]), ry: K(t, [[21.6, 0], [23.1, -14]]), rz: K(t, [[21.6, 0], [23.1, 3]]),
+      z: K(t, [[21.6, 0], [23.1, -260]]), op: K(t, [[20.9, 0], [21.5, 1], [23.2, 1], [24, 0]], E.sine)
+    });
+    /* kamera */
+    const rowRes = pt(this.results, .5, .52), grid = pt(this.library, .56, .6);
+    let c = { s: 1, px: 0, py: 0 };
+    if (t < 5.6) c = { s: K(t, [[0, .98], [2.8, 1], [4.9, 1.9], [5.6, 2.05]]), px: K(t, [[2.8, 0], [4.9, hero[0]]]), py: K(t, [[2.8, 0], [4.9, hero[1]]]) };
+    else if (t < 12.5) c = { s: .9, rx: 4 };
+    else if (t < 17.2) c = { s: K(t, [[13.5, 1], [14.6, 1.85], [15.0, 1.85], [16.2, 1.02]]), px: K(t, [[13.5, 0], [14.6, price[0]], [15.0, price[0]], [16.2, 30]]), py: K(t, [[13.5, 0], [14.6, price[1]], [15.0, price[1]], [16.2, 0]]) };
+    else if (t < 19.1) c = { s: 1 };
+    else if (t < 21.0) c = { s: K(t, [[19.6, 1], [20.8, 1.5]]), px: K(t, [[19.6, 0], [20.8, rowRes[0]]]), py: K(t, [[19.6, 0], [20.8, rowRes[1]]]) };
+    else c = { s: K(t, [[21.0, 1.55], [21.6, 1.55], [23.1, .86]]), px: K(t, [[21.6, grid[0]], [23.1, 0]]), py: K(t, [[21.6, grid[1]], [23.1, 0]]) };
+    cam(c);
+  }
+};
+
+/* DEMO MOBILE 1440 x 1440, 12 detik: tiga layar HP, layar tengah menjalani funnel */
+COMPS.mobile = {
+  W: 1440, H: 1440, DUR: 12,
+  build() {
+    const W = 420;
+    this.left = phone([SCR.mOutfits, SCR.mBackground], W);
+    this.right = phone([SCR.mResults, SCR.mLibrary], W);
+    this.mid = phone([SCR.mLanding, SCR.mGender, SCR.mOutfits, SCR.mBackground, SCR.mUpload, SCR.mPreparing, SCR.mResults, SCR.mLibrary], W * 1.1);
+    this.seq = [[0, 0], [2.6, 1], [3.8, 2], [5.0, 3], [6.2, 4], [7.4, 5], [8.6, 6], [9.8, 7]];
+  },
+  render(t) {
+    const enter = i => K(t, [[.1 + i * .14, 0], [1.3 + i * .14, 1]], E.out);
+    const out = K(t, [[11.2, 1], [12, 0]], E.sine);
+    const bob = (ph) => Math.sin((t / 12) * Math.PI * 2 + ph) * 8;
+    put(this.left, { x: -470, y: lerp(160, 0, enter(0)) + bob(0), z: -260, ry: 18, op: enter(0) * out });
+    put(this.mid, { x: 0, y: lerp(160, 0, enter(1)) + bob(2), z: 40, op: enter(1) * out });
+    put(this.right, { x: 470, y: lerp(160, 0, enter(2)) + bob(4), z: -260, ry: -18, op: enter(2) * out });
+    /* layar tengah: crossfade antar langkah */
+    this.mid._imgs.forEach((img, i) => {
+      const [t0] = this.seq[i], t1 = this.seq[i + 1] ? this.seq[i + 1][0] : 99;
+      img.style.opacity = i === 0 ? 1 : K(t, [[t0 - .35, 0], [t0, 1]], E.sine) * (t1 < 99 ? 1 : 1);
+    });
+    this.left._imgs[1].style.opacity = K(t, [[5.0, 0], [5.4, 1]], E.sine);
+    this.right._imgs[1].style.opacity = K(t, [[9.8, 0], [10.2, 1]], E.sine);
+    cam({ s: K(t, [[0, .94], [2.4, .98], [3.6, 1.1], [8.8, 1.1], [10.2, .98]]), rx: 5, ry: K(t, [[0, -8], [12, 8]], E.sine) });
+  }
+};
+
+/* COVER 1080 x 1080, 8 detik, loop mulus: dinding layar miring yang bergeser pelan */
+COMPS.cover = {
+  W: 1080, H: 1080, DUR: 8,
+  build() {
+    const order = ["landing", "outfits", "results", "paywall", "library", "gender", "preparing", "background", "account", "upload", "payment"];
+    this.walls = [0].map(() => {
+      const g = mk("grp"); g.style.transformStyle = "preserve-3d";
+      const TW = 520, TH = TW * 900 / 1920, GX = 36, GY = 36, cols = 5, rows = 7;
+      for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+        const k = order[(r * 2 + c * 3) % order.length];
+        const el = mk("el tile", g); el.style.width = TW + "px"; el.innerHTML = `<img src="${SCR[k].replace("desktop/", "desktop-sm/").replace(".png", ".jpg")}">`;
+        el._w = TW; el._h = TH;
+        el._base = { x: (c - (cols - 1) / 2) * (TW + GX) + (r % 2) * (TW + GX) / 2, y: (r - (rows - 1) / 2) * (TH + GY) };
+        put(el, el._base);
+      }
+      g._tiles = [...g.querySelectorAll(".tile")];
+      g._period = TH + GY;
+      return g;
+    });
+    /* ubin hero: ubin landing yang paling dekat ke pusat dinding */
+    const tiles = this.walls[0]._tiles;
+    let best = null, bd = 1e9;
+    tiles.forEach(el => { if (!/r4rJr/.test(el.innerHTML)) return; const d = Math.hypot(el._base.x, el._base.y); if (d < bd) { bd = d; best = el; } });
+    this.hero = best || tiles[Math.floor(tiles.length / 2)];
+  },
+  render(t) {
+    /* Gerak melayang melingkar: posisi di detik 8 sama dengan detik 0, jadi loop
+       mulus tanpa crossfade. Satu ubin di tengah terangkat pelan lalu turun lagi. */
+    const D = this.DUR, a = (t / D) * Math.PI * 2;
+    const g = this.walls[0];
+    g.style.transform = `rotateX(46deg) rotateZ(${-24 + Math.sin(a) * 1.2}deg) translate3d(${Math.sin(a) * 90}px,${-Math.cos(a) * 70 + 70}px,0)`;
+    const lift = Math.sin(Math.PI * seg(t, 1.2, 6.8)) ** 2;
+    const hero = this.hero;
+    put(hero, { ...hero._base, z: lift * 70, s: 1 + lift * .04 });
+    hero.style.boxShadow = `0 0 0 1px rgba(17,24,39,.06), 0 ${18 + lift * 30}px ${40 + lift * 50}px rgba(17,24,39,${.10 + lift * .08})`;
+    cam({ s: 1.18 });
+  }
+};
+
+/* STILL: kartu-kartu statis untuk slot media 03 dan 04 */
+COMPS.still3 = {
+  W: 1440, H: 1440, DUR: 1,
+  build() { this.a = win(SCR.account, 1120); this.b = win(SCR.results, 1120); },
+  render() {
+    put(this.b, { x: 120, y: 150, z: -260, rx: 10, ry: -18, rz: 2 });
+    put(this.a, { x: -60, y: -110, z: 0, rx: 10, ry: -18, rz: 2 });
+    cam({ s: .95 });
+  }
+};
+COMPS.still4 = {
+  W: 1440, H: 1440, DUR: 1,
+  build() { const W = 344; this.l = phone([SCR.mOutfits], W); this.m = phone([SCR.mLibrary], W * 1.08); this.r = phone([SCR.mResults], W); },
+  render() {
+    put(this.l, { x: -430, z: -180, ry: 16 }); put(this.m, { z: 40 }); put(this.r, { x: 430, z: -180, ry: -16 });
+    cam({ s: 1.04, rx: 6, ry: -4 });
+  }
+};
+
+/* ---------- jalankan ---------- */
+const C = COMPS[COMP];
+stage.style.setProperty("--W", C.W + "px"); stage.style.setProperty("--H", C.H + "px");
+C.build();
+window.DUR = C.DUR; window.SIZE = [C.W, C.H];
+window.render = t => C.render(t);
+window.__ready = Promise.all([...document.images].map(im => im.complete ? 0 : new Promise(r => { im.onload = im.onerror = r; })))
+  .then(() => Promise.all([...document.images].map(im => im.decode().catch(() => 0))));
+C.render(0);
+if (!RENDER) {
+  const t0 = performance.now();
+  const loop = () => { C.render(((performance.now() - t0) / 1000) % C.DUR); requestAnimationFrame(loop); };
+  window.__ready.then(loop);
+}
+</script>
+</body>
+</html>

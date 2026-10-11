@@ -1,5 +1,5 @@
 /* =========================================================
-   Portfolio UI/UX — sistem visual
+   Portfolio UI/UX: sistem visual
    Monokrom. Aset project jadi satu-satunya sumber warna.
 
    SISTEM SPASI
@@ -119,6 +119,12 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 }
 .rail > * { pointer-events: auto; }
 
+/* Batas kanan kolom kiri. Judul tidak pernah pindah baris; kalau lebih
+   panjang dari ruang ini, pasJudul() di app.js memperkecil ukurannya.
+   Home dibatasi tepi kiri kartu, project dibatasi tombol expand. */
+.rail { max-width: calc(var(--deck-x) - var(--deck-size) / 2 - var(--rail-x) - 4rem); }
+.rail--project { max-width: calc(var(--split-x) - 7.4rem - var(--rail-x) - 4rem); }
+
 /* Di about, rail dikosongkan. Nama, tombol, dan teksnya jadi satu aliran
    di dalam kolom .about supaya semuanya ikut ter-scroll bersama. */
 .rail--about { display: none; }
@@ -147,6 +153,7 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   line-height: 1.1;
   font-weight: 500;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 .title { color: var(--ink); }
 .subtitle { color: var(--ink-3); }
@@ -355,7 +362,7 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 .contact.is-stack.is-open .socials .pill { transform: none; }
 
 /* =========================================================
-   Home — dek kartu vertikal
+   Home: dek kartu vertikal
    ========================================================= */
 
 .stage { position: relative; }
@@ -723,7 +730,7 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 }
 
 /* =========================================================
-   Placeholder aset — mock UI abu-abu
+   Placeholder aset: mock UI abu-abu
    Ganti seluruh blok .mock dengan <video> atau <img> asli nanti.
    ========================================================= */
 
@@ -757,7 +764,7 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
    Kekuatannya diukur, bukan dikira-kira. Nama duduk di 8,4% sampai 14,1% dari
    tepi bawah. Gradien yang langsung meluruh dari tepi hanya memberi sekitar
    0,25 alpha di batas atas teks, dan di frame yang bidang bawahnya putih itu
-   cuma menghasilkan kontras 1,8:1 — nama praktis hilang selama beberapa detik.
+   cuma menghasilkan kontras 1,8:1, nama praktis hilang selama beberapa detik.
    Jadi peredamnya dibuat penuh dulu sampai melewati teks, baru meluruh. */
 .deck-card .mock.has-media::after {
   background: linear-gradient(
@@ -947,7 +954,7 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 }
 
 /* =========================================================
-   Tablet — 769 sampai 1100
+   Tablet: 769 sampai 1100
    Tata letaknya masih terbelah dua kolom seperti desktop, tapi kolom kiri
    ditarik mendekat dan kartunya dikecilkan supaya keduanya tidak berhimpit.
    ========================================================= */
@@ -962,6 +969,18 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   }
 
   .rail { gap: 4.5rem; }
+
+  /* Di halaman project kolom kiri turun ke kiri bawah. Kalau tetap di
+     tengah, judulnya sejajar dengan tombol expand yang juga duduk di tengah
+     garis batas, dan di lebar ini keduanya bertabrakan. Jarak ke bawah
+     disamakan dengan jarak ke kiri supaya sudutnya seimbang. */
+  .rail--project {
+    top: auto;
+    bottom: var(--rail-x);
+    transform: none;
+    max-width: calc(var(--split-x) - var(--rail-x) - 4rem);
+  }
+
   .note { padding: 4.5rem 4rem; gap: 4rem; }
   .note-body, .note-list { font-size: 2.1rem; }
   .about { padding: 18vh var(--rail-x) 24vh; }
@@ -970,7 +989,7 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 }
 
 /* =========================================================
-   Phone — 768 ke bawah
+   Phone: 768 ke bawah
    Kolom kiri jadi lapisan penuh layar: judul menempel di atas, tombol di
    bawah, kartu di tengah. Ini pola yang sama dengan referensi.
    ========================================================= */
@@ -996,6 +1015,7 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
     width: 100%;
     height: 100%;
     transform: none;
+    max-width: none;
     padding: 2.6rem 2rem 4rem;
     align-items: center;
     justify-content: space-between;
