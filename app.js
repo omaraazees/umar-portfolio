@@ -59,30 +59,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202610171938",
-      "webm": "media/cv-media-01.webm?v=202610171938",
-      "poster": "media/cv-media-01-poster.webp?v=202610171938"
+      "mp4": "media/cv-media-01.mp4?v=202610172210",
+      "webm": "media/cv-media-01.webm?v=202610172210",
+      "poster": "media/cv-media-01-poster.webp?v=202610172210"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202610171938",
-        "webm": "media/cv-media-01.webm?v=202610171938",
-        "poster": "media/cv-media-01-poster.webp?v=202610171938"
+        "mp4": "media/cv-media-01.mp4?v=202610172210",
+        "webm": "media/cv-media-01.webm?v=202610172210",
+        "poster": "media/cv-media-01-poster.webp?v=202610172210"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202610171938",
-        "webm": "media/cv-media-02.webm?v=202610171938",
-        "poster": "media/cv-media-02-poster.webp?v=202610171938"
+        "mp4": "media/cv-media-02.mp4?v=202610172210",
+        "webm": "media/cv-media-02.webm?v=202610172210",
+        "poster": "media/cv-media-02-poster.webp?v=202610172210"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202610171938",
-        "webm": "media/cv-media-03.webm?v=202610171938",
-        "poster": "media/cv-media-03-poster.webp?v=202610171938"
+        "mp4": "media/cv-media-03.mp4?v=202610172210",
+        "webm": "media/cv-media-03.webm?v=202610172210",
+        "poster": "media/cv-media-03-poster.webp?v=202610172210"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202610171938",
-        "webm": "media/cv-media-04.webm?v=202610171938",
-        "poster": "media/cv-media-04-poster.webp?v=202610171938"
+        "mp4": "media/cv-media-04.mp4?v=202610172210",
+        "webm": "media/cv-media-04.webm?v=202610172210",
+        "poster": "media/cv-media-04-poster.webp?v=202610172210"
       }
     ]
   },
@@ -98,30 +98,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202610171938",
-      "webm": "media/faq-media-01.webm?v=202610171938",
-      "poster": "media/faq-media-01-poster.webp?v=202610171938"
+      "mp4": "media/faq-media-01.mp4?v=202610172210",
+      "webm": "media/faq-media-01.webm?v=202610172210",
+      "poster": "media/faq-media-01-poster.webp?v=202610172210"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202610171938",
-        "webm": "media/faq-media-01.webm?v=202610171938",
-        "poster": "media/faq-media-01-poster.webp?v=202610171938"
+        "mp4": "media/faq-media-01.mp4?v=202610172210",
+        "webm": "media/faq-media-01.webm?v=202610172210",
+        "poster": "media/faq-media-01-poster.webp?v=202610172210"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202610171938",
-        "webm": "media/faq-media-02.webm?v=202610171938",
-        "poster": "media/faq-media-02-poster.webp?v=202610171938"
+        "mp4": "media/faq-media-02.mp4?v=202610172210",
+        "webm": "media/faq-media-02.webm?v=202610172210",
+        "poster": "media/faq-media-02-poster.webp?v=202610172210"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202610171938",
-        "webm": "media/faq-media-03.webm?v=202610171938",
-        "poster": "media/faq-media-03-poster.webp?v=202610171938"
+        "mp4": "media/faq-media-03.mp4?v=202610172210",
+        "webm": "media/faq-media-03.webm?v=202610172210",
+        "poster": "media/faq-media-03-poster.webp?v=202610172210"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202610171938",
-        "webm": "media/faq-media-04.webm?v=202610171938",
-        "poster": "media/faq-media-04-poster.webp?v=202610171938"
+        "mp4": "media/faq-media-04.mp4?v=202610172210",
+        "webm": "media/faq-media-04.webm?v=202610172210",
+        "poster": "media/faq-media-04-poster.webp?v=202610172210"
       }
     ]
   },
@@ -137,30 +137,30 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202610171938",
-      "webm": "media/headshots-media-01.webm?v=202610171938",
-      "poster": "media/headshots-media-01-poster.webp?v=202610171938"
+      "mp4": "media/headshots-media-01.mp4?v=202610172210",
+      "webm": "media/headshots-media-01.webm?v=202610172210",
+      "poster": "media/headshots-media-01-poster.webp?v=202610172210"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202610171938",
-        "webm": "media/headshots-media-01.webm?v=202610171938",
-        "poster": "media/headshots-media-01-poster.webp?v=202610171938"
+        "mp4": "media/headshots-media-01.mp4?v=202610172210",
+        "webm": "media/headshots-media-01.webm?v=202610172210",
+        "poster": "media/headshots-media-01-poster.webp?v=202610172210"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202610171938",
-        "webm": "media/headshots-media-02.webm?v=202610171938",
-        "poster": "media/headshots-media-02-poster.webp?v=202610171938"
+        "mp4": "media/headshots-media-02.mp4?v=202610172210",
+        "webm": "media/headshots-media-02.webm?v=202610172210",
+        "poster": "media/headshots-media-02-poster.webp?v=202610172210"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202610171938",
-        "webm": "media/headshots-media-03.webm?v=202610171938",
-        "poster": "media/headshots-media-03-poster.webp?v=202610171938"
+        "mp4": "media/headshots-media-03.mp4?v=202610172210",
+        "webm": "media/headshots-media-03.webm?v=202610172210",
+        "poster": "media/headshots-media-03-poster.webp?v=202610172210"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202610171938",
-        "webm": "media/headshots-media-04.webm?v=202610171938",
-        "poster": "media/headshots-media-04-poster.webp?v=202610171938"
+        "mp4": "media/headshots-media-04.mp4?v=202610172210",
+        "webm": "media/headshots-media-04.webm?v=202610172210",
+        "poster": "media/headshots-media-04-poster.webp?v=202610172210"
       }
     ]
   }
@@ -380,7 +380,9 @@ const TRACK = "Evolving Soundscape II";
 const BARS = "▁▂▃▄▅▆▇";
 
 function soundToggle() {
-  const playing = Sfx.music.isOn();
+  /* tampil menyala hanya kalau musik benar-benar berbunyi. Pilihan "menyala"
+     yang tersimpan baru berbunyi setelah sentuhan pertama di halaman. */
+  const playing = Sfx.music.isPlaying();
   const off = !playing && !Sfx.isEnabled();
   return `
     <button type="button" class="pill sound-pill${off ? " is-alt" : ""}${playing ? " is-playing" : ""}" id="sound-toggle"
@@ -421,7 +423,7 @@ function bindSound(scope) {
   const btn = scope.querySelector("#sound-toggle");
   if (!btn) return;
   const sync = () => {
-    const playing = Sfx.music.isOn();
+    const playing = Sfx.music.isPlaying() || (Sfx.music.isOn() && btn.dataset.baruDitekan === "1");
     btn.classList.toggle("is-playing", playing);
     btn.classList.toggle("is-alt", !playing && !Sfx.isEnabled());
     btn.setAttribute("aria-pressed", String(playing));
@@ -431,18 +433,23 @@ function bindSound(scope) {
     if (playing) startViz();
   };
   btn.addEventListener("click", () => {
-    if (Sfx.music.isOn()) {
+    /* matikan hanya kalau musik memang sedang berbunyi; selain itu selalu nyalakan */
+    if (Sfx.music.isPlaying()) {
       Sfx.music.set(false);
       Sfx.setEnabled(false);
+      btn.dataset.baruDitekan = "";
     } else {
       Sfx.setEnabled(true);
       Sfx.music.set(true);
+      btn.dataset.baruDitekan = "1";
     }
     sync();
     /* lebar tombol berubah, posisi tombol tutup di halaman project ikut diukur ulang */
     if (typeof sejajarTombolTutup === "function") requestAnimationFrame(sejajarTombolTutup);
   });
   sync();
+  /* musik mulai atau berhenti dari jalur lain (sentuhan pertama, akhir fade) */
+  window.addEventListener("sfx-music", () => { if (btn.isConnected) { btn.dataset.baruDitekan = ""; sync(); } });
 }
 
 function bindContact(scope) {

@@ -247,8 +247,12 @@ window.Sfx = (function () {
     g.setValueAtTime(g.value, now);
     g.linearRampToValueAtTime(VOL, now + 2);
     const p = music.el.play();
-    if (p && p.catch) p.catch(() => {});
+    if (p && p.then) p.then(kabari, () => {});
   }
+
+  /* tombol suara menyesuaikan tampilannya dengan keadaan musik yang nyata */
+  function kabari() { window.dispatchEvent(new Event("sfx-music")); }
+  const berbunyi = () => !!(music.el && music.on && !music.el.paused);
 
   function musicPause() {
     if (!music.el) return;
@@ -256,7 +260,7 @@ window.Sfx = (function () {
     g.cancelScheduledValues(now);
     g.setValueAtTime(g.value, now);
     g.linearRampToValueAtTime(0, now + 0.6);
-    setTimeout(() => { if (!music.on) music.el.pause(); }, 650);
+    setTimeout(() => { if (!music.on) { music.el.pause(); kabari(); } }, 650);
   }
 
   function setMusic(v) {
@@ -301,10 +305,16 @@ window.Sfx = (function () {
     return Math.max(0, Math.min(1, (v - bassAvg) / (bassAvg * 0.08 + 4)));
   }
 
-  /* lanjutkan musik pada gerakan pertama kalau terakhir kali menyala */
-  ["pointerdown", "keydown"].forEach((type) => {
-    window.addEventListener(type, () => { if (music.on) musicPlay(); }, { capture: true, once: true, passive: true });
-  });
+  /* Lanjutkan musik pada gerakan pertama kalau terakhir kali menyala.
+     Gerakan yang mengenai tombol suara dilewati: tombol itu sendiri yang
+     memutuskan. Kalau tidak, ketukan pertama ke tombol menyalakan musik di
+     sini lalu langsung dimatikan lagi oleh tombolnya. */
+  const lanjut = (e) => {
+    if (e.target && e.target.closest && e.target.closest("#sound-toggle")) return;
+    ["pointerdown", "keydown"].forEach((type) => window.removeEventListener(type, lanjut, true));
+    if (music.on) musicPlay();
+  };
+  ["pointerdown", "keydown"].forEach((type) => window.addEventListener(type, lanjut, { capture: true, passive: true }));
 
   function setEnabled(v) {
     enabled = !!v;
@@ -364,7 +374,7 @@ window.Sfx = (function () {
     play,
     setEnabled,
     isEnabled: () => enabled,
-    music: { set: setMusic, isOn: () => music.on, levels, bass },
+    music: { set: setMusic, isOn: () => music.on, isPlaying: berbunyi, levels, bass },
     /* untuk memeriksa kesiapan: "belum" berarti rakitan belum dibuat,
        "suspended" berarti siap tapi menunggu interaksi, "running" berarti
        sudah bisa berbunyi seketika */
