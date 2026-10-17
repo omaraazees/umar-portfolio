@@ -32,6 +32,7 @@
   const ctx = cv.getContext("2d");
 
   const poses = [];
+  let napas = 0;
   let W = 0, H = 0, dpr = 1, fs = 11, cw = 6.6, lh = 12.6, cols = 0, rows = 0;
 
   /* foto jadi peta kepadatan 0..1 */
@@ -99,6 +100,11 @@
     const A = poses[ke % n], B = poses[(ke + 1) % n];
     const k = smooth(HOLD, siklus, fase);
 
+    /* napas: saat musik menyala, riak membesar sampai 40% mengikuti bass,
+       diperhalus supaya tidak berkedut */
+    const b = window.Sfx && Sfx.music ? Sfx.music.bass() : 0;
+    napas += (b - napas) * 0.25;
+    const amp = 1 + 0.4 * napas;
     ctx.fillStyle = INK;
     const last = RAMP.length - 1;
     for (let r = 0; r < rows; r++) {
@@ -107,8 +113,8 @@
       for (let c = 0; c < cols; c++) {
         const x = c * cw;
         /* gelombang: dua sinus mendatar dan satu tegak, semua pelan */
-        const wx = Math.sin(y * 0.016 + t * 0.55) * 3 + Math.sin(y * 0.047 - t * 0.8) * 0.9;
-        const wy = Math.sin(x * 0.011 + t * 0.4) * 2;
+        const wx = (Math.sin(y * 0.016 + t * 0.55) * 3 + Math.sin(y * 0.047 - t * 0.8) * 0.9) * amp;
+        const wy = Math.sin(x * 0.011 + t * 0.4) * 2 * amp;
         const u = (x + wx - left) / pw, v = (y + wy - top) / ph;
         let d = 0;
         if (u > 0 && u < 1 && v > 0 && v < 1) {

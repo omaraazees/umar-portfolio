@@ -3,21 +3,21 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/inter-regular.woff2?v=202610171847") format("woff2");
+  src: url("fonts/inter-regular.woff2?v=202610171905") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("fonts/inter-semibold.woff2?v=202610171847") format("woff2");
+  src: url("fonts/inter-semibold.woff2?v=202610171905") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("fonts/inter-medium.woff2?v=202610171847") format("woff2");
+  src: url("fonts/inter-medium.woff2?v=202610171905") format("woff2");
 }
 
 /* =========================================================
@@ -1338,3 +1338,34 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 @keyframes sh-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-0.25rem); } }
 @media (prefers-reduced-motion: reduce) { .sh-arrows { animation: none; } }
 
+
+/* ---------------------------------------------------------
+   Tombol suara sebagai pemutar mini
+   Menyala: tombol memanjang berisi visualizer ASCII, judul lagu di tooltip.
+   Hover saat menyala: ikon berganti speaker dicoret, tanda ketuk = matikan.
+   --------------------------------------------------------- */
+.sound-pill .viz {
+  display: block;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  transition: max-width 0.55s var(--ease), opacity 0.35s ease;
+}
+.sound-pill .viz {
+  font: 500 1.45rem/1 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+.sound-pill.is-playing { gap: 0.85rem; border-radius: 999px; }
+.sound-pill.is-playing .viz { max-width: 10rem; opacity: 1; }
+/* label hover "Music" hanya untuk keadaan diam */
+.sound-pill.is-playing .lbl { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .sound-pill.is-playing:hover .ico-swap .ico-a { opacity: 0; transform: scale(0.6); }
+  .sound-pill.is-playing:hover .ico-swap .ico-b { opacity: 1; transform: none; }
+}
+@media (max-width: 767px) {
+  .sound-pill .viz { font-size: 1.15rem; letter-spacing: 0.02em; }
+  .sound-pill.is-playing { gap: 0.6rem; }
+}

@@ -194,6 +194,118 @@ window.Sfx = (function () {
     voice();
   }
 
+  /* --- musik latar ---
+
+     Satu lagu ambient yang diulang, lewat elemen audio supaya tidak perlu
+     menunggu seluruh berkas diunduh. Suaranya dialirkan lewat context yang
+     sama dengan bunyi klik, plus penganalisis untuk visualizer di tombol
+     suara dan untuk napas latar ASCII.
+
+     Musik tidak pernah mulai sendiri untuk pengunjung baru. Ia baru mulai
+     saat tombol suara diketuk. Kalau pengunjung terakhir kali membiarkannya
+     menyala, musik dilanjutkan pada gerakan pertama di halaman, karena
+     browser melarang audio sebelum ada interaksi. */
+
+  const MKEY = "portfolio-music";
+  const VOL = 0.42;
+  const music = { el: null, gain: null, an: null, bins: null, on: false };
+  try { music.on = localStorage.getItem(MKEY) === "on"; } catch (e) {}
+
+  function musicSrc() {
+    const a = document.createElement("audio");
+    const v = (document.querySelector('script[src*="sound.js"]') || {}).src || "";
+    const q = (v.match(/\?v=\d+/) || [""])[0];
+    return a.canPlayType('audio/webm; codecs="opus"') ? "media/music/evolving-soundscape.webm" + q : "media/music/evolving-soundscape.m4a" + q;
+  }
+
+  function musicBuild() {
+    if (music.el) return true;
+    if (!build()) return false;
+    const el = new Audio(musicSrc());
+    el.loop = true;
+    el.preload = "auto";
+    const src = ctx.createMediaElementSource(el);
+    const gain = ctx.createGain();
+    gain.gain.value = 0;
+    const an = ctx.createAnalyser();
+    an.fftSize = 256;
+    an.smoothingTimeConstant = 0.82;
+    /* penganalisis membaca sinyal sebelum volume, jadi efek masuk perlahan
+       dan volume tidak mengubah tinggi batang */
+    src.connect(an);
+    src.connect(gain);
+    gain.connect(ctx.destination);
+    Object.assign(music, { el, gain, an, bins: new Uint8Array(an.frequencyBinCount) });
+    return true;
+  }
+
+  function musicPlay() {
+    if (!musicBuild()) return;
+    if (ctx.state === "suspended") ctx.resume();
+    const g = music.gain.gain, now = ctx.currentTime;
+    g.cancelScheduledValues(now);
+    g.setValueAtTime(g.value, now);
+    g.linearRampToValueAtTime(VOL, now + 2);
+    const p = music.el.play();
+    if (p && p.catch) p.catch(() => {});
+  }
+
+  function musicPause() {
+    if (!music.el) return;
+    const g = music.gain.gain, now = ctx.currentTime;
+    g.cancelScheduledValues(now);
+    g.setValueAtTime(g.value, now);
+    g.linearRampToValueAtTime(0, now + 0.6);
+    setTimeout(() => { if (!music.on) music.el.pause(); }, 650);
+  }
+
+  function setMusic(v) {
+    music.on = !!v;
+    try { localStorage.setItem(MKEY, music.on ? "on" : "off"); } catch (e) {}
+    music.on ? musicPlay() : musicPause();
+  }
+
+  /* tinggi batang per pita frekuensi, 0..1. Pita dibagi logaritmik di
+     rentang yang memang berbunyi di lagu ambient (sampai sekitar 7 kHz).
+     Tiap batang menunjukkan naik turun energi pitanya terhadap rata-rata
+     pitanya sendiri, karena nada ambient yang panjang dan stabil membuat
+     batang yang diukur apa adanya mentok penuh terus. */
+  const avg = [];
+  function levels(n) {
+    if (!music.an || !music.on || music.el.paused) return new Array(n).fill(0);
+    music.an.getByteFrequencyData(music.bins);
+    const out = [], top = Math.floor(music.bins.length * 0.32);
+    for (let i = 0; i < n; i++) {
+      const a = Math.max(1, Math.floor(Math.pow(top, i / n))), b = Math.max(a + 1, Math.floor(Math.pow(top, (i + 1) / n)));
+      let s = 0;
+      for (let j = a; j < b; j++) s += music.bins[j];
+      const v = s / (b - a);
+      avg[i] = avg[i] === undefined ? v : avg[i] * 0.88 + v * 0.12;
+      const d = (v - avg[i]) / (avg[i] * 0.18 + 6);
+      out.push(Math.max(0, Math.min(1, 0.4 + d * 0.5)) * (v > 4 ? 1 : 0.2));
+    }
+    return out;
+  }
+
+  /* denyut bass 0..1 untuk napas latar: seberapa jauh bass naik di atas
+     rata-ratanya, bukan besarnya. Bass ambient hampir konstan, kalau diukur
+     apa adanya latar akan mengembang terus tanpa denyut. */
+  let bassAvg = -1;
+  function bass() {
+    if (!music.an || !music.on || music.el.paused) return 0;
+    music.an.getByteFrequencyData(music.bins);
+    let s = 0;
+    for (let j = 1; j < 6; j++) s += music.bins[j];
+    const v = s / 5;
+    bassAvg = bassAvg < 0 ? v : bassAvg * 0.95 + v * 0.05;
+    return Math.max(0, Math.min(1, (v - bassAvg) / (bassAvg * 0.08 + 4)));
+  }
+
+  /* lanjutkan musik pada gerakan pertama kalau terakhir kali menyala */
+  ["pointerdown", "keydown"].forEach((type) => {
+    window.addEventListener(type, () => { if (music.on) musicPlay(); }, { capture: true, once: true, passive: true });
+  });
+
   function setEnabled(v) {
     enabled = !!v;
     try {
@@ -252,6 +364,7 @@ window.Sfx = (function () {
     play,
     setEnabled,
     isEnabled: () => enabled,
+    music: { set: setMusic, isOn: () => music.on, levels, bass },
     /* untuk memeriksa kesiapan: "belum" berarti rakitan belum dibuat,
        "suspended" berarti siap tapi menunggu interaksi, "running" berarti
        sudah bisa berbunyi seketika */
