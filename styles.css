@@ -3,14 +3,14 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/inter-regular.woff2?v=202610171757") format("woff2");
+  src: url("fonts/inter-regular.woff2?v=202610171817") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("fonts/inter-medium.woff2?v=202610171757") format("woff2");
+  src: url("fonts/inter-medium.woff2?v=202610171817") format("woff2");
 }
 
 /* =========================================================
@@ -1329,3 +1329,12 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 @keyframes sh-in { from { opacity: 0; transform: translate(-50%, 0.6rem); } to { opacity: 1; transform: translate(-50%, 0); } }
 @keyframes sh-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-0.25rem); } }
 @media (prefers-reduced-motion: reduce) { .sh-arrows { animation: none; } }
+
+/* putaran cepat dek di HP: transisi tiap kartu dipersingkat supaya
+   langkah beruntun terasa seperti roda pemilih, bukan antre */
+.deck.is-rapid .deck-card {
+  transition:
+    transform 0.2s cubic-bezier(0.2, 0.7, 0.3, 1),
+    opacity 0.2s ease,
+    box-shadow 0.12s ease-out;
+}

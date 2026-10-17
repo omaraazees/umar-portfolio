@@ -59,30 +59,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202610171757",
-      "webm": "media/cv-media-01.webm?v=202610171757",
-      "poster": "media/cv-media-01-poster.webp?v=202610171757"
+      "mp4": "media/cv-media-01.mp4?v=202610171817",
+      "webm": "media/cv-media-01.webm?v=202610171817",
+      "poster": "media/cv-media-01-poster.webp?v=202610171817"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202610171757",
-        "webm": "media/cv-media-01.webm?v=202610171757",
-        "poster": "media/cv-media-01-poster.webp?v=202610171757"
+        "mp4": "media/cv-media-01.mp4?v=202610171817",
+        "webm": "media/cv-media-01.webm?v=202610171817",
+        "poster": "media/cv-media-01-poster.webp?v=202610171817"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202610171757",
-        "webm": "media/cv-media-02.webm?v=202610171757",
-        "poster": "media/cv-media-02-poster.webp?v=202610171757"
+        "mp4": "media/cv-media-02.mp4?v=202610171817",
+        "webm": "media/cv-media-02.webm?v=202610171817",
+        "poster": "media/cv-media-02-poster.webp?v=202610171817"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202610171757",
-        "webm": "media/cv-media-03.webm?v=202610171757",
-        "poster": "media/cv-media-03-poster.webp?v=202610171757"
+        "mp4": "media/cv-media-03.mp4?v=202610171817",
+        "webm": "media/cv-media-03.webm?v=202610171817",
+        "poster": "media/cv-media-03-poster.webp?v=202610171817"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202610171757",
-        "webm": "media/cv-media-04.webm?v=202610171757",
-        "poster": "media/cv-media-04-poster.webp?v=202610171757"
+        "mp4": "media/cv-media-04.mp4?v=202610171817",
+        "webm": "media/cv-media-04.webm?v=202610171817",
+        "poster": "media/cv-media-04-poster.webp?v=202610171817"
       }
     ]
   },
@@ -98,30 +98,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202610171757",
-      "webm": "media/faq-media-01.webm?v=202610171757",
-      "poster": "media/faq-media-01-poster.webp?v=202610171757"
+      "mp4": "media/faq-media-01.mp4?v=202610171817",
+      "webm": "media/faq-media-01.webm?v=202610171817",
+      "poster": "media/faq-media-01-poster.webp?v=202610171817"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202610171757",
-        "webm": "media/faq-media-01.webm?v=202610171757",
-        "poster": "media/faq-media-01-poster.webp?v=202610171757"
+        "mp4": "media/faq-media-01.mp4?v=202610171817",
+        "webm": "media/faq-media-01.webm?v=202610171817",
+        "poster": "media/faq-media-01-poster.webp?v=202610171817"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202610171757",
-        "webm": "media/faq-media-02.webm?v=202610171757",
-        "poster": "media/faq-media-02-poster.webp?v=202610171757"
+        "mp4": "media/faq-media-02.mp4?v=202610171817",
+        "webm": "media/faq-media-02.webm?v=202610171817",
+        "poster": "media/faq-media-02-poster.webp?v=202610171817"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202610171757",
-        "webm": "media/faq-media-03.webm?v=202610171757",
-        "poster": "media/faq-media-03-poster.webp?v=202610171757"
+        "mp4": "media/faq-media-03.mp4?v=202610171817",
+        "webm": "media/faq-media-03.webm?v=202610171817",
+        "poster": "media/faq-media-03-poster.webp?v=202610171817"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202610171757",
-        "webm": "media/faq-media-04.webm?v=202610171757",
-        "poster": "media/faq-media-04-poster.webp?v=202610171757"
+        "mp4": "media/faq-media-04.mp4?v=202610171817",
+        "webm": "media/faq-media-04.webm?v=202610171817",
+        "poster": "media/faq-media-04-poster.webp?v=202610171817"
       }
     ]
   },
@@ -137,30 +137,30 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202610171757",
-      "webm": "media/headshots-media-01.webm?v=202610171757",
-      "poster": "media/headshots-media-01-poster.webp?v=202610171757"
+      "mp4": "media/headshots-media-01.mp4?v=202610171817",
+      "webm": "media/headshots-media-01.webm?v=202610171817",
+      "poster": "media/headshots-media-01-poster.webp?v=202610171817"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202610171757",
-        "webm": "media/headshots-media-01.webm?v=202610171757",
-        "poster": "media/headshots-media-01-poster.webp?v=202610171757"
+        "mp4": "media/headshots-media-01.mp4?v=202610171817",
+        "webm": "media/headshots-media-01.webm?v=202610171817",
+        "poster": "media/headshots-media-01-poster.webp?v=202610171817"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202610171757",
-        "webm": "media/headshots-media-02.webm?v=202610171757",
-        "poster": "media/headshots-media-02-poster.webp?v=202610171757"
+        "mp4": "media/headshots-media-02.mp4?v=202610171817",
+        "webm": "media/headshots-media-02.webm?v=202610171817",
+        "poster": "media/headshots-media-02-poster.webp?v=202610171817"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202610171757",
-        "webm": "media/headshots-media-03.webm?v=202610171757",
-        "poster": "media/headshots-media-03-poster.webp?v=202610171757"
+        "mp4": "media/headshots-media-03.mp4?v=202610171817",
+        "webm": "media/headshots-media-03.webm?v=202610171817",
+        "poster": "media/headshots-media-03-poster.webp?v=202610171817"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202610171757",
-        "webm": "media/headshots-media-04.webm?v=202610171757",
-        "poster": "media/headshots-media-04-poster.webp?v=202610171757"
+        "mp4": "media/headshots-media-04.mp4?v=202610171817",
+        "webm": "media/headshots-media-04.webm?v=202610171817",
+        "poster": "media/headshots-media-04-poster.webp?v=202610171817"
       }
     ]
   }
@@ -675,6 +675,42 @@ function moveDeck(dir) {
   setTimeout(() => (deckState.locked = false), 620);
 }
 
+/* Putaran cepat seperti roda pemilih iOS: satu langkah per kartu dengan
+   transisi pendek dan bunyi tik, jedanya makin panjang sampai berhenti. */
+const momentum = { timer: 0, deck: null };
+function stepRapid(dir) {
+  const n = deckState.slots.length;
+  deckState.active = (deckState.active + dir + n) % n;
+  positionDeck();
+  Sfx.play("tick");
+  if (navigator.vibrate) navigator.vibrate(4);
+}
+function stopMomentum() {
+  clearTimeout(momentum.timer);
+  momentum.timer = 0;
+  if (momentum.deck) momentum.deck.classList.remove("is-rapid");
+  deckState.locked = false;
+}
+function spinDeck(deck, dir, steps) {
+  stopMomentum();
+  momentum.deck = deck;
+  deck.classList.add("is-rapid");
+  deckState.locked = true;
+  let left = steps, gap = 70;
+  const next = () => {
+    stepRapid(dir);
+    left--;
+    if (left <= 0) {
+      /* langkah terakhir mendarat dengan transisi normal yang memantul */
+      momentum.timer = setTimeout(() => { deck.classList.remove("is-rapid"); deckState.locked = false; momentum.timer = 0; }, 260);
+      return;
+    }
+    gap *= 1.22;
+    momentum.timer = setTimeout(next, gap);
+  };
+  next();
+}
+
 function bindDeck(deck, dots) {
   /* roda mouse dan trackpad: kumpulkan delta dulu supaya
      satu gestur trackpad tidak melompat tiga kartu */
@@ -707,19 +743,32 @@ function bindDeck(deck, dots) {
     openProject(link.getAttribute("href").replace("#/project/", ""), card);
   }
 
+  /* jejak gerak jari untuk menghitung kecepatan saat dilepas */
+  let trail = [];
+
   deck.addEventListener("pointerdown", (e) => {
+    /* sentuhan saat dek masih berputar langsung menghentikannya */
+    const hentikan = !!momentum.timer;
+    if (hentikan) stopMomentum();
+    trail = [[e.clientY, performance.now()]];
     startY = e.clientY;
     moved = false;
-    downCard = e.target.closest(".deck-card");
+    /* ketukan yang menghentikan putaran tidak membuka kartu */
+    downCard = hentikan ? null : e.target.closest(".deck-card");
     deck.classList.add("is-dragging");
     deck.setPointerCapture(e.pointerId);
   });
 
   deck.addEventListener("pointermove", (e) => {
     if (startY === null) return;
+    const now = performance.now();
+    trail.push([e.clientY, now]);
+    while (trail.length > 2 && now - trail[0][1] > 120) trail.shift();
     const dy = e.clientY - startY;
     if (Math.abs(dy) > 55) {
-      moveDeck(dy < 0 ? 1 : -1);
+      /* selama jari menempel, dek mengikuti per kartu tanpa jeda panjang */
+      if (e.pointerType === "mouse") moveDeck(dy < 0 ? 1 : -1);
+      else { stepRapid(dy < 0 ? 1 : -1); deck.classList.add("is-rapid"); }
       startY = e.clientY;
       moved = true;
     }
@@ -732,6 +781,17 @@ function bindDeck(deck, dots) {
     startY = null;
     deck.classList.remove("is-dragging");
     if (deck.hasPointerCapture(e.pointerId)) deck.releasePointerCapture(e.pointerId);
+    /* sentakan cepat di layar sentuh: dek terus berputar beberapa kartu */
+    if (activate && e.pointerType !== "mouse" && trail.length > 1) {
+      const [y0, t0] = trail[0], dt = performance.now() - t0, v = (e.clientY - y0) / Math.max(dt, 1);
+      if (Math.abs(v) > 0.45 && dt < 160) {
+        spinDeck(deck, v < 0 ? 1 : -1, Math.min(12, Math.max(2, Math.round(Math.abs(v) * 5))));
+        moved = true;
+      } else if (moved) {
+        deck.classList.remove("is-rapid");
+      }
+    }
+    trail = [];
     /* geseran tidak dihitung sebagai klik */
     if (activate && !moved && card && card.dataset.pos === "0") openCard(card);
     moved = false;
