@@ -59,30 +59,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202610171747",
-      "webm": "media/cv-media-01.webm?v=202610171747",
-      "poster": "media/cv-media-01-poster.webp?v=202610171747"
+      "mp4": "media/cv-media-01.mp4?v=202610171748",
+      "webm": "media/cv-media-01.webm?v=202610171748",
+      "poster": "media/cv-media-01-poster.webp?v=202610171748"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202610171747",
-        "webm": "media/cv-media-01.webm?v=202610171747",
-        "poster": "media/cv-media-01-poster.webp?v=202610171747"
+        "mp4": "media/cv-media-01.mp4?v=202610171748",
+        "webm": "media/cv-media-01.webm?v=202610171748",
+        "poster": "media/cv-media-01-poster.webp?v=202610171748"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202610171747",
-        "webm": "media/cv-media-02.webm?v=202610171747",
-        "poster": "media/cv-media-02-poster.webp?v=202610171747"
+        "mp4": "media/cv-media-02.mp4?v=202610171748",
+        "webm": "media/cv-media-02.webm?v=202610171748",
+        "poster": "media/cv-media-02-poster.webp?v=202610171748"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202610171747",
-        "webm": "media/cv-media-03.webm?v=202610171747",
-        "poster": "media/cv-media-03-poster.webp?v=202610171747"
+        "mp4": "media/cv-media-03.mp4?v=202610171748",
+        "webm": "media/cv-media-03.webm?v=202610171748",
+        "poster": "media/cv-media-03-poster.webp?v=202610171748"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202610171747",
-        "webm": "media/cv-media-04.webm?v=202610171747",
-        "poster": "media/cv-media-04-poster.webp?v=202610171747"
+        "mp4": "media/cv-media-04.mp4?v=202610171748",
+        "webm": "media/cv-media-04.webm?v=202610171748",
+        "poster": "media/cv-media-04-poster.webp?v=202610171748"
       }
     ]
   },
@@ -98,30 +98,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202610171747",
-      "webm": "media/faq-media-01.webm?v=202610171747",
-      "poster": "media/faq-media-01-poster.webp?v=202610171747"
+      "mp4": "media/faq-media-01.mp4?v=202610171748",
+      "webm": "media/faq-media-01.webm?v=202610171748",
+      "poster": "media/faq-media-01-poster.webp?v=202610171748"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202610171747",
-        "webm": "media/faq-media-01.webm?v=202610171747",
-        "poster": "media/faq-media-01-poster.webp?v=202610171747"
+        "mp4": "media/faq-media-01.mp4?v=202610171748",
+        "webm": "media/faq-media-01.webm?v=202610171748",
+        "poster": "media/faq-media-01-poster.webp?v=202610171748"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202610171747",
-        "webm": "media/faq-media-02.webm?v=202610171747",
-        "poster": "media/faq-media-02-poster.webp?v=202610171747"
+        "mp4": "media/faq-media-02.mp4?v=202610171748",
+        "webm": "media/faq-media-02.webm?v=202610171748",
+        "poster": "media/faq-media-02-poster.webp?v=202610171748"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202610171747",
-        "webm": "media/faq-media-03.webm?v=202610171747",
-        "poster": "media/faq-media-03-poster.webp?v=202610171747"
+        "mp4": "media/faq-media-03.mp4?v=202610171748",
+        "webm": "media/faq-media-03.webm?v=202610171748",
+        "poster": "media/faq-media-03-poster.webp?v=202610171748"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202610171747",
-        "webm": "media/faq-media-04.webm?v=202610171747",
-        "poster": "media/faq-media-04-poster.webp?v=202610171747"
+        "mp4": "media/faq-media-04.mp4?v=202610171748",
+        "webm": "media/faq-media-04.webm?v=202610171748",
+        "poster": "media/faq-media-04-poster.webp?v=202610171748"
       }
     ]
   },
@@ -137,30 +137,30 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202610171747",
-      "webm": "media/headshots-media-01.webm?v=202610171747",
-      "poster": "media/headshots-media-01-poster.webp?v=202610171747"
+      "mp4": "media/headshots-media-01.mp4?v=202610171748",
+      "webm": "media/headshots-media-01.webm?v=202610171748",
+      "poster": "media/headshots-media-01-poster.webp?v=202610171748"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202610171747",
-        "webm": "media/headshots-media-01.webm?v=202610171747",
-        "poster": "media/headshots-media-01-poster.webp?v=202610171747"
+        "mp4": "media/headshots-media-01.mp4?v=202610171748",
+        "webm": "media/headshots-media-01.webm?v=202610171748",
+        "poster": "media/headshots-media-01-poster.webp?v=202610171748"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202610171747",
-        "webm": "media/headshots-media-02.webm?v=202610171747",
-        "poster": "media/headshots-media-02-poster.webp?v=202610171747"
+        "mp4": "media/headshots-media-02.mp4?v=202610171748",
+        "webm": "media/headshots-media-02.webm?v=202610171748",
+        "poster": "media/headshots-media-02-poster.webp?v=202610171748"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202610171747",
-        "webm": "media/headshots-media-03.webm?v=202610171747",
-        "poster": "media/headshots-media-03-poster.webp?v=202610171747"
+        "mp4": "media/headshots-media-03.mp4?v=202610171748",
+        "webm": "media/headshots-media-03.webm?v=202610171748",
+        "poster": "media/headshots-media-03-poster.webp?v=202610171748"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202610171747",
-        "webm": "media/headshots-media-04.webm?v=202610171747",
-        "poster": "media/headshots-media-04-poster.webp?v=202610171747"
+        "mp4": "media/headshots-media-04.mp4?v=202610171748",
+        "webm": "media/headshots-media-04.webm?v=202610171748",
+        "poster": "media/headshots-media-04-poster.webp?v=202610171748"
       }
     ]
   }
@@ -173,7 +173,7 @@ const ABOUT = {
   body: "I work across UX, interface, and visual design, and I prototype with whatever fits the project, from Figma to Claude Code. Over six years that has covered HR tech and resume builders, Shopify and e-commerce, AI products, and Web3 dashboards.",
   awardsLabel: "Recognitions:",
   awards: [],
-  closing: "Top Rated Plus on Upwork. Based in Yogyakarta, Indonesia, open to freelance work.",
+  closing: "Top Rated Plus on Upwork. Working from Yogyakarta, Indonesia (GMT+7), asynchronously on Indonesia time, and open to freelance work.",
 
   /* Titik di globe. Ganti lat dan lon kalau pindah kota.
      Yogyakarta -7.80, 110.37. Jakarta -6.21, 106.85. Bandung -6.91, 107.61.
