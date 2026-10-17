@@ -425,10 +425,10 @@ COMPS.landing = {
 /* LANDING MOBILE 1440 x 1440: halaman yang sama di iPhone. Jari menggeser slider hero dulu,
    lalu menggulir halaman dengan usapan. */
 COMPS.mlanding = {
-  W: 1440, H: 1440, DUR: 18.8, N: 8, MAX: 5510 - 664, Y0: 330,
+  W: 1440, H: 1440, DUR: 18.8, N: 8, MAX: 5507 - 664, Y0: 330,
   build() {
     const a = this.a = app("phone", [["page", "screens/full/landing-mobile.jpg"]], 612);
-    this.page = page(a); this.cmp = compare(this.page, 24, 436, 342 / 489, 390, 5510);
+    this.page = page(a); this.cmp = compare(this.page, 24, 436, 342 / 489, 390, 5507);
     this.tap = mk("ov tap", a.fx);
   },
   render(t) {
@@ -508,7 +508,9 @@ function tepiLepas(layer, c, d, th, thSrc, PH, DW) {
 
 /* DEMO DESKTOP: cari nama, pilih domain, isi data, bayar, sampai website live dan dibuka */
 COMPS.cvdesk = {
-  W: 1440, H: 1440, DUR: 35.2,
+  W: 1440, H: 1440, DUR: 41.2,
+  /* segmen sisipan: form Confirm your details diisi field demi field */
+  T0: 4.7, D: 6.0,
   AT: { search: 0, avail: 2.35, details: 3.95, checkout: 5.55, pay: 7.85, setup: 9.95, yours: 13.0, resume: 14.65, design: 17.75, content: 22.25, publish: 23.85, live: 25.45, site: 27.25 },
   SRC: { search: "ESlPE", avail: "gzCVT", details: "TKFen", checkout: "U4hjig", pay: "JclTW", setup: "jBXk1", yours: "mMmBG", resume: "SwZ3m", design: "LVx1U", content: "TkzRS", publish: "ajHMi", live: "mSeCt" },
   PATH: [
@@ -548,8 +550,15 @@ COMPS.cvdesk = {
       cph: kartuPilih(L.design, [469.7, 247, 191.3, 182, 9], [525.7, 276, 80, 80], PT + "R20PV.png").concat(pratinjau(L.design, "kW8qN"))
     };
     this.rip = mk("ov rip", a.fx); this.cur = mk("ov cur", a.fx); this.cur.innerHTML = ARROW;
+    this.cc = { cur: this.cur, rip: this.rip, DUR: 35.2 };
+    /* form details: tiap nilai ditutup kotak putih yang menyusut dari kiri,
+       jadi teks aslinya muncul seperti diketik, dengan cincin fokus dan caret */
+    const C1 = 514, C2 = 888, FW = 334, R = [298, 354, 410, 466];
+    this.fields = [[C1, R[0], 132], [C2, R[0], 152], [C1, R[1], 150], [C2, R[1], 150], [C1, R[2], 80], [C1, R[3], 90], [C2, R[3], 90]]
+      .map(([x, y, w]) => ({ x, y, w, cov: ov(L.details, "tutup", x + 12, y + 9, w, 24), ring: ov(L.details, "focus", x - 1, y - 1, FW + 2, 43), car: ov(L.details, "fill", x + 13, y + 11, 1.5, 20) }));
+    this.fields.forEach(f => { f.car.style.background = "#181818"; f.car.style.borderRadius = "0"; });
   },
-  render(t) {
+  renderOld(t, ins) {
     const a = this.a;
     put(a, {});
     lapis(a, this.AT, t, 1 - on(t, 34.4, .8), "site");
@@ -567,8 +576,30 @@ COMPS.cvdesk = {
     const sOn = on(t, 18.7, .15) * (1 - on(t, 19.9, .15)), cOn = on(t, 19.9, .15) * (1 - on(t, 21.1, .15));
     tampil(this.flOff, Math.max(sOn, cOn)); tampil(this.tpl.seoul, sOn); tampil(this.tpl.cph, cOn);
     a.L.site.firstChild.style.transform = `translateY(${-K(t, [[28.1, 0], [30.4, 760], [31.2, 760], [33.4, 1700]], E.io)}px)`;
-    cursor(this, this.PATH, t);
-    camTo(a, this.CAM, t);
+    if (!ins) { cursor(this.cc, this.PATH, t); camTo(a, this.CAM, t); }
+  },
+  render(t) {
+    const { T0, D } = this, a = this.a;
+    const ins = t >= T0 && t < T0 + D, s = t - T0;
+    this.renderOld(t < T0 ? t : ins ? T0 : t - D, ins);
+    /* nilai form: kosong sebelum segmen, terisi berurutan, lalu tetap terisi */
+    const F0 = .9, DT = .55;
+    this.fields.forEach((f, i) => {
+      const p = t < T0 ? 0 : t >= T0 + D ? 1 : E.out(seg(s, F0 + i * DT, F0 + i * DT + .42));
+      f.cov.style.left = f.x + 12 + p * f.w + "px"; f.cov.style.width = Math.max(0, (1 - p) * f.w) + "px";
+      const aktif = ins && s >= F0 + i * DT - .05 && s < F0 + (i + 1) * DT - .05;
+      fade(f.ring, aktif ? 1 : 0);
+      f.car.style.left = f.x + 13 + p * f.w + "px";
+      fade(f.car, aktif && (p < 1 || Math.floor(s * 2.4) % 2 === 0) ? 1 : 0);
+    });
+    if (!ins) return;
+    /* kamera mendekat ke form, kursor menunggu lalu menunjuk catatan privasi */
+    const c0 = [1.48, 880, 360], cz = [1.78, 868, 420];
+    camTo(a, [[0, ...c0], [.7, ...cz], [5.0, ...cz], [D, ...c0]], s);
+    const p0 = this.p0 || (this.p0 = cursor(this.cc, this.PATH, T0));
+    const kx = [[0, p0[0]], [.8, 1160], [4.7, 1160], [5.2, 560], [D, p0[0]]], ky = [[0, p0[1]], [.8, 250], [4.7, 250], [5.2, 540], [D, p0[1]]];
+    const cx = K(s, kx, E.io), cy = K(s, ky, E.io);
+    this.cur.style.transform = `translate(${cx}px,${cy}px) scale(1.55)`; fade(this.cur, 1); fade(this.rip, 0);
   }
 };
 
