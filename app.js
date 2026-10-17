@@ -32,12 +32,12 @@
 
 const PROFILE = {
   name: "Umar Abdul Azis",
-  role: "UI/UX Designer",
+  role: "Senior Product Designer",
 
   /* Isi tombol contact. Tambah atau kurangi bebas, tombolnya ikut melebar.
      Field icon merujuk ke nama di objek ICON di bawah. */
   contacts: [
-    { label: "Email", icon: "mail", url: "mailto:omar.aazees@gmail.com" },
+    { label: "Email", icon: "mail", url: "mailto:hello@byumar.com" },
     { label: "Instagram", icon: "instagram", url: "https://instagram.com/omar.aazees" },
     { label: "Upwork", icon: "upwork", url: "https://www.upwork.com/freelancers/~01e38101af9b02fc32" }
   ]
@@ -46,16 +46,134 @@ const PROFILE = {
 /* Kosong. Tambah project di sini, satu objek per project, ikuti panduan field
    di atas. Contoh bentuk lengkap ada di README, bagian "Cara memasang aset".
    Selama array ini kosong, home cuma menampilkan nama dan tombol. */
-const PROJECTS = [];
+const PROJECTS = [
+  {
+    "slug": "ai-headshots",
+    "name": "AI Headshot Funnel",
+    "role": "CV-Lite - Product Design",
+    "credit": "CV-Lite by Resumedone, 2026",
+    "live": "",
+    "mandate": "CV-Lite turns a few selfies into studio headshots, and most of its visitors arrive cold from paid ads. I was asked to redesign the whole funnel for an A/B test against the live version, from the landing page to the photo library. The old flow showed no proof of the result, left empty photo slots, and only revealed the price at the very end.",
+    "challenge": "People have to trust an unknown AI with their face, then pay before they see the full result. Ad traffic leaves fast, so every second of doubt costs a sale. On real screens the browser bar also takes around 180 px, which pushed the button that moves people forward below the fold on laptops and phones alike.",
+    "solution": "I built the funnel around one idea: show the transformation before asking for anything. The landing hero is a before and after of the same person, and every step stays short: gender, outfit, background, selfies. The paywall unlocks two finished headshots and states one honest price. Each screen is laid out at the real visible area, 1920 × 900 on desktop and 390 × 664 on mobile, so the next action is always in view.",
+    "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
+    "awards": [],
+    "card": {
+      "mp4": "media/headshots-media-01.mp4",
+      "webm": "media/headshots-media-01.webm",
+      "poster": "media/headshots-media-01-poster.webp"
+    },
+    "scenes": [
+      {
+        "mp4": "media/headshots-media-01.mp4",
+        "webm": "media/headshots-media-01.webm",
+        "poster": "media/headshots-media-01-poster.webp"
+      },
+      {
+        "mp4": "media/headshots-media-02.mp4",
+        "webm": "media/headshots-media-02.webm",
+        "poster": "media/headshots-media-02-poster.webp"
+      },
+      {
+        "mp4": "media/headshots-media-03.mp4",
+        "webm": "media/headshots-media-03.webm",
+        "poster": "media/headshots-media-03-poster.webp"
+      },
+      {
+        "mp4": "media/headshots-media-04.mp4",
+        "webm": "media/headshots-media-04.webm",
+        "poster": "media/headshots-media-04-poster.webp"
+      }
+    ]
+  },
+  {
+    "slug": "cv-personal-website",
+    "name": "Custom .cv Domain",
+    "role": "Resumedone - Product Design",
+    "credit": "Resumedone, 2026",
+    "live": "",
+    "mandate": "Resumedone wanted a new paid add-on: a user buys their own name.cv domain and their resume goes live as a personal website on it. When I was brought in, the registrar backend was ready but there was no interface at all. I designed the whole experience inside the dashboard, from finding a name to managing the subscription, plus the website templates people publish.",
+    "challenge": "Buying a domain is a technical errand, and most job seekers have never done it. Pricing, name rules and payment were still being decided in chat while an early AI draft pointed the other way. The partner API offered one locked template, and a public site raised a real privacy question: how much contact detail should a resume show to the whole internet?",
+    "solution": "I turned the purchase into three short steps, Name, Details and Set up, with search results that show one clear price per domain per year and payment on the card already saved. The website editor reuses the resume builder's own components, so there is nothing new to learn. People pick from five templates that use their resume data exactly as written, and they decide what is public: email and phone are masked by default, with a contact form and an availability status instead.",
+    "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
+    "awards": [],
+    "card": {
+      "mp4": "media/cv-media-01.mp4",
+      "webm": "media/cv-media-01.webm",
+      "poster": "media/cv-media-01-poster.webp"
+    },
+    "scenes": [
+      {
+        "mp4": "media/cv-media-01.mp4",
+        "webm": "media/cv-media-01.webm",
+        "poster": "media/cv-media-01-poster.webp"
+      },
+      {
+        "mp4": "media/cv-media-02.mp4",
+        "webm": "media/cv-media-02.webm",
+        "poster": "media/cv-media-02-poster.webp"
+      },
+      {
+        "mp4": "media/cv-media-03.mp4",
+        "webm": "media/cv-media-03.webm",
+        "poster": "media/cv-media-03-poster.webp"
+      },
+      {
+        "mp4": "media/cv-media-04.mp4",
+        "webm": "media/cv-media-04.webm",
+        "poster": "media/cv-media-04-poster.webp"
+      }
+    ]
+  },
+  {
+    "slug": "cv-lite-help-center",
+    "name": "CV-Lite Help Center",
+    "role": "CV-Lite - Product Design",
+    "credit": "CV-Lite by Resumedone, 2026",
+    "live": "",
+    "mandate": "CV-Lite's FAQ at help.cv-lite.com was a single column of three collapsed lists: 32 links pointing to 19 articles, with no answer visible until you clicked. The product lead asked me to redesign it. I covered the home page, search, every article, and the states in between, at desktop, tablet and mobile.",
+    "challenge": "People open a help page in the middle of a problem, usually stuck on billing or an export, so every extra click costs patience. With only 19 articles, a full help center with category pages would add steps instead of saving them. The new design also had to keep the live product's colors and type, so it would feel like the same app.",
+    "solution": "I compared 15 help center homes and 19 FAQs on Mobbin, then tested six home layouts. The winner puts search first, then the most popular questions, then topics that open in place, with support always one tap away. Search suggests articles while you type and highlights the matching words. Articles read in one column with real product screenshots and end with a quick helpful or not question. Back to FAQ returns to the same topic, already open, and dead links land on a friendly 404 instead of an error.",
+    "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
+    "awards": [],
+    "card": {
+      "mp4": "media/faq-media-01.mp4",
+      "webm": "media/faq-media-01.webm",
+      "poster": "media/faq-media-01-poster.webp"
+    },
+    "scenes": [
+      {
+        "mp4": "media/faq-media-01.mp4",
+        "webm": "media/faq-media-01.webm",
+        "poster": "media/faq-media-01-poster.webp"
+      },
+      {
+        "mp4": "media/faq-media-02.mp4",
+        "webm": "media/faq-media-02.webm",
+        "poster": "media/faq-media-02-poster.webp"
+      },
+      {
+        "mp4": "media/faq-media-03.mp4",
+        "webm": "media/faq-media-03.webm",
+        "poster": "media/faq-media-03-poster.webp"
+      },
+      {
+        "mp4": "media/faq-media-04.mp4",
+        "webm": "media/faq-media-04.webm",
+        "poster": "media/faq-media-04-poster.webp"
+      }
+    ]
+  }
+];
 
 /* Teks About. Bungkus kata kunci dengan <strong> supaya naik kontrasnya.
    Jangan lebih dari empat paragraf, halaman ini bukan CV. */
 const ABOUT = {
-  intro: "",
-  body: "",
+  intro: "I design web, mobile, and AI products, then build them into live prototypes your team can click through before development starts.",
+  body: "I work across UX, interface, and visual design, and I prototype with whatever fits the project, from Figma to Claude Code. Over six years that has covered HR tech and resume builders, Shopify and e-commerce, AI products, and Web3 dashboards.",
   awardsLabel: "Recognitions:",
   awards: [],
-  closing: "",
+  closing: "Top Rated Plus on Upwork. Based in Yogyakarta, Indonesia, open to freelance work.",
 
   /* Titik di globe. Ganti lat dan lon kalau pindah kota.
      Yogyakarta -7.80, 110.37. Jakarta -6.21, 106.85. Bandung -6.91, 107.61.
@@ -70,6 +188,7 @@ const ABOUT = {
 const ICON = {
   person: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="6.5" r="3"/><path d="M4 16.5c0-2.8 2.7-4.5 6-4.5s6 1.7 6 4.5"/></svg>`,
   chat: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17 9.6c0 3.4-3.1 6.1-7 6.1-.9 0-1.7-.1-2.5-.4L3.5 17l1.1-3.1C3.6 12.8 3 11.3 3 9.6 3 6.2 6.1 3.5 10 3.5s7 2.7 7 6.1Z"/></svg>`,
+  book: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>`,
   info: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><path d="M10 9v4.5M10 6.6v.4"/></svg>`,
   external: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4.5H5.2A1.2 1.2 0 0 0 4 5.7v9.1a1.2 1.2 0 0 0 1.2 1.2h9.1a1.2 1.2 0 0 0 1.2-1.2V12"/><path d="M12 4h4v4M16 4l-6.5 6.5"/></svg>`,
   back: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 5 6.5 10l5 5"/></svg>`,
@@ -87,7 +206,7 @@ const ICON = {
      memakai viewBox 24 dengan stroke 2, yang merender sekitar 14 persen lebih
      tebal. Diturunkan ke 1,7 supaya 1,7/24 setara 1,4/20, jadi bobot optiknya
      sama dengan tetangganya. Bentuknya tetap asli. */
-  collapse: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14v2.2c0 1.6802 0 2.5202-.327 3.162a3 3 0 0 1-1.311 1.311C18.7202 21 17.8802 21 16.2 21H14M10 3H7.8c-1.6802 0-2.5202 0-3.162.327a3 3 0 0 0-1.311 1.311C3 5.2798 3 6.1198 3 7.8V10m12-1 6-6m0 0h-6m6 0v6M9 15l-6 6m0 0h6m-6 0v-6"/></svg>`
+  collapse: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m14 10 7-7"/><path d="M20 10h-6V4"/><path d="m3 21 7-7"/><path d="M4 14h6v6"/></svg>`
 };
 
 /* ---------------------------------------------------------
@@ -346,6 +465,8 @@ function bindContact(scope) {
 function pasJudul() {
   document.querySelectorAll(".title-block").forEach((blok) => {
     blok.style.removeProperty("--title-fs");
+    /* di desktop dan tablet judul pindah baris, bukan diperkecil */
+    if (window.innerWidth >= 768) return;
     const wadah = blok.parentElement;
     const gaya = getComputedStyle(wadah);
     const ruang =
@@ -358,10 +479,66 @@ function pasJudul() {
   });
 }
 
+/* Kolom kiri ditambatkan dari bawah. Posisinya dihitung seolah judul dan
+   subjudul masing-masing satu baris, jadi baris tombol selalu di tempat yang
+   sama. Kalau judulnya panjang dan pindah baris, kolomnya tumbuh ke atas,
+   bukan mendorong tombol ke bawah. Di HP susunannya diatur CSS. */
+function tambatRail() {
+  document.querySelectorAll(".rail").forEach((rail) => {
+    rail.style.removeProperty("top"); rail.style.removeProperty("bottom"); rail.style.removeProperty("transform");
+    if (window.innerWidth < 768 || rail.classList.contains("rail--about")) return;
+    const judul = rail.querySelector(".title"), blok = rail.querySelector(".title-block"), akhir = rail.lastElementChild;
+    if (!judul || !blok || !akhir || akhir === blok) return;
+    const baris = parseFloat(getComputedStyle(judul).fontSize) * 1.1;
+    const dasar = 2 * baris + (parseFloat(getComputedStyle(blok).rowGap) || 0) + (parseFloat(getComputedStyle(rail).rowGap) || 0) + akhir.offsetHeight;
+    rail.style.top = "auto";
+    rail.style.bottom = window.innerHeight / 2 - dasar / 2 + "px";
+    rail.style.transform = "none";
+  });
+}
+
+/* Tombol kembali di garis batas kolom disejajarkan dengan baris tombol di
+   kolom kiri (Case study, Sound), bukan di tengah layar. Tinggi blok judul
+   ikut ukuran teks, jadi posisinya diukur, tidak ditulis mati di CSS.
+   Di layar 768px ke bawah tombolnya sudah sebaris di tepi bawah lewat CSS. */
+function sejajarTombolTutup() {
+  const btn = document.querySelector(".edge-btn");
+  const baris = document.querySelector(".rail .actions");
+  if (!btn || !baris) return;
+  const r = baris.getBoundingClientRect();
+  btn.style.setProperty("--edge-top", r.top + r.height / 2 + "px");
+
+  /* Labelnya memanjang ke kiri, ke arah Case study dan Sound. Kalau ruangnya
+     tidak cukup (tablet tegak), label tidak dimunculkan supaya tidak menimpa. */
+  /* Diukur dari tata letak (offset), bukan getBoundingClientRect, karena
+     kolom kiri masih bergeser selama animasi masuk dan hasilnya jadi keliru. */
+  const lbl = btn.querySelector(".lbl");
+  if (lbl) {
+    /* yang dihitung tombol terakhirnya, bukan lebar baris: baris itu selebar
+       kolom kiri, yang ikut melebar kalau judulnya panjang */
+    const terakhir = baris.lastElementChild || baris;
+    let kananBaris = terakhir.offsetLeft + terakhir.offsetWidth;
+    for (let p = terakhir.offsetParent; p; p = p.offsetParent) kananBaris += p.offsetLeft;
+    const jarak = parseFloat(getComputedStyle(document.documentElement).fontSize) * 0.85;
+    const kiriSaatHover = btn.offsetLeft - lbl.scrollWidth - jarak;
+    btn.classList.toggle("no-lbl", kiriSaatHover - kananBaris < 16);
+  }
+}
+
+/* Ukuran layar bisa berubah tanpa event resize (misalnya emulasi perangkat
+   atau panel samping), jadi lebar body juga diamati langsung. */
+if (window.ResizeObserver) {
+  new ResizeObserver(() => setTimeout(sejajarTombolTutup, 0)).observe(document.documentElement);
+}
+
 let antreUkur = 0;
 window.addEventListener("resize", () => {
   cancelAnimationFrame(antreUkur);
-  antreUkur = requestAnimationFrame(pasJudul);
+  antreUkur = requestAnimationFrame(() => {
+    pasJudul();
+    tambatRail();
+    sejajarTombolTutup();
+  });
 });
 
 function titleBlock(a, b) {
@@ -800,15 +977,21 @@ function renderProject(rail, stage, dots, slug) {
   rail.innerHTML =
     titleBlock(p.name, p.role) +
     `<div class="actions">
-       ${pill({ icon: ICON.info, label: "Case study", id: "info-toggle", dark: infoOpen, round: infoOpen, aria: "Show case study" })}
+       ${pill({ icon: ICON.book, label: "Case study", id: "info-toggle", dark: infoOpen, round: infoOpen, aria: "Show case study" })}
        ${liveBtn}
        ${soundToggle()}
      </div>`;
   bindSound(rail);
   pasJudul();
+  tambatRail();
+  /* diukur lagi sesudah animasi masuk kolom kiri selesai */
+  setTimeout(sejajarTombolTutup, 0);
+  setTimeout(sejajarTombolTutup, 900);
+  setTimeout(sejajarTombolTutup, 1800);
+  if (document.fonts) document.fonts.ready.then(sejajarTombolTutup);
 
   stage.innerHTML =
-    `<a class="edge-btn" href="#/" aria-label="Back to projects">${ICON.collapse}</a>` +
+    `<a class="edge-btn" href="#/" aria-label="Back to projects"><span class="lbl">Back to projects</span>${ICON.collapse}</a>` +
     `<div class="media" id="media">${infoOpen ? notesHTML(p) : mediaHTML(p)}</div>`;
 
   window.scrollTo(0, 0);
@@ -991,6 +1174,7 @@ function render() {
     renderHome(rail, stage, dots);
   }
   pasJudul();
+  tambatRail();
 }
 
 function navigate() {

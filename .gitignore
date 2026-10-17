@@ -13,3 +13,7 @@ demo/screens/
 demo/checks/
 demo/stills/
 demo/*.log
+
+# cadangan versi sneak peek lama, tidak dipakai situs
+media/_sneakpeek-lama/
+demo/stage.sneakpeek-lama.html

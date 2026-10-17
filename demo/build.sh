@@ -20,10 +20,14 @@ enc () { # nama komposisi, nama berkas, detik poster, crf x264
   echo "$name: $(du -h "$OUT/$name.mp4" | cut -f1) mp4, $(du -h "$OUT/$name.webm" | cut -f1) webm"
 }
 
-[ "$1" = "encode" ] || for comp in desktop mobile cover; do node render.js $comp 30; done
+[ "$1" = "encode" ] || for comp in desktop mobile landing mlanding cover cvdesk cvmob cvtpl cvtplm; do node render.js $comp 30; done
 enc cover   headshots-card     0   24
-enc desktop headshots-media-01 2.8 22
-enc mobile  headshots-media-02 4.4 22
-node render.js still3 still
-node render.js still4 still
+enc desktop headshots-media-01 0 22
+enc mobile  headshots-media-02 3.9 22
+enc landing  headshots-media-03 4.9 22
+enc mlanding headshots-media-04 3.5 22
+enc cvdesk   cv-media-01 0 22
+enc cvmob    cv-media-02 0.6 22
+enc cvtpl    cv-media-03 2.5 22
+enc cvtplm   cv-media-04 1.0 22
 echo SELESAI

@@ -22,7 +22,7 @@ html {
   font-size: clamp(8.6px, 0.6944vw, 15px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   html {
     font-size: clamp(11px, 2.5vw, 19.5px);
   }
@@ -85,6 +85,19 @@ html, body {
 }
 
 body { min-height: 100vh; }
+
+/* latar ASCII (ascii-bg.js): di atas warna latar, di bawah semua konten */
+/* Warna latar cukup di html. Kalau body ikut berwarna, latarnya digambar
+   di atas kanvas z-index -1 dan ASCII-nya tertutup. */
+body { background: transparent; }
+#ascii-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
 body.no-scroll { overflow: hidden; }
 
 a { color: inherit; text-decoration: none; }
@@ -153,7 +166,9 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   line-height: 1.1;
   font-weight: 500;
   letter-spacing: -0.02em;
-  white-space: nowrap;
+  /* boleh pindah baris di desktop dan tablet; kolom kiri ditambatkan dari
+     bawah (tambatRail di app.js) jadi judul yang panjang tumbuh ke atas */
+  white-space: normal;
 }
 .title { color: var(--ink); }
 .subtitle { color: var(--ink-3); }
@@ -430,10 +445,29 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
    Kartu tetangga hanya menyisakan badan kartunya. Isinya disembunyikan
    supaya yang terlihat cuma slab abu-abu, sama seperti referensi. Media
    yang ikut dirender di posisi rebah justru bikin tampilannya ramai. */
-.deck-card:not([data-pos="0"]) .mock,
 .deck-card:not([data-pos="0"]) .card-name {
   opacity: 0;
 }
+/* Sekarang media tetangga diintipkan tipis: warnanya diredam dan memudar
+   ke tepi yang menjauh, jadi terbaca sebagai sekilas project berikutnya
+   tanpa bersaing dengan kartu aktif. */
+.deck-card:not([data-pos="0"]) .mock {
+  filter: grayscale(0.55) contrast(0.92);
+}
+.deck-card[data-pos="-1"] .mock,
+.deck-card[data-pos="-2"] .mock {
+  -webkit-mask-image: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.25) 85%);
+  mask-image: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.25) 85%);
+}
+.deck-card[data-pos="1"] .mock,
+.deck-card[data-pos="2"] .mock {
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.25) 85%);
+  mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.25) 85%);
+}
+.deck-card[data-pos="-1"] .mock,
+.deck-card[data-pos="1"] .mock { opacity: 0.55; }
+.deck-card[data-pos="-2"] .mock,
+.deck-card[data-pos="2"] .mock { opacity: 0.25; }
 
 /* Tanpa bayangan. Pada slab yang hampir rata, drop shadow bikin halo gelap
    yang menarik mata, padahal tugasnya cuma jadi latar. Blur dan opasitas
@@ -443,7 +477,7 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 }
 .deck-card .mock,
 .deck-card .card-name {
-  transition: opacity 0.25s var(--ease);
+  transition: opacity 0.25s var(--ease), filter 0.35s var(--ease);
 }
 
 .deck-card[data-pos="-1"] {
@@ -496,7 +530,7 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 /* Di kartu yang medianya sudah ada, namanya dibalik jadi putih. Video isinya
    tidak bisa dijamin, dan tepi bawahnya sering kena bidang terang. Teks gelap
    di sana hilang. Putih di atas peredam gelap terbaca di isi apa pun. */
-.deck-card.has-media .card-name { color: var(--surface); }
+.deck-card.has-media .card-name { color: var(--ink); }
 .deck-card[data-pos="0"]:hover .card-name { transform: translateX(0.4rem); }
 
 .deck.is-intro .deck-card { animation: deck-in 1s var(--ease) both; }
@@ -615,7 +649,8 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 .edge-btn {
   position: fixed;
   left: calc(var(--split-x) - 7.4rem);
-  top: 50%;
+  /* --edge-top diisi app.js: tengah baris tombol di kolom kiri */
+  top: var(--edge-top, 50%);
   transform: translateY(-50%);
   z-index: 60;
   width: 5.4rem;
@@ -628,7 +663,43 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   transition: border-radius 0.45s var(--ease);
 }
 .edge-btn:hover { border-radius: 999px; }
-.edge-btn svg { width: 2rem; height: 2rem; }
+.edge-btn svg { width: 2rem; height: 2rem; flex: none; }
+
+/* Label muncul saat hover seperti tombol pill lain. Tombolnya ditambat di sisi
+   kanan supaya labelnya memanjang ke kiri dan tidak menutupi media. */
+.edge-btn {
+  left: auto;
+  right: calc(100% - var(--split-x) + 2rem);
+  width: auto;
+  min-width: 5.4rem;
+  padding: 0 1.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  transition:
+    gap 0.5s var(--ease),
+    border-radius 0.45s var(--ease);
+}
+.edge-btn .lbl {
+  display: block;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.55rem;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  transition:
+    max-width 0.55s var(--ease),
+    opacity 0.35s ease;
+}
+.edge-btn:hover,
+.edge-btn:focus-visible { gap: 0.85rem; border-radius: 999px; }
+.edge-btn:hover .lbl,
+.edge-btn:focus-visible .lbl { max-width: 16rem; opacity: 1; }
+.edge-btn.no-lbl:hover,
+.edge-btn.no-lbl:focus-visible { gap: 0; }
+/* tetap display block supaya lebar teksnya masih bisa diukur app.js */
+.edge-btn.no-lbl .lbl { max-width: 0; opacity: 0; }
 
 /* =========================================================
    Halaman about
@@ -758,21 +829,24 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   background: linear-gradient(180deg, rgba(246, 246, 246, 0.78) 0%, rgba(246, 246, 246, 0) 16%);
 }
 
-/* Kartu home kebalikannya: nama project di sudut bawah warnanya putih,
-   jadi peredamnya gelap dan hanya di tepi bawah.
-
-   Kekuatannya diukur, bukan dikira-kira. Nama duduk di 8,4% sampai 14,1% dari
-   tepi bawah. Gradien yang langsung meluruh dari tepi hanya memberi sekitar
-   0,25 alpha di batas atas teks, dan di frame yang bidang bawahnya putih itu
-   cuma menghasilkan kontras 1,8:1, nama praktis hilang selama beberapa detik.
-   Jadi peredamnya dibuat penuh dulu sampai melewati teks, baru meluruh. */
+/* Kartu home: tepi bawah jadi kaca buram putih, bukan peredam gelap.
+   Blurnya makin kuat ke bawah (mask di atas backdrop-filter), lalu diberi
+   lapisan putih susu supaya bidang di belakang nama selalu terang, apa pun
+   isi videonya. Karena itu nama project ditulis gelap. Lapisan putih penuh
+   sampai melewati baris nama (nama duduk di 8,4% sampai 14,1% dari bawah),
+   baru meluruh, sama seperti alasan pada peredam gelap sebelumnya. */
 .deck-card .mock.has-media::after {
   background: linear-gradient(
     0deg,
-    rgba(17, 17, 17, 0.62) 0%,
-    rgba(17, 17, 17, 0.62) 17%,
-    rgba(17, 17, 17, 0) 38%
+    rgba(248, 248, 247, 0.82) 0%,
+    rgba(248, 248, 247, 0.7) 18%,
+    rgba(248, 248, 247, 0.28) 30%,
+    rgba(248, 248, 247, 0) 40%
   );
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+  backdrop-filter: blur(18px) saturate(1.15);
+  -webkit-mask-image: linear-gradient(0deg, #000 0%, #000 20%, rgba(0, 0, 0, 0.6) 30%, transparent 42%);
+  mask-image: linear-gradient(0deg, #000 0%, #000 20%, rgba(0, 0, 0, 0.6) 30%, transparent 42%);
 }
 
 /* label harus di atas peredamnya, dan warnanya dinaikkan karena abu muda
@@ -954,12 +1028,12 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 }
 
 /* =========================================================
-   Tablet: 769 sampai 1100
+   Tablet: 768 sampai 1100
    Tata letaknya masih terbelah dua kolom seperti desktop, tapi kolom kiri
    ditarik mendekat dan kartunya dikecilkan supaya keduanya tidak berhimpit.
    ========================================================= */
 
-@media (min-width: 769px) and (max-width: 1100px) {
+@media (min-width: 768px) and (max-width: 1100px) {
   :root {
     --rail-x: 8vw;
     --deck-x: 68vw;
@@ -970,16 +1044,9 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 
   .rail { gap: 4.5rem; }
 
-  /* Di halaman project kolom kiri turun ke kiri bawah. Kalau tetap di
-     tengah, judulnya sejajar dengan tombol expand yang juga duduk di tengah
-     garis batas, dan di lebar ini keduanya bertabrakan. Jarak ke bawah
-     disamakan dengan jarak ke kiri supaya sudutnya seimbang. */
-  .rail--project {
-    top: auto;
-    bottom: var(--rail-x);
-    transform: none;
-    max-width: calc(var(--split-x) - var(--rail-x) - 4rem);
-  }
+  /* Kolom kiri tetap di tengah seperti desktop. Lebarnya dikurangi supaya
+     judul pindah baris lebih awal dan jaraknya ke tombol kembali lega. */
+  .rail--project { max-width: calc(var(--split-x) - 7.4rem - var(--rail-x) - 6.5rem); }
 
   .note { padding: 4.5rem 4rem; gap: 4rem; }
   .note-body, .note-list { font-size: 2.1rem; }
@@ -989,12 +1056,15 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 }
 
 /* =========================================================
-   Phone: 768 ke bawah
+   Phone: di bawah 768
    Kolom kiri jadi lapisan penuh layar: judul menempel di atas, tombol di
    bawah, kartu di tengah. Ini pola yang sama dengan referensi.
    ========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+  /* di HP judul tetap satu baris, kalau kepanjangan diperkecil pasJudul() */
+  .title, .subtitle { white-space: nowrap; }
+
   :root {
     --deck-x: 50vw;
     --deck-size: min(70vw, 48vh);
@@ -1053,6 +1123,31 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   .rail::before { top: 0;    background: linear-gradient(180deg, var(--bg) 28%, rgba(246, 246, 246, 0)); }
   .rail::after  { bottom: 0; background: linear-gradient(0deg,   var(--bg) 28%, rgba(246, 246, 246, 0)); }
 
+  /* Di halaman project media ter-scroll lewat di belakang judul, jadi peredam
+     atasnya dibuat lebih tinggi: padat sampai melewati subjudul, lalu meluruh
+     pelan ke transparan. */
+  .rail--project::before {
+    height: 12.5rem;
+    background: linear-gradient(180deg,
+      var(--bg) 0%,
+      var(--bg) 66%,
+      rgba(246, 246, 246, 0.6) 84%,
+      rgba(246, 246, 246, 0) 100%);
+  }
+
+  /* Peredam bawah: lebih tipis dari yang atas karena tombolnya sudah pil
+     putih bershadow. Tugasnya cuma memberi napas, jadi padat sampai kira-kira
+     tengah tombol lalu meluruh ke atas. */
+  .rail--project::after {
+    height: 13rem;
+    background: linear-gradient(0deg,
+      var(--bg) 0%,
+      var(--bg) 45%,
+      rgba(246, 246, 246, 0.7) 62%,
+      rgba(246, 246, 246, 0.25) 82%,
+      rgba(246, 246, 246, 0) 100%);
+  }
+
   /* project: media turun ke bawah judul */
   .media {
     margin-left: 0;
@@ -1068,18 +1163,21 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   .note-body, .note-list { font-size: 1.8rem; max-width: none; }
   .note-label, .note-credit { font-size: 1.25rem; }
 
-  /* sejajar dengan tombol di rail yang jaraknya 4rem dari bawah */
+  /* di tepi kanan, sebaris dengan tombol di rail (tengahnya diukur app.js) */
   .edge-btn {
     left: auto;
     right: 2rem;
-    top: auto;
+    top: var(--edge-top, auto);
     bottom: 4rem;
-    transform: none;
-    width: 4.8rem;
+    transform: translateY(-50%);
+    width: auto;
+    min-width: 4.8rem;
     height: 4.8rem;
+    padding: 0 1.4rem;
   }
 
-  .about { padding: 17vh 2rem 11rem; max-width: none; }
+  /* teks mulai di bawah peredam atas, jadi saat diam tidak ada baris yang pudar */
+  .about { padding: max(17vh, 14.5rem) 2rem 13rem; max-width: none; }
   .prose, .awards { font-size: 1.95rem; max-width: none; }
   .prose p { margin-bottom: 2.8rem; }
   .awards { margin-bottom: 2.8rem; }
@@ -1117,8 +1215,26 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
     z-index: -1;
     pointer-events: none;
   }
-  .about-head::before { top: 0;    background: linear-gradient(180deg, var(--bg) 34%, rgba(246, 246, 246, 0)); }
-  .about-head::after  { bottom: 0; background: linear-gradient(0deg,   var(--bg) 24%, rgba(246, 246, 246, 0)); }
+  /* ukuran dan gradien sama dengan peredam halaman project */
+  .about-head::before {
+    top: 0;
+    height: 12.5rem;
+    background: linear-gradient(180deg,
+      var(--bg) 0%,
+      var(--bg) 66%,
+      rgba(246, 246, 246, 0.6) 84%,
+      rgba(246, 246, 246, 0) 100%);
+  }
+  .about-head::after {
+    bottom: 0;
+    height: 13rem;
+    background: linear-gradient(0deg,
+      var(--bg) 0%,
+      var(--bg) 45%,
+      rgba(246, 246, 246, 0.7) 62%,
+      rgba(246, 246, 246, 0.25) 82%,
+      rgba(246, 246, 246, 0) 100%);
+  }
 
   /* di layar kecil globe ikut alur teks, bukan menempel di kanan */
   .globe {
