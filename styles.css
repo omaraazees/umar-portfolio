@@ -3,21 +3,21 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/inter-regular.woff2?v=202610171834") format("woff2");
+  src: url("fonts/inter-regular.woff2?v=202610171837") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("fonts/inter-semibold.woff2?v=202610171834") format("woff2");
+  src: url("fonts/inter-semibold.woff2?v=202610171837") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("fonts/inter-medium.woff2?v=202610171834") format("woff2");
+  src: url("fonts/inter-medium.woff2?v=202610171837") format("woff2");
 }
 
 /* =========================================================
@@ -1342,7 +1342,7 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
    langkah beruntun terasa seperti roda pemilih, bukan antre */
 .deck.is-rapid .deck-card {
   transition:
-    transform 0.2s cubic-bezier(0.2, 0.7, 0.3, 1),
-    opacity 0.2s ease,
+    transform 0.32s cubic-bezier(0.2, 0.7, 0.3, 1),
+    opacity 0.3s ease,
     box-shadow 0.12s ease-out;
 }

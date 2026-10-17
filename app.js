@@ -59,30 +59,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202610171834",
-      "webm": "media/cv-media-01.webm?v=202610171834",
-      "poster": "media/cv-media-01-poster.webp?v=202610171834"
+      "mp4": "media/cv-media-01.mp4?v=202610171837",
+      "webm": "media/cv-media-01.webm?v=202610171837",
+      "poster": "media/cv-media-01-poster.webp?v=202610171837"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202610171834",
-        "webm": "media/cv-media-01.webm?v=202610171834",
-        "poster": "media/cv-media-01-poster.webp?v=202610171834"
+        "mp4": "media/cv-media-01.mp4?v=202610171837",
+        "webm": "media/cv-media-01.webm?v=202610171837",
+        "poster": "media/cv-media-01-poster.webp?v=202610171837"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202610171834",
-        "webm": "media/cv-media-02.webm?v=202610171834",
-        "poster": "media/cv-media-02-poster.webp?v=202610171834"
+        "mp4": "media/cv-media-02.mp4?v=202610171837",
+        "webm": "media/cv-media-02.webm?v=202610171837",
+        "poster": "media/cv-media-02-poster.webp?v=202610171837"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202610171834",
-        "webm": "media/cv-media-03.webm?v=202610171834",
-        "poster": "media/cv-media-03-poster.webp?v=202610171834"
+        "mp4": "media/cv-media-03.mp4?v=202610171837",
+        "webm": "media/cv-media-03.webm?v=202610171837",
+        "poster": "media/cv-media-03-poster.webp?v=202610171837"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202610171834",
-        "webm": "media/cv-media-04.webm?v=202610171834",
-        "poster": "media/cv-media-04-poster.webp?v=202610171834"
+        "mp4": "media/cv-media-04.mp4?v=202610171837",
+        "webm": "media/cv-media-04.webm?v=202610171837",
+        "poster": "media/cv-media-04-poster.webp?v=202610171837"
       }
     ]
   },
@@ -98,30 +98,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202610171834",
-      "webm": "media/faq-media-01.webm?v=202610171834",
-      "poster": "media/faq-media-01-poster.webp?v=202610171834"
+      "mp4": "media/faq-media-01.mp4?v=202610171837",
+      "webm": "media/faq-media-01.webm?v=202610171837",
+      "poster": "media/faq-media-01-poster.webp?v=202610171837"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202610171834",
-        "webm": "media/faq-media-01.webm?v=202610171834",
-        "poster": "media/faq-media-01-poster.webp?v=202610171834"
+        "mp4": "media/faq-media-01.mp4?v=202610171837",
+        "webm": "media/faq-media-01.webm?v=202610171837",
+        "poster": "media/faq-media-01-poster.webp?v=202610171837"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202610171834",
-        "webm": "media/faq-media-02.webm?v=202610171834",
-        "poster": "media/faq-media-02-poster.webp?v=202610171834"
+        "mp4": "media/faq-media-02.mp4?v=202610171837",
+        "webm": "media/faq-media-02.webm?v=202610171837",
+        "poster": "media/faq-media-02-poster.webp?v=202610171837"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202610171834",
-        "webm": "media/faq-media-03.webm?v=202610171834",
-        "poster": "media/faq-media-03-poster.webp?v=202610171834"
+        "mp4": "media/faq-media-03.mp4?v=202610171837",
+        "webm": "media/faq-media-03.webm?v=202610171837",
+        "poster": "media/faq-media-03-poster.webp?v=202610171837"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202610171834",
-        "webm": "media/faq-media-04.webm?v=202610171834",
-        "poster": "media/faq-media-04-poster.webp?v=202610171834"
+        "mp4": "media/faq-media-04.mp4?v=202610171837",
+        "webm": "media/faq-media-04.webm?v=202610171837",
+        "poster": "media/faq-media-04-poster.webp?v=202610171837"
       }
     ]
   },
@@ -137,30 +137,30 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202610171834",
-      "webm": "media/headshots-media-01.webm?v=202610171834",
-      "poster": "media/headshots-media-01-poster.webp?v=202610171834"
+      "mp4": "media/headshots-media-01.mp4?v=202610171837",
+      "webm": "media/headshots-media-01.webm?v=202610171837",
+      "poster": "media/headshots-media-01-poster.webp?v=202610171837"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202610171834",
-        "webm": "media/headshots-media-01.webm?v=202610171834",
-        "poster": "media/headshots-media-01-poster.webp?v=202610171834"
+        "mp4": "media/headshots-media-01.mp4?v=202610171837",
+        "webm": "media/headshots-media-01.webm?v=202610171837",
+        "poster": "media/headshots-media-01-poster.webp?v=202610171837"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202610171834",
-        "webm": "media/headshots-media-02.webm?v=202610171834",
-        "poster": "media/headshots-media-02-poster.webp?v=202610171834"
+        "mp4": "media/headshots-media-02.mp4?v=202610171837",
+        "webm": "media/headshots-media-02.webm?v=202610171837",
+        "poster": "media/headshots-media-02-poster.webp?v=202610171837"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202610171834",
-        "webm": "media/headshots-media-03.webm?v=202610171834",
-        "poster": "media/headshots-media-03-poster.webp?v=202610171834"
+        "mp4": "media/headshots-media-03.mp4?v=202610171837",
+        "webm": "media/headshots-media-03.webm?v=202610171837",
+        "poster": "media/headshots-media-03-poster.webp?v=202610171837"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202610171834",
-        "webm": "media/headshots-media-04.webm?v=202610171834",
-        "poster": "media/headshots-media-04-poster.webp?v=202610171834"
+        "mp4": "media/headshots-media-04.mp4?v=202610171837",
+        "webm": "media/headshots-media-04.webm?v=202610171837",
+        "poster": "media/headshots-media-04-poster.webp?v=202610171837"
       }
     ]
   }
@@ -701,7 +701,7 @@ function spinDeck(deck, dir, steps) {
   momentum.deck = deck;
   deck.classList.add("is-rapid");
   deckState.locked = true;
-  let left = steps, gap = 70;
+  let left = steps, gap = 120;
   const next = () => {
     stepRapid(dir);
     left--;
@@ -710,7 +710,7 @@ function spinDeck(deck, dir, steps) {
       momentum.timer = setTimeout(() => { deck.classList.remove("is-rapid"); deckState.locked = false; momentum.timer = 0; }, 260);
       return;
     }
-    gap *= 1.22;
+    gap *= 1.28;
     momentum.timer = setTimeout(next, gap);
   };
   next();
@@ -770,7 +770,7 @@ function bindDeck(deck, dots) {
     trail.push([e.clientY, now]);
     while (trail.length > 2 && now - trail[0][1] > 120) trail.shift();
     const dy = e.clientY - startY;
-    if (Math.abs(dy) > 55) {
+    if (Math.abs(dy) > 80) {
       /* selama jari menempel, dek mengikuti per kartu tanpa jeda panjang */
       if (e.pointerType === "mouse") moveDeck(dy < 0 ? 1 : -1);
       else { stepRapid(dy < 0 ? 1 : -1); deck.classList.add("is-rapid"); }
@@ -789,8 +789,8 @@ function bindDeck(deck, dots) {
     /* sentakan cepat di layar sentuh: dek terus berputar beberapa kartu */
     if (activate && e.pointerType !== "mouse" && trail.length > 1) {
       const [y0, t0] = trail[0], dt = performance.now() - t0, v = (e.clientY - y0) / Math.max(dt, 1);
-      if (Math.abs(v) > 0.45 && dt < 160) {
-        spinDeck(deck, v < 0 ? 1 : -1, Math.min(12, Math.max(2, Math.round(Math.abs(v) * 5))));
+      if (Math.abs(v) > 0.6 && dt < 160) {
+        spinDeck(deck, v < 0 ? 1 : -1, Math.min(6, Math.max(2, Math.round(Math.abs(v) * 2.6))));
         moved = true;
       } else if (moved) {
         deck.classList.remove("is-rapid");
