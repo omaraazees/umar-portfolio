@@ -162,8 +162,6 @@ window.Sfx = (function () {
     deckUp: () => click({ freq: 1900, q: 4.2, dur: 0.045, gain: 0.22, body: 0.07, bodyFreq: 118, bodyDur: 0.08 }),
     deckDown: () => click({ freq: 1650, q: 4.2, dur: 0.05, gain: 0.22, body: 0.08, bodyFreq: 98, bodyDur: 0.09 }),
 
-    /* putaran cepat dek: tik pendek seperti roda pemilih iOS */
-    tick: () => click({ freq: 2600, q: 5, dur: 0.016, gain: 0.14, body: 0.025, bodyFreq: 150, bodyDur: 0.025 }),
 
     /* masuk halaman project: satu klik penuh, bukan dua ketukan */
     open: () => click({ freq: 1500, q: 3.8, dur: 0.06, gain: 0.26, body: 0.11, bodyFreq: 86, bodyDur: 0.13 }),
