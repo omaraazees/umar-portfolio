@@ -1,0 +1,36 @@
+# Hostinger (LiteSpeed/Apache): kompresi, cache, dan berkas kerja yang tidak
+# perlu publik. Berkas CSS, JS, font, dan media dipanggil dengan penanda
+# ?v=... (lihat versi.sh), jadi aman disimpan setahun di browser. HTML tidak
+# di-cache supaya penanda versi baru langsung terbaca setelah deploy.
+
+Options -Indexes
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/javascript application/javascript application/json application/xml image/svg+xml
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType video/webm .webm
+  AddType audio/mp4 .m4a
+  AddType font/woff2 .woff2
+  AddType image/webp .webp
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|woff2|webm|mp4|m4a|webp)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # dipanggil tanpa penanda versi (og-image, favicon, ikon iPhone), jadi pendek
+  <FilesMatch "\.(png|jpg|jpeg|svg|txt|xml)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# berkas kerja di repo, tidak untuk pengunjung maupun mesin pencari
+RedirectMatch 404 ^/(demo|tools|\.git|\.githooks)(/.*)?$
+RedirectMatch 404 ^/(README\.md|KONTEN\.md|serve\.py|versi\.sh|\.gitignore)$

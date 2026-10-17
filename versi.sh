@@ -6,6 +6,8 @@
 # pengunjung tetap melihat versi lama setelah deploy.
 set -e
 cd "$(dirname "$0")"
+# isi statis, JSON-LD, llms.txt, robots.txt, sitemap.xml ikut data terbaru
+node tools/seo.js
 V=$(date +%Y%m%d%H%M)
 sed -i '' -E "s/\?v=[0-9]+/?v=$V/g" index.html app.js styles.css
 echo "versi $V ($(grep -o "?v=$V" index.html app.js styles.css | wc -l | tr -d ' ') tempat)"

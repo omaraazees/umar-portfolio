@@ -59,30 +59,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202610171931",
-      "webm": "media/cv-media-01.webm?v=202610171931",
-      "poster": "media/cv-media-01-poster.webp?v=202610171931"
+      "mp4": "media/cv-media-01.mp4?v=202610171938",
+      "webm": "media/cv-media-01.webm?v=202610171938",
+      "poster": "media/cv-media-01-poster.webp?v=202610171938"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202610171931",
-        "webm": "media/cv-media-01.webm?v=202610171931",
-        "poster": "media/cv-media-01-poster.webp?v=202610171931"
+        "mp4": "media/cv-media-01.mp4?v=202610171938",
+        "webm": "media/cv-media-01.webm?v=202610171938",
+        "poster": "media/cv-media-01-poster.webp?v=202610171938"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202610171931",
-        "webm": "media/cv-media-02.webm?v=202610171931",
-        "poster": "media/cv-media-02-poster.webp?v=202610171931"
+        "mp4": "media/cv-media-02.mp4?v=202610171938",
+        "webm": "media/cv-media-02.webm?v=202610171938",
+        "poster": "media/cv-media-02-poster.webp?v=202610171938"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202610171931",
-        "webm": "media/cv-media-03.webm?v=202610171931",
-        "poster": "media/cv-media-03-poster.webp?v=202610171931"
+        "mp4": "media/cv-media-03.mp4?v=202610171938",
+        "webm": "media/cv-media-03.webm?v=202610171938",
+        "poster": "media/cv-media-03-poster.webp?v=202610171938"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202610171931",
-        "webm": "media/cv-media-04.webm?v=202610171931",
-        "poster": "media/cv-media-04-poster.webp?v=202610171931"
+        "mp4": "media/cv-media-04.mp4?v=202610171938",
+        "webm": "media/cv-media-04.webm?v=202610171938",
+        "poster": "media/cv-media-04-poster.webp?v=202610171938"
       }
     ]
   },
@@ -98,30 +98,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202610171931",
-      "webm": "media/faq-media-01.webm?v=202610171931",
-      "poster": "media/faq-media-01-poster.webp?v=202610171931"
+      "mp4": "media/faq-media-01.mp4?v=202610171938",
+      "webm": "media/faq-media-01.webm?v=202610171938",
+      "poster": "media/faq-media-01-poster.webp?v=202610171938"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202610171931",
-        "webm": "media/faq-media-01.webm?v=202610171931",
-        "poster": "media/faq-media-01-poster.webp?v=202610171931"
+        "mp4": "media/faq-media-01.mp4?v=202610171938",
+        "webm": "media/faq-media-01.webm?v=202610171938",
+        "poster": "media/faq-media-01-poster.webp?v=202610171938"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202610171931",
-        "webm": "media/faq-media-02.webm?v=202610171931",
-        "poster": "media/faq-media-02-poster.webp?v=202610171931"
+        "mp4": "media/faq-media-02.mp4?v=202610171938",
+        "webm": "media/faq-media-02.webm?v=202610171938",
+        "poster": "media/faq-media-02-poster.webp?v=202610171938"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202610171931",
-        "webm": "media/faq-media-03.webm?v=202610171931",
-        "poster": "media/faq-media-03-poster.webp?v=202610171931"
+        "mp4": "media/faq-media-03.mp4?v=202610171938",
+        "webm": "media/faq-media-03.webm?v=202610171938",
+        "poster": "media/faq-media-03-poster.webp?v=202610171938"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202610171931",
-        "webm": "media/faq-media-04.webm?v=202610171931",
-        "poster": "media/faq-media-04-poster.webp?v=202610171931"
+        "mp4": "media/faq-media-04.mp4?v=202610171938",
+        "webm": "media/faq-media-04.webm?v=202610171938",
+        "poster": "media/faq-media-04-poster.webp?v=202610171938"
       }
     ]
   },
@@ -137,30 +137,30 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202610171931",
-      "webm": "media/headshots-media-01.webm?v=202610171931",
-      "poster": "media/headshots-media-01-poster.webp?v=202610171931"
+      "mp4": "media/headshots-media-01.mp4?v=202610171938",
+      "webm": "media/headshots-media-01.webm?v=202610171938",
+      "poster": "media/headshots-media-01-poster.webp?v=202610171938"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202610171931",
-        "webm": "media/headshots-media-01.webm?v=202610171931",
-        "poster": "media/headshots-media-01-poster.webp?v=202610171931"
+        "mp4": "media/headshots-media-01.mp4?v=202610171938",
+        "webm": "media/headshots-media-01.webm?v=202610171938",
+        "poster": "media/headshots-media-01-poster.webp?v=202610171938"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202610171931",
-        "webm": "media/headshots-media-02.webm?v=202610171931",
-        "poster": "media/headshots-media-02-poster.webp?v=202610171931"
+        "mp4": "media/headshots-media-02.mp4?v=202610171938",
+        "webm": "media/headshots-media-02.webm?v=202610171938",
+        "poster": "media/headshots-media-02-poster.webp?v=202610171938"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202610171931",
-        "webm": "media/headshots-media-03.webm?v=202610171931",
-        "poster": "media/headshots-media-03-poster.webp?v=202610171931"
+        "mp4": "media/headshots-media-03.mp4?v=202610171938",
+        "webm": "media/headshots-media-03.webm?v=202610171938",
+        "poster": "media/headshots-media-03-poster.webp?v=202610171938"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202610171931",
-        "webm": "media/headshots-media-04.webm?v=202610171931",
-        "poster": "media/headshots-media-04-poster.webp?v=202610171931"
+        "mp4": "media/headshots-media-04.mp4?v=202610171938",
+        "webm": "media/headshots-media-04.webm?v=202610171938",
+        "poster": "media/headshots-media-04-poster.webp?v=202610171938"
       }
     ]
   }
@@ -222,16 +222,19 @@ const ICON = {
    currentTime video tujuan supaya nyambung dengan yang tadi diklik, dan
    lompatan itu butuh datanya sudah ada. Dengan metadata saja, seek-nya
    menunggu request tambahan dan sambungannya telat. */
-function videoTag(m, eager) {
+/* auto=false untuk kartu dek: videonya tidak memutar sendiri, syncDeckVideos
+   yang memutuskan. Atribut autoplay membuat browser mengunduh semua video
+   kartu sekaligus, termasuk kartu tetangga yang cuma mengintip. */
+function videoTag(m, eager, auto = true) {
   return `
-    <video class="mock-media" autoplay muted loop playsinline
+    <video class="mock-media"${auto ? " autoplay" : ""} muted loop playsinline
            preload="${eager ? "auto" : "none"}" poster="${m.poster || ""}">
       ${m.webm ? `<source src="${m.webm}" type="video/webm">` : ""}
       <source src="${m.mp4}" type="video/mp4">
     </video>`;
 }
 
-function scene(kind, tag, eager) {
+function scene(kind, tag, eager, auto = true) {
   const label = tag ? `<span class="mock-tag">${tag}</span>` : "";
 
   /* kalau entrinya objek, itu media asli. Kalau string, placeholder CSS. */
@@ -239,7 +242,7 @@ function scene(kind, tag, eager) {
     /* has-tag menyalakan peredam di tepi atas. Peredamnya cuma ada gunanya
        kalau memang ada label di sana, dan sekarang tidak ada pemanggil yang
        mengisinya. Argumen tag tetap didukung kalau nanti dibutuhkan lagi. */
-    return `<div class="mock has-media${label ? " has-tag" : ""}">${label}${videoTag(kind, eager)}</div>`;
+    return `<div class="mock has-media${label ? " has-tag" : ""}">${label}${videoTag(kind, eager, auto)}</div>`;
   }
 
   const frames = {
@@ -659,7 +662,7 @@ function renderHome(rail, stage, dots) {
           const hasMedia = !!media && typeof media === "object";
           return `
         <article class="deck-card${hasMedia ? " has-media" : ""}" data-slot="${i}" data-pos="x" style="animation-delay:${Math.min(i, 3) * 0.08}s">
-          ${scene(media, "", i === 0)}
+          ${scene(media, "", i === 0, false)}
           <a class="card-link" href="#/project/${p.slug}" aria-label="Open project ${p.name}"></a>
           <span class="card-name">${p.name}</span>
         </article>`;
@@ -674,7 +677,6 @@ function renderHome(rail, stage, dots) {
   ).join("");
 
   const deck = document.getElementById("deck");
-  amatiVideo(deck);
   positionDeck();
   setTimeout(() => deck.classList.remove("is-intro"), 1400);
 
@@ -708,7 +710,25 @@ function positionDeck() {
   const current = deckState.active % PROJECTS.length;
   document.querySelectorAll(".dot").forEach((d, i) =>
     d.setAttribute("aria-current", String(i === current))
-  );
+  );  syncDeckVideos();
+}
+
+/* Hanya kartu aktif yang memuat dan memutar videonya. Kartu tetangga cukup
+   menampilkan poster (mereka hanya mengintip, pudar). Dek punya dua slot per
+   project, jadi tanpa ini satu video bisa terunduh dua kali dan halaman
+   pertama memuat sekitar 9 MB video. */
+function syncDeckVideos() {
+  document.querySelectorAll(".deck-card").forEach((el) => {
+    const v = el.querySelector("video");
+    if (!v) return;
+    if (el.dataset.pos === "0") {
+      if (v.preload !== "auto") v.preload = "auto";
+      const p = v.play();
+      if (p && p.catch) p.catch(() => {});
+    } else if (!v.paused) {
+      v.pause();
+    }
+  });
 }
 
 /* petunjuk geser hilang begitu dek pertama kali bergerak, lewat jalur apa pun */

@@ -15,7 +15,9 @@
      gerakan, yang tampil satu frame diam.
    ========================================================= */
 (() => {
-  const SRC = ["media/ascii/pose-a.png", "media/ascii/pose-b.png", "media/ascii/pose-c.png"];
+  /* ikut penanda versi skrip ini, supaya aman di-cache lama oleh browser */
+  const VER = ((document.currentScript && document.currentScript.src) || "").match(/\?v=\d+/)?.[0] || "";
+  const SRC = ["media/ascii/pose-a.webp", "media/ascii/pose-b.webp", "media/ascii/pose-c.webp"].map((s) => s + VER);
   /* deret dari tipis ke padat dengan langkah ketebalan yang rata. Deret yang
      terlalu panjang penuh huruf, hasilnya terbaca seperti teks acak. */
   const RAMP = " .,:;i1tfLCG08@";

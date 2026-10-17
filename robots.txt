@@ -1,0 +1,7 @@
+# Mesin pencari dan crawler AI dipersilakan membaca portfolio ini.
+User-agent: *
+Allow: /
+Disallow: /demo/
+Disallow: /tools/
+
+Sitemap: https://byumar.com/sitemap.xml
