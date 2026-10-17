@@ -48,45 +48,6 @@ const PROFILE = {
    Selama array ini kosong, home cuma menampilkan nama dan tombol. */
 const PROJECTS = [
   {
-    "slug": "ai-headshots",
-    "name": "AI Headshot Funnel",
-    "role": "CV-Lite - Product Design",
-    "credit": "CV-Lite by Resumedone, 2026",
-    "live": "",
-    "mandate": "CV-Lite turns a few selfies into studio headshots, and most of its visitors arrive cold from paid ads. I was asked to redesign the whole funnel for an A/B test against the live version, from the landing page to the photo library. The old flow showed no proof of the result, left empty photo slots, and only revealed the price at the very end.",
-    "challenge": "People have to trust an unknown AI with their face, then pay before they see the full result. Ad traffic leaves fast, so every second of doubt costs a sale. On real screens the browser bar also takes around 180 px, which pushed the button that moves people forward below the fold on laptops and phones alike.",
-    "solution": "I built the funnel around one idea: show the transformation before asking for anything. The landing hero is a before and after of the same person, and every step stays short: gender, outfit, background, selfies. The paywall unlocks two finished headshots and states one honest price. Each screen is laid out at the real visible area, 1920 × 900 on desktop and 390 × 664 on mobile, so the next action is always in view.",
-    "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
-    "awards": [],
-    "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202610171719",
-      "webm": "media/headshots-media-01.webm?v=202610171719",
-      "poster": "media/headshots-media-01-poster.webp?v=202610171719"
-    },
-    "scenes": [
-      {
-        "mp4": "media/headshots-media-01.mp4?v=202610171719",
-        "webm": "media/headshots-media-01.webm?v=202610171719",
-        "poster": "media/headshots-media-01-poster.webp?v=202610171719"
-      },
-      {
-        "mp4": "media/headshots-media-02.mp4?v=202610171719",
-        "webm": "media/headshots-media-02.webm?v=202610171719",
-        "poster": "media/headshots-media-02-poster.webp?v=202610171719"
-      },
-      {
-        "mp4": "media/headshots-media-03.mp4?v=202610171719",
-        "webm": "media/headshots-media-03.webm?v=202610171719",
-        "poster": "media/headshots-media-03-poster.webp?v=202610171719"
-      },
-      {
-        "mp4": "media/headshots-media-04.mp4?v=202610171719",
-        "webm": "media/headshots-media-04.webm?v=202610171719",
-        "poster": "media/headshots-media-04-poster.webp?v=202610171719"
-      }
-    ]
-  },
-  {
     "slug": "cv-personal-website",
     "name": "Custom .cv Domain",
     "role": "Resumedone - Product Design",
@@ -98,30 +59,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202610171719",
-      "webm": "media/cv-media-01.webm?v=202610171719",
-      "poster": "media/cv-media-01-poster.webp?v=202610171719"
+      "mp4": "media/cv-media-01.mp4?v=202610171734",
+      "webm": "media/cv-media-01.webm?v=202610171734",
+      "poster": "media/cv-media-01-poster.webp?v=202610171734"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202610171719",
-        "webm": "media/cv-media-01.webm?v=202610171719",
-        "poster": "media/cv-media-01-poster.webp?v=202610171719"
+        "mp4": "media/cv-media-01.mp4?v=202610171734",
+        "webm": "media/cv-media-01.webm?v=202610171734",
+        "poster": "media/cv-media-01-poster.webp?v=202610171734"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202610171719",
-        "webm": "media/cv-media-02.webm?v=202610171719",
-        "poster": "media/cv-media-02-poster.webp?v=202610171719"
+        "mp4": "media/cv-media-02.mp4?v=202610171734",
+        "webm": "media/cv-media-02.webm?v=202610171734",
+        "poster": "media/cv-media-02-poster.webp?v=202610171734"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202610171719",
-        "webm": "media/cv-media-03.webm?v=202610171719",
-        "poster": "media/cv-media-03-poster.webp?v=202610171719"
+        "mp4": "media/cv-media-03.mp4?v=202610171734",
+        "webm": "media/cv-media-03.webm?v=202610171734",
+        "poster": "media/cv-media-03-poster.webp?v=202610171734"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202610171719",
-        "webm": "media/cv-media-04.webm?v=202610171719",
-        "poster": "media/cv-media-04-poster.webp?v=202610171719"
+        "mp4": "media/cv-media-04.mp4?v=202610171734",
+        "webm": "media/cv-media-04.webm?v=202610171734",
+        "poster": "media/cv-media-04-poster.webp?v=202610171734"
       }
     ]
   },
@@ -137,30 +98,69 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202610171719",
-      "webm": "media/faq-media-01.webm?v=202610171719",
-      "poster": "media/faq-media-01-poster.webp?v=202610171719"
+      "mp4": "media/faq-media-01.mp4?v=202610171734",
+      "webm": "media/faq-media-01.webm?v=202610171734",
+      "poster": "media/faq-media-01-poster.webp?v=202610171734"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202610171719",
-        "webm": "media/faq-media-01.webm?v=202610171719",
-        "poster": "media/faq-media-01-poster.webp?v=202610171719"
+        "mp4": "media/faq-media-01.mp4?v=202610171734",
+        "webm": "media/faq-media-01.webm?v=202610171734",
+        "poster": "media/faq-media-01-poster.webp?v=202610171734"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202610171719",
-        "webm": "media/faq-media-02.webm?v=202610171719",
-        "poster": "media/faq-media-02-poster.webp?v=202610171719"
+        "mp4": "media/faq-media-02.mp4?v=202610171734",
+        "webm": "media/faq-media-02.webm?v=202610171734",
+        "poster": "media/faq-media-02-poster.webp?v=202610171734"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202610171719",
-        "webm": "media/faq-media-03.webm?v=202610171719",
-        "poster": "media/faq-media-03-poster.webp?v=202610171719"
+        "mp4": "media/faq-media-03.mp4?v=202610171734",
+        "webm": "media/faq-media-03.webm?v=202610171734",
+        "poster": "media/faq-media-03-poster.webp?v=202610171734"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202610171719",
-        "webm": "media/faq-media-04.webm?v=202610171719",
-        "poster": "media/faq-media-04-poster.webp?v=202610171719"
+        "mp4": "media/faq-media-04.mp4?v=202610171734",
+        "webm": "media/faq-media-04.webm?v=202610171734",
+        "poster": "media/faq-media-04-poster.webp?v=202610171734"
+      }
+    ]
+  },
+  {
+    "slug": "ai-headshots",
+    "name": "AI Headshot Funnel",
+    "role": "CV-Lite - Product Design",
+    "credit": "CV-Lite by Resumedone, 2026",
+    "live": "",
+    "mandate": "CV-Lite turns a few selfies into studio headshots, and most of its visitors arrive cold from paid ads. I was asked to redesign the whole funnel for an A/B test against the live version, from the landing page to the photo library. The old flow showed no proof of the result, left empty photo slots, and only revealed the price at the very end.",
+    "challenge": "People have to trust an unknown AI with their face, then pay before they see the full result. Ad traffic leaves fast, so every second of doubt costs a sale. On real screens the browser bar also takes around 180 px, which pushed the button that moves people forward below the fold on laptops and phones alike.",
+    "solution": "I built the funnel around one idea: show the transformation before asking for anything. The landing hero is a before and after of the same person, and every step stays short: gender, outfit, background, selfies. The paywall unlocks two finished headshots and states one honest price. Each screen is laid out at the real visible area, 1920 × 900 on desktop and 390 × 664 on mobile, so the next action is always in view.",
+    "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
+    "awards": [],
+    "card": {
+      "mp4": "media/headshots-media-01.mp4?v=202610171734",
+      "webm": "media/headshots-media-01.webm?v=202610171734",
+      "poster": "media/headshots-media-01-poster.webp?v=202610171734"
+    },
+    "scenes": [
+      {
+        "mp4": "media/headshots-media-01.mp4?v=202610171734",
+        "webm": "media/headshots-media-01.webm?v=202610171734",
+        "poster": "media/headshots-media-01-poster.webp?v=202610171734"
+      },
+      {
+        "mp4": "media/headshots-media-02.mp4?v=202610171734",
+        "webm": "media/headshots-media-02.webm?v=202610171734",
+        "poster": "media/headshots-media-02-poster.webp?v=202610171734"
+      },
+      {
+        "mp4": "media/headshots-media-03.mp4?v=202610171734",
+        "webm": "media/headshots-media-03.webm?v=202610171734",
+        "poster": "media/headshots-media-03-poster.webp?v=202610171734"
+      },
+      {
+        "mp4": "media/headshots-media-04.mp4?v=202610171734",
+        "webm": "media/headshots-media-04.webm?v=202610171734",
+        "poster": "media/headshots-media-04-poster.webp?v=202610171734"
       }
     ]
   }
