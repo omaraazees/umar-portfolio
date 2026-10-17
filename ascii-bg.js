@@ -115,6 +115,9 @@
           d = k <= 0 ? sample(A, u, v) : k >= 1 ? sample(B, u, v) : sample(A, u, v) * (1 - k) + sample(B, u, v) * k;
           const q = ((u - 0.5) / 0.5) ** 2 + ((v - 0.52) / 0.56) ** 2;
           d *= 1 - smooth(0.5, 1, q);
+          /* badan di foto terpotong di tepi kiri, kanan, dan bawah gambar. Tanpa
+             pudar ini potongannya terbaca sebagai blok bertepi lurus. */
+          d *= smooth(0, 0.16, u) * smooth(0, 0.16, 1 - u) * smooth(0, 0.2, 1 - v);
           /* kontras sedikit dinaikkan supaya garis mata, alis, dan rahang tegas */
           d = Math.min(1, Math.max(0, (d - 0.05) * 1.4));
         }
