@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/inter-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/inter-medium.woff2") format("woff2");
+}
+
 /* =========================================================
    Portfolio UI/UX: sistem visual
    Monokrom. Aset project jadi satu-satunya sumber warna.
@@ -31,7 +46,9 @@ html {
 :root {
   /* Suisse Intl kalau terpasang, kalau tidak jatuh ke Helvetica Neue
      yang bentuk hurufnya paling dekat. */
-  --font: "Suisse Intl", "Helvetica Neue", Helvetica, Inter, system-ui, sans-serif;
+  /* Inter dibundel sendiri (fonts/), jadi Mac, iPhone, Android, dan pen.dev
+     memakai huruf yang sama. Cadangan hanya dipakai selama font dimuat. */
+  --font: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --bg: #f6f6f6;
   --ink: #111111;
@@ -270,15 +287,20 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
     opacity 0.35s ease;
 }
 
-.pill:hover,
 .pill:focus-visible {
   gap: 0.85rem;
   border-radius: 999px;
 }
-.pill:hover .lbl,
 .pill:focus-visible .lbl {
   max-width: 16rem;
   opacity: 1;
+}
+/* Hover hanya untuk perangkat yang memang punya kursor. Di layar sentuh,
+   ketukan meninggalkan status :hover yang menempel, jadi tombol tetap
+   memanjang dengan labelnya sampai layar diketuk di tempat lain. */
+@media (hover: hover) and (pointer: fine) {
+  .pill:hover { gap: 0.85rem; border-radius: 999px; }
+  .pill:hover .lbl { max-width: 16rem; opacity: 1; }
 }
 
 .pill.is-dark {
@@ -531,7 +553,9 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
    tidak bisa dijamin, dan tepi bawahnya sering kena bidang terang. Teks gelap
    di sana hilang. Putih di atas peredam gelap terbaca di isi apa pun. */
 .deck-card.has-media .card-name { color: var(--ink); }
-.deck-card[data-pos="0"]:hover .card-name { transform: translateX(0.4rem); }
+@media (hover: hover) and (pointer: fine) {
+  .deck-card[data-pos="0"]:hover .card-name { transform: translateX(0.4rem); }
+}
 
 .deck.is-intro .deck-card { animation: deck-in 1s var(--ease) both; }
 @keyframes deck-in {
@@ -662,7 +686,6 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   box-shadow: var(--shadow-sm);
   transition: border-radius 0.45s var(--ease);
 }
-.edge-btn:hover { border-radius: 999px; }
 .edge-btn svg { width: 2rem; height: 2rem; flex: none; }
 
 /* Label muncul saat hover seperti tombol pill lain. Tombolnya ditambat di sisi
@@ -692,12 +715,14 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
     max-width 0.55s var(--ease),
     opacity 0.35s ease;
 }
-.edge-btn:hover,
 .edge-btn:focus-visible { gap: 0.85rem; border-radius: 999px; }
-.edge-btn:hover .lbl,
 .edge-btn:focus-visible .lbl { max-width: 16rem; opacity: 1; }
-.edge-btn.no-lbl:hover,
 .edge-btn.no-lbl:focus-visible { gap: 0; }
+@media (hover: hover) and (pointer: fine) {
+  .edge-btn:hover { gap: 0.85rem; border-radius: 999px; }
+  .edge-btn:hover .lbl { max-width: 16rem; opacity: 1; }
+  .edge-btn.no-lbl:hover { gap: 0; }
+}
 /* tetap display block supaya lebar teksnya masih bisa diukur app.js */
 .edge-btn.no-lbl .lbl { max-width: 0; opacity: 0; }
 
@@ -1260,3 +1285,40 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   }
   .deck-card { filter: none !important; }
 }
+
+/* Petunjuk geser di dek, khusus HP. Pil kaca tipis di bawah kartu aktif,
+   panahnya naik turun pelan. Muncul setelah dek selesai masuk. */
+.swipe-hint { display: none; }
+@media (max-width: 767px) {
+  .swipe-hint {
+    position: fixed;
+    left: 50%;
+    top: calc(50% + var(--deck-size) / 2 + 1.4rem);
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.8rem 1.4rem 0.8rem 1rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.62);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    backdrop-filter: blur(14px) saturate(1.2);
+    box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.06), 0 8px 24px rgba(17, 17, 17, 0.08);
+    color: var(--ink-2);
+    font-size: 1.25rem;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+    pointer-events: none;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: sh-in 0.6s var(--ease) 1.6s forwards;
+    transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+  }
+  .swipe-hint.is-gone { opacity: 0 !important; transform: translate(-50%, 0.6rem); animation: none; }
+  .sh-arrows { display: flex; flex-direction: column; width: 1.4rem; animation: sh-bob 1.8s ease-in-out 2.2s infinite; }
+  .sh-arrows svg { width: 1.4rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .sh-arrows svg + svg { margin-top: -0.3rem; }
+}
+@keyframes sh-in { from { opacity: 0; transform: translate(-50%, 0.6rem); } to { opacity: 1; transform: translate(-50%, 0); } }
+@keyframes sh-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-0.25rem); } }
+@media (prefers-reduced-motion: reduce) { .sh-arrows { animation: none; } }

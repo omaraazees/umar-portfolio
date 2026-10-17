@@ -627,6 +627,19 @@ function renderHome(rail, stage, dots) {
   setTimeout(() => deck.classList.remove("is-intro"), 1400);
 
   bindDeck(deck, dots);
+
+  /* Petunjuk geser untuk HP: cuma muncul sekali per sesi dan hilang begitu
+     dek pertama kali digeser. CSS-nya hanya menampilkan di layar kecil. */
+  let lihatHint = true;
+  try { lihatHint = !sessionStorage.getItem("swipeHint"); } catch (e) {}
+  if (lihatHint && PROJECTS.length > 1) {
+    const h = document.createElement("div");
+    h.className = "swipe-hint";
+    h.id = "swipe-hint";
+    h.setAttribute("aria-hidden", "true");
+    h.innerHTML = `<span class="sh-arrows"><svg viewBox="0 0 16 16"><path d="M4.5 9.5 8 6l3.5 3.5"/></svg><svg viewBox="0 0 16 16"><path d="M4.5 6.5 8 10l3.5-3.5"/></svg></span>Swipe to browse`;
+    stage.appendChild(h);
+  }
   document.body.classList.add("no-scroll");
 }
 
@@ -648,6 +661,12 @@ function positionDeck() {
 
 function moveDeck(dir) {
   if (deckState.locked) return;
+  const hint = document.getElementById("swipe-hint");
+  if (hint && !hint.classList.contains("is-gone")) {
+    hint.classList.add("is-gone");
+    try { sessionStorage.setItem("swipeHint", "1"); } catch (e) {}
+    setTimeout(() => hint.remove(), 500);
+  }
   const n = deckState.slots.length;
   deckState.active = (deckState.active + dir + n) % n;
   deckState.locked = true;

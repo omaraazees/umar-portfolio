@@ -79,6 +79,8 @@
   const smooth = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
 
   function draw(t) {
+    /* timestamp rAF pertama bisa sedikit lebih awal dari t0, jadi t negatif */
+    t = Math.max(0, t);
     ctx.clearRect(0, 0, W, H);
     if (!poses.length) return;
     const mobile = W < 768;
