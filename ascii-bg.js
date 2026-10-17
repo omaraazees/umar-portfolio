@@ -19,7 +19,7 @@
   /* deret dari tipis ke padat dengan langkah ketebalan yang rata. Deret yang
      terlalu panjang penuh huruf, hasilnya terbaca seperti teks acak. */
   const RAMP = " .,:;i1tfLCG08@";
-  const INK = "rgba(17, 17, 17, 0.2)";
+  const INK = "rgba(17, 17, 17, 0.38)";
   const FPS = 24;
   const HOLD = 9;     // detik satu pose diam
   const MORPH = 2.6;  // detik peralihan ke pose berikutnya
@@ -65,7 +65,9 @@
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     W = window.innerWidth; H = window.innerHeight;
     cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
-    fs = W < 768 ? 5 : W >= 1800 ? 6.5 : 5.5;
+    /* huruf kecil = sel rapat = wajah lebih detail. Foto sumber 600 x 800
+       masih cukup untuk sekitar 190 baris. */
+    fs = W < 768 ? 3.8 : W >= 1800 ? 5 : 4.3;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.font = `${fs}px ui-monospace, "SF Mono", Menlo, Consolas, monospace`;
     ctx.textBaseline = "top";
@@ -113,6 +115,8 @@
           d = k <= 0 ? sample(A, u, v) : k >= 1 ? sample(B, u, v) : sample(A, u, v) * (1 - k) + sample(B, u, v) * k;
           const q = ((u - 0.5) / 0.5) ** 2 + ((v - 0.52) / 0.56) ** 2;
           d *= 1 - smooth(0.5, 1, q);
+          /* kontras sedikit dinaikkan supaya garis mata, alis, dan rahang tegas */
+          d = Math.min(1, Math.max(0, (d - 0.05) * 1.4));
         }
         /* riak air di seluruh latar: titik jarang yang ikut berjalan */
         const air = Math.sin(x * 0.009 - y * 0.005 + t * 0.5) * Math.sin(y * 0.013 + x * 0.002 + t * 0.32);
