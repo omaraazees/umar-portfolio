@@ -19,9 +19,11 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://byumar.com/og-image.jpg">
-<link rel="preload" href="fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/inter-medium.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css">
+<!-- ?v= memaksa browser mengambil berkas baru. Hostinger menyimpan JS, CSS, dan
+     media 7 hari, jadi naikkan angkanya (juga di app.js dan styles.css) tiap update. -->
+<link rel="preload" href="fonts/inter-regular.woff2?v=20261017" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-medium.woff2?v=20261017" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=20261017">
 </head>
 <body>
   <!-- navigasi teks untuk screen reader & crawler, tidak terlihat -->
@@ -47,8 +49,8 @@
        hanya dipakai halaman about, jadi diambil saat halaman itu dibuka.
        Lihat ensureGlobe() di app.js. -->
   <!-- latar ASCII dari foto diri, lihat ascii-bg.js -->
-  <script src="ascii-bg.js" defer></script>
-  <script src="sound.js" defer></script>
-  <script src="app.js" defer></script>
+  <script src="ascii-bg.js?v=20261017" defer></script>
+  <script src="sound.js?v=20261017" defer></script>
+  <script src="app.js?v=20261017" defer></script>
 </body>
 </html>
