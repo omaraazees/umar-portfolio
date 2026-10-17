@@ -59,30 +59,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202610171748",
-      "webm": "media/cv-media-01.webm?v=202610171748",
-      "poster": "media/cv-media-01-poster.webp?v=202610171748"
+      "mp4": "media/cv-media-01.mp4?v=202610171751",
+      "webm": "media/cv-media-01.webm?v=202610171751",
+      "poster": "media/cv-media-01-poster.webp?v=202610171751"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202610171748",
-        "webm": "media/cv-media-01.webm?v=202610171748",
-        "poster": "media/cv-media-01-poster.webp?v=202610171748"
+        "mp4": "media/cv-media-01.mp4?v=202610171751",
+        "webm": "media/cv-media-01.webm?v=202610171751",
+        "poster": "media/cv-media-01-poster.webp?v=202610171751"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202610171748",
-        "webm": "media/cv-media-02.webm?v=202610171748",
-        "poster": "media/cv-media-02-poster.webp?v=202610171748"
+        "mp4": "media/cv-media-02.mp4?v=202610171751",
+        "webm": "media/cv-media-02.webm?v=202610171751",
+        "poster": "media/cv-media-02-poster.webp?v=202610171751"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202610171748",
-        "webm": "media/cv-media-03.webm?v=202610171748",
-        "poster": "media/cv-media-03-poster.webp?v=202610171748"
+        "mp4": "media/cv-media-03.mp4?v=202610171751",
+        "webm": "media/cv-media-03.webm?v=202610171751",
+        "poster": "media/cv-media-03-poster.webp?v=202610171751"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202610171748",
-        "webm": "media/cv-media-04.webm?v=202610171748",
-        "poster": "media/cv-media-04-poster.webp?v=202610171748"
+        "mp4": "media/cv-media-04.mp4?v=202610171751",
+        "webm": "media/cv-media-04.webm?v=202610171751",
+        "poster": "media/cv-media-04-poster.webp?v=202610171751"
       }
     ]
   },
@@ -98,30 +98,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202610171748",
-      "webm": "media/faq-media-01.webm?v=202610171748",
-      "poster": "media/faq-media-01-poster.webp?v=202610171748"
+      "mp4": "media/faq-media-01.mp4?v=202610171751",
+      "webm": "media/faq-media-01.webm?v=202610171751",
+      "poster": "media/faq-media-01-poster.webp?v=202610171751"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202610171748",
-        "webm": "media/faq-media-01.webm?v=202610171748",
-        "poster": "media/faq-media-01-poster.webp?v=202610171748"
+        "mp4": "media/faq-media-01.mp4?v=202610171751",
+        "webm": "media/faq-media-01.webm?v=202610171751",
+        "poster": "media/faq-media-01-poster.webp?v=202610171751"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202610171748",
-        "webm": "media/faq-media-02.webm?v=202610171748",
-        "poster": "media/faq-media-02-poster.webp?v=202610171748"
+        "mp4": "media/faq-media-02.mp4?v=202610171751",
+        "webm": "media/faq-media-02.webm?v=202610171751",
+        "poster": "media/faq-media-02-poster.webp?v=202610171751"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202610171748",
-        "webm": "media/faq-media-03.webm?v=202610171748",
-        "poster": "media/faq-media-03-poster.webp?v=202610171748"
+        "mp4": "media/faq-media-03.mp4?v=202610171751",
+        "webm": "media/faq-media-03.webm?v=202610171751",
+        "poster": "media/faq-media-03-poster.webp?v=202610171751"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202610171748",
-        "webm": "media/faq-media-04.webm?v=202610171748",
-        "poster": "media/faq-media-04-poster.webp?v=202610171748"
+        "mp4": "media/faq-media-04.mp4?v=202610171751",
+        "webm": "media/faq-media-04.webm?v=202610171751",
+        "poster": "media/faq-media-04-poster.webp?v=202610171751"
       }
     ]
   },
@@ -137,30 +137,30 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202610171748",
-      "webm": "media/headshots-media-01.webm?v=202610171748",
-      "poster": "media/headshots-media-01-poster.webp?v=202610171748"
+      "mp4": "media/headshots-media-01.mp4?v=202610171751",
+      "webm": "media/headshots-media-01.webm?v=202610171751",
+      "poster": "media/headshots-media-01-poster.webp?v=202610171751"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202610171748",
-        "webm": "media/headshots-media-01.webm?v=202610171748",
-        "poster": "media/headshots-media-01-poster.webp?v=202610171748"
+        "mp4": "media/headshots-media-01.mp4?v=202610171751",
+        "webm": "media/headshots-media-01.webm?v=202610171751",
+        "poster": "media/headshots-media-01-poster.webp?v=202610171751"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202610171748",
-        "webm": "media/headshots-media-02.webm?v=202610171748",
-        "poster": "media/headshots-media-02-poster.webp?v=202610171748"
+        "mp4": "media/headshots-media-02.mp4?v=202610171751",
+        "webm": "media/headshots-media-02.webm?v=202610171751",
+        "poster": "media/headshots-media-02-poster.webp?v=202610171751"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202610171748",
-        "webm": "media/headshots-media-03.webm?v=202610171748",
-        "poster": "media/headshots-media-03-poster.webp?v=202610171748"
+        "mp4": "media/headshots-media-03.mp4?v=202610171751",
+        "webm": "media/headshots-media-03.webm?v=202610171751",
+        "poster": "media/headshots-media-03-poster.webp?v=202610171751"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202610171748",
-        "webm": "media/headshots-media-04.webm?v=202610171748",
-        "poster": "media/headshots-media-04-poster.webp?v=202610171748"
+        "mp4": "media/headshots-media-04.mp4?v=202610171751",
+        "webm": "media/headshots-media-04.webm?v=202610171751",
+        "poster": "media/headshots-media-04-poster.webp?v=202610171751"
       }
     ]
   }
@@ -170,7 +170,7 @@ const PROJECTS = [
    Jangan lebih dari empat paragraf, halaman ini bukan CV. */
 const ABOUT = {
   intro: "I design web, mobile, and AI products, then build them into live prototypes your team can click through before development starts.",
-  body: "I work across UX, interface, and visual design, and I prototype with whatever fits the project, from Figma to Claude Code. Over six years that has covered HR tech and resume builders, Shopify and e-commerce, AI products, and Web3 dashboards.",
+  body: "I work across UX, interface, and visual design, and I prototype with whatever fits the project, from Figma to AI code editors like Claude Code, Codex, and Cursor. Over six years that has covered HR tech and resume builders, Shopify and e-commerce, AI products, and Web3 dashboards.",
   awardsLabel: "Recognitions:",
   awards: [],
   closing: "Top Rated Plus on Upwork. Working from Yogyakarta, Indonesia (GMT+7), asynchronously on Indonesia time, and open to freelance work.",
@@ -541,9 +541,9 @@ window.addEventListener("resize", () => {
   });
 });
 
-function titleBlock(a, b) {
+function titleBlock(a, b, cls = "") {
   return `
-    <div class="title-block">
+    <div class="title-block${cls ? " " + cls : ""}">
       <div class="title-line"><span><h1 class="title">${a}</h1></span></div>
       <div class="title-line"><span><p class="subtitle">${b}</p></span></div>
     </div>`;
@@ -566,7 +566,7 @@ let returnToSlug = null;
 
 function renderHome(rail, stage, dots) {
   rail.innerHTML =
-    titleBlock(PROFILE.name, PROFILE.role) +
+    titleBlock(PROFILE.name, PROFILE.role, "is-profile") +
     `<div class="actions">
        ${pill({ href: "#/about", icon: ICON.person, label: "About" })}
        ${contactGroup()}
@@ -1121,7 +1121,7 @@ function renderAbout(rail, stage, dots) {
   stage.innerHTML = `
     <div class="about">
       <div class="about-head">
-        ${titleBlock(PROFILE.name, PROFILE.role)}
+        ${titleBlock(PROFILE.name, PROFILE.role, "is-profile")}
         <div class="actions">
           ${pill({ href: "#/", icon: ICON.back, label: "Back", dark: true, round: true, aria: "Back" })}
           ${contactGroup()}

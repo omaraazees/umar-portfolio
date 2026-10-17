@@ -3,14 +3,14 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/inter-regular.woff2?v=202610171748") format("woff2");
+  src: url("fonts/inter-regular.woff2?v=202610171751") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("fonts/inter-medium.woff2?v=202610171748") format("woff2");
+  src: url("fonts/inter-medium.woff2?v=202610171751") format("woff2");
 }
 
 /* =========================================================
@@ -189,6 +189,12 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 }
 .title { color: var(--ink); }
 .subtitle { color: var(--ink-3); }
+/* Di layar besar peran profil dibatasi selebar "Senior Product and", jadi
+   "Graphic Designer" selalu turun ke baris kedua dan kolom kiri tidak
+   memanjang. Di HP peran tetap satu baris (aturan nowrap di bawah). */
+@media (min-width: 768px) {
+  .title-block.is-profile .subtitle { max-width: 10.4em; }
+}
 
 /* masking reveal saat halaman masuk */
 .title-line > span {
