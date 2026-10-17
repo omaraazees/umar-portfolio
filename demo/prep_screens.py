@@ -58,7 +58,7 @@ for f in sorted(glob.glob("screens/mobile-g/*.png")):
     n = os.path.basename(f)[:-4]
     im = frame(n)
     im.save(f"screens/mobile/{n}.png")
-    if n in ("HKS7B", "l6XHVi", "S3yoB"):
+    if n in ("HKS7B", "l6XHVi", "S3yoB", "W7BPnM", "bUSl6"):
         none, swap = variants(im, n)
         none.save(f"screens/mobile/{n}-none.png")
         if n == "HKS7B": swap.save(f"screens/mobile/{n}-b.png")

@@ -111,10 +111,10 @@ const RENDER = Q.get("render") === "1";
 
 const D = "screens/desktop/", M = "screens/mobile/";
 const SCR = {
-  landing: D + "r4rJr.png", gender: D + "BJqwc.png", outfits: D + "C15kO.png", background: D + "qv2J8.png",
+  landing: D + "r4rJr.png", gender: D + "BJqwc.png", outfits: D + "EaOpi.png", background: D + "Q5f1V.png",
   upload: D + "kwWTC.png", account: D + "DZdwj.png", paywall: D + "cFFJA.png", payment: D + "lZ1Es.png",
   preparing: D + "xU9Ux.png", results: D + "qX4Jo.png", library: D + "l0MBQ8.png",
-  mLanding: M + "u7PYv.png", mGender: M + "HKS7B.png", mOutfits: M + "l6XHVi.png", mBackground: M + "S3yoB.png",
+  mLanding: M + "u7PYv.png", mGender: M + "HKS7B.png", mOutfits: M + "W7BPnM.png", mBackground: M + "bUSl6.png",
   mUpload: M + "TPll4.png", mPaywall: M + "oSjmm.png", mPreparing: M + "RPOyL.png", mResults: M + "TTRmk.png", mLibrary: M + "uZVWw.png"
 };
 
@@ -265,7 +265,7 @@ COMPS.desktop = {
   PATH: [
     { t: .9, x: 1250, y: 540, hover: 1 },
     { t: 2.5, x: 498, y: 694 }, { t: 4.2, x: 1147, y: 520 }, { t: 5.3, x: 1513, y: 857 },
-    { t: 6.9, x: 460, y: 310 }, { t: 8.0, x: 1513, y: 857 },
+    { t: 6.9, x: 460, y: 332 }, { t: 8.0, x: 1513, y: 857 },
     { t: 9.6, x: 1210, y: 480 }, { t: 10.7, x: 1513, y: 857 },
     { t: 12.2, x: 483, y: 520 }, { t: 13.7, x: 1513, y: 857 },
     { t: 15.0, x: 470, y: 341 }, { t: 18.6, x: 480, y: 591 },
@@ -286,7 +286,7 @@ COMPS.desktop = {
     const ring = (lay, x, y, w, h) => ov(lay, "ring", x, y, w, h);
     this.sel = [
       [4.2, [ring(L.gender, 978.5, 288, 337.5, 395), ov(L.gender, "radio", 1278.75, 309.75, 20, 20, "<i></i>"), enable(L.gender, ...N, 1920, 900)]],
-      [6.9, [ring(L.outfits, 353, 148, 213.5, 298.5), ov(L.outfits, "chk", 540.75, 163.75, 16, 16, CHECK), enable(L.outfits, ...N, 1920, 900)]],
+      [6.9, [ring(L.outfits, 353, 170, 213.5, 298.5), ov(L.outfits, "chk", 540.75, 185.75, 16, 16, CHECK), enable(L.outfits, ...N, 1920, 900)]],
       [9.6, [ring(L.background, 1103.5, 314, 212.5, 298.5), ov(L.background, "chk", 1290.75, 329.75, 16, 16, CHECK), enable(L.background, ...N, 1920, 900)]],
       [12.5, [enable(L.upload, ...N, 1920, 900)]],
       [18.05, [enable(L.account, 302.5, 568, 355, 46, 1920, 900)]]
@@ -356,7 +356,7 @@ COMPS.mobile = {
   TAPS: [{ t: 1.9, x: 195, y: 382 }, { t: 3.5, x: 288, y: 235 }, { t: 4.5, x: 251, y: 624 }, { t: 6.0, x: 102, y: 235 }, { t: 7.0, x: 251, y: 624 },
     { t: 8.5, x: 102, y: 235 }, { t: 9.5, x: 251, y: 624 }, { t: 11.0, x: 75, y: 350 }, { t: 12.2, x: 251, y: 624 }, { t: 13.8, x: 195, y: 567 }, { t: 17.1, x: 195, y: 624 }],
   build() {
-    const src = { landing: "u7PYv", genderNone: "HKS7B-none", genderB: "HKS7B-b", outfitsNone: "l6XHVi-none", outfits: "l6XHVi", bgNone: "S3yoB-none", bg: "S3yoB",
+    const src = { landing: "u7PYv", genderNone: "HKS7B-none", genderB: "HKS7B-b", outfitsNone: "W7BPnM-none", outfits: "W7BPnM", bgNone: "bUSl6-none", bg: "bUSl6",
       upload: "TPll4", paywall: "oSjmm", preparing: "RPOyL", results: "TTRmk", library: "uZVWw" };
     const a = this.a = app("phone", this.SEQ.map(([k]) => [k, M + src[k] + ".png"]), 612), L = a.L;
     this.photo = ov(L.upload, "photo", 20, 287, 110.5, 133.7); this.photo.style.borderRadius = "8px";
