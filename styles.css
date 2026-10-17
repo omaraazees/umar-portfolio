@@ -3,21 +3,21 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/inter-regular.woff2?v=202610171924") format("woff2");
+  src: url("fonts/inter-regular.woff2?v=202610171931") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("fonts/inter-semibold.woff2?v=202610171924") format("woff2");
+  src: url("fonts/inter-semibold.woff2?v=202610171931") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("fonts/inter-medium.woff2?v=202610171924") format("woff2");
+  src: url("fonts/inter-medium.woff2?v=202610171931") format("woff2");
 }
 
 /* =========================================================
@@ -1143,6 +1143,21 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   .pill .ico { width: 2rem; height: 2rem; }
   .pill .lbl { font-size: 1.4rem; }
   .actions { gap: 1rem; }
+  /* Deretan tombol ditambat langsung ke tepi bawah layar, bukan ke dasar
+     wadah setinggi layar. Chrome Android dan Safari iOS hanya menggeser
+     elemen bersama bilah alamat dengan mulus kalau elemen itu sendiri yang
+     ditambat ke bawah. Ditambat lewat wadah, tombolnya tertinggal sesaat
+     lalu menyusul, terasa terseret saat halaman di-scroll. Dipusatkan dengan
+     margin otomatis, bukan transform, karena transform dipakai animasi masuk. */
+  .rail .actions,
+  .about-head .actions {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: calc(4rem + env(safe-area-inset-bottom, 0px));
+    width: max-content;
+    margin-inline: auto;
+  }
   .socials { gap: 1rem; }
 
   .deck-card .card-name { left: 2rem; bottom: 1.8rem; font-size: 1.4rem; }
