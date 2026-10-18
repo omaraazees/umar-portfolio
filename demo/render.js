@@ -14,7 +14,7 @@ const fs = require("fs");
     headless: true,
     args: ["--use-angle=metal", "--enable-gpu", "--ignore-gpu-blocklist"]
   });
-  const page = await browser.newPage({ viewport: { width: 1440, height: 1440 }, deviceScaleFactor: 1 });
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1440 }, deviceScaleFactor: +process.env.SCALE || 1 });
   await page.goto("file://" + path.join(__dirname, "stage.html") + `?comp=${comp}&render=1`);
   await page.evaluate(() => window.__ready);
   const [W, H] = await page.evaluate(() => window.SIZE);

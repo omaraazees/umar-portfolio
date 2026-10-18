@@ -14,7 +14,7 @@ const fs = require("fs");
     headless: true,
     args: ["--use-angle=metal", "--enable-gpu", "--ignore-gpu-blocklist"]
   });
-  const page = await browser.newPage({ viewport: { width: 1440, height: 1440 }, deviceScaleFactor: 1 });
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1440 }, deviceScaleFactor: +process.env.SCALE || 1 });
   page.on("console", m => { if (m.type() === "error") console.error("PAGE", m.text()); });
   page.on("pageerror", e => console.error("PAGEERR", e.message));
   await page.goto(`http://localhost:8791/portfolio-uiux/demo/faq-stage.html?comp=${comp}&render=1`);

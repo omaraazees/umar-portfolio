@@ -516,9 +516,9 @@ function tepiLepas(layer, c, d, th, thSrc, PH, DW) {
 
 /* DEMO DESKTOP: cari nama, pilih domain, isi data, bayar, sampai website live dan dibuka */
 COMPS.cvdesk = {
-  W: 1440, H: 1440, DUR: 41.2,
+  W: 1440, H: 1440, DUR: 41.8,
   /* segmen sisipan: form Confirm your details diisi field demi field */
-  T0: 4.7, D: 6.0,
+  T0: 4.7, D: 6.6,
   AT: { search: 0, avail: 2.35, details: 3.95, checkout: 5.55, pay: 7.85, setup: 9.95, yours: 13.0, resume: 14.65, design: 17.75, content: 22.25, publish: 23.85, live: 25.45, site: 27.25 },
   SRC: { search: "ESlPE", avail: "gzCVT", details: "TKFen", checkout: "U4hjig", pay: "JclTW", setup: "jBXk1", yours: "mMmBG", resume: "SwZ3m", design: "LVx1U", content: "TkzRS", publish: "ajHMi", live: "mSeCt" },
   PATH: [
@@ -562,9 +562,18 @@ COMPS.cvdesk = {
     /* form details: tiap nilai ditutup kotak putih yang menyusut dari kiri,
        jadi teks aslinya muncul seperti diketik, dengan cincin fokus dan caret */
     const C1 = 514, C2 = 888, FW = 334, R = [298, 354, 410, 466];
-    this.fields = [[C1, R[0], 132], [C2, R[0], 152], [C1, R[1], 150], [C2, R[1], 150], [C1, R[2], 80], [C1, R[3], 90], [C2, R[3], 90]]
-      .map(([x, y, w]) => ({ x, y, w, cov: ov(L.details, "tutup", x + 12, y + 9, w, 24), ring: ov(L.details, "focus", x - 1, y - 1, FW + 2, 43), car: ov(L.details, "fill", x + 13, y + 11, 1.5, 20) }));
+    /* tx: awal teks, tw: lebar teks asli diukur dari layar, n: jumlah huruf.
+       Teks muncul per huruf dan caret menempel tepat di belakang huruf terakhir. */
+    this.fields = [[C1, R[0], 527.5, 79.5, "Ciara Doyle"], [C2, R[0], 901.5, 120.5, "ciara.doyle@rd.co"], [C1, R[1], 528, 112.5, "+353 87 318 2046"],
+      [C2, R[1], 901.5, 116, "14 Hanover Quay"], [C1, R[2], 528, 41.5, "Dublin"], [C1, R[3], 528, 64.5, "D02 X285"], [C2, R[3], 904, 51, "Ireland"]]
+      .map(([x, y, tx, tw, txt]) => ({ x, y, tx, tw, txt, n: txt.length, cov: ov(L.details, "tutup", tx - 1.5, y + 9, tw + 6, 24), ring: ov(L.details, "focus", x - 1, y - 1, FW + 2, 43), car: ov(L.details, "fill", tx, y + 11, 1.5, 20) }));
     this.fields.forEach(f => { f.car.style.background = "#181818"; f.car.style.borderRadius = "0"; });
+    /* Label duduk di atas garis tepi field dengan latar putih, jadi garis tepi
+       asli terputus di bawahnya. Cincin fokus adalah garis utuh, maka potongan
+       label dari layar asli ditempel di atasnya: cincin ikut terputus dan label
+       tetap bersih. Ujung kanan tiap label diukur dari layar (garis tepi mulai lagi). */
+    const ujung = [594.5, 942.5, 573.5, 1000.5, 561.5, 595.5, 962.5];
+    this.fields.forEach((f, i) => { f.lab = piece(L.details, L.details._src, f.x + 7, f.y - 8, ujung[i] - (f.x + 7), 16, f.x + 7, f.y - 8, 1440, 872); });
   },
   renderOld(t, ins) {
     const a = this.a;
@@ -591,21 +600,35 @@ COMPS.cvdesk = {
     const ins = t >= T0 && t < T0 + D, s = t - T0;
     this.renderOld(t < T0 ? t : ins ? T0 : t - D, ins);
     /* nilai form: kosong sebelum segmen, terisi berurutan, lalu tetap terisi */
-    const F0 = .9, DT = .55;
+    /* tiap isian diketik sekitar 24 huruf per detik, jeda pendek antar isian */
+    const F0 = .9, CPS = 24, GAP = .2;
+    let mulai = F0;
+    this.fields.forEach((f) => { f.t0 = mulai; f.t1 = mulai + f.n / CPS; mulai = f.t1 + GAP; });
     this.fields.forEach((f, i) => {
-      const p = t < T0 ? 0 : t >= T0 + D ? 1 : E.out(seg(s, F0 + i * DT, F0 + i * DT + .42));
-      f.cov.style.left = f.x + 12 + p * f.w + "px"; f.cov.style.width = Math.max(0, (1 - p) * f.w) + "px";
-      const aktif = ins && s >= F0 + i * DT - .05 && s < F0 + (i + 1) * DT - .05;
+      const k = t < T0 ? 0 : t >= T0 + D ? f.n : Math.min(f.n, Math.floor(seg(s, f.t0, f.t1) * f.n + 1e-6));
+      /* posisi tiap huruf diukur dengan Gilroy asli, diskalakan ke lebar teks di layar */
+      if (!f.pos && document.fonts.check("500 13px Gilroy")) {
+        const c = fit.c || (fit.c = document.createElement("canvas").getContext("2d"));
+        c.font = "500 100px Gilroy";
+        const total = c.measureText(f.txt).width;
+        f.pos = Array.from({ length: f.n + 1 }, (_, j) => f.tw * c.measureText(f.txt.slice(0, j)).width / total);
+      }
+      const ujung = f.tx + (f.pos ? f.pos[k] : f.tw * k / f.n);
+      /* selesai: penutup hilang total, kosong: penutup mulai sedikit sebelum huruf pertama */
+      const kiri = ujung - (k === 0 ? 2.5 : 0.5);
+      f.cov.style.left = kiri + "px"; f.cov.style.width = (k >= f.n ? 0 : Math.max(0, f.tx + f.tw + 4.5 - kiri)) + "px";
+      const next = this.fields[i + 1];
+      const aktif = ins && s >= f.t0 - .08 && s < (next ? next.t0 - .08 : f.t1 + .5);
       fade(f.ring, aktif ? 1 : 0);
-      f.car.style.left = f.x + 13 + p * f.w + "px";
-      fade(f.car, aktif && (p < 1 || Math.floor(s * 2.4) % 2 === 0) ? 1 : 0);
+      f.car.style.left = ujung + 1 + "px";
+      fade(f.car, aktif && (k < f.n || Math.floor(s * 2.4) % 2 === 0) ? 1 : 0);
     });
     if (!ins) return;
     /* kamera mendekat ke form, kursor menunggu lalu menunjuk catatan privasi */
     const c0 = [1.48, 880, 360], cz = [1.78, 868, 420];
-    camTo(a, [[0, ...c0], [.7, ...cz], [5.0, ...cz], [D, ...c0]], s);
+    camTo(a, [[0, ...c0], [.7, ...cz], [5.7, ...cz], [D, ...c0]], s);
     const p0 = this.p0 || (this.p0 = cursor(this.cc, this.PATH, T0));
-    const kx = [[0, p0[0]], [.8, 1160], [4.7, 1160], [5.2, 560], [D, p0[0]]], ky = [[0, p0[1]], [.8, 250], [4.7, 250], [5.2, 540], [D, p0[1]]];
+    const kx = [[0, p0[0]], [.8, 1160], [5.5, 1160], [5.95, 560], [D, p0[0]]], ky = [[0, p0[1]], [.8, 250], [5.5, 250], [5.95, 540], [D, p0[1]]];
     const cx = K(s, kx, E.io), cy = K(s, ky, E.io);
     this.cur.style.transform = `translate(${cx}px,${cy}px) scale(1.55)`; fade(this.cur, 1); fade(this.rip, 0);
   }

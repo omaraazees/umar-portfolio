@@ -59,30 +59,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202610181132",
-      "webm": "media/cv-media-01.webm?v=202610181132",
-      "poster": "media/cv-media-01-poster.webp?v=202610181132"
+      "mp4": "media/cv-media-01.mp4?v=202610190021",
+      "webm": "media/cv-media-01.webm?v=202610190021",
+      "poster": "media/cv-media-01-poster.webp?v=202610190021"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202610181132",
-        "webm": "media/cv-media-01.webm?v=202610181132",
-        "poster": "media/cv-media-01-poster.webp?v=202610181132"
+        "mp4": "media/cv-media-01.mp4?v=202610190021",
+        "webm": "media/cv-media-01.webm?v=202610190021",
+        "poster": "media/cv-media-01-poster.webp?v=202610190021"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202610181132",
-        "webm": "media/cv-media-02.webm?v=202610181132",
-        "poster": "media/cv-media-02-poster.webp?v=202610181132"
+        "mp4": "media/cv-media-02.mp4?v=202610190021",
+        "webm": "media/cv-media-02.webm?v=202610190021",
+        "poster": "media/cv-media-02-poster.webp?v=202610190021"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202610181132",
-        "webm": "media/cv-media-03.webm?v=202610181132",
-        "poster": "media/cv-media-03-poster.webp?v=202610181132"
+        "mp4": "media/cv-media-03.mp4?v=202610190021",
+        "webm": "media/cv-media-03.webm?v=202610190021",
+        "poster": "media/cv-media-03-poster.webp?v=202610190021"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202610181132",
-        "webm": "media/cv-media-04.webm?v=202610181132",
-        "poster": "media/cv-media-04-poster.webp?v=202610181132"
+        "mp4": "media/cv-media-04.mp4?v=202610190021",
+        "webm": "media/cv-media-04.webm?v=202610190021",
+        "poster": "media/cv-media-04-poster.webp?v=202610190021"
       }
     ]
   },
@@ -98,30 +98,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202610181132",
-      "webm": "media/faq-media-01.webm?v=202610181132",
-      "poster": "media/faq-media-01-poster.webp?v=202610181132"
+      "mp4": "media/faq-media-01.mp4?v=202610190021",
+      "webm": "media/faq-media-01.webm?v=202610190021",
+      "poster": "media/faq-media-01-poster.webp?v=202610190021"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202610181132",
-        "webm": "media/faq-media-01.webm?v=202610181132",
-        "poster": "media/faq-media-01-poster.webp?v=202610181132"
+        "mp4": "media/faq-media-01.mp4?v=202610190021",
+        "webm": "media/faq-media-01.webm?v=202610190021",
+        "poster": "media/faq-media-01-poster.webp?v=202610190021"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202610181132",
-        "webm": "media/faq-media-02.webm?v=202610181132",
-        "poster": "media/faq-media-02-poster.webp?v=202610181132"
+        "mp4": "media/faq-media-02.mp4?v=202610190021",
+        "webm": "media/faq-media-02.webm?v=202610190021",
+        "poster": "media/faq-media-02-poster.webp?v=202610190021"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202610181132",
-        "webm": "media/faq-media-03.webm?v=202610181132",
-        "poster": "media/faq-media-03-poster.webp?v=202610181132"
+        "mp4": "media/faq-media-03.mp4?v=202610190021",
+        "webm": "media/faq-media-03.webm?v=202610190021",
+        "poster": "media/faq-media-03-poster.webp?v=202610190021"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202610181132",
-        "webm": "media/faq-media-04.webm?v=202610181132",
-        "poster": "media/faq-media-04-poster.webp?v=202610181132"
+        "mp4": "media/faq-media-04.mp4?v=202610190021",
+        "webm": "media/faq-media-04.webm?v=202610190021",
+        "poster": "media/faq-media-04-poster.webp?v=202610190021"
       }
     ]
   },
@@ -137,30 +137,30 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202610181132",
-      "webm": "media/headshots-media-01.webm?v=202610181132",
-      "poster": "media/headshots-media-01-poster.webp?v=202610181132"
+      "mp4": "media/headshots-media-01.mp4?v=202610190021",
+      "webm": "media/headshots-media-01.webm?v=202610190021",
+      "poster": "media/headshots-media-01-poster.webp?v=202610190021"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202610181132",
-        "webm": "media/headshots-media-01.webm?v=202610181132",
-        "poster": "media/headshots-media-01-poster.webp?v=202610181132"
+        "mp4": "media/headshots-media-01.mp4?v=202610190021",
+        "webm": "media/headshots-media-01.webm?v=202610190021",
+        "poster": "media/headshots-media-01-poster.webp?v=202610190021"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202610181132",
-        "webm": "media/headshots-media-02.webm?v=202610181132",
-        "poster": "media/headshots-media-02-poster.webp?v=202610181132"
+        "mp4": "media/headshots-media-02.mp4?v=202610190021",
+        "webm": "media/headshots-media-02.webm?v=202610190021",
+        "poster": "media/headshots-media-02-poster.webp?v=202610190021"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202610181132",
-        "webm": "media/headshots-media-03.webm?v=202610181132",
-        "poster": "media/headshots-media-03-poster.webp?v=202610181132"
+        "mp4": "media/headshots-media-03.mp4?v=202610190021",
+        "webm": "media/headshots-media-03.webm?v=202610190021",
+        "poster": "media/headshots-media-03-poster.webp?v=202610190021"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202610181132",
-        "webm": "media/headshots-media-04.webm?v=202610181132",
-        "poster": "media/headshots-media-04-poster.webp?v=202610181132"
+        "mp4": "media/headshots-media-04.mp4?v=202610190021",
+        "webm": "media/headshots-media-04.webm?v=202610190021",
+        "poster": "media/headshots-media-04-poster.webp?v=202610190021"
       }
     ]
   }
@@ -225,11 +225,20 @@ const ICON = {
 /* auto=false untuk kartu dek: videonya tidak memutar sendiri, syncDeckVideos
    yang memutuskan. Atribut autoplay membuat browser mengunduh semua video
    kartu sekaligus, termasuk kartu tetangga yang cuma mengintip. */
+/* Di HP dipakai versi 1080 px (nama berakhiran -sm). Layar HP menampilkan
+   video sekitar 800 sampai 1100 piksel, jadi versi 2160 px hanya menambah
+   unduhan, beban dekoder, dan baterai tanpa beda yang terlihat. Browser
+   memilih sumber pertama yang cocok, jadi versi HP ditulis lebih dulu. */
+const HP_MEDIA = "(max-width: 767px)";
+const kecil = (u) => u.replace(/(\.\w+)(\?|$)/, "-sm$1$2");
+
 function videoTag(m, eager, auto = true) {
   return `
     <video class="mock-media"${auto ? " autoplay" : ""} muted loop playsinline
            preload="${eager ? "auto" : "none"}" poster="${m.poster || ""}">
-      ${m.webm ? `<source src="${m.webm}" type="video/webm">` : ""}
+      ${m.webm ? `<source src="${kecil(m.webm)}" type="video/webm" media="${HP_MEDIA}">
+      <source src="${m.webm}" type="video/webm">` : ""}
+      <source src="${kecil(m.mp4)}" type="video/mp4" media="${HP_MEDIA}">
       <source src="${m.mp4}" type="video/mp4">
     </video>`;
 }
