@@ -10,35 +10,48 @@
   Tanpa render=1 halaman memutar sendiri (preview).
 -->
 <style>
-  html, body { margin: 0; background: #ECECEA; }
+  html, body { margin: 0; background: #F6F6F6; }
   #stage {
     position: relative; overflow: hidden;
     width: var(--W); height: var(--H);
-    background: radial-gradient(120% 95% at 50% 38%, #FBFBFA 0%, #F1F1EF 62%, #E9E9E6 100%);
+    /* rata, sama persis dengan --bg situs, supaya video menyatu dengan halaman */
+    background: #F6F6F6;
   }
   .cam { position: absolute; inset: 0; perspective: 2600px; perspective-origin: 50% 50%; }
   .world { position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform-style: preserve-3d; }
   .grp { position: absolute; left: 0; top: 0; transform-style: preserve-3d; }
   .el { position: absolute; left: 0; top: 0; transform-origin: 50% 50%; will-change: transform, opacity; }
 
-  .win {
-    border-radius: 16px; overflow: hidden; background: #fff;
-    box-shadow: 0 0 0 1px rgba(17, 24, 39, .06), 0 2px 4px rgba(17, 24, 39, .04), 0 28px 70px rgba(17, 24, 39, .13);
-  }
-  .win .bar { height: 30px; background: #F5F5F6; border-bottom: 1px solid #EAEAED; display: flex; gap: 7px; align-items: center; padding-left: 15px; }
-  .win .bar i { width: 10px; height: 10px; border-radius: 50%; background: #DCDCE0; }
+  /* Jendela browser bergaya skeuomorph minimalis, satu bahan dengan iPhone
+     clay: layar duduk di dalam bingkai putih susu bergradasi yang tepinya
+     tersorot di atas dan sedikit cekung di bawah. Bingkainya digambar lewat
+     ::before di luar kotak, jadi ukuran dan koordinat jendela tidak berubah. */
+  .win { border-radius: 14px; background: #fff;
+    box-shadow: 0 0 0 1px rgba(17, 17, 17, .08), 0 0 0 3px rgba(255, 255, 255, .7); }
+  .win::before { content: ""; position: absolute; inset: -9px; z-index: -1; border-radius: 23px;
+    background: linear-gradient(160deg, #FDFDFC 0%, #F3F3F1 55%, #E9E9E6 100%);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .9), inset 0 2px 3px rgba(255, 255, 255, .9), inset 0 -4px 10px rgba(17, 17, 17, .06),
+      0 0 0 1px rgba(17, 17, 17, .05), 0 2px 4px rgba(17, 17, 17, .05), 0 14px 28px -10px rgba(17, 17, 17, .10), 0 44px 90px -30px rgba(17, 17, 17, .20); }
+  .win .bar { height: 30px; background: linear-gradient(180deg, #FAFAF9 0%, #F2F2F0 100%); border-bottom: 1px solid rgba(17, 17, 17, .06);
+    border-radius: 14px 14px 0 0; display: flex; gap: 7px; align-items: center; padding-left: 15px; }
+  /* lampu jendela cekung ke dalam bahan */
+  .win .bar i { width: 10px; height: 10px; border-radius: 50%; background: #E4E4E1;
+    box-shadow: inset 0 1px 1.5px rgba(17, 17, 17, .14), 0 .5px 0 rgba(255, 255, 255, .9); }
+  .win .view { border-radius: 0 0 14px 14px; }
   .win img, .phone img, .tile img { display: block; width: 100%; height: auto; }
 
   .phone {
     border-radius: 42px; overflow: hidden; background: #fff;
-    box-shadow: 0 0 0 1px rgba(17, 24, 39, .07), 0 2px 4px rgba(17, 24, 39, .04), 0 30px 70px rgba(17, 24, 39, .16);
+    box-shadow: 0 0 0 1px rgba(17, 17, 17, .06), 0 1px 2px rgba(17, 17, 17, .04), 0 10px 20px -6px rgba(17, 17, 17, .08), 0 40px 80px -24px rgba(17, 17, 17, .18);
   }
   .phone .scr { position: relative; }
   .phone .scr img { position: absolute; left: 0; top: 0; }
   .phone .scr img:first-child { position: relative; }
 
   .tile { border-radius: 12px; overflow: hidden; background: #fff;
-    box-shadow: 0 0 0 1px rgba(17, 24, 39, .06), 0 18px 40px rgba(17, 24, 39, .10); }
+    box-shadow: 0 0 0 1px rgba(17, 17, 17, .05), 0 1px 2px rgba(17, 17, 17, .05), 0 10px 22px -10px rgba(17, 17, 17, .12), 0 30px 56px -26px rgba(17, 17, 17, .16); }
+  .tile::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), inset 0 0 0 1px rgba(255, 255, 255, .25); }
 
   /* layar yang bisa dipakai: lapisan layar + overlay state dalam piksel desain */
   @font-face { font-family: Gilroy; font-weight: 400; src: url("../../../Pen.dev/Resumedone/Gilroy-Regular.otf"); }
@@ -73,8 +86,8 @@
      sorotan di tepi atas, sedikit cekung di tepi bawah, bayangan lembut */
   .iph .body { position: absolute; left: 0; top: 0; width: 412px; height: 866px; transform-origin: 0 0; border-radius: 58px;
     background: linear-gradient(160deg, #FDFDFC 0%, #F1F1EE 55%, #E6E6E2 100%);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .9), inset 0 2px 3px rgba(255, 255, 255, .9), inset 0 -4px 10px rgba(17, 24, 39, .07),
-      0 0 0 1px rgba(17, 24, 39, .05), 0 2px 4px rgba(17, 24, 39, .05), 0 30px 70px rgba(17, 24, 39, .14); }
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .9), inset 0 2px 3px rgba(255, 255, 255, .9), inset 0 -4px 10px rgba(17, 17, 17, .06),
+      0 0 0 1px rgba(17, 17, 17, .05), 0 2px 4px rgba(17, 17, 17, .05), 0 14px 28px -10px rgba(17, 17, 17, .10), 0 44px 90px -30px rgba(17, 17, 17, .20); }
   /* lekuk tipis di sekeliling layar supaya bezelnya terbaca sebagai benda */
   .iph .scrn { box-shadow: 0 0 0 1px rgba(17, 24, 39, .08), 0 0 0 3px rgba(255, 255, 255, .7); }
   .iph .scrn { position: absolute; left: 11px; top: 11px; width: 390px; height: 844px; border-radius: 47px; overflow: hidden; background: #fff; }

@@ -48,50 +48,6 @@ const PROFILE = {
    Selama array ini kosong, home cuma menampilkan nama dan tombol. */
 const PROJECTS = [
   {
-    "slug": "ejemplos-curriculum",
-    "name": "Ejemplos Curriculum",
-    "role": "Ejemplos Curriculum - Landing Page Design",
-    "credit": "Ejemplos Curriculum, 2026",
-    "live": "",
-    "mandate": "Ejemplos Curriculum is a Spanish-language resume site with templates, real CV examples, cover letters, and writing advice for job seekers. I designed its marketing landing page, the page most visitors see first, at desktop, tablet, and mobile widths.",
-    "challenge": "Most visitors arrive from search with one narrow question, like how to write a resignation letter, and leave once it is answered. The landing page had to show in a few seconds that the site can also help them build a CV, without the pushy habits common in this category: no \"free\" promise that turns into a paywall, and no social proof without data behind it.",
-    "solution": "The hero leads with what people search for, the best CV templates and writing advice, and shows real templates instead of stock art. Each section below answers one question job seekers ask, from which template to pick to how to write a cover letter, and ends with a clear way into the builder. The AI tools sit together in one dark band so they read as a feature, not a pop-up. The header keeps templates, examples, letters, and sign-in one click away, so the page works as a hub for the rest of the site.",
-    "results": "Targets set for launch: 30% more visitors reaching a template from the landing page, 20% more visitors scrolling past the hero, and a higher share of search visitors starting a CV. Delivered as one landing page at four widths, ready for development.",
-    "awards": [],
-    "card": {
-      "mp4": "media/ej-media-01.mp4?v=202610200014",
-      "webm": "media/ej-media-01.webm?v=202610200014",
-      "poster": "media/ej-media-01-poster.webp?v=202610200014"
-    },
-    "scenes": [
-      {
-        "mp4": "media/ej-media-01.mp4?v=202610200014",
-        "webm": "media/ej-media-01.webm?v=202610200014",
-        "poster": "media/ej-media-01-poster.webp?v=202610200014"
-      },
-      {
-        "mp4": "media/ej-media-02.mp4?v=202610200014",
-        "webm": "media/ej-media-02.webm?v=202610200014",
-        "poster": "media/ej-media-02-poster.webp?v=202610200014"
-      },
-      {
-        "mp4": "media/ej-media-03.mp4?v=202610200014",
-        "webm": "media/ej-media-03.webm?v=202610200014",
-        "poster": "media/ej-media-03-poster.webp?v=202610200014"
-      },
-      {
-        "mp4": "media/ej-media-04.mp4?v=202610200014",
-        "webm": "media/ej-media-04.webm?v=202610200014",
-        "poster": "media/ej-media-04-poster.webp?v=202610200014"
-      },
-      {
-        "mp4": "media/ej-media-05.mp4?v=202610200014",
-        "webm": "media/ej-media-05.webm?v=202610200014",
-        "poster": "media/ej-media-05-poster.webp?v=202610200014"
-      }
-    ]
-  },
-  {
     "slug": "cv-personal-website",
     "name": "Custom .cv Domain",
     "role": "Resumedone - Product Design",
@@ -103,30 +59,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202610200014",
-      "webm": "media/cv-media-01.webm?v=202610200014",
-      "poster": "media/cv-media-01-poster.webp?v=202610200014"
+      "mp4": "media/cv-media-01.mp4?v=202610200201",
+      "webm": "media/cv-media-01.webm?v=202610200201",
+      "poster": "media/cv-media-01-poster.webp?v=202610200201"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202610200014",
-        "webm": "media/cv-media-01.webm?v=202610200014",
-        "poster": "media/cv-media-01-poster.webp?v=202610200014"
+        "mp4": "media/cv-media-01.mp4?v=202610200201",
+        "webm": "media/cv-media-01.webm?v=202610200201",
+        "poster": "media/cv-media-01-poster.webp?v=202610200201"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202610200014",
-        "webm": "media/cv-media-02.webm?v=202610200014",
-        "poster": "media/cv-media-02-poster.webp?v=202610200014"
+        "mp4": "media/cv-media-02.mp4?v=202610200201",
+        "webm": "media/cv-media-02.webm?v=202610200201",
+        "poster": "media/cv-media-02-poster.webp?v=202610200201"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202610200014",
-        "webm": "media/cv-media-03.webm?v=202610200014",
-        "poster": "media/cv-media-03-poster.webp?v=202610200014"
+        "mp4": "media/cv-media-03.mp4?v=202610200201",
+        "webm": "media/cv-media-03.webm?v=202610200201",
+        "poster": "media/cv-media-03-poster.webp?v=202610200201"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202610200014",
-        "webm": "media/cv-media-04.webm?v=202610200014",
-        "poster": "media/cv-media-04-poster.webp?v=202610200014"
+        "mp4": "media/cv-media-04.mp4?v=202610200201",
+        "webm": "media/cv-media-04.webm?v=202610200201",
+        "poster": "media/cv-media-04-poster.webp?v=202610200201"
       }
     ]
   },
@@ -142,30 +98,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202610200014",
-      "webm": "media/faq-media-01.webm?v=202610200014",
-      "poster": "media/faq-media-01-poster.webp?v=202610200014"
+      "mp4": "media/faq-media-01.mp4?v=202610200201",
+      "webm": "media/faq-media-01.webm?v=202610200201",
+      "poster": "media/faq-media-01-poster.webp?v=202610200201"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202610200014",
-        "webm": "media/faq-media-01.webm?v=202610200014",
-        "poster": "media/faq-media-01-poster.webp?v=202610200014"
+        "mp4": "media/faq-media-01.mp4?v=202610200201",
+        "webm": "media/faq-media-01.webm?v=202610200201",
+        "poster": "media/faq-media-01-poster.webp?v=202610200201"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202610200014",
-        "webm": "media/faq-media-02.webm?v=202610200014",
-        "poster": "media/faq-media-02-poster.webp?v=202610200014"
+        "mp4": "media/faq-media-02.mp4?v=202610200201",
+        "webm": "media/faq-media-02.webm?v=202610200201",
+        "poster": "media/faq-media-02-poster.webp?v=202610200201"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202610200014",
-        "webm": "media/faq-media-03.webm?v=202610200014",
-        "poster": "media/faq-media-03-poster.webp?v=202610200014"
+        "mp4": "media/faq-media-03.mp4?v=202610200201",
+        "webm": "media/faq-media-03.webm?v=202610200201",
+        "poster": "media/faq-media-03-poster.webp?v=202610200201"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202610200014",
-        "webm": "media/faq-media-04.webm?v=202610200014",
-        "poster": "media/faq-media-04-poster.webp?v=202610200014"
+        "mp4": "media/faq-media-04.mp4?v=202610200201",
+        "webm": "media/faq-media-04.webm?v=202610200201",
+        "poster": "media/faq-media-04-poster.webp?v=202610200201"
       }
     ]
   },
@@ -181,30 +137,74 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202610200014",
-      "webm": "media/headshots-media-01.webm?v=202610200014",
-      "poster": "media/headshots-media-01-poster.webp?v=202610200014"
+      "mp4": "media/headshots-media-01.mp4?v=202610200201",
+      "webm": "media/headshots-media-01.webm?v=202610200201",
+      "poster": "media/headshots-media-01-poster.webp?v=202610200201"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202610200014",
-        "webm": "media/headshots-media-01.webm?v=202610200014",
-        "poster": "media/headshots-media-01-poster.webp?v=202610200014"
+        "mp4": "media/headshots-media-01.mp4?v=202610200201",
+        "webm": "media/headshots-media-01.webm?v=202610200201",
+        "poster": "media/headshots-media-01-poster.webp?v=202610200201"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202610200014",
-        "webm": "media/headshots-media-02.webm?v=202610200014",
-        "poster": "media/headshots-media-02-poster.webp?v=202610200014"
+        "mp4": "media/headshots-media-02.mp4?v=202610200201",
+        "webm": "media/headshots-media-02.webm?v=202610200201",
+        "poster": "media/headshots-media-02-poster.webp?v=202610200201"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202610200014",
-        "webm": "media/headshots-media-03.webm?v=202610200014",
-        "poster": "media/headshots-media-03-poster.webp?v=202610200014"
+        "mp4": "media/headshots-media-03.mp4?v=202610200201",
+        "webm": "media/headshots-media-03.webm?v=202610200201",
+        "poster": "media/headshots-media-03-poster.webp?v=202610200201"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202610200014",
-        "webm": "media/headshots-media-04.webm?v=202610200014",
-        "poster": "media/headshots-media-04-poster.webp?v=202610200014"
+        "mp4": "media/headshots-media-04.mp4?v=202610200201",
+        "webm": "media/headshots-media-04.webm?v=202610200201",
+        "poster": "media/headshots-media-04-poster.webp?v=202610200201"
+      }
+    ]
+  },
+  {
+    "slug": "ejemplos-curriculum",
+    "name": "Ejemplos Curriculum",
+    "role": "Ejemplos Curriculum - Landing Page Design",
+    "credit": "Ejemplos Curriculum, 2026",
+    "live": "",
+    "mandate": "Ejemplos Curriculum is a Spanish-language resume site with templates, real CV examples, cover letters, and writing advice for job seekers. I designed its marketing landing page, the page most visitors see first, at desktop, tablet, and mobile widths.",
+    "challenge": "Most visitors arrive from search with one narrow question, like how to write a resignation letter, and leave once it is answered. The landing page had to show in a few seconds that the site can also help them build a CV, without the pushy habits common in this category: no \"free\" promise that turns into a paywall, and no social proof without data behind it.",
+    "solution": "The hero leads with what people search for, the best CV templates and writing advice, and shows real templates instead of stock art. Each section below answers one question job seekers ask, from which template to pick to how to write a cover letter, and ends with a clear way into the builder. The AI tools sit together in one dark band so they read as a feature, not a pop-up. The header keeps templates, examples, letters, and sign-in one click away, so the page works as a hub for the rest of the site.",
+    "results": "Targets set for launch: 30% more visitors reaching a template from the landing page, 20% more visitors scrolling past the hero, and a higher share of search visitors starting a CV. Delivered as one landing page at four widths, ready for development.",
+    "awards": [],
+    "card": {
+      "mp4": "media/ej-media-01.mp4?v=202610200201",
+      "webm": "media/ej-media-01.webm?v=202610200201",
+      "poster": "media/ej-media-01-poster.webp?v=202610200201"
+    },
+    "scenes": [
+      {
+        "mp4": "media/ej-media-01.mp4?v=202610200201",
+        "webm": "media/ej-media-01.webm?v=202610200201",
+        "poster": "media/ej-media-01-poster.webp?v=202610200201"
+      },
+      {
+        "mp4": "media/ej-media-02.mp4?v=202610200201",
+        "webm": "media/ej-media-02.webm?v=202610200201",
+        "poster": "media/ej-media-02-poster.webp?v=202610200201"
+      },
+      {
+        "mp4": "media/ej-media-03.mp4?v=202610200201",
+        "webm": "media/ej-media-03.webm?v=202610200201",
+        "poster": "media/ej-media-03-poster.webp?v=202610200201"
+      },
+      {
+        "mp4": "media/ej-media-04.mp4?v=202610200201",
+        "webm": "media/ej-media-04.webm?v=202610200201",
+        "poster": "media/ej-media-04-poster.webp?v=202610200201"
+      },
+      {
+        "mp4": "media/ej-media-05.mp4?v=202610200201",
+        "webm": "media/ej-media-05.webm?v=202610200201",
+        "poster": "media/ej-media-05-poster.webp?v=202610200201"
       }
     ]
   }

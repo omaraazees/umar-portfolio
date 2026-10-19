@@ -8,14 +8,6 @@ Top Rated Plus on Upwork. Working from Yogyakarta, Indonesia (GMT+7), asynchrono
 
 ## Selected projects
 
-### Ejemplos Curriculum
-Ejemplos Curriculum - Landing Page Design. Ejemplos Curriculum, 2026.
-
-- Mandate: Ejemplos Curriculum is a Spanish-language resume site with templates, real CV examples, cover letters, and writing advice for job seekers. I designed its marketing landing page, the page most visitors see first, at desktop, tablet, and mobile widths.
-- Challenge: Most visitors arrive from search with one narrow question, like how to write a resignation letter, and leave once it is answered. The landing page had to show in a few seconds that the site can also help them build a CV, without the pushy habits common in this category: no "free" promise that turns into a paywall, and no social proof without data behind it.
-- Solution: The hero leads with what people search for, the best CV templates and writing advice, and shows real templates instead of stock art. Each section below answers one question job seekers ask, from which template to pick to how to write a cover letter, and ends with a clear way into the builder. The AI tools sit together in one dark band so they read as a feature, not a pop-up. The header keeps templates, examples, letters, and sign-in one click away, so the page works as a hub for the rest of the site.
-- Results: Targets set for launch: 30% more visitors reaching a template from the landing page, 20% more visitors scrolling past the hero, and a higher share of search visitors starting a CV. Delivered as one landing page at four widths, ready for development.
-
 ### Custom .cv Domain
 Resumedone - Product Design. Resumedone, 2026.
 
@@ -39,6 +31,14 @@ CV-Lite - Product Design. CV-Lite by Resumedone, 2026.
 - Challenge: People have to trust an unknown AI with their face, then pay before they see the full result. Ad traffic leaves fast, so every second of doubt costs a sale. On real screens the browser bar also takes around 180 px, which pushed the button that moves people forward below the fold on laptops and phones alike.
 - Solution: I built the funnel around one idea: show the transformation before asking for anything. The landing hero is a before and after of the same person, and every step stays short: gender, outfit, background, selfies. The paywall unlocks two finished headshots and states one honest price. Each screen is laid out at the real visible area, 1920 × 900 on desktop and 390 × 664 on mobile, so the next action is always in view.
 - Results: Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.
+
+### Ejemplos Curriculum
+Ejemplos Curriculum - Landing Page Design. Ejemplos Curriculum, 2026.
+
+- Mandate: Ejemplos Curriculum is a Spanish-language resume site with templates, real CV examples, cover letters, and writing advice for job seekers. I designed its marketing landing page, the page most visitors see first, at desktop, tablet, and mobile widths.
+- Challenge: Most visitors arrive from search with one narrow question, like how to write a resignation letter, and leave once it is answered. The landing page had to show in a few seconds that the site can also help them build a CV, without the pushy habits common in this category: no "free" promise that turns into a paywall, and no social proof without data behind it.
+- Solution: The hero leads with what people search for, the best CV templates and writing advice, and shows real templates instead of stock art. Each section below answers one question job seekers ask, from which template to pick to how to write a cover letter, and ends with a clear way into the builder. The AI tools sit together in one dark band so they read as a feature, not a pop-up. The header keeps templates, examples, letters, and sign-in one click away, so the page works as a hub for the rest of the site.
+- Results: Targets set for launch: 30% more visitors reaching a template from the landing page, 20% more visitors scrolling past the hero, and a higher share of search visitors starting a CV. Delivered as one landing page at four widths, ready for development.
 
 ## Contact
 
