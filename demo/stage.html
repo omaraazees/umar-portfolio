@@ -752,6 +752,193 @@ COMPS.cvtplm = {
   }
 };
 
+
+/* =========================================================
+   Project Ejemplos Curriculum (landing CV berbahasa Spanyol, desain 1440 dan 390)
+   Layar diekspor dari pen: landing per section lalu disambung, halaman lain utuh.
+   Semua titik klik diukur dari layar asli (lihat catatan di masing-masing).
+   ========================================================= */
+const EJ = "screens/ej/";
+/* salin tepi kotak "dari" ke kotak "ke" (ukuran sama), m = lebar tepi yang ikut disalin
+   termasuk cahaya fokus di luar garis. Dipakai untuk memindah fokus antar field
+   tanpa mengarang gaya: tepi field fokus dan tepi field biasa diambil dari layar. */
+function tepiSalin(layer, src, dari, ke, m, DW, DH) {
+  const [fx, fy, w, h] = dari, [tx, ty] = ke;
+  return [[-m, -m, w + 2 * m, 2 * m], [-m, h - m, w + 2 * m, 2 * m], [-m, m, 2 * m, h - 2 * m], [w - m, m, 2 * m, h - 2 * m]]
+    .map(([dx, dy, ww, hh]) => piece(layer, src, tx + dx, ty + dy, ww, hh, fx + dx, fy + dy, DW, DH));
+}
+/* kata sandi diketik: penutup placeholder, titik-titik, caret */
+function sandi(layer, x, y, w, fs) {
+  const cov = ov(layer, "tutup", x - 2, y - 13, w, 26);
+  const el = ov(layer, "typed", x - 5, y - 13, w, 26, "<span></span><b></b>");
+  el.style.fontFamily = "Gilroy, sans-serif"; el.style.fontSize = fs + "px"; el.style.letterSpacing = ".12em"; el.style.color = "#1D1D1F";
+  return { cov, el, set(k, caret) { fade(cov, k > 0 || caret ? 1 : 0); fade(el, k > 0 || caret ? 1 : 0); el.firstChild.textContent = "•".repeat(k); fade(el.lastChild, caret ? 1 : 0); } };
+}
+
+/* 1. LANDING DESKTOP: scroll pelan dari hero sampai footer, berhenti di tiap section */
+COMPS.ejdesk = {
+  W: 1440, H: 1440, DUR: 20.4, VH: 1150,
+  /* awal section (piksel desain): hero, template, empat blok fitur, AI gelap, FAQ, tips, akhir */
+  STOPS: [0, 640, 1449, 2160, 2900, 3859, 5028, 5960, 7360],
+  PATH: [{ t: .9, x: 1060, y: 700, hover: 1 }, { t: 2.0, x: 205, y: 318, hover: 1 }, { t: 3.6, x: 330, y: 318, hover: 1 },
+    { t: 5.4, x: 900, y: 560, hover: 1 }, { t: 9.0, x: 1060, y: 520, hover: 1 }, { t: 13.0, x: 760, y: 640, hover: 1 }, { t: 17.0, x: 1000, y: 600, hover: 1 }, { t: 20.4, x: 1060, y: 700, hover: 1 }],
+  build() {
+    const a = this.a = app("win", [["page", EJ + "landing-d.jpg"]], 1200, this.VH, { dw: 1440 });
+    this.page = page(a);
+    this.cur = mk("ov cur", a.fx); this.cur.innerHTML = ARROW; this.rip = mk("ov rip", a.fx);
+  },
+  render(t) {
+    const a = this.a, S = this.STOPS;
+    put(a, { s: K(t, [[0, .965], [.9, 1]], E.out), op: K(t, [[0, 0], [.6, 1], [19.6, 1], [20.4, 0]], E.sine) });
+    const keys = [[0, 0]]; S.slice(1).forEach((y, i) => { keys.push([3.9 + i * 1.95, S[i]], [5.1 + i * 1.95, y]); });
+    const y = K(t, keys, E.io);
+    this.page.style.transform = `translateY(${-y}px)`;
+    cursor(this, this.PATH, t);
+    cam({ s: K(t, [[0, .97], [1.2, 1]], E.out) });
+  }
+};
+
+/* 2. LANDING MOBILE: usapan jari dari hero sampai footer */
+COMPS.ejmob = {
+  W: 1440, H: 1440, DUR: 18.4, N: 12, MAX: 9062 - 664,
+  build() {
+    const a = this.a = app("phone", [["page", EJ + "landing-m.jpg"]], 612);
+    this.page = page(a); setUrl(a, "ejemplos-curriculum.com");
+    this.tap = mk("ov tap", a.fx);
+  },
+  render(t) {
+    const a = this.a, step = this.MAX / this.N;
+    put(a, { y: K(t, [[0, 60], [.9, 0]], E.out), op: K(t, [[0, 0], [.6, 1], [17.6, 1], [18.4, 0]], E.sine) });
+    let y = 0, u = -1;
+    for (let i = 0; i < this.N; i++) { const t0 = 1.6 + i * 1.3; y += step * E.out(seg(t, t0, t0 + .95)); if (t >= t0 - .12 && t < t0 + .5) u = t - t0; }
+    this.page.style.transform = `translateY(${-y}px)`;
+    this.tap.style.transform = `translate(300px,${470 - 190 * E.out(seg(u, 0, .38))}px) scale(${u < 0 ? 1.25 : 1})`;
+    fade(this.tap, u < -.5 ? 0 : u < 0 ? seg(u, -.12, 0) : 1 - seg(u, .3, .5));
+    cam({ s: K(t, [[0, .97], [1.2, 1]], E.out) });
+  }
+};
+
+/* 3. NAVIGASI DESKTOP: menu Plantillas, menu Ejemplos, artikel pertama, lalu masuk akun.
+   Titik klik (desain 1440): menu Plantillas (436,60), Ejemplos (581,60), Conéctese (1279,60);
+   "Leer artículo" pertama di halaman Ejemplos (980,2194); field kata sandi (80,515,400,48),
+   field email fokus (80,416,400,48); tombol Iniciar sesión (80,632,400,55). */
+COMPS.ejnav = {
+  W: 1440, H: 1440, DUR: 24.2,
+  AT: { home: 0, plant: 2.0, ejem: 8.2, art: 13.0, login: 18.6 },
+  SRC: { home: "landing-d.jpg", plant: "pages-d/i88V1h.png", ejem: "pages-d/s9j1AQ.png", art: "pages-d/Ju32U.png", login: "pages-d/OYvK4.png" },
+  /* scroll per halaman: [mulai, selesai, dari, ke] */
+  SCROLL: { plant: [[2.4, 3.6, 0, 700], [3.9, 5.1, 700, 1450], [5.6, 6.6, 1450, 0]], ejem: [[8.6, 9.8, 0, 800], [10.1, 11.3, 800, 1820]],
+    art: [[13.4, 14.8, 0, 900], [15.1, 16.4, 900, 1700], [16.8, 17.6, 1700, 0]] },
+  PATH: [{ t: .8, x: 1100, y: 520, hover: 1 }, { t: 1.7, x: 436, y: 60 }, { t: 3.0, x: 760, y: 520, hover: 1 }, { t: 6.4, x: 700, y: 420, hover: 1 },
+    { t: 7.9, x: 581, y: 60 }, { t: 9.4, x: 760, y: 420, hover: 1 }, { t: 12.6, x: 980, y: 374 }, { t: 14.0, x: 1080, y: 480, hover: 1 },
+    { t: 17.4, x: 1180, y: 300, hover: 1 }, { t: 18.3, x: 1279, y: 60 }, { t: 19.6, x: 300, y: 539 }, { t: 21.9, x: 280, y: 659 }, { t: 24.2, x: 1100, y: 520, hover: 1 }],
+  build() {
+    const list = Object.entries(this.SRC).map(([k, f]) => [k, EJ + f]);
+    const a = this.a = app("win", list, 1200, 900, { dw: 1440 });
+    tinggi(a);
+    const L = a.L.login, src = L._src;
+    /* fokus pindah dari email ke kata sandi: tepi kata sandi jadi tepi fokus, tepi email jadi biasa */
+    this.fokus = tepiSalin(L, src, [80, 416, 400, 48], [80, 515], 5, 1440, 900).concat(tepiSalin(L, src, [80, 515, 400, 48], [80, 416], 5, 1440, 900));
+    this.pw = sandi(L, 97, 539, 300, 18);
+    this.tekan = ov(L, "fill", 80, 632, 400, 55); this.tekan.style.background = "rgba(2, 15, 46, .18)"; this.tekan.style.borderRadius = "6px";
+    this.cur = mk("ov cur", a.fx); this.cur.innerHTML = ARROW; this.rip = mk("ov rip", a.fx);
+  },
+  render(t) {
+    const a = this.a;
+    /* video ini juga kartu di home: frame pertama = hero landing, dan di akhir
+       halaman masuk memudar kembali ke hero supaya berulang tanpa sambungan */
+    put(a, {});
+    lapis(a, this.AT, t, 1 - on(t, 23.3, .8), "login");
+    for (const [k, sc] of Object.entries(this.SCROLL)) {
+      let y = 0; for (const [t0, t1, y0, y1] of sc) if (t >= t0) y = lerp(y0, y1, E.io(seg(t, t0, t1)));
+      a.L[k].firstChild.style.transform = `translateY(${-y}px)`;
+    }
+    tampil(this.fokus, on(t, 19.65, .12));
+    const k = Math.floor(seg(t, 19.95, 21.05) * 10 + 1e-6);
+    this.pw.set(t < 19.65 ? 0 : k, t >= 19.65 && t < 21.7 && (k < 10 || Math.floor(t * 2.4) % 2 === 0));
+    fade(this.tekan, on(t, 21.9, .08) * (1 - on(t, 22.15, .2)));
+    cursor(this, this.PATH, t);
+    camTo(a, [[0, 1.02, 720, 450], [18.8, 1.02, 720, 450], [19.4, 1.5, 300, 560], [22.6, 1.5, 300, 560], [23.4, 1.02, 720, 450]], t);
+  }
+};
+
+/* 4. NAVIGASI MOBILE: Plantillas, pilih template, masuk akun.
+   Titik ketuk (desain 390): "Crea un CV" baris ketiga kiri (72,1354) setelah scroll 1050;
+   halaman masuk di-scroll 180, field kata sandi (16,577,358,44), email fokus (16,489,358,44),
+   tombol Iniciar sesión (16,679,358,44). */
+COMPS.ejnavm = {
+  W: 1440, H: 1440, DUR: 13.4,
+  SEQ: [["plant", 0], ["login", 5.1, "push"]],
+  TAPS: [{ t: 1.2, sw: 1 }, { t: 2.4, sw: 1 }, { t: 3.6, sw: 1 }, { t: 4.8, x: 72, y: 304 }, { t: 5.9, sw: 1 }, { t: 7.2, x: 195, y: 419 }, { t: 9.4, x: 195, y: 521 }],
+  build() {
+    const a = this.a = app("phone", [["plant", EJ + "pages-m/o9GNAn.png"], ["login", EJ + "pages-m/cQHnW.png"]], 612);
+    tinggi(a); setUrl(a, "ejemplos-curriculum.com");
+    const L = a.L.login, src = L._src;
+    this.fokus = tepiSalin(L, src, [16, 489, 358, 44], [16, 577], 4, 390, 844).concat(tepiSalin(L, src, [16, 577, 358, 44], [16, 489], 4, 390, 844));
+    this.pw = sandi(L, 29, 599, 300, 16);
+    this.tekan = ov(L, "fill", 16, 679, 358, 44); this.tekan.style.background = "rgba(2, 15, 46, .18)"; this.tekan.style.borderRadius = "8px";
+    this.tap = mk("ov tap", a.fx);
+  },
+  render(t) {
+    const a = this.a, S = this.SEQ, DW = 390;
+    put(a, { y: K(t, [[0, 60], [.9, 0]], E.out), op: K(t, [[0, 0], [.6, 1], [12.6, 1], [13.4, 0]], E.sine) });
+    const pr = S.map(([, t0, mode], i) => i === 0 ? 1 : E.out(seg(t, t0, t0 + .34)));
+    S.forEach(([k], i) => {
+      const nx = pr[i + 1] || 0;
+      a.L[k].style.transform = `translateX(${(1 - pr[i]) * DW - nx * DW * .3}px)`;
+      fade(a.L[k], pr[i] > 0 ? 1 : 0);
+    });
+    const plantY = K(t, [[1.2, 0], [2.1, 420], [2.4, 420], [3.3, 760], [3.6, 760], [4.5, 1050]], E.out);
+    a.L.plant.firstChild.style.transform = `translateY(${-plantY}px)`;
+    /* gambar dan semua lapisan di atasnya (fokus, sandi, tekan) di-scroll bersama */
+    const ly = `translateY(${-K(t, [[5.9, 0], [6.7, 180]], E.out)}px)`;
+    for (const el of a.L.login.children) el.style.transform = ly;
+    tampil(this.fokus, on(t, 7.25, .12));
+    const k = Math.floor(seg(t, 7.55, 8.65) * 10 + 1e-6);
+    this.pw.set(t < 7.25 ? 0 : k, t >= 7.25 && t < 9.3 && (k < 10 || Math.floor(t * 2.4) % 2 === 0));
+    fade(this.tekan, on(t, 9.4, .08) * (1 - on(t, 9.65, .2)));
+    /* jari: usapan untuk scroll, ketukan di titik tombol */
+    const h = this.TAPS.find((q) => t > q.t - .32 && t < q.t + .5);
+    if (h) {
+      const u = t - h.t;
+      if (h.sw) this.tap.style.transform = `translate(300px,${470 - 190 * E.out(seg(u, 0, .38))}px) scale(${u < 0 ? 1.25 : 1})`;
+      else this.tap.style.transform = `translate(${h.x}px,${h.y}px) scale(${u < 0 ? lerp(1.3, 1, seg(u, -.32, 0)) : 1 - .12 * Math.sin(Math.PI * seg(u, 0, .2))})`;
+      fade(this.tap, u < 0 ? seg(u, -.3, -.1) : 1 - seg(u, .3, .5));
+    } else fade(this.tap, 0);
+    cam({ s: K(t, [[0, .97], [1.2, 1]], E.out) });
+  }
+};
+
+
+/* 5. HALAMAN LAIN DESKTOP: menu Cartas de presentación (755,60), lalu Búsqueda de empleo (950,60).
+   Tinggi halaman: Cartas 2838, Búsqueda 2098 (desain 1440). */
+COMPS.ejnav2 = {
+  W: 1440, H: 1440, DUR: 17.2,
+  AT: { home: 0, cartas: 2.0, busca: 9.6 },
+  SRC: { home: "landing-d.jpg", cartas: "pages-d/TuUuz.png", busca: "pages-d/WaOvm.png" },
+  SCROLL: { cartas: [[2.5, 3.8, 0, 760], [4.2, 5.5, 760, 1500], [6.0, 7.2, 1500, 1938], [7.8, 8.7, 1938, 0]],
+    busca: [[10.2, 11.5, 0, 480], [12.0, 13.4, 480, 860]] },
+  PATH: [{ t: .8, x: 1100, y: 520, hover: 1 }, { t: 1.7, x: 755, y: 60 }, { t: 3.2, x: 900, y: 520, hover: 1 }, { t: 6.6, x: 640, y: 560, hover: 1 },
+    { t: 9.3, x: 950, y: 60 }, { t: 11.0, x: 900, y: 460, hover: 1 }, { t: 14.4, x: 860, y: 430, hover: 1 }, { t: 17.2, x: 1100, y: 520, hover: 1 }],
+  build() {
+    const list = Object.entries(this.SRC).map(([k, f]) => [k, EJ + f]);
+    const a = this.a = app("win", list, 1200, 900, { dw: 1440 });
+    tinggi(a);
+    this.cur = mk("ov cur", a.fx); this.cur.innerHTML = ARROW; this.rip = mk("ov rip", a.fx);
+  },
+  render(t) {
+    const a = this.a;
+    put(a, { s: K(t, [[0, .965], [.9, 1]], E.out), op: K(t, [[0, 0], [.6, 1], [16.4, 1], [17.2, 0]], E.sine) });
+    lapis(a, this.AT, t, 1, "busca");
+    for (const [k, sc] of Object.entries(this.SCROLL)) {
+      let y = 0; for (const [t0, t1, y0, y1] of sc) if (t >= t0) y = lerp(y0, y1, E.io(seg(t, t0, t1)));
+      a.L[k].firstChild.style.transform = `translateY(${-y}px)`;
+    }
+    cursor(this, this.PATH, t);
+    cam({ s: K(t, [[0, .97], [1.2, 1]], E.out) });
+  }
+};
+
 /* COVER 1080 x 1080, 8 detik, loop mulus: dinding layar miring yang bergeser pelan */
 COMPS.cover = {
   W: 1080, H: 1080, DUR: 8,

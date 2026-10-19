@@ -8,6 +8,14 @@ Top Rated Plus on Upwork. Working from Yogyakarta, Indonesia (GMT+7), asynchrono
 
 ## Selected projects
 
+### Ejemplos Curriculum
+Ejemplos Curriculum - Landing Page Design. Ejemplos Curriculum, 2026.
+
+- Mandate: Ejemplos Curriculum is a Spanish-language resume site with templates, real CV examples, cover letters, and writing advice for job seekers. I designed its marketing landing page, the page most visitors see first, at desktop, tablet, and mobile widths.
+- Challenge: Most visitors arrive from search with one narrow question, like how to write a resignation letter, and leave once it is answered. The landing page had to show in a few seconds that the site can also help them build a CV, without the pushy habits common in this category: no "free" promise that turns into a paywall, and no social proof without data behind it.
+- Solution: The hero leads with what people search for, the best CV templates and writing advice, and shows real templates instead of stock art. Each section below answers one question job seekers ask, from which template to pick to how to write a cover letter, and ends with a clear way into the builder. The AI tools sit together in one dark band so they read as a feature, not a pop-up. The header keeps templates, examples, letters, and sign-in one click away, so the page works as a hub for the rest of the site.
+- Results: Targets set for launch: 30% more visitors reaching a template from the landing page, 20% more visitors scrolling past the hero, and a higher share of search visitors starting a CV. Delivered as one landing page at four widths, ready for development.
+
 ### Custom .cv Domain
 Resumedone - Product Design. Resumedone, 2026.
 
