@@ -15,7 +15,6 @@
 
    Pemakaian:
      Sfx.play("tap");
-     Sfx.setEnabled(false);
    ========================================================= */
 
 window.Sfx = (function () {
@@ -27,8 +26,11 @@ window.Sfx = (function () {
   let enabled = true;
   let lastAt = 0;
 
+  /* Bunyi antarmuka selalu menyala dan tidak bisa dimatikan. Tombol Music
+     hanya mengatur musik latar. Pilihan "off" lama yang masih tersimpan dari
+     versi sebelumnya dibuang supaya tidak membisukan pengunjung lama. */
   try {
-    enabled = localStorage.getItem(KEY) !== "off";
+    localStorage.removeItem(KEY);
   } catch (e) {
     /* localStorage bisa diblokir, abaikan saja */
   }
@@ -316,13 +318,6 @@ window.Sfx = (function () {
   };
   ["pointerdown", "keydown"].forEach((type) => window.addEventListener(type, lanjut, { capture: true, passive: true }));
 
-  function setEnabled(v) {
-    enabled = !!v;
-    try {
-      localStorage.setItem(KEY, enabled ? "on" : "off");
-    } catch (e) {}
-    if (enabled) play("tap");
-  }
 
   /* --- pemanasan ---
 
@@ -372,7 +367,6 @@ window.Sfx = (function () {
 
   return {
     play,
-    setEnabled,
     isEnabled: () => enabled,
     music: { set: setMusic, isOn: () => music.on, isPlaying: berbunyi, levels, bass },
     /* untuk memeriksa kesiapan: "belum" berarti rakitan belum dibuat,

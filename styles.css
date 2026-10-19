@@ -3,21 +3,21 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/inter-regular.woff2?v=202610200009") format("woff2");
+  src: url("fonts/inter-regular.woff2?v=202610200014") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("fonts/inter-semibold.woff2?v=202610200009") format("woff2");
+  src: url("fonts/inter-semibold.woff2?v=202610200014") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("fonts/inter-medium.woff2?v=202610200009") format("woff2");
+  src: url("fonts/inter-medium.woff2?v=202610200014") format("woff2");
 }
 
 /* =========================================================

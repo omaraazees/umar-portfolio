@@ -59,35 +59,35 @@ const PROJECTS = [
     "results": "Targets set for launch: 30% more visitors reaching a template from the landing page, 20% more visitors scrolling past the hero, and a higher share of search visitors starting a CV. Delivered as one landing page at four widths, ready for development.",
     "awards": [],
     "card": {
-      "mp4": "media/ej-media-01.mp4?v=202610200009",
-      "webm": "media/ej-media-01.webm?v=202610200009",
-      "poster": "media/ej-media-01-poster.webp?v=202610200009"
+      "mp4": "media/ej-media-01.mp4?v=202610200014",
+      "webm": "media/ej-media-01.webm?v=202610200014",
+      "poster": "media/ej-media-01-poster.webp?v=202610200014"
     },
     "scenes": [
       {
-        "mp4": "media/ej-media-01.mp4?v=202610200009",
-        "webm": "media/ej-media-01.webm?v=202610200009",
-        "poster": "media/ej-media-01-poster.webp?v=202610200009"
+        "mp4": "media/ej-media-01.mp4?v=202610200014",
+        "webm": "media/ej-media-01.webm?v=202610200014",
+        "poster": "media/ej-media-01-poster.webp?v=202610200014"
       },
       {
-        "mp4": "media/ej-media-02.mp4?v=202610200009",
-        "webm": "media/ej-media-02.webm?v=202610200009",
-        "poster": "media/ej-media-02-poster.webp?v=202610200009"
+        "mp4": "media/ej-media-02.mp4?v=202610200014",
+        "webm": "media/ej-media-02.webm?v=202610200014",
+        "poster": "media/ej-media-02-poster.webp?v=202610200014"
       },
       {
-        "mp4": "media/ej-media-03.mp4?v=202610200009",
-        "webm": "media/ej-media-03.webm?v=202610200009",
-        "poster": "media/ej-media-03-poster.webp?v=202610200009"
+        "mp4": "media/ej-media-03.mp4?v=202610200014",
+        "webm": "media/ej-media-03.webm?v=202610200014",
+        "poster": "media/ej-media-03-poster.webp?v=202610200014"
       },
       {
-        "mp4": "media/ej-media-04.mp4?v=202610200009",
-        "webm": "media/ej-media-04.webm?v=202610200009",
-        "poster": "media/ej-media-04-poster.webp?v=202610200009"
+        "mp4": "media/ej-media-04.mp4?v=202610200014",
+        "webm": "media/ej-media-04.webm?v=202610200014",
+        "poster": "media/ej-media-04-poster.webp?v=202610200014"
       },
       {
-        "mp4": "media/ej-media-05.mp4?v=202610200009",
-        "webm": "media/ej-media-05.webm?v=202610200009",
-        "poster": "media/ej-media-05-poster.webp?v=202610200009"
+        "mp4": "media/ej-media-05.mp4?v=202610200014",
+        "webm": "media/ej-media-05.webm?v=202610200014",
+        "poster": "media/ej-media-05-poster.webp?v=202610200014"
       }
     ]
   },
@@ -103,30 +103,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202610200009",
-      "webm": "media/cv-media-01.webm?v=202610200009",
-      "poster": "media/cv-media-01-poster.webp?v=202610200009"
+      "mp4": "media/cv-media-01.mp4?v=202610200014",
+      "webm": "media/cv-media-01.webm?v=202610200014",
+      "poster": "media/cv-media-01-poster.webp?v=202610200014"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202610200009",
-        "webm": "media/cv-media-01.webm?v=202610200009",
-        "poster": "media/cv-media-01-poster.webp?v=202610200009"
+        "mp4": "media/cv-media-01.mp4?v=202610200014",
+        "webm": "media/cv-media-01.webm?v=202610200014",
+        "poster": "media/cv-media-01-poster.webp?v=202610200014"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202610200009",
-        "webm": "media/cv-media-02.webm?v=202610200009",
-        "poster": "media/cv-media-02-poster.webp?v=202610200009"
+        "mp4": "media/cv-media-02.mp4?v=202610200014",
+        "webm": "media/cv-media-02.webm?v=202610200014",
+        "poster": "media/cv-media-02-poster.webp?v=202610200014"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202610200009",
-        "webm": "media/cv-media-03.webm?v=202610200009",
-        "poster": "media/cv-media-03-poster.webp?v=202610200009"
+        "mp4": "media/cv-media-03.mp4?v=202610200014",
+        "webm": "media/cv-media-03.webm?v=202610200014",
+        "poster": "media/cv-media-03-poster.webp?v=202610200014"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202610200009",
-        "webm": "media/cv-media-04.webm?v=202610200009",
-        "poster": "media/cv-media-04-poster.webp?v=202610200009"
+        "mp4": "media/cv-media-04.mp4?v=202610200014",
+        "webm": "media/cv-media-04.webm?v=202610200014",
+        "poster": "media/cv-media-04-poster.webp?v=202610200014"
       }
     ]
   },
@@ -142,30 +142,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202610200009",
-      "webm": "media/faq-media-01.webm?v=202610200009",
-      "poster": "media/faq-media-01-poster.webp?v=202610200009"
+      "mp4": "media/faq-media-01.mp4?v=202610200014",
+      "webm": "media/faq-media-01.webm?v=202610200014",
+      "poster": "media/faq-media-01-poster.webp?v=202610200014"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202610200009",
-        "webm": "media/faq-media-01.webm?v=202610200009",
-        "poster": "media/faq-media-01-poster.webp?v=202610200009"
+        "mp4": "media/faq-media-01.mp4?v=202610200014",
+        "webm": "media/faq-media-01.webm?v=202610200014",
+        "poster": "media/faq-media-01-poster.webp?v=202610200014"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202610200009",
-        "webm": "media/faq-media-02.webm?v=202610200009",
-        "poster": "media/faq-media-02-poster.webp?v=202610200009"
+        "mp4": "media/faq-media-02.mp4?v=202610200014",
+        "webm": "media/faq-media-02.webm?v=202610200014",
+        "poster": "media/faq-media-02-poster.webp?v=202610200014"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202610200009",
-        "webm": "media/faq-media-03.webm?v=202610200009",
-        "poster": "media/faq-media-03-poster.webp?v=202610200009"
+        "mp4": "media/faq-media-03.mp4?v=202610200014",
+        "webm": "media/faq-media-03.webm?v=202610200014",
+        "poster": "media/faq-media-03-poster.webp?v=202610200014"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202610200009",
-        "webm": "media/faq-media-04.webm?v=202610200009",
-        "poster": "media/faq-media-04-poster.webp?v=202610200009"
+        "mp4": "media/faq-media-04.mp4?v=202610200014",
+        "webm": "media/faq-media-04.webm?v=202610200014",
+        "poster": "media/faq-media-04-poster.webp?v=202610200014"
       }
     ]
   },
@@ -181,30 +181,30 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202610200009",
-      "webm": "media/headshots-media-01.webm?v=202610200009",
-      "poster": "media/headshots-media-01-poster.webp?v=202610200009"
+      "mp4": "media/headshots-media-01.mp4?v=202610200014",
+      "webm": "media/headshots-media-01.webm?v=202610200014",
+      "poster": "media/headshots-media-01-poster.webp?v=202610200014"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202610200009",
-        "webm": "media/headshots-media-01.webm?v=202610200009",
-        "poster": "media/headshots-media-01-poster.webp?v=202610200009"
+        "mp4": "media/headshots-media-01.mp4?v=202610200014",
+        "webm": "media/headshots-media-01.webm?v=202610200014",
+        "poster": "media/headshots-media-01-poster.webp?v=202610200014"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202610200009",
-        "webm": "media/headshots-media-02.webm?v=202610200009",
-        "poster": "media/headshots-media-02-poster.webp?v=202610200009"
+        "mp4": "media/headshots-media-02.mp4?v=202610200014",
+        "webm": "media/headshots-media-02.webm?v=202610200014",
+        "poster": "media/headshots-media-02-poster.webp?v=202610200014"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202610200009",
-        "webm": "media/headshots-media-03.webm?v=202610200009",
-        "poster": "media/headshots-media-03-poster.webp?v=202610200009"
+        "mp4": "media/headshots-media-03.mp4?v=202610200014",
+        "webm": "media/headshots-media-03.webm?v=202610200014",
+        "poster": "media/headshots-media-03-poster.webp?v=202610200014"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202610200009",
-        "webm": "media/headshots-media-04.webm?v=202610200009",
-        "poster": "media/headshots-media-04-poster.webp?v=202610200009"
+        "mp4": "media/headshots-media-04.mp4?v=202610200014",
+        "webm": "media/headshots-media-04.webm?v=202610200014",
+        "poster": "media/headshots-media-04-poster.webp?v=202610200014"
       }
     ]
   }
@@ -427,8 +427,8 @@ function contactGroup() {
 /* Tombol suara sekaligus pemutar mini. Mati: speaker dicoret. Menyala:
    musik berputar, tombol memanjang berisi visualizer ASCII. Judul lagu
    hanya di tooltip dan label pembaca layar, supaya muat di semua layar.
-   Satu ketukan menyalakan musik dan bunyi antarmuka, ketukan berikutnya
-   mematikan keduanya. */
+   Tombol ini hanya memutar dan menjeda musik. Bunyi antarmuka selalu
+   menyala. */
 const TRACK = "Evolving Soundscape II";
 const BARS = "▁▂▃▄▅▆▇";
 
@@ -436,9 +436,8 @@ function soundToggle() {
   /* tampil menyala hanya kalau musik benar-benar berbunyi. Pilihan "menyala"
      yang tersimpan baru berbunyi setelah sentuhan pertama di halaman. */
   const playing = Sfx.music.isPlaying();
-  const off = !playing && !Sfx.isEnabled();
   return `
-    <button type="button" class="pill sound-pill${off ? " is-alt" : ""}${playing ? " is-playing" : ""}" id="sound-toggle"
+    <button type="button" class="pill sound-pill${playing ? " is-playing" : ""}" id="sound-toggle"
             aria-label="${playing ? "Pause music: " + TRACK : "Play music"}"
             title="${playing ? TRACK : ""}"
             aria-pressed="${playing}">
@@ -478,7 +477,6 @@ function bindSound(scope) {
   const sync = () => {
     const playing = Sfx.music.isPlaying() || (Sfx.music.isOn() && btn.dataset.baruDitekan === "1");
     btn.classList.toggle("is-playing", playing);
-    btn.classList.toggle("is-alt", !playing && !Sfx.isEnabled());
     btn.setAttribute("aria-pressed", String(playing));
     btn.setAttribute("aria-label", playing ? "Pause music: " + TRACK : "Play music");
     /* judul lagu cukup di tooltip, tombolnya hanya ikon dan visualizer */
@@ -488,11 +486,11 @@ function bindSound(scope) {
   btn.addEventListener("click", () => {
     /* matikan hanya kalau musik memang sedang berbunyi; selain itu selalu nyalakan */
     if (Sfx.music.isPlaying()) {
+      Sfx.play("off");
       Sfx.music.set(false);
-      Sfx.setEnabled(false);
       btn.dataset.baruDitekan = "";
     } else {
-      Sfx.setEnabled(true);
+      Sfx.play("on");
       Sfx.music.set(true);
       btn.dataset.baruDitekan = "1";
     }
