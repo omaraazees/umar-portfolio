@@ -60,30 +60,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202610281705",
-      "webm": "media/cv-media-01.webm?v=202610281705",
-      "poster": "media/cv-media-01-poster.webp?v=202610281705"
+      "mp4": "media/cv-media-01.mp4?v=202610281710",
+      "webm": "media/cv-media-01.webm?v=202610281710",
+      "poster": "media/cv-media-01-poster.webp?v=202610281710"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202610281705",
-        "webm": "media/cv-media-01.webm?v=202610281705",
-        "poster": "media/cv-media-01-poster.webp?v=202610281705"
+        "mp4": "media/cv-media-01.mp4?v=202610281710",
+        "webm": "media/cv-media-01.webm?v=202610281710",
+        "poster": "media/cv-media-01-poster.webp?v=202610281710"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202610281705",
-        "webm": "media/cv-media-02.webm?v=202610281705",
-        "poster": "media/cv-media-02-poster.webp?v=202610281705"
+        "mp4": "media/cv-media-02.mp4?v=202610281710",
+        "webm": "media/cv-media-02.webm?v=202610281710",
+        "poster": "media/cv-media-02-poster.webp?v=202610281710"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202610281705",
-        "webm": "media/cv-media-03.webm?v=202610281705",
-        "poster": "media/cv-media-03-poster.webp?v=202610281705"
+        "mp4": "media/cv-media-03.mp4?v=202610281710",
+        "webm": "media/cv-media-03.webm?v=202610281710",
+        "poster": "media/cv-media-03-poster.webp?v=202610281710"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202610281705",
-        "webm": "media/cv-media-04.webm?v=202610281705",
-        "poster": "media/cv-media-04-poster.webp?v=202610281705"
+        "mp4": "media/cv-media-04.mp4?v=202610281710",
+        "webm": "media/cv-media-04.webm?v=202610281710",
+        "poster": "media/cv-media-04-poster.webp?v=202610281710"
       }
     ]
   },
@@ -99,30 +99,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202610281705",
-      "webm": "media/faq-media-01.webm?v=202610281705",
-      "poster": "media/faq-media-01-poster.webp?v=202610281705"
+      "mp4": "media/faq-media-01.mp4?v=202610281710",
+      "webm": "media/faq-media-01.webm?v=202610281710",
+      "poster": "media/faq-media-01-poster.webp?v=202610281710"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202610281705",
-        "webm": "media/faq-media-01.webm?v=202610281705",
-        "poster": "media/faq-media-01-poster.webp?v=202610281705"
+        "mp4": "media/faq-media-01.mp4?v=202610281710",
+        "webm": "media/faq-media-01.webm?v=202610281710",
+        "poster": "media/faq-media-01-poster.webp?v=202610281710"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202610281705",
-        "webm": "media/faq-media-02.webm?v=202610281705",
-        "poster": "media/faq-media-02-poster.webp?v=202610281705"
+        "mp4": "media/faq-media-02.mp4?v=202610281710",
+        "webm": "media/faq-media-02.webm?v=202610281710",
+        "poster": "media/faq-media-02-poster.webp?v=202610281710"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202610281705",
-        "webm": "media/faq-media-03.webm?v=202610281705",
-        "poster": "media/faq-media-03-poster.webp?v=202610281705"
+        "mp4": "media/faq-media-03.mp4?v=202610281710",
+        "webm": "media/faq-media-03.webm?v=202610281710",
+        "poster": "media/faq-media-03-poster.webp?v=202610281710"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202610281705",
-        "webm": "media/faq-media-04.webm?v=202610281705",
-        "poster": "media/faq-media-04-poster.webp?v=202610281705"
+        "mp4": "media/faq-media-04.mp4?v=202610281710",
+        "webm": "media/faq-media-04.webm?v=202610281710",
+        "poster": "media/faq-media-04-poster.webp?v=202610281710"
       }
     ]
   },
@@ -138,30 +138,30 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202610281705",
-      "webm": "media/headshots-media-01.webm?v=202610281705",
-      "poster": "media/headshots-media-01-poster.webp?v=202610281705"
+      "mp4": "media/headshots-media-01.mp4?v=202610281710",
+      "webm": "media/headshots-media-01.webm?v=202610281710",
+      "poster": "media/headshots-media-01-poster.webp?v=202610281710"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202610281705",
-        "webm": "media/headshots-media-01.webm?v=202610281705",
-        "poster": "media/headshots-media-01-poster.webp?v=202610281705"
+        "mp4": "media/headshots-media-01.mp4?v=202610281710",
+        "webm": "media/headshots-media-01.webm?v=202610281710",
+        "poster": "media/headshots-media-01-poster.webp?v=202610281710"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202610281705",
-        "webm": "media/headshots-media-02.webm?v=202610281705",
-        "poster": "media/headshots-media-02-poster.webp?v=202610281705"
+        "mp4": "media/headshots-media-02.mp4?v=202610281710",
+        "webm": "media/headshots-media-02.webm?v=202610281710",
+        "poster": "media/headshots-media-02-poster.webp?v=202610281710"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202610281705",
-        "webm": "media/headshots-media-03.webm?v=202610281705",
-        "poster": "media/headshots-media-03-poster.webp?v=202610281705"
+        "mp4": "media/headshots-media-03.mp4?v=202610281710",
+        "webm": "media/headshots-media-03.webm?v=202610281710",
+        "poster": "media/headshots-media-03-poster.webp?v=202610281710"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202610281705",
-        "webm": "media/headshots-media-04.webm?v=202610281705",
-        "poster": "media/headshots-media-04-poster.webp?v=202610281705"
+        "mp4": "media/headshots-media-04.mp4?v=202610281710",
+        "webm": "media/headshots-media-04.webm?v=202610281710",
+        "poster": "media/headshots-media-04-poster.webp?v=202610281710"
       }
     ]
   },
@@ -177,35 +177,35 @@ const PROJECTS = [
     "results": "Targets set for launch: 30% more visitors reaching a template from the landing page, 20% more visitors scrolling past the hero, and a higher share of search visitors starting a CV. Delivered as one landing page at four widths, ready for development.",
     "awards": [],
     "card": {
-      "mp4": "media/ej-media-01.mp4?v=202610281705",
-      "webm": "media/ej-media-01.webm?v=202610281705",
-      "poster": "media/ej-media-01-poster.webp?v=202610281705"
+      "mp4": "media/ej-media-01.mp4?v=202610281710",
+      "webm": "media/ej-media-01.webm?v=202610281710",
+      "poster": "media/ej-media-01-poster.webp?v=202610281710"
     },
     "scenes": [
       {
-        "mp4": "media/ej-media-01.mp4?v=202610281705",
-        "webm": "media/ej-media-01.webm?v=202610281705",
-        "poster": "media/ej-media-01-poster.webp?v=202610281705"
+        "mp4": "media/ej-media-01.mp4?v=202610281710",
+        "webm": "media/ej-media-01.webm?v=202610281710",
+        "poster": "media/ej-media-01-poster.webp?v=202610281710"
       },
       {
-        "mp4": "media/ej-media-02.mp4?v=202610281705",
-        "webm": "media/ej-media-02.webm?v=202610281705",
-        "poster": "media/ej-media-02-poster.webp?v=202610281705"
+        "mp4": "media/ej-media-02.mp4?v=202610281710",
+        "webm": "media/ej-media-02.webm?v=202610281710",
+        "poster": "media/ej-media-02-poster.webp?v=202610281710"
       },
       {
-        "mp4": "media/ej-media-03.mp4?v=202610281705",
-        "webm": "media/ej-media-03.webm?v=202610281705",
-        "poster": "media/ej-media-03-poster.webp?v=202610281705"
+        "mp4": "media/ej-media-03.mp4?v=202610281710",
+        "webm": "media/ej-media-03.webm?v=202610281710",
+        "poster": "media/ej-media-03-poster.webp?v=202610281710"
       },
       {
-        "mp4": "media/ej-media-04.mp4?v=202610281705",
-        "webm": "media/ej-media-04.webm?v=202610281705",
-        "poster": "media/ej-media-04-poster.webp?v=202610281705"
+        "mp4": "media/ej-media-04.mp4?v=202610281710",
+        "webm": "media/ej-media-04.webm?v=202610281710",
+        "poster": "media/ej-media-04-poster.webp?v=202610281710"
       },
       {
-        "mp4": "media/ej-media-05.mp4?v=202610281705",
-        "webm": "media/ej-media-05.webm?v=202610281705",
-        "poster": "media/ej-media-05-poster.webp?v=202610281705"
+        "mp4": "media/ej-media-05.mp4?v=202610281710",
+        "webm": "media/ej-media-05.webm?v=202610281710",
+        "poster": "media/ej-media-05-poster.webp?v=202610281710"
       }
     ]
   }
@@ -793,7 +793,7 @@ function positionDeck(snap) {
   const n = deckState.slots.length;
   const half = Math.floor(n / 2);
   const instan = snap || prefersReduced();
-  document.querySelectorAll(".deck-card").forEach((el, i) => {
+  document.querySelectorAll("#deck .deck-card").forEach((el, i) => {
     let rel = (((i - deckState.active) % n) + n) % n;
     if (rel >= half) rel -= n;
     const tampak = Math.abs(rel) <= 3;
@@ -886,7 +886,7 @@ function langkahPegas(now) {
    project, jadi tanpa ini satu video bisa terunduh dua kali dan halaman
    pertama memuat sekitar 9 MB video. */
 function syncDeckVideos() {
-  document.querySelectorAll(".deck-card").forEach((el) => {
+  document.querySelectorAll("#deck .deck-card").forEach((el) => {
     const v = el.querySelector("video");
     if (!v) return;
     if (el.dataset.pos === "0") {
@@ -1287,6 +1287,27 @@ function openProject(slug, cardEl) {
   const t0 = waktuVideo(cardEl);
   const ghost = liveGhost(mock, from, "2rem");
 
+  /* Dek lama dilepas dari panggung sebelum halaman project dirender, lalu
+     kartu tetangganya diluncurkan keluar layar. Tanpa ini seluruh home hilang
+     dalam satu frame dan itu terasa sebagai kedipan. */
+  const dekLama = document.getElementById("deck");
+  if (dekLama) {
+    dekLama.removeAttribute("id");
+    dekLama.classList.add("is-exiting");
+    document.body.appendChild(dekLama);
+    const H = window.innerHeight;
+    dekLama.querySelectorAll(".deck-card").forEach((el) => {
+      const st = el._s;
+      if (!st || el === cardEl) return;
+      const d = Number(el.dataset.pos);
+      if (!isFinite(d)) return;
+      st.ty = (d < 0 ? -1 : 1) * (H * 0.6 + Math.abs(st.ty));
+    });
+    cardEl.style.visibility = "hidden";
+    jalankanPegas();
+    setTimeout(() => dekLama.remove(), FLY_MS);
+  }
+
   /* halaman project langsung dirender di bawah klon, tanpa jeda pudar */
   location.hash = "#/project/" + slug;
   render();
@@ -1303,6 +1324,7 @@ function openProject(slug, cardEl) {
 
   fly(ghost, from, () => rectOf(target), "2rem", getComputedStyle(target).borderRadius, () => {
     const sama = serahkan(ghost.firstElementChild, target, t0);
+    target.classList.add("is-landed");
     target.classList.remove("is-morph-target");
     buangKlon(ghost, !sama);
   });
@@ -1338,6 +1360,18 @@ function closeProject() {
   const r0 = getComputedStyle(src).borderRadius;
   const mock = src.querySelector(".mock");
   const ghost = mock ? liveGhost(mock, from, r0) : makeGhost(src, from, r0);
+
+  /* media lain di halaman project dipudarkan di tempatnya */
+  const mediaLama = document.getElementById("media");
+  if (mediaLama) {
+    const top = mediaLama.getBoundingClientRect().top;
+    mediaLama.removeAttribute("id");
+    mediaLama.classList.add("is-exiting");
+    mediaLama.style.top = top + "px";
+    document.body.appendChild(mediaLama);
+    requestAnimationFrame(() => (mediaLama.style.opacity = "0"));
+    setTimeout(() => mediaLama.remove(), 420);
+  }
 
   returnToSlug = slug;
   location.hash = "#/";

@@ -3,21 +3,21 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/inter-regular.woff2?v=202610281705") format("woff2");
+  src: url("fonts/inter-regular.woff2?v=202610281710") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("fonts/inter-semibold.woff2?v=202610281705") format("woff2");
+  src: url("fonts/inter-semibold.woff2?v=202610281710") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("fonts/inter-medium.woff2?v=202610281705") format("woff2");
+  src: url("fonts/inter-medium.woff2?v=202610281710") format("woff2");
 }
 
 /* =========================================================
@@ -1084,6 +1084,40 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 .media-item.is-morph-target {
   visibility: hidden;
   animation: none !important;
+}
+/* Media yang baru didarati klon tidak boleh memutar animasi masuknya lagi.
+   Tanpa ini, begitu kelas is-morph-target dilepas, media-in jalan dari awal
+   (transparan dan turun 2rem) dan itu terlihat sebagai frame yang reset. */
+.media-item.is-landed { animation: none !important; }
+
+/* Klon yang terbang memakai bibir tersorot yang sama dengan kartu dan media,
+   jadi saat serah terima tidak ada tepi yang muncul atau hilang. */
+.morph::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  border-radius: inherit;
+  box-shadow: var(--sk-rim);
+  pointer-events: none;
+}
+
+/* Dek lama yang ditinggalkan saat project dibuka. Kartu tetangganya
+   meluncur keluar layar, seperti referensi, lalu elemennya dibuang. */
+.deck.is-exiting {
+  z-index: 150;
+  pointer-events: none;
+}
+/* Media halaman project yang ditinggalkan saat kembali ke home: dipudarkan
+   di tempatnya, tidak hilang dalam satu frame. */
+.media.is-exiting {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-top: 0;
+  z-index: 150;
+  pointer-events: none;
+  transition: opacity 0.35s ease-out;
 }
 
 /* =========================================================
