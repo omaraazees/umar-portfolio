@@ -38,6 +38,7 @@ const PROFILE = {
      Field icon merujuk ke nama di objek ICON di bawah. */
   contacts: [
     { label: "Email", icon: "mail", url: "mailto:hello@byumar.com" },
+    { label: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/in/umar-abdul-azis-948900159/" },
     { label: "Instagram", icon: "instagram", url: "https://instagram.com/omar.aazees" },
     { label: "Upwork", icon: "upwork", url: "https://www.upwork.com/freelancers/~01e38101af9b02fc32" }
   ]
@@ -59,30 +60,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202610200201",
-      "webm": "media/cv-media-01.webm?v=202610200201",
-      "poster": "media/cv-media-01-poster.webp?v=202610200201"
+      "mp4": "media/cv-media-01.mp4?v=202610281411",
+      "webm": "media/cv-media-01.webm?v=202610281411",
+      "poster": "media/cv-media-01-poster.webp?v=202610281411"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202610200201",
-        "webm": "media/cv-media-01.webm?v=202610200201",
-        "poster": "media/cv-media-01-poster.webp?v=202610200201"
+        "mp4": "media/cv-media-01.mp4?v=202610281411",
+        "webm": "media/cv-media-01.webm?v=202610281411",
+        "poster": "media/cv-media-01-poster.webp?v=202610281411"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202610200201",
-        "webm": "media/cv-media-02.webm?v=202610200201",
-        "poster": "media/cv-media-02-poster.webp?v=202610200201"
+        "mp4": "media/cv-media-02.mp4?v=202610281411",
+        "webm": "media/cv-media-02.webm?v=202610281411",
+        "poster": "media/cv-media-02-poster.webp?v=202610281411"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202610200201",
-        "webm": "media/cv-media-03.webm?v=202610200201",
-        "poster": "media/cv-media-03-poster.webp?v=202610200201"
+        "mp4": "media/cv-media-03.mp4?v=202610281411",
+        "webm": "media/cv-media-03.webm?v=202610281411",
+        "poster": "media/cv-media-03-poster.webp?v=202610281411"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202610200201",
-        "webm": "media/cv-media-04.webm?v=202610200201",
-        "poster": "media/cv-media-04-poster.webp?v=202610200201"
+        "mp4": "media/cv-media-04.mp4?v=202610281411",
+        "webm": "media/cv-media-04.webm?v=202610281411",
+        "poster": "media/cv-media-04-poster.webp?v=202610281411"
       }
     ]
   },
@@ -98,30 +99,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202610200201",
-      "webm": "media/faq-media-01.webm?v=202610200201",
-      "poster": "media/faq-media-01-poster.webp?v=202610200201"
+      "mp4": "media/faq-media-01.mp4?v=202610281411",
+      "webm": "media/faq-media-01.webm?v=202610281411",
+      "poster": "media/faq-media-01-poster.webp?v=202610281411"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202610200201",
-        "webm": "media/faq-media-01.webm?v=202610200201",
-        "poster": "media/faq-media-01-poster.webp?v=202610200201"
+        "mp4": "media/faq-media-01.mp4?v=202610281411",
+        "webm": "media/faq-media-01.webm?v=202610281411",
+        "poster": "media/faq-media-01-poster.webp?v=202610281411"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202610200201",
-        "webm": "media/faq-media-02.webm?v=202610200201",
-        "poster": "media/faq-media-02-poster.webp?v=202610200201"
+        "mp4": "media/faq-media-02.mp4?v=202610281411",
+        "webm": "media/faq-media-02.webm?v=202610281411",
+        "poster": "media/faq-media-02-poster.webp?v=202610281411"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202610200201",
-        "webm": "media/faq-media-03.webm?v=202610200201",
-        "poster": "media/faq-media-03-poster.webp?v=202610200201"
+        "mp4": "media/faq-media-03.mp4?v=202610281411",
+        "webm": "media/faq-media-03.webm?v=202610281411",
+        "poster": "media/faq-media-03-poster.webp?v=202610281411"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202610200201",
-        "webm": "media/faq-media-04.webm?v=202610200201",
-        "poster": "media/faq-media-04-poster.webp?v=202610200201"
+        "mp4": "media/faq-media-04.mp4?v=202610281411",
+        "webm": "media/faq-media-04.webm?v=202610281411",
+        "poster": "media/faq-media-04-poster.webp?v=202610281411"
       }
     ]
   },
@@ -137,30 +138,30 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202610200201",
-      "webm": "media/headshots-media-01.webm?v=202610200201",
-      "poster": "media/headshots-media-01-poster.webp?v=202610200201"
+      "mp4": "media/headshots-media-01.mp4?v=202610281411",
+      "webm": "media/headshots-media-01.webm?v=202610281411",
+      "poster": "media/headshots-media-01-poster.webp?v=202610281411"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202610200201",
-        "webm": "media/headshots-media-01.webm?v=202610200201",
-        "poster": "media/headshots-media-01-poster.webp?v=202610200201"
+        "mp4": "media/headshots-media-01.mp4?v=202610281411",
+        "webm": "media/headshots-media-01.webm?v=202610281411",
+        "poster": "media/headshots-media-01-poster.webp?v=202610281411"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202610200201",
-        "webm": "media/headshots-media-02.webm?v=202610200201",
-        "poster": "media/headshots-media-02-poster.webp?v=202610200201"
+        "mp4": "media/headshots-media-02.mp4?v=202610281411",
+        "webm": "media/headshots-media-02.webm?v=202610281411",
+        "poster": "media/headshots-media-02-poster.webp?v=202610281411"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202610200201",
-        "webm": "media/headshots-media-03.webm?v=202610200201",
-        "poster": "media/headshots-media-03-poster.webp?v=202610200201"
+        "mp4": "media/headshots-media-03.mp4?v=202610281411",
+        "webm": "media/headshots-media-03.webm?v=202610281411",
+        "poster": "media/headshots-media-03-poster.webp?v=202610281411"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202610200201",
-        "webm": "media/headshots-media-04.webm?v=202610200201",
-        "poster": "media/headshots-media-04-poster.webp?v=202610200201"
+        "mp4": "media/headshots-media-04.mp4?v=202610281411",
+        "webm": "media/headshots-media-04.webm?v=202610281411",
+        "poster": "media/headshots-media-04-poster.webp?v=202610281411"
       }
     ]
   },
@@ -176,35 +177,35 @@ const PROJECTS = [
     "results": "Targets set for launch: 30% more visitors reaching a template from the landing page, 20% more visitors scrolling past the hero, and a higher share of search visitors starting a CV. Delivered as one landing page at four widths, ready for development.",
     "awards": [],
     "card": {
-      "mp4": "media/ej-media-01.mp4?v=202610200201",
-      "webm": "media/ej-media-01.webm?v=202610200201",
-      "poster": "media/ej-media-01-poster.webp?v=202610200201"
+      "mp4": "media/ej-media-01.mp4?v=202610281411",
+      "webm": "media/ej-media-01.webm?v=202610281411",
+      "poster": "media/ej-media-01-poster.webp?v=202610281411"
     },
     "scenes": [
       {
-        "mp4": "media/ej-media-01.mp4?v=202610200201",
-        "webm": "media/ej-media-01.webm?v=202610200201",
-        "poster": "media/ej-media-01-poster.webp?v=202610200201"
+        "mp4": "media/ej-media-01.mp4?v=202610281411",
+        "webm": "media/ej-media-01.webm?v=202610281411",
+        "poster": "media/ej-media-01-poster.webp?v=202610281411"
       },
       {
-        "mp4": "media/ej-media-02.mp4?v=202610200201",
-        "webm": "media/ej-media-02.webm?v=202610200201",
-        "poster": "media/ej-media-02-poster.webp?v=202610200201"
+        "mp4": "media/ej-media-02.mp4?v=202610281411",
+        "webm": "media/ej-media-02.webm?v=202610281411",
+        "poster": "media/ej-media-02-poster.webp?v=202610281411"
       },
       {
-        "mp4": "media/ej-media-03.mp4?v=202610200201",
-        "webm": "media/ej-media-03.webm?v=202610200201",
-        "poster": "media/ej-media-03-poster.webp?v=202610200201"
+        "mp4": "media/ej-media-03.mp4?v=202610281411",
+        "webm": "media/ej-media-03.webm?v=202610281411",
+        "poster": "media/ej-media-03-poster.webp?v=202610281411"
       },
       {
-        "mp4": "media/ej-media-04.mp4?v=202610200201",
-        "webm": "media/ej-media-04.webm?v=202610200201",
-        "poster": "media/ej-media-04-poster.webp?v=202610200201"
+        "mp4": "media/ej-media-04.mp4?v=202610281411",
+        "webm": "media/ej-media-04.webm?v=202610281411",
+        "poster": "media/ej-media-04-poster.webp?v=202610281411"
       },
       {
-        "mp4": "media/ej-media-05.mp4?v=202610200201",
-        "webm": "media/ej-media-05.webm?v=202610200201",
-        "poster": "media/ej-media-05-poster.webp?v=202610200201"
+        "mp4": "media/ej-media-05.mp4?v=202610281411",
+        "webm": "media/ej-media-05.webm?v=202610281411",
+        "poster": "media/ej-media-05-poster.webp?v=202610281411"
       }
     ]
   }
@@ -237,6 +238,7 @@ const ICON = {
   external: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4.5H5.2A1.2 1.2 0 0 0 4 5.7v9.1a1.2 1.2 0 0 0 1.2 1.2h9.1a1.2 1.2 0 0 0 1.2-1.2V12"/><path d="M12 4h4v4M16 4l-6.5 6.5"/></svg>`,
   back: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 5 6.5 10l5 5"/></svg>`,
   mail: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="10" rx="2"/><path d="m3.6 6.2 5.5 4a1.5 1.5 0 0 0 1.8 0l5.5-4"/></svg>`,
+  linkedin: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.2" y="3.2" width="13.6" height="13.6" rx="3"/><path d="M7 9v4.6"/><path d="M7 6.6v.01"/><path d="M10 13.6V9"/><path d="M10 11.2c0-1.3.9-2.2 2-2.2s1.9.8 1.9 2.1v2.5"/></svg>`,
   instagram: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.2" y="3.2" width="13.6" height="13.6" rx="4.2"/><circle cx="10" cy="10" r="3.2"/><path d="M14.1 5.9v.01"/></svg>`,
   /* logo resmi Upwork, path terisi. Ikon lain di set ini bergaya garis,
      tapi untuk logo merek bentuk terisi yang benar lebih penting daripada
@@ -669,8 +671,7 @@ function titleBlock(a, b, cls = "") {
 const deckState = {
   slots: [],
   active: 0,
-  locked: false,
-  wheelAcc: 0
+  locked: false
 };
 
 /* diisi saat kembali dari halaman project, supaya dek berhenti
@@ -700,6 +701,7 @@ function renderHome(rail, stage, dots) {
   /* Kartu digandakan supaya loop-nya simetris di atas dan bawah.
      Referensi aslinya juga pakai trik ini. */
   deckState.slots = PROJECTS.concat(PROJECTS);
+  deckState.locked = false;
   deckState.active = 0;
 
   const back = returnToSlug;
@@ -735,7 +737,7 @@ function renderHome(rail, stage, dots) {
   ).join("");
 
   const deck = document.getElementById("deck");
-  positionDeck();
+  positionDeck(true);
   setTimeout(() => deck.classList.remove("is-intro"), 1400);
 
   bindDeck(deck, dots);
@@ -758,20 +760,125 @@ function renderHome(rail, stage, dots) {
   document.body.classList.add("no-scroll");
 }
 
-function positionDeck() {
+/* Posisi kartu mengikuti referensi (gabrielbeaugonin.com), angkanya diambil
+   dari kode situsnya:
+   - tetangga pertama bergeser 40% tinggi layar (HP 37%), tiap tetangga
+     berikutnya menambah 35 px (HP 43 px)
+   - tetangga diputar 98 derajat (HP 93) sampai melewati rebah, dan diperkecil
+     ke 0,8 (HP 0,76)
+   - semua gerakan memakai pegas kaku 190, redaman 18, massa 1. Pegasnya
+     sedikit memantul dan bisa disela kapan saja, jadi scroll cepat terasa
+     menyambung, bukan antre.
+   Transform dihitung di JS, bukan transisi CSS, karena transisi CSS selalu
+   mulai ulang dari nol kalau disela di tengah jalan. */
+const DECK_SPRING = { k: 190, c: 18, m: 1 };
+const MAGNET_SPRING = { k: 70, c: 24, m: 0.28 };
+const MAGNET_RELEASE = { k: 140, c: 26, m: 0.14 };
+const deckHp = matchMedia("(max-width: 767px)");
+
+function deckTarget(d) {
+  const hp = deckHp.matches;
+  const H = window.innerHeight;
+  const geser = hp ? 0.37 : 0.4;
+  const tambah = hp ? 43 : 35;
+  const putar = hp ? 93 : 98;
+  const kecil = hp ? 0.76 : 0.8;
+  if (d === 0) return { y: 0, r: 0, s: 1 };
+  const a = Math.abs(d);
+  const y = H * geser + (a - 1) * tambah;
+  return { y: d > 0 ? y : -y, r: d > 0 ? putar : -putar, s: kecil };
+}
+
+function positionDeck(snap) {
   const n = deckState.slots.length;
   const half = Math.floor(n / 2);
+  const instan = snap || prefersReduced();
   document.querySelectorAll(".deck-card").forEach((el, i) => {
-    let rel = (i - deckState.active + n) % n;
-    if (rel > half) rel -= n;
-    el.dataset.pos = Math.abs(rel) <= 2 ? String(rel) : "x";
+    let rel = (((i - deckState.active) % n) + n) % n;
+    if (rel >= half) rel -= n;
+    const tampak = Math.abs(rel) <= 3;
+    const lama = el._rel;
+    el._rel = rel;
+    el.dataset.pos = tampak ? String(rel) : "x";
     el.setAttribute("aria-hidden", rel === 0 ? "false" : "true");
+    const t = deckTarget(rel);
+    if (!el._s) el._s = { y: t.y, r: t.r, s: t.s, vy: 0, vr: 0, vs: 0, mx: 0, my: 0, vmx: 0, vmy: 0, tmx: 0, tmy: 0 };
+    const st = el._s;
+    st.ty = t.y; st.tr = t.r; st.ts = t.s;
+    /* kartu yang memutar dari ujung atas ke ujung bawah (atau sebaliknya)
+       dipindah langsung, tidak terbang melintasi layar */
+    if (instan || !tampak || lama === undefined || Math.abs(rel - lama) > 2) {
+      st.y = t.y; st.r = t.r; st.s = t.s; st.vy = st.vr = st.vs = 0;
+    }
+    if (rel !== 0) { st.tmx = 0; st.tmy = 0; }
+    tulisKartu(el);
   });
 
   const current = deckState.active % PROJECTS.length;
   document.querySelectorAll(".dot").forEach((d, i) =>
     d.setAttribute("aria-current", String(i === current))
-  );  syncDeckVideos();
+  );
+  syncDeckVideos();
+  jalankanPegas();
+}
+
+function tulisKartu(el) {
+  const st = el._s;
+  el.style.transform =
+    `translate3d(${st.mx.toFixed(2)}px, ${(st.y + st.my).toFixed(2)}px, 0) ` +
+    `scale(${st.s.toFixed(4)}) rotateX(${st.r.toFixed(3)}deg)`;
+}
+
+/* satu langkah pegas untuk satu sumbu; mengembalikan [posisi, kecepatan] */
+function pegas(x, v, target, sp, dt) {
+  const a = (-sp.k * (x - target) - sp.c * v) / sp.m;
+  v += a * dt;
+  x += v * dt;
+  return [x, v];
+}
+
+let pegasJalan = false;
+let pegasLalu = 0;
+function jalankanPegas() {
+  if (pegasJalan) return;
+  pegasJalan = true;
+  pegasLalu = performance.now();
+  requestAnimationFrame(langkahPegas);
+}
+
+function langkahPegas(now) {
+  let dt = Math.min((now - pegasLalu) / 1000, 0.05);
+  pegasLalu = now;
+  let masihGerak = false;
+  const kartu = document.querySelectorAll(".deck-card");
+  /* dipecah jadi langkah kecil supaya pegas kaku tetap stabil di 30 fps */
+  const pecah = Math.max(1, Math.ceil(dt / (1 / 240)));
+  const h = dt / pecah;
+  kartu.forEach((el) => {
+    const st = el._s;
+    if (!st) return;
+    const mspring = st.tmx || st.tmy ? MAGNET_SPRING : MAGNET_RELEASE;
+    for (let i = 0; i < pecah; i++) {
+      [st.y, st.vy] = pegas(st.y, st.vy, st.ty, DECK_SPRING, h);
+      [st.r, st.vr] = pegas(st.r, st.vr, st.tr, DECK_SPRING, h);
+      [st.s, st.vs] = pegas(st.s, st.vs, st.ts, DECK_SPRING, h);
+      [st.mx, st.vmx] = pegas(st.mx, st.vmx, st.tmx, mspring, h);
+      [st.my, st.vmy] = pegas(st.my, st.vmy, st.tmy, mspring, h);
+    }
+    const diam =
+      Math.abs(st.y - st.ty) < 0.1 && Math.abs(st.vy) < 0.5 &&
+      Math.abs(st.r - st.tr) < 0.02 && Math.abs(st.vr) < 0.1 &&
+      Math.abs(st.s - st.ts) < 0.0005 && Math.abs(st.vs) < 0.005 &&
+      Math.abs(st.mx - st.tmx) < 0.05 && Math.abs(st.vmx) < 0.3 &&
+      Math.abs(st.my - st.tmy) < 0.05 && Math.abs(st.vmy) < 0.3;
+    if (diam) {
+      st.y = st.ty; st.r = st.tr; st.s = st.ts; st.mx = st.tmx; st.my = st.tmy;
+      st.vy = st.vr = st.vs = st.vmx = st.vmy = 0;
+    } else masihGerak = true;
+    tulisKartu(el);
+  });
+  if (masihGerak && kartu.length) requestAnimationFrame(langkahPegas);
+  else pegasJalan = false;
 }
 
 /* Hanya kartu aktif yang memuat dan memutar videonya. Kartu tetangga cukup
@@ -802,82 +909,145 @@ function hideSwipeHint() {
 }
 
 function moveDeck(dir) {
-  if (deckState.locked) return;
+  if (deckState.locked || !dir) return;
   hideSwipeHint();
   const n = deckState.slots.length;
-  deckState.active = (deckState.active + dir + n) % n;
-  deckState.locked = true;
+  deckState.active = (((deckState.active + dir) % n) + n) % n;
   Sfx.play(dir > 0 ? "deckDown" : "deckUp");
   positionDeck();
-  setTimeout(() => (deckState.locked = false), 620);
 }
 
 function bindDeck(deck, dots) {
-  /* roda mouse dan trackpad: kumpulkan delta dulu supaya
-     satu gestur trackpad tidak melompat tiga kartu */
+  /* Roda mouse dan trackpad, sama dengan referensi: tiap event dengan
+     delta 20 ke atas memajukan satu kartu, lalu ada jeda singkat yang makin
+     pendek kalau scroll-nya makin kencang (165 ms dikurangi besar delta,
+     paling cepat 30 ms). Jadi satu notch = satu kartu, tapi gulir kencang
+     bisa melewati beberapa kartu berturut-turut. */
+  let rodaKunci = false;
   deck.addEventListener(
     "wheel",
     (e) => {
       e.preventDefault();
-      if (deckState.locked) return;
-      deckState.wheelAcc += e.deltaY;
-      if (Math.abs(deckState.wheelAcc) > 38) {
-        moveDeck(deckState.wheelAcc > 0 ? 1 : -1);
-        deckState.wheelAcc = 0;
-      }
+      const d = e.deltaY * (e.deltaMode === 1 ? 100 / 6 : 1);
+      const besar = Math.abs(d);
+      if (besar < 20 || rodaKunci) return;
+      rodaKunci = true;
+      moveDeck(d > 0 ? 1 : -1);
+      setTimeout(() => (rodaKunci = false), Math.max(30, 165 - besar));
     },
     { passive: false }
   );
 
-  /* Geser dengan pointer.
-     setPointerCapture mengalihkan seluruh event pointer ke elemen dek,
-     termasuk event click bawaannya. Jadi kartu tidak bisa mengandalkan
-     click pada anchor, aktivasinya diputuskan sendiri di pointerup
-     memakai elemen yang tercatat waktu pointerdown. */
+  /* Geser dengan pointer, angka dari referensi: tiap 45 px geser vertikal
+     memajukan satu kartu (paling cepat tiap 170 ms). Kalau dilepas sebelum
+     mencapai 45 px tapi sudah 30 px, tetap dihitung satu langkah.
+     Ketukan tanpa geser: kartu aktif dibuka, kartu tetangga didatangkan ke
+     tengah, sejauh posisinya (kartu kedua di atas = mundur dua). */
+  let startX = null;
   let startY = null;
   let moved = false;
+  let lastStep = 0;
   let downCard = null;
+  let captured = false;
 
   function openCard(card) {
     const link = card && card.querySelector(".card-link");
     if (!link) return;
+    deckState.locked = true;
+    setTimeout(() => (deckState.locked = false), 500);
     openProject(link.getAttribute("href").replace("#/project/", ""), card);
   }
 
+  function step(dir) {
+    const now = performance.now();
+    if (now - lastStep < 170) return;
+    lastStep = now;
+    moveDeck(dir);
+    moved = true;
+  }
+
   deck.addEventListener("pointerdown", (e) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    startX = e.clientX;
     startY = e.clientY;
     moved = false;
+    captured = false;
     downCard = e.target.closest(".deck-card");
-    deck.classList.add("is-dragging");
-    deck.setPointerCapture(e.pointerId);
   });
 
   deck.addEventListener("pointermove", (e) => {
-    if (startY === null) return;
-    const dy = e.clientY - startY;
-    if (Math.abs(dy) > 55) {
-      moveDeck(dy < 0 ? 1 : -1);
-      startY = e.clientY;
-      moved = true;
+    if (startY !== null) {
+      const dy = e.clientY - startY;
+      const dx = e.clientX - startX;
+      if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) >= 45) {
+        if (!captured) {
+          deck.setPointerCapture(e.pointerId);
+          deck.classList.add("is-dragging");
+          captured = true;
+        }
+        step(dy < 0 ? 1 : -1);
+        startY = e.clientY;
+        startX = e.clientX;
+      }
     }
+    magnet(e);
   });
 
   function endDrag(e, activate) {
     const card = downCard;
     downCard = null;
     if (startY === null) return;
-    startY = null;
+    const dy = e.clientY - startY;
+    const dx = e.clientX - startX;
+    startY = startX = null;
     deck.classList.remove("is-dragging");
-    if (deck.hasPointerCapture(e.pointerId)) deck.releasePointerCapture(e.pointerId);
+    if (captured && deck.hasPointerCapture(e.pointerId)) deck.releasePointerCapture(e.pointerId);
+    captured = false;
+    if (!activate) return;
+    if (!moved && Math.abs(dy) > Math.abs(dx) && Math.abs(dy) >= 30) {
+      step(dy < 0 ? 1 : -1);
+      return;
+    }
     /* geseran tidak dihitung sebagai klik */
-    if (activate && !moved && card && card.dataset.pos === "0") openCard(card);
-    moved = false;
+    if (moved || !card || card.dataset.pos === "x") return;
+    const pos = Number(card.dataset.pos);
+    if (pos === 0) openCard(card);
+    else moveBy(pos);
   }
 
   deck.addEventListener("pointerup", (e) => endDrag(e, true));
   deck.addEventListener("pointercancel", (e) => endDrag(e, false));
 
-  /* jalur keyboard: Enter di anchor menghasilkan click tanpa pointer capture */
+  /* Magnet halus di kartu aktif (desktop saja): dalam radius 325 px kartu
+     sedikit menjauh dari kursor, maksimal sekitar 31 px, lalu kembali
+     dengan pegas saat kursor keluar. Angka dari referensi. */
+  const pointerHalus = matchMedia("(hover: hover) and (pointer: fine)");
+  function magnet(e) {
+    if (!pointerHalus.matches || prefersReduced() || e.pointerType !== "mouse") return;
+    const aktif = deck.querySelector('.deck-card[data-pos="0"]');
+    if (!aktif || !aktif._s) return;
+    const r = aktif.getBoundingClientRect();
+    const ax = e.clientX - (r.left + r.width / 2);
+    const ay = e.clientY - (r.top + r.height / 2);
+    const jarak = Math.hypot(ax, ay);
+    const st = aktif._s;
+    const RADIUS = 325, KUAT = 0.095;
+    if (startY !== null && captured) { st.tmx = st.tmy = 0; }
+    else if (jarak < RADIUS) {
+      const f = 1 - jarak / RADIUS;
+      let mx = -ax * KUAT * f, my = -ay * KUAT * f;
+      const batas = RADIUS * KUAT, m = Math.hypot(mx, my);
+      if (m > batas) { mx *= batas / m; my *= batas / m; }
+      st.tmx = mx; st.tmy = my;
+    } else { st.tmx = st.tmy = 0; }
+    jalankanPegas();
+  }
+  deck.addEventListener("pointerleave", () => {
+    const aktif = deck.querySelector('.deck-card[data-pos="0"]');
+    if (aktif && aktif._s) { aktif._s.tmx = aktif._s.tmy = 0; jalankanPegas(); }
+  });
+
+  /* jalur keyboard: Enter di anchor menghasilkan click tanpa pointer */
   deck.addEventListener("click", (e) => {
     const link = e.target.closest(".card-link");
     if (!link) return;
@@ -892,20 +1062,25 @@ function bindDeck(deck, dots) {
     const n = deckState.slots.length;
     const current = deckState.active;
     /* cari slot terdekat yang mewakili project ini */
-    let best = current;
     let bestDist = Infinity;
+    let jalan = 0;
     for (let i = 0; i < n; i++) {
       if (i % PROJECTS.length !== target) continue;
       let d = ((i - current + n) % n);
       if (d > n / 2) d -= n;
       if (Math.abs(d) < bestDist) {
         bestDist = Math.abs(d);
-        best = i;
+        jalan = d;
       }
     }
-    deckState.active = best;
-    positionDeck();
+    moveBy(jalan);
   });
+}
+
+/* lompat beberapa kartu sekaligus, bunyinya cukup sekali */
+function moveBy(d) {
+  if (!d) return;
+  moveDeck(d);
 }
 
 /* ---------------------------------------------------------
@@ -915,9 +1090,11 @@ function bindDeck(deck, dots) {
    dari satu ke yang lain. Halaman di belakangnya cuma ikut memudar.
    --------------------------------------------------------- */
 
-const EASE = "cubic-bezier(0.16, 1, 0.3, 1)";
+/* Kartu yang dibuka membesar dengan kurva dan durasi referensi: 1,2 detik,
+   awal tertahan lalu meluncur dan mendarat sangat lembut. */
+const EASE = "cubic-bezier(0.32, 0, 0, 1)";
 const FADE_MS = 150;
-const FLY_MS = 620;
+const FLY_MS = 1200;
 
 function prefersReduced() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;

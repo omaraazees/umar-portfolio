@@ -3,21 +3,21 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/inter-regular.woff2?v=202610200201") format("woff2");
+  src: url("fonts/inter-regular.woff2?v=202610281411") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("fonts/inter-semibold.woff2?v=202610200201") format("woff2");
+  src: url("fonts/inter-semibold.woff2?v=202610281411") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("fonts/inter-medium.woff2?v=202610200201") format("woff2");
+  src: url("fonts/inter-medium.woff2?v=202610281411") format("woff2");
 }
 
 /* =========================================================
@@ -104,13 +104,6 @@ html {
   --deck-x: 70.5vw;       /* titik tengah kartu */
   --deck-size: 33.5rem;   /* 335px di 1440 */
 
-  /* Dek disusun seperti drum: kartu tetangga diputar di sumbu X sampai
-     hampir rebah, jadi bentuknya trapesium bukan persegi yang diperkecil.
-     Jaraknya kelipatan ukuran kartu supaya konsisten di semua layar. */
-  --deck-gap-1: 0.83;
-  --deck-gap-2: 1.05;
-  --deck-tilt-1: 66deg;
-  --deck-tilt-2: 80deg;
   --dots-x: 5.76vw;       /* jarak titik indikator dari tepi kanan */
   --split-x: 50.5vw;      /* batas kolom di halaman project */
 
@@ -455,7 +448,7 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   inset: 0;
   z-index: 10;
   touch-action: pan-x;
-  perspective: 118rem;
+  perspective: 1500px;
   perspective-origin: var(--deck-x) 50%;
 }
 .deck.is-dragging { cursor: grabbing; }
@@ -474,13 +467,15 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   transform-origin: 50% 50%;
   will-change: transform, opacity, filter;
   pointer-events: none;
-  backface-visibility: hidden;
-  /* Hanya transform yang boleh pelan. Bayangan dan blur harus cepat selesai.
+  /* Tetangga diputar lewat 90 derajat, jadi yang menghadap layar adalah
+     punggung kartu. Punggungnya harus tetap tergambar sebagai slab. */
+  backface-visibility: visible;
+  /* Transform digerakkan pegas di app.js, jadi tidak ada transisi transform
+     di sini. Hanya transform yang boleh pelan. Bayangan dan blur harus cepat selesai.
      Kalau bayangan ikut beranimasi selama 0,55 detik, di tengah jalan dia
      kena filter blur milik kartu yang sedang rebah dan hasilnya jadi gumpalan
      gelap besar yang mengikuti kartu. Itu yang kelihatan seperti bug. */
   transition:
-    transform var(--dur) var(--ease-bounce),
     opacity 0.4s var(--ease),
     box-shadow 0.16s ease-out;
 }
@@ -492,11 +487,9 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
    masuk pelan dan diberi jeda, jadi kartunya mendarat dulu baru terangkat */
 .deck-card[data-pos="0"] {
   transition:
-    transform var(--dur) var(--ease-bounce),
     opacity 0.4s var(--ease),
     box-shadow 0.45s var(--ease) 0.22s;
-  transform: translateY(0) rotateX(0deg);
-  opacity: 1; z-index: 3;
+  opacity: 1; z-index: 4;
   pointer-events: auto;
   cursor: pointer;
 }
@@ -520,20 +513,22 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 .deck-card:not([data-pos="0"]) .mock {
   filter: grayscale(0.55) contrast(0.92);
 }
-.deck-card[data-pos="-1"] .mock,
-.deck-card[data-pos="-2"] .mock {
+.deck-card[data-pos^="-"] .mock {
   -webkit-mask-image: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.25) 85%);
   mask-image: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.25) 85%);
 }
 .deck-card[data-pos="1"] .mock,
-.deck-card[data-pos="2"] .mock {
+.deck-card[data-pos="2"] .mock,
+.deck-card[data-pos="3"] .mock {
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.25) 85%);
   mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.25) 85%);
 }
 .deck-card[data-pos="-1"] .mock,
 .deck-card[data-pos="1"] .mock { opacity: 0.55; }
 .deck-card[data-pos="-2"] .mock,
-.deck-card[data-pos="2"] .mock { opacity: 0.25; }
+.deck-card[data-pos="2"] .mock,
+.deck-card[data-pos="-3"] .mock,
+.deck-card[data-pos="3"] .mock { opacity: 0.25; }
 
 /* Tanpa bayangan. Pada slab yang hampir rata, drop shadow bikin halo gelap
    yang menarik mata, padahal tugasnya cuma jadi latar. Blur dan opasitas
@@ -546,35 +541,14 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   transition: opacity 0.25s var(--ease), filter 0.35s var(--ease);
 }
 
-.deck-card[data-pos="-1"] {
-  transform:
-    translateY(calc(var(--deck-size) * var(--deck-gap-1) * -1))
-    rotateX(var(--deck-tilt-1));
-  opacity: 1; z-index: 2;
-}
-/* di bawah kartu aktif, sisi bawahnya yang menjauh */
-.deck-card[data-pos="1"] {
-  transform:
-    translateY(calc(var(--deck-size) * var(--deck-gap-1)))
-    rotateX(calc(var(--deck-tilt-1) * -1));
-  opacity: 1; z-index: 2;
-}
-.deck-card[data-pos="-2"] {
-  transform:
-    translateY(calc(var(--deck-size) * var(--deck-gap-2) * -1))
-    rotateX(var(--deck-tilt-2));
-  opacity: 0.72; z-index: 1;
-}
-.deck-card[data-pos="2"] {
-  transform:
-    translateY(calc(var(--deck-size) * var(--deck-gap-2)))
-    rotateX(calc(var(--deck-tilt-2) * -1));
-  opacity: 0.72; z-index: 1;
-}
-.deck-card[data-pos="x"] {
-  transform: translateY(0) rotateX(88deg);
-  opacity: 0; z-index: 0;
-}
+/* Kartu tetangga bisa diklik: kartu itu didatangkan ke tengah. */
+.deck-card[data-pos="-1"],
+.deck-card[data-pos="1"] { opacity: 1; z-index: 3; pointer-events: auto; cursor: pointer; }
+.deck-card[data-pos="-2"],
+.deck-card[data-pos="2"] { opacity: 1; z-index: 2; pointer-events: auto; cursor: pointer; }
+.deck-card[data-pos="-3"],
+.deck-card[data-pos="3"] { opacity: 1; z-index: 1; pointer-events: auto; cursor: pointer; }
+.deck-card[data-pos="x"] { opacity: 0; z-index: 0; }
 
 .deck-card .card-link {
   position: absolute;
@@ -1153,12 +1127,6 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   :root {
     --deck-x: 50vw;
     --deck-size: min(70vw, 48vh);
-    /* di layar kecil putarannya sedikit dikurangi supaya tetangganya
-       masih terbaca sebagai kartu, bukan garis */
-    --deck-tilt-1: 60deg;
-    --deck-tilt-2: 76deg;
-    --deck-gap-1: 0.86;
-    --deck-gap-2: 1.09;
     --r-card: 2.4rem;
     --r-media: 1.8rem;
     --r-btn: 1.2rem;
