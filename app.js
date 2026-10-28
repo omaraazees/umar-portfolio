@@ -60,30 +60,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202610281411",
-      "webm": "media/cv-media-01.webm?v=202610281411",
-      "poster": "media/cv-media-01-poster.webp?v=202610281411"
+      "mp4": "media/cv-media-01.mp4?v=202610281424",
+      "webm": "media/cv-media-01.webm?v=202610281424",
+      "poster": "media/cv-media-01-poster.webp?v=202610281424"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202610281411",
-        "webm": "media/cv-media-01.webm?v=202610281411",
-        "poster": "media/cv-media-01-poster.webp?v=202610281411"
+        "mp4": "media/cv-media-01.mp4?v=202610281424",
+        "webm": "media/cv-media-01.webm?v=202610281424",
+        "poster": "media/cv-media-01-poster.webp?v=202610281424"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202610281411",
-        "webm": "media/cv-media-02.webm?v=202610281411",
-        "poster": "media/cv-media-02-poster.webp?v=202610281411"
+        "mp4": "media/cv-media-02.mp4?v=202610281424",
+        "webm": "media/cv-media-02.webm?v=202610281424",
+        "poster": "media/cv-media-02-poster.webp?v=202610281424"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202610281411",
-        "webm": "media/cv-media-03.webm?v=202610281411",
-        "poster": "media/cv-media-03-poster.webp?v=202610281411"
+        "mp4": "media/cv-media-03.mp4?v=202610281424",
+        "webm": "media/cv-media-03.webm?v=202610281424",
+        "poster": "media/cv-media-03-poster.webp?v=202610281424"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202610281411",
-        "webm": "media/cv-media-04.webm?v=202610281411",
-        "poster": "media/cv-media-04-poster.webp?v=202610281411"
+        "mp4": "media/cv-media-04.mp4?v=202610281424",
+        "webm": "media/cv-media-04.webm?v=202610281424",
+        "poster": "media/cv-media-04-poster.webp?v=202610281424"
       }
     ]
   },
@@ -99,30 +99,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202610281411",
-      "webm": "media/faq-media-01.webm?v=202610281411",
-      "poster": "media/faq-media-01-poster.webp?v=202610281411"
+      "mp4": "media/faq-media-01.mp4?v=202610281424",
+      "webm": "media/faq-media-01.webm?v=202610281424",
+      "poster": "media/faq-media-01-poster.webp?v=202610281424"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202610281411",
-        "webm": "media/faq-media-01.webm?v=202610281411",
-        "poster": "media/faq-media-01-poster.webp?v=202610281411"
+        "mp4": "media/faq-media-01.mp4?v=202610281424",
+        "webm": "media/faq-media-01.webm?v=202610281424",
+        "poster": "media/faq-media-01-poster.webp?v=202610281424"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202610281411",
-        "webm": "media/faq-media-02.webm?v=202610281411",
-        "poster": "media/faq-media-02-poster.webp?v=202610281411"
+        "mp4": "media/faq-media-02.mp4?v=202610281424",
+        "webm": "media/faq-media-02.webm?v=202610281424",
+        "poster": "media/faq-media-02-poster.webp?v=202610281424"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202610281411",
-        "webm": "media/faq-media-03.webm?v=202610281411",
-        "poster": "media/faq-media-03-poster.webp?v=202610281411"
+        "mp4": "media/faq-media-03.mp4?v=202610281424",
+        "webm": "media/faq-media-03.webm?v=202610281424",
+        "poster": "media/faq-media-03-poster.webp?v=202610281424"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202610281411",
-        "webm": "media/faq-media-04.webm?v=202610281411",
-        "poster": "media/faq-media-04-poster.webp?v=202610281411"
+        "mp4": "media/faq-media-04.mp4?v=202610281424",
+        "webm": "media/faq-media-04.webm?v=202610281424",
+        "poster": "media/faq-media-04-poster.webp?v=202610281424"
       }
     ]
   },
@@ -138,30 +138,30 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202610281411",
-      "webm": "media/headshots-media-01.webm?v=202610281411",
-      "poster": "media/headshots-media-01-poster.webp?v=202610281411"
+      "mp4": "media/headshots-media-01.mp4?v=202610281424",
+      "webm": "media/headshots-media-01.webm?v=202610281424",
+      "poster": "media/headshots-media-01-poster.webp?v=202610281424"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202610281411",
-        "webm": "media/headshots-media-01.webm?v=202610281411",
-        "poster": "media/headshots-media-01-poster.webp?v=202610281411"
+        "mp4": "media/headshots-media-01.mp4?v=202610281424",
+        "webm": "media/headshots-media-01.webm?v=202610281424",
+        "poster": "media/headshots-media-01-poster.webp?v=202610281424"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202610281411",
-        "webm": "media/headshots-media-02.webm?v=202610281411",
-        "poster": "media/headshots-media-02-poster.webp?v=202610281411"
+        "mp4": "media/headshots-media-02.mp4?v=202610281424",
+        "webm": "media/headshots-media-02.webm?v=202610281424",
+        "poster": "media/headshots-media-02-poster.webp?v=202610281424"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202610281411",
-        "webm": "media/headshots-media-03.webm?v=202610281411",
-        "poster": "media/headshots-media-03-poster.webp?v=202610281411"
+        "mp4": "media/headshots-media-03.mp4?v=202610281424",
+        "webm": "media/headshots-media-03.webm?v=202610281424",
+        "poster": "media/headshots-media-03-poster.webp?v=202610281424"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202610281411",
-        "webm": "media/headshots-media-04.webm?v=202610281411",
-        "poster": "media/headshots-media-04-poster.webp?v=202610281411"
+        "mp4": "media/headshots-media-04.mp4?v=202610281424",
+        "webm": "media/headshots-media-04.webm?v=202610281424",
+        "poster": "media/headshots-media-04-poster.webp?v=202610281424"
       }
     ]
   },
@@ -177,35 +177,35 @@ const PROJECTS = [
     "results": "Targets set for launch: 30% more visitors reaching a template from the landing page, 20% more visitors scrolling past the hero, and a higher share of search visitors starting a CV. Delivered as one landing page at four widths, ready for development.",
     "awards": [],
     "card": {
-      "mp4": "media/ej-media-01.mp4?v=202610281411",
-      "webm": "media/ej-media-01.webm?v=202610281411",
-      "poster": "media/ej-media-01-poster.webp?v=202610281411"
+      "mp4": "media/ej-media-01.mp4?v=202610281424",
+      "webm": "media/ej-media-01.webm?v=202610281424",
+      "poster": "media/ej-media-01-poster.webp?v=202610281424"
     },
     "scenes": [
       {
-        "mp4": "media/ej-media-01.mp4?v=202610281411",
-        "webm": "media/ej-media-01.webm?v=202610281411",
-        "poster": "media/ej-media-01-poster.webp?v=202610281411"
+        "mp4": "media/ej-media-01.mp4?v=202610281424",
+        "webm": "media/ej-media-01.webm?v=202610281424",
+        "poster": "media/ej-media-01-poster.webp?v=202610281424"
       },
       {
-        "mp4": "media/ej-media-02.mp4?v=202610281411",
-        "webm": "media/ej-media-02.webm?v=202610281411",
-        "poster": "media/ej-media-02-poster.webp?v=202610281411"
+        "mp4": "media/ej-media-02.mp4?v=202610281424",
+        "webm": "media/ej-media-02.webm?v=202610281424",
+        "poster": "media/ej-media-02-poster.webp?v=202610281424"
       },
       {
-        "mp4": "media/ej-media-03.mp4?v=202610281411",
-        "webm": "media/ej-media-03.webm?v=202610281411",
-        "poster": "media/ej-media-03-poster.webp?v=202610281411"
+        "mp4": "media/ej-media-03.mp4?v=202610281424",
+        "webm": "media/ej-media-03.webm?v=202610281424",
+        "poster": "media/ej-media-03-poster.webp?v=202610281424"
       },
       {
-        "mp4": "media/ej-media-04.mp4?v=202610281411",
-        "webm": "media/ej-media-04.webm?v=202610281411",
-        "poster": "media/ej-media-04-poster.webp?v=202610281411"
+        "mp4": "media/ej-media-04.mp4?v=202610281424",
+        "webm": "media/ej-media-04.webm?v=202610281424",
+        "poster": "media/ej-media-04-poster.webp?v=202610281424"
       },
       {
-        "mp4": "media/ej-media-05.mp4?v=202610281411",
-        "webm": "media/ej-media-05.webm?v=202610281411",
-        "poster": "media/ej-media-05-poster.webp?v=202610281411"
+        "mp4": "media/ej-media-05.mp4?v=202610281424",
+        "webm": "media/ej-media-05.webm?v=202610281424",
+        "poster": "media/ej-media-05-poster.webp?v=202610281424"
       }
     ]
   }
@@ -1086,14 +1086,12 @@ function moveBy(d) {
 /* ---------------------------------------------------------
    6. TRANSISI MORPH
    Kartu di home dan media di halaman project itu benda yang sama.
-   Waktu berpindah, posisi keduanya diukur lalu sebuah klon terbang
-   dari satu ke yang lain. Halaman di belakangnya cuma ikut memudar.
+   Waktu berpindah, elemen video yang sedang jalan dipindah ke klon yang
+   terbang dari satu posisi ke posisi lain, lalu diserahkan ke halaman
+   tujuan. Halaman tujuan langsung dirender di bawahnya tanpa jeda.
    --------------------------------------------------------- */
 
-/* Kartu yang dibuka membesar dengan kurva dan durasi referensi: 1,2 detik,
-   awal tertahan lalu meluncur dan mendarat sangat lembut. */
-const EASE = "cubic-bezier(0.32, 0, 0, 1)";
-const FADE_MS = 150;
+/* Kartu yang dibuka membesar dengan durasi referensi, 1,2 detik */
 const FLY_MS = 1200;
 
 function prefersReduced() {
@@ -1163,36 +1161,113 @@ function waktuVideo(el) {
   return v ? v.currentTime : null;
 }
 
-function fly(ghost, from, to, r0, r1, done) {
-  const keys = (r, radius) => ({
-    left: r.left + "px",
-    top: r.top + "px",
-    width: r.width + "px",
-    height: r.height + "px",
-    borderRadius: radius
-  });
-  const anim = ghost.animate([keys(from, r0), keys(to, r1)], {
-    duration: FLY_MS,
-    easing: EASE,
-    fill: "forwards"
-  });
+/* Kurva referensi [.32, 0, 0, 1] dihitung sendiri, karena animasinya
+   digerakkan per frame (lihat terbang di bawah). */
+function bezier(x1, y1, x2, y2) {
+  const bx = (t) => 3 * x1 * t * (1 - t) ** 2 + 3 * x2 * t * t * (1 - t) + t ** 3;
+  const by = (t) => 3 * y1 * t * (1 - t) ** 2 + 3 * y2 * t * t * (1 - t) + t ** 3;
+  return (x) => {
+    let lo = 0, hi = 1, t = x;
+    for (let i = 0; i < 24; i++) {
+      t = (lo + hi) / 2;
+      if (bx(t) < x) lo = t; else hi = t;
+    }
+    return by(t);
+  };
+}
+const KURVA_MORPH = bezier(0.32, 0, 0, 1);
 
-  /* Kalau tab pindah ke belakang, animasi ditahan browser dan onfinish
-     tidak pernah jalan. Timer cadangan memastikan klonnya tetap dibuang. */
+/* Klon terbang dari kotak asal ke kotak tujuan. Tujuannya dibaca ulang tiap
+   frame, bukan sekali di awal, jadi kalau pengunjung langsung men-scroll
+   halaman project, klonnya tetap mendarat tepat di media yang ikut bergeser.
+   Itu yang membuat halaman bisa di-scroll sejak detik pertama. */
+function fly(ghost, from, getTo, r0, r1, done) {
+  const t0 = performance.now();
+  const rad = (r) => parseFloat(r) * (r.endsWith("rem") ? 10 : 1);
+  const ra = rad(r0), rb = rad(r1);
   let settled = false;
   const finish = () => {
     if (settled) return;
     settled = true;
     done();
   };
-  anim.onfinish = finish;
-  anim.oncancel = finish;
+  const frame = (now) => {
+    if (settled) return;
+    const k = Math.min(1, (now - t0) / FLY_MS);
+    const e = KURVA_MORPH(k);
+    const to = getTo();
+    const mix = (a, b) => a + (b - a) * e;
+    ghost.style.left = mix(from.left, to.left) + "px";
+    ghost.style.top = mix(from.top, to.top) + "px";
+    ghost.style.width = mix(from.width, to.width) + "px";
+    ghost.style.height = mix(from.height, to.height) + "px";
+    ghost.style.borderRadius = mix(ra, rb) + "px";
+    if (k < 1) requestAnimationFrame(frame);
+    else finish();
+  };
+  requestAnimationFrame(frame);
+  /* tab di belakang menahan requestAnimationFrame, jadi ada timer cadangan */
   setTimeout(finish, FLY_MS + 500);
+}
+
+/* Bungkus terbang yang membawa elemen media ASLI, bukan salinannya. Video
+   yang sedang jalan dipindah utuh dari kartu ke klon lalu ke halaman
+   tujuan, jadi tidak pernah mulai ulang, tidak berkedip hitam, dan tidak
+   perlu di-seek. */
+function liveGhost(mock, rect, radius) {
+  const g = document.createElement("div");
+  g.className = "morph";
+  g.style.left = rect.left + "px";
+  g.style.top = rect.top + "px";
+  g.style.width = rect.width + "px";
+  g.style.height = rect.height + "px";
+  g.style.borderRadius = radius;
+  document.body.appendChild(g);
+  g.appendChild(mock);
+  putar(mock);
+  return g;
+}
+
+function putar(scope) {
+  const v = scope && scope.querySelector("video");
+  if (!v) return;
+  const main = v.play();
+  if (main && main.catch) main.catch(() => {});
+}
+
+function srcVideo(el) {
+  const v = el && el.querySelector("video");
+  return v ? v.currentSrc || (v.querySelector("source") || {}).src || "" : "";
+}
+
+/* Setelah mendarat, media asli menggantikan media yang baru dirender di
+   tujuan. Kalau berkasnya beda (misalnya kartu dan media pertama memakai
+   video berbeda), media tujuan dipertahankan dan cukup disamakan waktunya. */
+function serahkan(mock, slot, t0) {
+  const lama = slot.querySelector(".mock");
+  if (mock && lama && srcVideo(mock) && srcVideo(mock) === srcVideo(lama)) {
+    lama.replaceWith(mock);
+    putar(mock);
+    if (typeof amatiVideo === "function") amatiVideo(slot);
+    return true;
+  }
+  if (t0 !== null) seekTo(slot.querySelector("video"), t0 + FLY_MS / 1000);
+  return false;
+}
+
+/* klon dibuang; kalau isinya beda dengan yang di bawahnya, dipudarkan
+   sebentar supaya gambarnya tidak berganti mendadak */
+function buangKlon(ghost, pudar) {
+  if (!pudar) { ghost.remove(); return; }
+  ghost.style.transition = "opacity 0.32s ease-out";
+  ghost.style.opacity = "0";
+  setTimeout(() => ghost.remove(), 360);
 }
 
 /* home ke halaman project: kartu membesar jadi media pertama */
 function openProject(slug, cardEl) {
-  if (prefersReduced() || !cardEl) {
+  const mock = cardEl && cardEl.querySelector(".mock");
+  if (prefersReduced() || !cardEl || !mock) {
     location.hash = "#/project/" + slug;
     return;
   }
@@ -1200,31 +1275,27 @@ function openProject(slug, cardEl) {
   Sfx.play("open");
   const from = rectOf(cardEl);
   const t0 = waktuVideo(cardEl);
-  const ghost = makeGhost(cardEl, from, "2rem");
-  cardEl.style.visibility = "hidden";
-  app.classList.add("is-leaving");
+  const ghost = liveGhost(mock, from, "2rem");
 
-  setTimeout(() => {
-    location.hash = "#/project/" + slug;
-    render();
+  /* halaman project langsung dirender di bawah klon, tanpa jeda pudar */
+  location.hash = "#/project/" + slug;
+  render();
 
-    const target = document.querySelector("#media .media-item");
-    app.classList.remove("is-leaving");
-    if (!target) {
-      ghost.remove();
-      return;
-    }
-    target.classList.add("is-morph-target");
-    const to = rectOf(target);
+  const target = document.querySelector("#media .media-item");
+  if (!target) {
+    ghost.remove();
+    return;
+  }
+  target.classList.add("is-morph-target");
+  /* video tujuan tidak perlu diunduh dan diputar dua kali selama terbang */
+  const vt = target.querySelector("video");
+  if (vt && srcVideo(target) === srcVideo(ghost)) { vt.pause(); vt.preload = "none"; }
 
-    /* geser ke posisi yang akan dicapai klon saat penerbangan selesai */
-    if (t0 !== null) seekTo(target.querySelector("video"), t0 + FLY_MS / 1000);
-
-    fly(ghost, from, to, "2rem", "1.5rem", () => {
-      target.classList.remove("is-morph-target");
-      ghost.remove();
-    });
-  }, FADE_MS);
+  fly(ghost, from, () => rectOf(target), "2rem", getComputedStyle(target).borderRadius, () => {
+    const sama = serahkan(ghost.firstElementChild, target, t0);
+    target.classList.remove("is-morph-target");
+    buangKlon(ghost, !sama);
+  });
 }
 
 /* halaman project kembali ke home: media mengecil jadi kartu */
@@ -1254,37 +1325,28 @@ function closeProject() {
   Sfx.play("close");
   const from = rectOf(src);
   const t0 = waktuVideo(src);
-  const ghost = makeGhost(src, from, "1.5rem");
-  src.style.visibility = "hidden";
-  app.classList.add("is-leaving");
+  const r0 = getComputedStyle(src).borderRadius;
+  const mock = src.querySelector(".mock");
+  const ghost = mock ? liveGhost(mock, from, r0) : makeGhost(src, from, r0);
 
-  setTimeout(() => {
-    returnToSlug = slug;
-    location.hash = "#/";
-    render();
+  returnToSlug = slug;
+  location.hash = "#/";
+  render();
 
-    const deck = document.getElementById("deck");
-    const card = deck && deck.querySelector('.deck-card[data-pos="0"]');
-    app.classList.remove("is-leaving");
-    if (!card) {
-      ghost.remove();
-      return;
-    }
+  const deck = document.getElementById("deck");
+  const card = deck && deck.querySelector('.deck-card[data-pos="0"]');
+  if (!card) {
+    ghost.remove();
+    return;
+  }
+  card.style.visibility = "hidden";
 
-    /* matikan transisi sesaat supaya yang terukur posisi akhirnya */
-    deck.classList.add("is-instant");
-    void deck.offsetWidth;
-    const to = rectOf(card);
-    deck.classList.remove("is-instant");
-    card.style.visibility = "hidden";
-
-    if (t0 !== null) seekTo(card.querySelector("video"), t0 + FLY_MS / 1000);
-
-    fly(ghost, from, to, "1.5rem", "2rem", () => {
-      card.style.visibility = "";
-      ghost.remove();
-    });
-  }, FADE_MS);
+  fly(ghost, from, () => rectOf(card), r0, "2rem", () => {
+    const sama = serahkan(ghost.firstElementChild, card, t0);
+    card.style.visibility = "";
+    buangKlon(ghost, !sama);
+    syncDeckVideos();
+  });
 }
 
 /* ---------------------------------------------------------
