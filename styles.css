@@ -3,21 +3,21 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/inter-regular.woff2?v=202610291214") format("woff2");
+  src: url("fonts/inter-regular.woff2?v=202610291240") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("fonts/inter-semibold.woff2?v=202610291214") format("woff2");
+  src: url("fonts/inter-semibold.woff2?v=202610291240") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("fonts/inter-medium.woff2?v=202610291214") format("woff2");
+  src: url("fonts/inter-medium.woff2?v=202610291240") format("woff2");
 }
 
 /* =========================================================
@@ -1110,6 +1110,20 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
    (transparan dan turun 2rem) dan itu terlihat sebagai frame yang reset. */
 .media-item.is-landed { animation: none !important; }
 
+/* Kartu yang baru didarati klon saat kembali ke home: nama project dan
+   peredam di bawahnya masuk perlahan, tidak muncul dalam satu frame.
+   Bayangan kartunya langsung penuh (tanpa jeda transisi), karena klon di
+   atasnya sudah tidak berbayang. */
+.deck-card.is-landing { transition: opacity 0.4s var(--ease) !important; }
+.deck-card.is-landing .card-name { animation: nama-masuk 0.6s var(--ease) 0.08s both; }
+.deck-card.is-landing .mock.has-media::after { animation: pudar-masuk 0.5s ease-out both; }
+@keyframes nama-masuk {
+  from { opacity: 0; transform: translateY(0.6rem); }
+}
+@keyframes pudar-masuk {
+  from { opacity: 0; }
+}
+
 /* Klon yang terbang memakai bibir tersorot yang sama dengan kartu dan media,
    jadi saat serah terima tidak ada tepi yang muncul atau hilang. */
 .morph::after {
@@ -1137,8 +1151,15 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   margin-top: 0;
   z-index: 150;
   pointer-events: none;
-  transition: opacity 0.35s ease-out;
+  transition: opacity 0.18s ease-out;
 }
+/* Bayangan kotak media lama dilepas di frame pertama. Kalau ikut memudar,
+   yang tersisa sesaat adalah bayangan kotak kosong di belakang klon. */
+.media.is-exiting .media-item {
+  box-shadow: none;
+  animation: none;
+}
+.media.is-exiting .media-item::after { display: none; }
 
 /* =========================================================
    Tablet: 768 sampai 1100

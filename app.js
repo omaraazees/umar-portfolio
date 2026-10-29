@@ -60,30 +60,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202610291214",
-      "webm": "media/cv-media-01.webm?v=202610291214",
-      "poster": "media/cv-media-01-poster.webp?v=202610291214"
+      "mp4": "media/cv-media-01.mp4?v=202610291240",
+      "webm": "media/cv-media-01.webm?v=202610291240",
+      "poster": "media/cv-media-01-poster.webp?v=202610291240"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202610291214",
-        "webm": "media/cv-media-01.webm?v=202610291214",
-        "poster": "media/cv-media-01-poster.webp?v=202610291214"
+        "mp4": "media/cv-media-01.mp4?v=202610291240",
+        "webm": "media/cv-media-01.webm?v=202610291240",
+        "poster": "media/cv-media-01-poster.webp?v=202610291240"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202610291214",
-        "webm": "media/cv-media-02.webm?v=202610291214",
-        "poster": "media/cv-media-02-poster.webp?v=202610291214"
+        "mp4": "media/cv-media-02.mp4?v=202610291240",
+        "webm": "media/cv-media-02.webm?v=202610291240",
+        "poster": "media/cv-media-02-poster.webp?v=202610291240"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202610291214",
-        "webm": "media/cv-media-03.webm?v=202610291214",
-        "poster": "media/cv-media-03-poster.webp?v=202610291214"
+        "mp4": "media/cv-media-03.mp4?v=202610291240",
+        "webm": "media/cv-media-03.webm?v=202610291240",
+        "poster": "media/cv-media-03-poster.webp?v=202610291240"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202610291214",
-        "webm": "media/cv-media-04.webm?v=202610291214",
-        "poster": "media/cv-media-04-poster.webp?v=202610291214"
+        "mp4": "media/cv-media-04.mp4?v=202610291240",
+        "webm": "media/cv-media-04.webm?v=202610291240",
+        "poster": "media/cv-media-04-poster.webp?v=202610291240"
       }
     ]
   },
@@ -99,30 +99,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202610291214",
-      "webm": "media/faq-media-01.webm?v=202610291214",
-      "poster": "media/faq-media-01-poster.webp?v=202610291214"
+      "mp4": "media/faq-media-01.mp4?v=202610291240",
+      "webm": "media/faq-media-01.webm?v=202610291240",
+      "poster": "media/faq-media-01-poster.webp?v=202610291240"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202610291214",
-        "webm": "media/faq-media-01.webm?v=202610291214",
-        "poster": "media/faq-media-01-poster.webp?v=202610291214"
+        "mp4": "media/faq-media-01.mp4?v=202610291240",
+        "webm": "media/faq-media-01.webm?v=202610291240",
+        "poster": "media/faq-media-01-poster.webp?v=202610291240"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202610291214",
-        "webm": "media/faq-media-02.webm?v=202610291214",
-        "poster": "media/faq-media-02-poster.webp?v=202610291214"
+        "mp4": "media/faq-media-02.mp4?v=202610291240",
+        "webm": "media/faq-media-02.webm?v=202610291240",
+        "poster": "media/faq-media-02-poster.webp?v=202610291240"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202610291214",
-        "webm": "media/faq-media-03.webm?v=202610291214",
-        "poster": "media/faq-media-03-poster.webp?v=202610291214"
+        "mp4": "media/faq-media-03.mp4?v=202610291240",
+        "webm": "media/faq-media-03.webm?v=202610291240",
+        "poster": "media/faq-media-03-poster.webp?v=202610291240"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202610291214",
-        "webm": "media/faq-media-04.webm?v=202610291214",
-        "poster": "media/faq-media-04-poster.webp?v=202610291214"
+        "mp4": "media/faq-media-04.mp4?v=202610291240",
+        "webm": "media/faq-media-04.webm?v=202610291240",
+        "poster": "media/faq-media-04-poster.webp?v=202610291240"
       }
     ]
   },
@@ -138,30 +138,30 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202610291214",
-      "webm": "media/headshots-media-01.webm?v=202610291214",
-      "poster": "media/headshots-media-01-poster.webp?v=202610291214"
+      "mp4": "media/headshots-media-01.mp4?v=202610291240",
+      "webm": "media/headshots-media-01.webm?v=202610291240",
+      "poster": "media/headshots-media-01-poster.webp?v=202610291240"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202610291214",
-        "webm": "media/headshots-media-01.webm?v=202610291214",
-        "poster": "media/headshots-media-01-poster.webp?v=202610291214"
+        "mp4": "media/headshots-media-01.mp4?v=202610291240",
+        "webm": "media/headshots-media-01.webm?v=202610291240",
+        "poster": "media/headshots-media-01-poster.webp?v=202610291240"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202610291214",
-        "webm": "media/headshots-media-02.webm?v=202610291214",
-        "poster": "media/headshots-media-02-poster.webp?v=202610291214"
+        "mp4": "media/headshots-media-02.mp4?v=202610291240",
+        "webm": "media/headshots-media-02.webm?v=202610291240",
+        "poster": "media/headshots-media-02-poster.webp?v=202610291240"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202610291214",
-        "webm": "media/headshots-media-03.webm?v=202610291214",
-        "poster": "media/headshots-media-03-poster.webp?v=202610291214"
+        "mp4": "media/headshots-media-03.mp4?v=202610291240",
+        "webm": "media/headshots-media-03.webm?v=202610291240",
+        "poster": "media/headshots-media-03-poster.webp?v=202610291240"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202610291214",
-        "webm": "media/headshots-media-04.webm?v=202610291214",
-        "poster": "media/headshots-media-04-poster.webp?v=202610291214"
+        "mp4": "media/headshots-media-04.mp4?v=202610291240",
+        "webm": "media/headshots-media-04.webm?v=202610291240",
+        "poster": "media/headshots-media-04-poster.webp?v=202610291240"
       }
     ]
   },
@@ -177,35 +177,35 @@ const PROJECTS = [
     "results": "Targets set for launch: 30% more visitors reaching a template from the landing page, 20% more visitors scrolling past the hero, and a higher share of search visitors starting a CV. Delivered as one landing page at four widths, ready for development.",
     "awards": [],
     "card": {
-      "mp4": "media/ej-media-01.mp4?v=202610291214",
-      "webm": "media/ej-media-01.webm?v=202610291214",
-      "poster": "media/ej-media-01-poster.webp?v=202610291214"
+      "mp4": "media/ej-media-01.mp4?v=202610291240",
+      "webm": "media/ej-media-01.webm?v=202610291240",
+      "poster": "media/ej-media-01-poster.webp?v=202610291240"
     },
     "scenes": [
       {
-        "mp4": "media/ej-media-01.mp4?v=202610291214",
-        "webm": "media/ej-media-01.webm?v=202610291214",
-        "poster": "media/ej-media-01-poster.webp?v=202610291214"
+        "mp4": "media/ej-media-01.mp4?v=202610291240",
+        "webm": "media/ej-media-01.webm?v=202610291240",
+        "poster": "media/ej-media-01-poster.webp?v=202610291240"
       },
       {
-        "mp4": "media/ej-media-02.mp4?v=202610291214",
-        "webm": "media/ej-media-02.webm?v=202610291214",
-        "poster": "media/ej-media-02-poster.webp?v=202610291214"
+        "mp4": "media/ej-media-02.mp4?v=202610291240",
+        "webm": "media/ej-media-02.webm?v=202610291240",
+        "poster": "media/ej-media-02-poster.webp?v=202610291240"
       },
       {
-        "mp4": "media/ej-media-03.mp4?v=202610291214",
-        "webm": "media/ej-media-03.webm?v=202610291214",
-        "poster": "media/ej-media-03-poster.webp?v=202610291214"
+        "mp4": "media/ej-media-03.mp4?v=202610291240",
+        "webm": "media/ej-media-03.webm?v=202610291240",
+        "poster": "media/ej-media-03-poster.webp?v=202610291240"
       },
       {
-        "mp4": "media/ej-media-04.mp4?v=202610291214",
-        "webm": "media/ej-media-04.webm?v=202610291214",
-        "poster": "media/ej-media-04-poster.webp?v=202610291214"
+        "mp4": "media/ej-media-04.mp4?v=202610291240",
+        "webm": "media/ej-media-04.webm?v=202610291240",
+        "poster": "media/ej-media-04-poster.webp?v=202610291240"
       },
       {
-        "mp4": "media/ej-media-05.mp4?v=202610291214",
-        "webm": "media/ej-media-05.webm?v=202610291214",
-        "poster": "media/ej-media-05-poster.webp?v=202610291214"
+        "mp4": "media/ej-media-05.mp4?v=202610291240",
+        "webm": "media/ej-media-05.webm?v=202610291240",
+        "poster": "media/ej-media-05-poster.webp?v=202610291240"
       }
     ]
   }
@@ -1284,7 +1284,8 @@ function pudarkanRail() {
   salin.querySelectorAll("[id]").forEach((el) => el.removeAttribute("id"));
   salin.setAttribute("aria-hidden", "true");
   document.body.appendChild(salin);
-  requestAnimationFrame(() => requestAnimationFrame(() => salin.classList.add("is-exiting")));
+  void salin.offsetWidth;
+  salin.classList.add("is-exiting");
   setTimeout(() => salin.remove(), 450);
 }
 
@@ -1389,8 +1390,9 @@ function closeProject() {
     mediaLama.classList.add("is-exiting");
     mediaLama.style.top = top + "px";
     document.body.appendChild(mediaLama);
-    requestAnimationFrame(() => (mediaLama.style.opacity = "0"));
-    setTimeout(() => mediaLama.remove(), 420);
+    void mediaLama.offsetWidth;
+    mediaLama.style.opacity = "0";
+    setTimeout(() => mediaLama.remove(), 240);
   }
 
   returnToSlug = slug;
@@ -1407,8 +1409,16 @@ function closeProject() {
 
   fly(ghost, from, () => rectOf(card), r0, getComputedStyle(card).borderRadius, () => {
     const sama = serahkan(ghost.firstElementChild, card, t0);
+    /* Kartu muncul di bawah klon dengan nama project yang memudar masuk,
+       lalu klonnya dipudarkan. Bayangan klon dimatikan lebih dulu supaya
+       tidak bertumpuk dengan bayangan kartu (dua bayangan = sesaat lebih
+       gelap, lalu meloncat terang). */
+    card.classList.add("is-landing");
     card.style.visibility = "";
+    ghost.style.boxShadow = "none";
+    /* kalau videonya sudah dipindah ke kartu, klonnya kosong: langsung buang */
     buangKlon(ghost, !sama);
+    setTimeout(() => card.classList.remove("is-landing"), 700);
     syncDeckVideos();
   });
 }
