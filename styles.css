@@ -3,21 +3,21 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/inter-regular.woff2?v=202610281710") format("woff2");
+  src: url("fonts/inter-regular.woff2?v=202610291214") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("fonts/inter-semibold.woff2?v=202610281710") format("woff2");
+  src: url("fonts/inter-semibold.woff2?v=202610291214") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("fonts/inter-medium.woff2?v=202610281710") format("woff2");
+  src: url("fonts/inter-medium.woff2?v=202610291214") format("woff2");
 }
 
 /* =========================================================
@@ -223,19 +223,33 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   .title-block.is-profile .subtitle { max-width: 10.4em; }
 }
 
-/* masking reveal saat halaman masuk */
+/* masking reveal saat halaman masuk, sekaligus memudar masuk */
 .title-line > span {
   display: block;
-  will-change: transform;
-  animation: line-up 0.9s var(--ease) both;
+  will-change: transform, opacity;
+  animation: line-up 0.9s var(--ease) 0.14s both;
 }
-.title-line:nth-child(2) > span { animation-delay: 0.06s; }
+/* jeda 0,14 detik memberi waktu judul lama memudar dulu, jadi keduanya
+   tidak bertumpuk di tempat yang sama */
+.title-line:nth-child(2) > span { animation-delay: 0.2s; }
 /* geseran awal harus melewati padding masker, kalau tidak teksnya
    sudah kelihatan mengintip sebelum animasinya mulai */
 @keyframes line-up {
-  from { transform: translateY(calc(100% + 0.45em)); }
-  to   { transform: translateY(0); }
+  from { transform: translateY(calc(100% + 0.45em)); opacity: 0; }
+  60%  { opacity: 1; }
+  to   { transform: translateY(0); opacity: 1; }
 }
+
+/* Salinan kolom kiri halaman sebelumnya, dipudarkan sambil sedikit naik
+   saat pindah halaman, supaya judul lama tidak hilang dalam satu frame. */
+.rail.is-exiting {
+  z-index: 49;
+  pointer-events: none;
+  transition: opacity 0.2s ease-out, translate 0.2s ease-out;
+  opacity: 0;
+  translate: 0 -0.8rem;
+}
+.rail.is-exiting * { pointer-events: none !important; animation: none !important; }
 
 /* --- tombol ikon yang melebar jadi pil saat hover --- */
 
@@ -1069,6 +1083,12 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   position: fixed;
   z-index: 200;
   overflow: hidden;
+  /* Video yang sedang dianimasikan sering lolos dari potongan sudut bulat
+     overflow:hidden di Chrome dan Safari, jadi sudutnya terlihat kotak
+     sesaat. Masker dan lapisan sendiri memaksa video ikut terpotong. */
+  isolation: isolate;
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
   background: var(--bg);
   box-shadow: var(--shadow-md);
   pointer-events: none;

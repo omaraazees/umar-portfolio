@@ -203,15 +203,20 @@ window.Sfx = (function () {
      sama dengan bunyi klik, plus penganalisis untuk visualizer di tombol
      suara dan untuk napas latar ASCII.
 
-     Musik tidak pernah mulai sendiri untuk pengunjung baru. Ia baru mulai
-     saat tombol suara diketuk. Kalau pengunjung terakhir kali membiarkannya
-     menyala, musik dilanjutkan pada gerakan pertama di halaman, karena
-     browser melarang audio sebelum ada interaksi. */
+     Musik menyala sejak awal untuk semua pengunjung, kecuali yang pernah
+     mematikannya lewat tombol Music. Browser hanya mengizinkan audio
+     berbunyi sebelum ada interaksi kalau situsnya sudah sering diputar
+     pengunjung itu, jadi musik dicoba diputar saat halaman dibuka, dan
+     kalau ditolak, dimulai pada sentuhan, klik, atau tombol pertama. */
 
-  const MKEY = "portfolio-music";
+  /* kunci baru: pilihan "off" dari versi lama (yang dulu tersimpan setiap
+     kali musik dijeda) tidak ikut terbawa, jadi semua pengunjung mulai dari
+     musik menyala */
+  const MKEY = "portfolio-music-2";
   const VOL = 0.42;
   const music = { el: null, gain: null, an: null, bins: null, on: false };
-  try { music.on = localStorage.getItem(MKEY) === "on"; } catch (e) {}
+  music.on = true;
+  try { music.on = localStorage.getItem(MKEY) !== "off"; } catch (e) {}
 
   function musicSrc() {
     const a = document.createElement("audio");
@@ -311,12 +316,29 @@ window.Sfx = (function () {
      Gerakan yang mengenai tombol suara dilewati: tombol itu sendiri yang
      memutuskan. Kalau tidak, ketukan pertama ke tombol menyalakan musik di
      sini lalu langsung dimatikan lagi oleh tombolnya. */
+  const GERAK = ["pointerdown", "keydown", "touchend"];
+  const lepas = () => GERAK.forEach((type) => window.removeEventListener(type, lanjut, true));
   const lanjut = (e) => {
     if (e.target && e.target.closest && e.target.closest("#sound-toggle")) return;
-    ["pointerdown", "keydown"].forEach((type) => window.removeEventListener(type, lanjut, true));
-    if (music.on) musicPlay();
+    lepas();
+    if (music.on && !berbunyi()) musicPlay();
   };
-  ["pointerdown", "keydown"].forEach((type) => window.addEventListener(type, lanjut, { capture: true, passive: true }));
+  GERAK.forEach((type) => window.addEventListener(type, lanjut, { capture: true, passive: true }));
+
+  /* Coba putar langsung saat halaman dibuka. Musik hanya dijalankan kalau
+     AudioContext memang boleh berjalan; kalau masih ditahan browser, elemen
+     audionya tidak diputar supaya tombol tidak menampilkan musik yang
+     sebenarnya bisu. Sentuhan pertama tetap jadi cadangan. */
+  const cobaAutoplay = () => {
+    if (!music.on || berbunyi() || !build()) return;
+    try {
+      const r = ctx.resume();
+      const jalan = () => { if (ctx.state === "running" && music.on && !berbunyi()) { musicPlay(); lepas(); } };
+      if (r && r.then) r.then(jalan, () => {}); else jalan();
+    } catch (e) {}
+  };
+  if (document.readyState === "complete") setTimeout(cobaAutoplay, 300);
+  else window.addEventListener("load", () => setTimeout(cobaAutoplay, 300), { once: true });
 
 
   /* --- pemanasan ---
