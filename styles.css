@@ -3,21 +3,21 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/inter-regular.woff2?v=202610291240") format("woff2");
+  src: url("fonts/inter-regular.woff2?v=202611011253") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("fonts/inter-semibold.woff2?v=202610291240") format("woff2");
+  src: url("fonts/inter-semibold.woff2?v=202611011253") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("fonts/inter-medium.woff2?v=202610291240") format("woff2");
+  src: url("fonts/inter-medium.woff2?v=202611011253") format("woff2");
 }
 
 /* =========================================================
@@ -240,16 +240,18 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   to   { transform: translateY(0); opacity: 1; }
 }
 
-/* Salinan kolom kiri halaman sebelumnya, dipudarkan sambil sedikit naik
-   saat pindah halaman, supaya judul lama tidak hilang dalam satu frame. */
-.rail.is-exiting {
-  z-index: 49;
-  pointer-events: none;
-  transition: opacity 0.2s ease-out, translate 0.2s ease-out;
-  opacity: 0;
-  translate: 0 -0.8rem;
-}
-.rail.is-exiting * { pointer-events: none !important; animation: none !important; }
+/* Salinan kolom kiri dan titik indikator halaman sebelumnya, dipudarkan oleh
+   app.js saat pindah halaman. Animasi anaknya dimatikan supaya salinan langsung
+   tampil seperti aslinya, tidak memutar ulang animasi masuk. */
+.is-salinan { pointer-events: none; }
+.is-salinan,
+.is-salinan * { animation: none !important; }
+.is-salinan * { pointer-events: none !important; }
+
+/* Kolom kiri yang masuk lewat transisi project cukup memudar, sesudah
+   salinan lamanya habis. Jedanya sama dengan MASUK_JEDA di app.js. */
+.rail--morph .title-line > span { animation: fade-in 0.3s ease-out 0.15s both; }
+.rail--morph .actions { animation: fade-in 0.3s ease-out 0.15s both; }
 
 /* --- tombol ikon yang melebar jadi pil saat hover --- */
 
@@ -570,7 +572,8 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   display: block;
 }
 
-.deck-card .card-name {
+.deck-card .card-name,
+.morph-kartu .card-name {
   position: absolute;
   left: 3rem;
   bottom: 2.8rem;
@@ -586,7 +589,8 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
    di sana hilang. Putih di atas peredam gelap terbaca di isi apa pun. */
 /* tebal dan abu-abu redup, tapi cukup gelap untuk lolos kontras AA
    (sekitar 4,7:1 di atas peredam terang) */
-.deck-card.has-media .card-name { color: var(--ink-2); font-weight: 600; }
+.deck-card.has-media .card-name,
+.morph-kartu .card-name { color: var(--ink-2); font-weight: 600; }
 @media (hover: hover) and (pointer: fine) {
   .deck-card[data-pos="0"]:hover .card-name { transform: translateX(0.4rem); }
 }
@@ -908,7 +912,8 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
    isi videonya. Karena itu nama project ditulis gelap. Lapisan putih penuh
    sampai melewati baris nama (nama duduk di 8,4% sampai 14,1% dari bawah),
    baru meluruh, sama seperti alasan pada peredam gelap sebelumnya. */
-.deck-card .mock.has-media::after {
+.deck-card .mock.has-media::after,
+.morph-kaca {
   background: linear-gradient(
     0deg,
     rgba(246, 246, 246, 0.82) 0%,
@@ -1078,22 +1083,36 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   transition: opacity 0.18s ease;
 }
 
-/* Elemen bayangan yang terbang dari kartu ke media, dan sebaliknya. */
+/* Klon yang terbang dari kartu ke media, dan sebaliknya. Lapis luar membawa
+   ukuran dan bayangan, lapis dalam memotong isinya. */
 .morph {
-  position: fixed;
   z-index: 200;
+  box-shadow: var(--shadow-md);
+  pointer-events: none;
+  will-change: left, top, width, height, border-radius;
+}
+.morph-clip {
+  position: absolute;
+  inset: 0;
   overflow: hidden;
-  /* Video yang sedang dianimasikan sering lolos dari potongan sudut bulat
-     overflow:hidden di Chrome dan Safari, jadi sudutnya terlihat kotak
-     sesaat. Masker dan lapisan sendiri memaksa video ikut terpotong. */
+  border-radius: inherit;
+  background: var(--bg);
   isolation: isolate;
   transform: translateZ(0);
   -webkit-mask-image: -webkit-radial-gradient(white, black);
-  background: var(--bg);
-  box-shadow: var(--shadow-md);
-  pointer-events: none;
-  will-change: left, top, width, height;
 }
+/* bibir tersorot sama dengan kartu dan media */
+.morph-clip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  border-radius: inherit;
+  box-shadow: var(--sk-rim);
+  pointer-events: none;
+}
+.morph-kartu { position: absolute; inset: 0; z-index: 4; }
+.morph-kaca { position: absolute; inset: 0; }
 
 /* dipakai sesaat untuk mengukur posisi akhir kartu tanpa terganggu animasi */
 .deck.is-instant .deck-card {
@@ -1107,41 +1126,15 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 }
 /* Media yang baru didarati klon tidak boleh memutar animasi masuknya lagi.
    Tanpa ini, begitu kelas is-morph-target dilepas, media-in jalan dari awal
-   (transparan dan turun 2rem) dan itu terlihat sebagai frame yang reset. */
+   dan itu terlihat sebagai frame yang reset. */
 .media-item.is-landed { animation: none !important; }
-
-/* Kartu yang baru didarati klon saat kembali ke home: nama project dan
-   peredam di bawahnya masuk perlahan, tidak muncul dalam satu frame.
-   Bayangan kartunya langsung penuh (tanpa jeda transisi), karena klon di
-   atasnya sudah tidak berbayang. */
-.deck-card.is-landing { transition: opacity 0.4s var(--ease) !important; }
-.deck-card.is-landing .card-name { animation: nama-masuk 0.6s var(--ease) 0.08s both; }
-.deck-card.is-landing .mock.has-media::after { animation: pudar-masuk 0.5s ease-out both; }
-@keyframes nama-masuk {
-  from { opacity: 0; transform: translateY(0.6rem); }
-}
-@keyframes pudar-masuk {
-  from { opacity: 0; }
-}
-
-/* Klon yang terbang memakai bibir tersorot yang sama dengan kartu dan media,
-   jadi saat serah terima tidak ada tepi yang muncul atau hilang. */
-.morph::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  border-radius: inherit;
-  box-shadow: var(--sk-rim);
-  pointer-events: none;
-}
+/* media lain di halaman project masuk lewat timeline yang sama */
+.media.is-morphing .media-item { animation: media-in 0.34s ease-out 0.15s both; }
 
 /* Dek lama yang ditinggalkan saat project dibuka. Kartu tetangganya
-   meluncur keluar layar, seperti referensi, lalu elemennya dibuang. */
-.deck.is-exiting {
-  z-index: 150;
-  pointer-events: none;
-}
+   meluncur keluar layar, lalu elemennya dibuang saat klon mendarat. */
+/* di atas panggung baru, di bawah kolom kiri (z-index 50) */
+.deck.is-exiting { z-index: 45; pointer-events: none; }
 /* Media halaman project yang ditinggalkan saat kembali ke home: dipudarkan
    di tempatnya, tidak hilang dalam satu frame. */
 .media.is-exiting {
@@ -1151,7 +1144,6 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   margin-top: 0;
   z-index: 150;
   pointer-events: none;
-  transition: opacity 0.18s ease-out;
 }
 /* Bayangan kotak media lama dilepas di frame pertama. Kalau ikut memudar,
    yang tersisa sesaat adalah bayangan kotak kosong di belakang klon. */
@@ -1246,7 +1238,8 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   }
   .socials { gap: 1rem; }
 
-  .deck-card .card-name { left: 2rem; bottom: 1.8rem; font-size: 1.4rem; }
+  .deck-card .card-name,
+  .morph-kartu .card-name { left: 2rem; bottom: 1.8rem; font-size: 1.4rem; }
   .mock-tag { left: 2rem; top: 1.8rem; font-size: 1.15rem; }
 
   .dots { right: 4vw; gap: 1rem; }

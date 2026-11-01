@@ -60,30 +60,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202610291240",
-      "webm": "media/cv-media-01.webm?v=202610291240",
-      "poster": "media/cv-media-01-poster.webp?v=202610291240"
+      "mp4": "media/cv-media-01.mp4?v=202611011253",
+      "webm": "media/cv-media-01.webm?v=202611011253",
+      "poster": "media/cv-media-01-poster.webp?v=202611011253"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202610291240",
-        "webm": "media/cv-media-01.webm?v=202610291240",
-        "poster": "media/cv-media-01-poster.webp?v=202610291240"
+        "mp4": "media/cv-media-01.mp4?v=202611011253",
+        "webm": "media/cv-media-01.webm?v=202611011253",
+        "poster": "media/cv-media-01-poster.webp?v=202611011253"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202610291240",
-        "webm": "media/cv-media-02.webm?v=202610291240",
-        "poster": "media/cv-media-02-poster.webp?v=202610291240"
+        "mp4": "media/cv-media-02.mp4?v=202611011253",
+        "webm": "media/cv-media-02.webm?v=202611011253",
+        "poster": "media/cv-media-02-poster.webp?v=202611011253"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202610291240",
-        "webm": "media/cv-media-03.webm?v=202610291240",
-        "poster": "media/cv-media-03-poster.webp?v=202610291240"
+        "mp4": "media/cv-media-03.mp4?v=202611011253",
+        "webm": "media/cv-media-03.webm?v=202611011253",
+        "poster": "media/cv-media-03-poster.webp?v=202611011253"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202610291240",
-        "webm": "media/cv-media-04.webm?v=202610291240",
-        "poster": "media/cv-media-04-poster.webp?v=202610291240"
+        "mp4": "media/cv-media-04.mp4?v=202611011253",
+        "webm": "media/cv-media-04.webm?v=202611011253",
+        "poster": "media/cv-media-04-poster.webp?v=202611011253"
       }
     ]
   },
@@ -99,30 +99,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202610291240",
-      "webm": "media/faq-media-01.webm?v=202610291240",
-      "poster": "media/faq-media-01-poster.webp?v=202610291240"
+      "mp4": "media/faq-media-01.mp4?v=202611011253",
+      "webm": "media/faq-media-01.webm?v=202611011253",
+      "poster": "media/faq-media-01-poster.webp?v=202611011253"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202610291240",
-        "webm": "media/faq-media-01.webm?v=202610291240",
-        "poster": "media/faq-media-01-poster.webp?v=202610291240"
+        "mp4": "media/faq-media-01.mp4?v=202611011253",
+        "webm": "media/faq-media-01.webm?v=202611011253",
+        "poster": "media/faq-media-01-poster.webp?v=202611011253"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202610291240",
-        "webm": "media/faq-media-02.webm?v=202610291240",
-        "poster": "media/faq-media-02-poster.webp?v=202610291240"
+        "mp4": "media/faq-media-02.mp4?v=202611011253",
+        "webm": "media/faq-media-02.webm?v=202611011253",
+        "poster": "media/faq-media-02-poster.webp?v=202611011253"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202610291240",
-        "webm": "media/faq-media-03.webm?v=202610291240",
-        "poster": "media/faq-media-03-poster.webp?v=202610291240"
+        "mp4": "media/faq-media-03.mp4?v=202611011253",
+        "webm": "media/faq-media-03.webm?v=202611011253",
+        "poster": "media/faq-media-03-poster.webp?v=202611011253"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202610291240",
-        "webm": "media/faq-media-04.webm?v=202610291240",
-        "poster": "media/faq-media-04-poster.webp?v=202610291240"
+        "mp4": "media/faq-media-04.mp4?v=202611011253",
+        "webm": "media/faq-media-04.webm?v=202611011253",
+        "poster": "media/faq-media-04-poster.webp?v=202611011253"
       }
     ]
   },
@@ -138,30 +138,30 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202610291240",
-      "webm": "media/headshots-media-01.webm?v=202610291240",
-      "poster": "media/headshots-media-01-poster.webp?v=202610291240"
+      "mp4": "media/headshots-media-01.mp4?v=202611011253",
+      "webm": "media/headshots-media-01.webm?v=202611011253",
+      "poster": "media/headshots-media-01-poster.webp?v=202611011253"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202610291240",
-        "webm": "media/headshots-media-01.webm?v=202610291240",
-        "poster": "media/headshots-media-01-poster.webp?v=202610291240"
+        "mp4": "media/headshots-media-01.mp4?v=202611011253",
+        "webm": "media/headshots-media-01.webm?v=202611011253",
+        "poster": "media/headshots-media-01-poster.webp?v=202611011253"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202610291240",
-        "webm": "media/headshots-media-02.webm?v=202610291240",
-        "poster": "media/headshots-media-02-poster.webp?v=202610291240"
+        "mp4": "media/headshots-media-02.mp4?v=202611011253",
+        "webm": "media/headshots-media-02.webm?v=202611011253",
+        "poster": "media/headshots-media-02-poster.webp?v=202611011253"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202610291240",
-        "webm": "media/headshots-media-03.webm?v=202610291240",
-        "poster": "media/headshots-media-03-poster.webp?v=202610291240"
+        "mp4": "media/headshots-media-03.mp4?v=202611011253",
+        "webm": "media/headshots-media-03.webm?v=202611011253",
+        "poster": "media/headshots-media-03-poster.webp?v=202611011253"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202610291240",
-        "webm": "media/headshots-media-04.webm?v=202610291240",
-        "poster": "media/headshots-media-04-poster.webp?v=202610291240"
+        "mp4": "media/headshots-media-04.mp4?v=202611011253",
+        "webm": "media/headshots-media-04.webm?v=202611011253",
+        "poster": "media/headshots-media-04-poster.webp?v=202611011253"
       }
     ]
   },
@@ -177,35 +177,35 @@ const PROJECTS = [
     "results": "Targets set for launch: 30% more visitors reaching a template from the landing page, 20% more visitors scrolling past the hero, and a higher share of search visitors starting a CV. Delivered as one landing page at four widths, ready for development.",
     "awards": [],
     "card": {
-      "mp4": "media/ej-media-01.mp4?v=202610291240",
-      "webm": "media/ej-media-01.webm?v=202610291240",
-      "poster": "media/ej-media-01-poster.webp?v=202610291240"
+      "mp4": "media/ej-media-01.mp4?v=202611011253",
+      "webm": "media/ej-media-01.webm?v=202611011253",
+      "poster": "media/ej-media-01-poster.webp?v=202611011253"
     },
     "scenes": [
       {
-        "mp4": "media/ej-media-01.mp4?v=202610291240",
-        "webm": "media/ej-media-01.webm?v=202610291240",
-        "poster": "media/ej-media-01-poster.webp?v=202610291240"
+        "mp4": "media/ej-media-01.mp4?v=202611011253",
+        "webm": "media/ej-media-01.webm?v=202611011253",
+        "poster": "media/ej-media-01-poster.webp?v=202611011253"
       },
       {
-        "mp4": "media/ej-media-02.mp4?v=202610291240",
-        "webm": "media/ej-media-02.webm?v=202610291240",
-        "poster": "media/ej-media-02-poster.webp?v=202610291240"
+        "mp4": "media/ej-media-02.mp4?v=202611011253",
+        "webm": "media/ej-media-02.webm?v=202611011253",
+        "poster": "media/ej-media-02-poster.webp?v=202611011253"
       },
       {
-        "mp4": "media/ej-media-03.mp4?v=202610291240",
-        "webm": "media/ej-media-03.webm?v=202610291240",
-        "poster": "media/ej-media-03-poster.webp?v=202610291240"
+        "mp4": "media/ej-media-03.mp4?v=202611011253",
+        "webm": "media/ej-media-03.webm?v=202611011253",
+        "poster": "media/ej-media-03-poster.webp?v=202611011253"
       },
       {
-        "mp4": "media/ej-media-04.mp4?v=202610291240",
-        "webm": "media/ej-media-04.webm?v=202610291240",
-        "poster": "media/ej-media-04-poster.webp?v=202610291240"
+        "mp4": "media/ej-media-04.mp4?v=202611011253",
+        "webm": "media/ej-media-04.webm?v=202611011253",
+        "poster": "media/ej-media-04-poster.webp?v=202611011253"
       },
       {
-        "mp4": "media/ej-media-05.mp4?v=202610291240",
-        "webm": "media/ej-media-05.webm?v=202610291240",
-        "poster": "media/ej-media-05-poster.webp?v=202610291240"
+        "mp4": "media/ej-media-05.mp4?v=202611011253",
+        "webm": "media/ej-media-05.webm?v=202611011253",
+        "poster": "media/ej-media-05-poster.webp?v=202611011253"
       }
     ]
   }
@@ -963,8 +963,6 @@ function bindDeck(deck, dots) {
   function openCard(card) {
     const link = card && card.querySelector(".card-link");
     if (!link) return;
-    deckState.locked = true;
-    setTimeout(() => (deckState.locked = false), 500);
     openProject(link.getAttribute("href").replace("#/project/", ""), card);
   }
 
@@ -1101,8 +1099,15 @@ function moveBy(d) {
    tujuan. Halaman tujuan langsung dirender di bawahnya tanpa jeda.
    --------------------------------------------------------- */
 
-/* Kartu yang dibuka membesar dengan durasi referensi, 1,2 detik */
-const FLY_MS = 1200;
+/* Satu timeline untuk semua yang bergerak saat pindah halaman. Klon kotak
+   media memakai durasi dan kurva ini, begitu juga kartu tetangga, supaya
+   semuanya berangkat dan berhenti bersamaan. Teks lama habis lebih dulu baru
+   teks baru masuk, jadi keduanya tidak pernah bertumpuk. */
+const MORPH_MS = 560;
+const MORPH_KURVA = "cubic-bezier(0.3, 0, 0.08, 1)";
+const KELUAR_MS = 130;
+const MASUK_JEDA = 150;
+const MASUK_MS = 300;
 
 function prefersReduced() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1113,127 +1118,39 @@ function rectOf(el) {
   return { left: r.left, top: r.top, width: r.width, height: r.height };
 }
 
-function makeGhost(sourceEl, rect, radius) {
+let morphJalan = false;
+
+function gerak(el, keyframes, opsi) {
+  const a = el.animate(keyframes, { easing: "linear", fill: "both", ...opsi });
+  if (document.hidden) a.finish();
+  return a;
+}
+
+/* Klon punya dua lapis. Lapis luar membawa posisi, ukuran, dan bayangan.
+   Lapis dalam memotong video mengikuti sudut bulat; video yang sedang
+   dianimasikan sering lolos dari overflow:hidden biasa, jadi lapis ini
+   memakai masker. Masker tidak boleh di lapis luar karena ikut memotong
+   bayangan, dan itu yang dulu membuat bayangan hilang selama terbang.
+
+   Video yang sedang jalan dipindah utuh ke klon, bukan disalin, jadi tidak
+   pernah mulai ulang. Klon yang berangkat dari halaman project dipasang
+   fixed. Klon yang menuju halaman project dipasang absolute di koordinat
+   dokumen, jadi kalau pengunjung langsung men-scroll, klonnya ikut bergeser
+   bersama media tujuannya dan tetap mendarat tepat di tempatnya. */
+function buatKlon(mock, rect, radius, ikutScroll) {
   const g = document.createElement("div");
   g.className = "morph";
-  g.style.left = rect.left + "px";
-  g.style.top = rect.top + "px";
+  g.style.position = ikutScroll ? "absolute" : "fixed";
+  g.style.left = rect.left + (ikutScroll ? window.scrollX : 0) + "px";
+  g.style.top = rect.top + (ikutScroll ? window.scrollY : 0) + "px";
   g.style.width = rect.width + "px";
   g.style.height = rect.height + "px";
   g.style.borderRadius = radius;
-  const inner = sourceEl.querySelector(".mock");
-  if (inner) g.appendChild(inner.cloneNode(true));
+  const potong = document.createElement("div");
+  potong.className = "morph-clip";
+  g.appendChild(potong);
   document.body.appendChild(g);
-
-  /* cloneNode menghasilkan video yang berhenti di frame 0 dan tidak autoplay.
-     Tanpa ini, selama morph yang terlihat frame beku lalu melompat ke video
-     yang sudah jalan. Waktunya disamakan supaya sambungannya tidak kelihatan. */
-  const asli = sourceEl.querySelector("video");
-  const klon = g.querySelector("video");
-  if (asli && klon) {
-    klon.muted = true;
-    klon.playsInline = true;
-    try { klon.currentTime = asli.currentTime; } catch (e) {}
-    const main = klon.play();
-    if (main && main.catch) main.catch(() => {});
-  }
-
-  return g;
-}
-
-/* Klon yang terbang sudah disamakan waktunya dengan asalnya, tapi video di
-   halaman tujuan tetap mulai dari nol. Begitu klonnya dibuang, frame melompat
-   mundur dan transisinya terasa patah. Jadi video tujuan digeser ke posisi
-   yang kira-kira dicapai klonnya saat serah terima.
-
-   Video baru belum tentu siap di-seek. Kalau readyState masih rendah,
-   penyeteltan ditunda sampai metadata datang, dan diberi batas waktu supaya
-   tidak menggantung kalau berkasnya gagal dimuat. */
-function seekTo(video, detik) {
-  if (!video || !isFinite(detik)) return;
-  const pasang = () => {
-    const d = video.duration;
-    try { video.currentTime = isFinite(d) && d > 0 ? detik % d : detik; } catch (e) {}
-    const main = video.play();
-    if (main && main.catch) main.catch(() => {});
-  };
-  if (video.readyState >= 1) pasang();
-  else {
-    const sekali = () => { video.removeEventListener("loadedmetadata", sekali); pasang(); };
-    video.addEventListener("loadedmetadata", sekali);
-    setTimeout(() => video.removeEventListener("loadedmetadata", sekali), 3000);
-  }
-}
-
-/* posisi video di dalam sebuah kartu atau slot media, kalau ada */
-function waktuVideo(el) {
-  const v = el && el.querySelector("video");
-  return v ? v.currentTime : null;
-}
-
-/* Kurva referensi [.32, 0, 0, 1] dihitung sendiri, karena animasinya
-   digerakkan per frame (lihat terbang di bawah). */
-function bezier(x1, y1, x2, y2) {
-  const bx = (t) => 3 * x1 * t * (1 - t) ** 2 + 3 * x2 * t * t * (1 - t) + t ** 3;
-  const by = (t) => 3 * y1 * t * (1 - t) ** 2 + 3 * y2 * t * t * (1 - t) + t ** 3;
-  return (x) => {
-    let lo = 0, hi = 1, t = x;
-    for (let i = 0; i < 24; i++) {
-      t = (lo + hi) / 2;
-      if (bx(t) < x) lo = t; else hi = t;
-    }
-    return by(t);
-  };
-}
-const KURVA_MORPH = bezier(0.32, 0, 0, 1);
-
-/* Klon terbang dari kotak asal ke kotak tujuan. Tujuannya dibaca ulang tiap
-   frame, bukan sekali di awal, jadi kalau pengunjung langsung men-scroll
-   halaman project, klonnya tetap mendarat tepat di media yang ikut bergeser.
-   Itu yang membuat halaman bisa di-scroll sejak detik pertama. */
-function fly(ghost, from, getTo, r0, r1, done) {
-  const t0 = performance.now();
-  const rad = (r) => parseFloat(r) * (r.endsWith("rem") ? 10 : 1);
-  const ra = rad(r0), rb = rad(r1);
-  let settled = false;
-  const finish = () => {
-    if (settled) return;
-    settled = true;
-    done();
-  };
-  const frame = (now) => {
-    if (settled) return;
-    const k = Math.min(1, (now - t0) / FLY_MS);
-    const e = KURVA_MORPH(k);
-    const to = getTo();
-    const mix = (a, b) => a + (b - a) * e;
-    ghost.style.left = mix(from.left, to.left) + "px";
-    ghost.style.top = mix(from.top, to.top) + "px";
-    ghost.style.width = mix(from.width, to.width) + "px";
-    ghost.style.height = mix(from.height, to.height) + "px";
-    ghost.style.borderRadius = mix(ra, rb) + "px";
-    if (k < 1) requestAnimationFrame(frame);
-    else finish();
-  };
-  requestAnimationFrame(frame);
-  /* tab di belakang menahan requestAnimationFrame, jadi ada timer cadangan */
-  setTimeout(finish, FLY_MS + 500);
-}
-
-/* Bungkus terbang yang membawa elemen media ASLI, bukan salinannya. Video
-   yang sedang jalan dipindah utuh dari kartu ke klon lalu ke halaman
-   tujuan, jadi tidak pernah mulai ulang, tidak berkedip hitam, dan tidak
-   perlu di-seek. */
-function liveGhost(mock, rect, radius) {
-  const g = document.createElement("div");
-  g.className = "morph";
-  g.style.left = rect.left + "px";
-  g.style.top = rect.top + "px";
-  g.style.width = rect.width + "px";
-  g.style.height = rect.height + "px";
-  g.style.borderRadius = radius;
-  document.body.appendChild(g);
-  g.appendChild(mock);
+  potong.appendChild(mock);
   putar(mock);
   return g;
 }
@@ -1245,110 +1162,178 @@ function putar(scope) {
   if (main && main.catch) main.catch(() => {});
 }
 
-function srcVideo(el) {
-  const v = el && el.querySelector("video");
-  return v ? v.currentSrc || (v.querySelector("source") || {}).src || "" : "";
+function kunciVideo(mock) {
+  const v = mock && mock.querySelector("video");
+  return v ? v.getAttribute("poster") : null;
 }
 
-/* Setelah mendarat, media asli menggantikan media yang baru dirender di
-   tujuan. Kalau berkasnya beda (misalnya kartu dan media pertama memakai
-   video berbeda), media tujuan dipertahankan dan cukup disamakan waktunya. */
-function serahkan(mock, slot, t0) {
-  const lama = slot.querySelector(".mock");
-  if (mock && lama && srcVideo(mock) && srcVideo(mock) === srcVideo(lama)) {
-    lama.replaceWith(mock);
-    putar(mock);
-    if (typeof amatiVideo === "function") amatiVideo(slot);
-    return true;
+/* Menyatukan isi klon dengan isi tujuan, dan mengembalikan elemen yang nanti
+   dipasang di tujuan. Kalau videonya sama, klon meneruskan video yang sudah
+   jalan. Kalau beda (kembali dari media kedua dan seterusnya), media tujuan
+   ikut masuk ke klon dan memudar di atasnya selama terbang, jadi saat
+   mendarat isinya sudah persis isi tujuan. */
+function satukanIsi(ghost, slot) {
+  const potong = ghost.firstElementChild;
+  const asal = potong.querySelector(".mock");
+  const tujuan = slot.querySelector(".mock");
+  if (!tujuan) return asal;
+  if (kunciVideo(asal) && kunciVideo(asal) === kunciVideo(tujuan)) {
+    tujuan.remove();
+    return asal;
   }
-  if (t0 !== null) seekTo(slot.querySelector("video"), t0 + FLY_MS / 1000);
-  return false;
+  potong.appendChild(tujuan);
+  putar(tujuan);
+  const a = gerak(tujuan, [{ opacity: 0 }, { opacity: 1 }], {
+    duration: MORPH_MS * 0.5,
+    delay: MORPH_MS * 0.12,
+    easing: "ease-out"
+  });
+  a.onfinish = () => a.cancel();
+  return tujuan;
 }
 
-/* klon dibuang; kalau isinya beda dengan yang di bawahnya, dipudarkan
-   sebentar supaya gambarnya tidak berganti mendadak */
-function buangKlon(ghost, pudar) {
-  if (!pudar) { ghost.remove(); return; }
-  ghost.style.transition = "opacity 0.32s ease-out";
-  ghost.style.opacity = "0";
-  setTimeout(() => ghost.remove(), 360);
+/* Bagian bawah kartu (kaca buram dan nama project) tidak ada di media
+   halaman project, jadi di klon bagian ini dipasang terpisah lalu memudar.
+   Opacity diberikan ke tiap anak, bukan ke pembungkusnya: pembungkus yang
+   punya opacity memutus backdrop-filter dari video di bawahnya, dan kacanya
+   jadi tidak buram. */
+function lapisKartu(ghost, nama, masuk) {
+  const lapis = document.createElement("div");
+  lapis.className = "morph-kartu";
+  lapis.innerHTML = '<div class="morph-kaca"></div><span class="card-name"></span>';
+  lapis.lastChild.textContent = nama;
+  ghost.firstElementChild.appendChild(lapis);
+  Array.from(lapis.children).forEach((el) => {
+    gerak(el, masuk ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }], {
+      duration: masuk ? MORPH_MS * 0.4 : KELUAR_MS,
+      delay: masuk ? MORPH_MS * 0.6 : 0,
+      easing: "ease-out"
+    });
+  });
 }
 
-/* Salinan kolom kiri yang lama dipasang di tempat yang sama lalu
-   dipudarkan, sementara kolom kiri yang baru memutar animasi masuknya. */
-function pudarkanRail() {
-  const lama = document.querySelector(".rail:not(.is-exiting)");
-  if (!lama) return;
-  const salin = lama.cloneNode(true);
+function terbang(ghost, ke, radiusKe) {
+  const ikutScroll = ghost.style.position === "absolute";
+  const dx = ikutScroll ? window.scrollX : 0;
+  const dy = ikutScroll ? window.scrollY : 0;
+  const a = gerak(
+    ghost,
+    [
+      {},
+      {
+        left: ke.left + dx + "px",
+        top: ke.top + dy + "px",
+        width: ke.width + "px",
+        height: ke.height + "px",
+        borderRadius: radiusKe
+      }
+    ],
+    { duration: MORPH_MS, easing: MORPH_KURVA }
+  );
+  return a.finished.catch(() => {});
+}
+
+/* Salinan elemen lama memudar di tempatnya sementara yang baru dirender di
+   elemen aslinya. */
+function pudarkanSalinan(el) {
+  if (!el || el.hidden) return;
+  const salin = el.cloneNode(true);
   salin.removeAttribute("id");
-  salin.querySelectorAll("[id]").forEach((el) => el.removeAttribute("id"));
+  salin.querySelectorAll("[id]").forEach((n) => n.removeAttribute("id"));
   salin.setAttribute("aria-hidden", "true");
+  salin.classList.add("is-salinan");
   document.body.appendChild(salin);
-  void salin.offsetWidth;
-  salin.classList.add("is-exiting");
-  setTimeout(() => salin.remove(), 450);
+  gerak(salin, [{ opacity: 1 }, { opacity: 0 }], { duration: KELUAR_MS, easing: "ease-out" }).onfinish =
+    () => salin.remove();
+}
+
+function munculkan(el) {
+  if (!el) return;
+  const a = gerak(el, [{ opacity: 0 }, { opacity: 1 }], {
+    duration: MASUK_MS,
+    delay: MASUK_JEDA,
+    easing: "ease-out"
+  });
+  a.onfinish = () => a.cancel();
+}
+
+/* jarak tempuh kartu tetangga saat keluar dan masuk layar */
+function geserTetangga(deck, masuk) {
+  const jarak = window.innerHeight * 0.5;
+  deck.querySelectorAll(".deck-card").forEach((el) => {
+    const d = Number(el.dataset.pos);
+    if (!d) return;
+    const dasar = el.style.transform;
+    const jauh = `translateY(${d < 0 ? -jarak : jarak}px) ${dasar}`;
+    const a = gerak(el, masuk ? [{ transform: jauh }, { transform: dasar }] : [{ transform: dasar }, { transform: jauh }], {
+      duration: MORPH_MS,
+      easing: MORPH_KURVA
+    });
+    /* sesudah masuk, kartu kembali dipegang pegas di transform inline */
+    if (masuk) a.onfinish = () => a.cancel();
+  });
 }
 
 /* home ke halaman project: kartu membesar jadi media pertama */
 function openProject(slug, cardEl) {
   const mock = cardEl && cardEl.querySelector(".mock");
-  if (prefersReduced() || !cardEl || !mock) {
+  if (morphJalan) return;
+  if (prefersReduced() || !mock) {
     location.hash = "#/project/" + slug;
     return;
   }
+  morphJalan = true;
 
   Sfx.play("open");
   const from = rectOf(cardEl);
-  const t0 = waktuVideo(cardEl);
   const rKartu = getComputedStyle(cardEl).borderRadius;
-  const ghost = liveGhost(mock, from, rKartu);
+  const nama = cardEl.querySelector(".card-name").textContent;
+  const ghost = buatKlon(mock, from, rKartu, true);
+  lapisKartu(ghost, nama, false);
+  cardEl.style.visibility = "hidden";
 
-  /* Dek lama dilepas dari panggung sebelum halaman project dirender, lalu
-     kartu tetangganya diluncurkan keluar layar. Tanpa ini seluruh home hilang
-     dalam satu frame dan itu terasa sebagai kedipan. */
+  /* Dek lama dilepas dari panggung supaya tetangganya sempat meluncur keluar
+     sesudah halaman project dirender. */
   const dekLama = document.getElementById("deck");
-  if (dekLama) {
-    dekLama.removeAttribute("id");
-    dekLama.classList.add("is-exiting");
-    document.body.appendChild(dekLama);
-    const H = window.innerHeight;
-    dekLama.querySelectorAll(".deck-card").forEach((el) => {
-      const st = el._s;
-      if (!st || el === cardEl) return;
-      const d = Number(el.dataset.pos);
-      if (!isFinite(d)) return;
-      st.ty = (d < 0 ? -1 : 1) * (H * 0.6 + Math.abs(st.ty));
-    });
-    cardEl.style.visibility = "hidden";
-    jalankanPegas();
-    setTimeout(() => dekLama.remove(), FLY_MS);
-  }
+  dekLama.removeAttribute("id");
+  dekLama.classList.add("is-exiting");
+  document.body.appendChild(dekLama);
+  geserTetangga(dekLama, false);
 
-  pudarkanRail();
-  /* halaman project langsung dirender di bawah klon, tanpa jeda pudar */
+  pudarkanSalinan(rail);
+  pudarkanSalinan(dots);
+
   location.hash = "#/project/" + slug;
   render();
+  rail.classList.add("rail--morph");
+  stage.querySelector("#media").classList.add("is-morphing");
+  munculkan(stage.querySelector(".edge-btn"));
 
   const target = document.querySelector("#media .media-item");
   if (!target) {
     ghost.remove();
+    dekLama.remove();
+    morphJalan = false;
     return;
   }
   target.classList.add("is-morph-target");
-  /* video tujuan tidak perlu diunduh dan diputar dua kali selama terbang */
-  const vt = target.querySelector("video");
-  if (vt && srcVideo(target) === srcVideo(ghost)) { vt.pause(); vt.preload = "none"; }
+  const isi = satukanIsi(ghost, target);
 
-  fly(ghost, from, () => rectOf(target), rKartu, getComputedStyle(target).borderRadius, () => {
-    const sama = serahkan(ghost.firstElementChild, target, t0);
+  terbang(ghost, rectOf(target), getComputedStyle(target).borderRadius).then(() => {
+    target.prepend(isi);
+    putar(isi);
+    amatiVideo(target);
     target.classList.add("is-landed");
     target.classList.remove("is-morph-target");
-    buangKlon(ghost, !sama);
+    ghost.remove();
+    dekLama.remove();
+    morphJalan = false;
   });
 }
 
 /* halaman project kembali ke home: media mengecil jadi kartu */
 function closeProject() {
+  if (morphJalan) return;
   const slug = currentSlug;
   const items = Array.from(document.querySelectorAll("#media .media-item"));
 
@@ -1357,6 +1342,7 @@ function closeProject() {
     location.hash = "#/";
     return;
   }
+  morphJalan = true;
 
   /* yang jadi titik berangkat adalah media yang paling banyak terlihat,
      bukan selalu yang pertama, karena halaman bisa sedang di-scroll */
@@ -1373,53 +1359,46 @@ function closeProject() {
 
   Sfx.play("close");
   const from = rectOf(src);
-  const t0 = waktuVideo(src);
   const r0 = getComputedStyle(src).borderRadius;
-  const mock = src.querySelector(".mock");
-  const ghost = mock ? liveGhost(mock, from, r0) : makeGhost(src, from, r0);
-
-  /* Media lain di halaman project dipudarkan di tempatnya. Kotak media
-     yang isinya sedang terbang disembunyikan dulu, kalau tidak yang tersisa
-     di sana adalah kotak putih kosong yang ikut memudar. */
+  const ghost = buatKlon(src.querySelector(".mock"), from, r0, false);
   src.style.visibility = "hidden";
-  pudarkanRail();
+
+  /* media lain memudar di tempatnya, bayangannya dilepas di CSS */
   const mediaLama = document.getElementById("media");
-  if (mediaLama) {
-    const top = mediaLama.getBoundingClientRect().top;
-    mediaLama.removeAttribute("id");
-    mediaLama.classList.add("is-exiting");
-    mediaLama.style.top = top + "px";
-    document.body.appendChild(mediaLama);
-    void mediaLama.offsetWidth;
-    mediaLama.style.opacity = "0";
-    setTimeout(() => mediaLama.remove(), 240);
-  }
+  const atas = mediaLama.getBoundingClientRect().top;
+  mediaLama.removeAttribute("id");
+  mediaLama.classList.add("is-exiting");
+  mediaLama.style.top = atas + "px";
+  document.body.appendChild(mediaLama);
+  gerak(mediaLama, [{ opacity: 1 }, { opacity: 0 }], { duration: KELUAR_MS, easing: "ease-out" }).onfinish =
+    () => mediaLama.remove();
+
+  pudarkanSalinan(rail);
+  pudarkanSalinan(stage.querySelector(".edge-btn"));
 
   returnToSlug = slug;
   location.hash = "#/";
   render();
+  rail.classList.add("rail--morph");
+  dots.style.animation = "none";
+  munculkan(dots);
 
   const deck = document.getElementById("deck");
-  const card = deck && deck.querySelector('.deck-card[data-pos="0"]');
-  if (!card) {
-    ghost.remove();
-    return;
-  }
+  const card = deck.querySelector('.deck-card[data-pos="0"]');
+  deck.classList.add("is-instant");
   card.style.visibility = "hidden";
+  geserTetangga(deck, true);
 
-  fly(ghost, from, () => rectOf(card), r0, getComputedStyle(card).borderRadius, () => {
-    const sama = serahkan(ghost.firstElementChild, card, t0);
-    /* Kartu muncul di bawah klon dengan nama project yang memudar masuk,
-       lalu klonnya dipudarkan. Bayangan klon dimatikan lebih dulu supaya
-       tidak bertumpuk dengan bayangan kartu (dua bayangan = sesaat lebih
-       gelap, lalu meloncat terang). */
-    card.classList.add("is-landing");
+  const isi = satukanIsi(ghost, card);
+  lapisKartu(ghost, card.querySelector(".card-name").textContent, true);
+
+  terbang(ghost, rectOf(card), getComputedStyle(card).borderRadius).then(() => {
+    card.prepend(isi);
     card.style.visibility = "";
-    ghost.style.boxShadow = "none";
-    /* kalau videonya sudah dipindah ke kartu, klonnya kosong: langsung buang */
-    buangKlon(ghost, !sama);
-    setTimeout(() => card.classList.remove("is-landing"), 700);
+    ghost.remove();
+    deck.classList.remove("is-instant");
     syncDeckVideos();
+    morphJalan = false;
   });
 }
 
@@ -1630,7 +1609,7 @@ function render() {
     activeGlobe = null;
   }
 
-  rail.classList.remove("rail--about", "rail--project");
+  rail.classList.remove("rail--about", "rail--project", "rail--morph");
 
   if (path.startsWith("/project/")) {
     renderProject(rail, stage, dots, path.split("/")[2]);
