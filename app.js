@@ -60,30 +60,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202611011253",
-      "webm": "media/cv-media-01.webm?v=202611011253",
-      "poster": "media/cv-media-01-poster.webp?v=202611011253"
+      "mp4": "media/cv-media-01.mp4?v=202611020817",
+      "webm": "media/cv-media-01.webm?v=202611020817",
+      "poster": "media/cv-media-01-poster.webp?v=202611020817"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202611011253",
-        "webm": "media/cv-media-01.webm?v=202611011253",
-        "poster": "media/cv-media-01-poster.webp?v=202611011253"
+        "mp4": "media/cv-media-01.mp4?v=202611020817",
+        "webm": "media/cv-media-01.webm?v=202611020817",
+        "poster": "media/cv-media-01-poster.webp?v=202611020817"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202611011253",
-        "webm": "media/cv-media-02.webm?v=202611011253",
-        "poster": "media/cv-media-02-poster.webp?v=202611011253"
+        "mp4": "media/cv-media-02.mp4?v=202611020817",
+        "webm": "media/cv-media-02.webm?v=202611020817",
+        "poster": "media/cv-media-02-poster.webp?v=202611020817"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202611011253",
-        "webm": "media/cv-media-03.webm?v=202611011253",
-        "poster": "media/cv-media-03-poster.webp?v=202611011253"
+        "mp4": "media/cv-media-03.mp4?v=202611020817",
+        "webm": "media/cv-media-03.webm?v=202611020817",
+        "poster": "media/cv-media-03-poster.webp?v=202611020817"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202611011253",
-        "webm": "media/cv-media-04.webm?v=202611011253",
-        "poster": "media/cv-media-04-poster.webp?v=202611011253"
+        "mp4": "media/cv-media-04.mp4?v=202611020817",
+        "webm": "media/cv-media-04.webm?v=202611020817",
+        "poster": "media/cv-media-04-poster.webp?v=202611020817"
       }
     ]
   },
@@ -99,30 +99,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202611011253",
-      "webm": "media/faq-media-01.webm?v=202611011253",
-      "poster": "media/faq-media-01-poster.webp?v=202611011253"
+      "mp4": "media/faq-media-01.mp4?v=202611020817",
+      "webm": "media/faq-media-01.webm?v=202611020817",
+      "poster": "media/faq-media-01-poster.webp?v=202611020817"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202611011253",
-        "webm": "media/faq-media-01.webm?v=202611011253",
-        "poster": "media/faq-media-01-poster.webp?v=202611011253"
+        "mp4": "media/faq-media-01.mp4?v=202611020817",
+        "webm": "media/faq-media-01.webm?v=202611020817",
+        "poster": "media/faq-media-01-poster.webp?v=202611020817"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202611011253",
-        "webm": "media/faq-media-02.webm?v=202611011253",
-        "poster": "media/faq-media-02-poster.webp?v=202611011253"
+        "mp4": "media/faq-media-02.mp4?v=202611020817",
+        "webm": "media/faq-media-02.webm?v=202611020817",
+        "poster": "media/faq-media-02-poster.webp?v=202611020817"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202611011253",
-        "webm": "media/faq-media-03.webm?v=202611011253",
-        "poster": "media/faq-media-03-poster.webp?v=202611011253"
+        "mp4": "media/faq-media-03.mp4?v=202611020817",
+        "webm": "media/faq-media-03.webm?v=202611020817",
+        "poster": "media/faq-media-03-poster.webp?v=202611020817"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202611011253",
-        "webm": "media/faq-media-04.webm?v=202611011253",
-        "poster": "media/faq-media-04-poster.webp?v=202611011253"
+        "mp4": "media/faq-media-04.mp4?v=202611020817",
+        "webm": "media/faq-media-04.webm?v=202611020817",
+        "poster": "media/faq-media-04-poster.webp?v=202611020817"
       }
     ]
   },
@@ -138,30 +138,30 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202611011253",
-      "webm": "media/headshots-media-01.webm?v=202611011253",
-      "poster": "media/headshots-media-01-poster.webp?v=202611011253"
+      "mp4": "media/headshots-media-01.mp4?v=202611020817",
+      "webm": "media/headshots-media-01.webm?v=202611020817",
+      "poster": "media/headshots-media-01-poster.webp?v=202611020817"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202611011253",
-        "webm": "media/headshots-media-01.webm?v=202611011253",
-        "poster": "media/headshots-media-01-poster.webp?v=202611011253"
+        "mp4": "media/headshots-media-01.mp4?v=202611020817",
+        "webm": "media/headshots-media-01.webm?v=202611020817",
+        "poster": "media/headshots-media-01-poster.webp?v=202611020817"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202611011253",
-        "webm": "media/headshots-media-02.webm?v=202611011253",
-        "poster": "media/headshots-media-02-poster.webp?v=202611011253"
+        "mp4": "media/headshots-media-02.mp4?v=202611020817",
+        "webm": "media/headshots-media-02.webm?v=202611020817",
+        "poster": "media/headshots-media-02-poster.webp?v=202611020817"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202611011253",
-        "webm": "media/headshots-media-03.webm?v=202611011253",
-        "poster": "media/headshots-media-03-poster.webp?v=202611011253"
+        "mp4": "media/headshots-media-03.mp4?v=202611020817",
+        "webm": "media/headshots-media-03.webm?v=202611020817",
+        "poster": "media/headshots-media-03-poster.webp?v=202611020817"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202611011253",
-        "webm": "media/headshots-media-04.webm?v=202611011253",
-        "poster": "media/headshots-media-04-poster.webp?v=202611011253"
+        "mp4": "media/headshots-media-04.mp4?v=202611020817",
+        "webm": "media/headshots-media-04.webm?v=202611020817",
+        "poster": "media/headshots-media-04-poster.webp?v=202611020817"
       }
     ]
   },
@@ -177,35 +177,35 @@ const PROJECTS = [
     "results": "Targets set for launch: 30% more visitors reaching a template from the landing page, 20% more visitors scrolling past the hero, and a higher share of search visitors starting a CV. Delivered as one landing page at four widths, ready for development.",
     "awards": [],
     "card": {
-      "mp4": "media/ej-media-01.mp4?v=202611011253",
-      "webm": "media/ej-media-01.webm?v=202611011253",
-      "poster": "media/ej-media-01-poster.webp?v=202611011253"
+      "mp4": "media/ej-media-01.mp4?v=202611020817",
+      "webm": "media/ej-media-01.webm?v=202611020817",
+      "poster": "media/ej-media-01-poster.webp?v=202611020817"
     },
     "scenes": [
       {
-        "mp4": "media/ej-media-01.mp4?v=202611011253",
-        "webm": "media/ej-media-01.webm?v=202611011253",
-        "poster": "media/ej-media-01-poster.webp?v=202611011253"
+        "mp4": "media/ej-media-01.mp4?v=202611020817",
+        "webm": "media/ej-media-01.webm?v=202611020817",
+        "poster": "media/ej-media-01-poster.webp?v=202611020817"
       },
       {
-        "mp4": "media/ej-media-02.mp4?v=202611011253",
-        "webm": "media/ej-media-02.webm?v=202611011253",
-        "poster": "media/ej-media-02-poster.webp?v=202611011253"
+        "mp4": "media/ej-media-02.mp4?v=202611020817",
+        "webm": "media/ej-media-02.webm?v=202611020817",
+        "poster": "media/ej-media-02-poster.webp?v=202611020817"
       },
       {
-        "mp4": "media/ej-media-03.mp4?v=202611011253",
-        "webm": "media/ej-media-03.webm?v=202611011253",
-        "poster": "media/ej-media-03-poster.webp?v=202611011253"
+        "mp4": "media/ej-media-03.mp4?v=202611020817",
+        "webm": "media/ej-media-03.webm?v=202611020817",
+        "poster": "media/ej-media-03-poster.webp?v=202611020817"
       },
       {
-        "mp4": "media/ej-media-04.mp4?v=202611011253",
-        "webm": "media/ej-media-04.webm?v=202611011253",
-        "poster": "media/ej-media-04-poster.webp?v=202611011253"
+        "mp4": "media/ej-media-04.mp4?v=202611020817",
+        "webm": "media/ej-media-04.webm?v=202611020817",
+        "poster": "media/ej-media-04-poster.webp?v=202611020817"
       },
       {
-        "mp4": "media/ej-media-05.mp4?v=202611011253",
-        "webm": "media/ej-media-05.webm?v=202611011253",
-        "poster": "media/ej-media-05-poster.webp?v=202611011253"
+        "mp4": "media/ej-media-05.mp4?v=202611020817",
+        "webm": "media/ej-media-05.webm?v=202611020817",
+        "poster": "media/ej-media-05-poster.webp?v=202611020817"
       }
     ]
   }
@@ -918,39 +918,51 @@ function moveDeck(dir) {
 }
 
 function bindDeck(deck, dots) {
-  /* Roda mouse dan trackpad. Satu notch roda mouse (delta sekitar 100)
-     langsung memajukan satu kartu. Trackpad mengirim delta kecil-kecil, jadi
-     deltanya dikumpulkan dulu: begitu terkumpul 24, kartu maju. Dulu event
-     di bawah 20 dibuang begitu saja, akibatnya trackpad harus digeser jauh.
-     Sesudah maju ada jeda singkat (165 ms dikurangi besar delta, paling
-     cepat 90 ms) supaya satu usapan tidak melompati banyak kartu. Kumpulan
-     delta dikosongkan kalau arahnya berbalik atau tangan berhenti sejenak. */
-  let rodaKunci = false;
+  /* Roda mouse dan trackpad: satu usapan memajukan satu kartu.
+     Sesudah kartu maju, roda dikunci paling sedikit 420 ms. Trackpad terus
+     mengirim delta yang mengecil selama sisa dorongan (inersia), dan delta itu
+     dibuang. Kunci baru lepas kalau tangan berhenti (jeda 120 ms), ada dorongan
+     baru (delta naik lagi), atau roda mouse terus diputar (delta besar). */
+  const ROLL_MIN = 30;
+  const KUNCI_MS = 420;
   let rodaKumpul = 0;
+  let rodaLangkah = -Infinity;
   let rodaLalu = 0;
+  let rodaDelta = 0;
+  let rodaKunci = false;
   deck.addEventListener(
     "wheel",
     (e) => {
       e.preventDefault();
       const d = e.deltaY * (e.deltaMode === 1 ? 100 / 6 : 1);
-      const now = performance.now();
-      if (now - rodaLalu > 220 || Math.sign(d) !== Math.sign(rodaKumpul)) rodaKumpul = 0;
-      rodaLalu = now;
-      if (rodaKunci) return;
-      rodaKumpul += d;
-      if (Math.abs(rodaKumpul) < 24) return;
       const besar = Math.abs(d);
-      rodaKunci = true;
+      const now = performance.now();
+      const jeda = now - rodaLalu;
+      const naik = rodaDelta > 0 && besar > rodaDelta * 1.5 && besar >= 8;
+      rodaLalu = now;
+      rodaDelta = besar;
+
+      if (rodaKunci) {
+        if (now - rodaLangkah < KUNCI_MS) return;
+        if (jeda < 120 && !naik && besar < 80) return;
+        rodaKunci = false;
+        rodaKumpul = 0;
+      }
+      if (jeda > 220 || Math.sign(d) !== Math.sign(rodaKumpul)) rodaKumpul = 0;
+      rodaKumpul += d;
+      if (Math.abs(rodaKumpul) < ROLL_MIN) return;
+
       moveDeck(rodaKumpul > 0 ? 1 : -1);
       rodaKumpul = 0;
-      setTimeout(() => (rodaKunci = false), Math.max(90, 165 - besar));
+      rodaKunci = true;
+      rodaLangkah = now;
     },
     { passive: false }
   );
 
-  /* Geser dengan pointer, angka dari referensi: tiap 45 px geser vertikal
-     memajukan satu kartu (paling cepat tiap 170 ms). Kalau dilepas sebelum
-     mencapai 45 px tapi sudah 30 px, tetap dihitung satu langkah.
+  /* Geser dengan pointer: satu geseran memajukan satu kartu, sejauh apa pun
+     jarinya bergerak. Batasnya 45 px; kalau dilepas sebelum itu tapi sudah
+     30 px, tetap dihitung satu langkah.
      Ketukan tanpa geser: kartu aktif dibuka, kartu tetangga didatangkan ke
      tengah, sejauh posisinya (kartu kedua di atas = mundur dua). */
   let startX = null;
@@ -993,7 +1005,7 @@ function bindDeck(deck, dots) {
           deck.classList.add("is-dragging");
           captured = true;
         }
-        step(dy < 0 ? 1 : -1);
+        if (!moved) step(dy < 0 ? 1 : -1);
         startY = e.clientY;
         startX = e.clientX;
       }
