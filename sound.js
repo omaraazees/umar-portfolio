@@ -42,6 +42,9 @@ window.Sfx = (function () {
     const AC = window.AudioContext || window.webkitAudioContext;
     if (!AC) return false;
     ctx = new AC();
+    /* Safari iPhone: tanpa ini, semua suara Web Audio ikut bisu saat tombol
+       senyap HP menyala. "playback" = diperlakukan seperti pemutar musik. */
+    try { if (navigator.audioSession) navigator.audioSession.type = "playback"; } catch (e) {}
 
     const master = ctx.createGain();
     master.gain.value = 0.55;
@@ -247,14 +250,15 @@ window.Sfx = (function () {
   }
 
   function musicPlay() {
-    if (!musicBuild()) return;
-    if (ctx.state === "suspended") ctx.resume();
+    if (!musicBuild()) return Promise.resolve();
+    if (ctx.state !== "running") ctx.resume().catch(() => {});
     const g = music.gain.gain, now = ctx.currentTime;
     g.cancelScheduledValues(now);
     g.setValueAtTime(g.value, now);
     g.linearRampToValueAtTime(VOL, now + 2);
     const p = music.el.play();
-    if (p && p.then) p.then(kabari, () => {});
+    if (p && p.then) return p.then(kabari, () => {});
+    return Promise.resolve();
   }
 
   /* tombol suara menyesuaikan tampilannya dengan keadaan musik yang nyata */
@@ -320,10 +324,16 @@ window.Sfx = (function () {
      diangkat, jadi pointerup dan click ikut didengarkan */
   const GERAK = ["pointerdown", "pointerup", "click", "keydown", "touchend"];
   const lepas = () => GERAK.forEach((type) => window.removeEventListener(type, lanjut, true));
+  /* Pendengar baru dilepas kalau musik benar-benar berbunyi. Di HP, sentuhan
+     pertama memicu pointerdown dulu, padahal browser belum menganggapnya
+     izin memutar suara (izinnya baru ada saat jari diangkat). Dulu pendengar
+     langsung dilepas di pointerdown itu, percobaannya ditolak, dan ketukan
+     yang sebenarnya diizinkan tidak pernah dipakai. */
+  const terdengar = () => berbunyi() && ctx && ctx.state === "running";
   const lanjut = (e) => {
     if (e.target && e.target.closest && e.target.closest("#sound-toggle")) return;
-    lepas();
-    if (music.on && !berbunyi()) musicPlay();
+    if (!music.on || terdengar()) { lepas(); return; }
+    musicPlay().then(() => { if (terdengar()) lepas(); });
   };
   GERAK.forEach((type) => window.addEventListener(type, lanjut, { capture: true, passive: true }));
 
@@ -335,7 +345,15 @@ window.Sfx = (function () {
     if (!music.on || berbunyi() || !build()) return;
     try {
       const r = ctx.resume();
-      const jalan = () => { if (ctx.state === "running" && music.on && !berbunyi()) { musicPlay(); lepas(); } };
+      /* Pendengar klik hanya dilepas kalau lagunya memang berbunyi. Browser
+         bisa mengizinkan AudioContext tapi tetap menolak play() lagu; dulu
+         pendengar dilepas di sini apa pun hasilnya, jadi klik pertama tidak
+         pernah memulai musik. */
+      const jalan = () => {
+        if (ctx.state === "running" && music.on && !berbunyi()) {
+          musicPlay().then(() => { if (terdengar()) lepas(); });
+        }
+      };
       if (r && r.then) r.then(jalan, () => {}); else jalan();
     } catch (e) {}
   };
