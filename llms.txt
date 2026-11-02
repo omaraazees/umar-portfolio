@@ -1,6 +1,6 @@
 # Umar Abdul Azis
 
-> Senior Product and Graphic Designer, based in Yogyakarta, Indonesia (GMT+7). I design web, mobile, and AI products, then build them into live prototypes your team can click through before development starts.
+> Senior Product and Design Engineer, based in Yogyakarta, Indonesia (GMT+7). I design web, mobile, and AI products, then build them into live prototypes your team can click through before development starts.
 
 I work across UX, interface, and visual design, and I prototype with whatever fits the project, from Figma to AI code editors like Claude Code, Codex, and Cursor. Over six years that has covered HR tech and resume builders, Shopify and e-commerce, AI products, and Web3 dashboards.
 

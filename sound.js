@@ -337,8 +337,16 @@ window.Sfx = (function () {
       if (r && r.then) r.then(jalan, () => {}); else jalan();
     } catch (e) {}
   };
-  if (document.readyState === "complete") setTimeout(cobaAutoplay, 300);
-  else window.addEventListener("load", () => setTimeout(cobaAutoplay, 300), { once: true });
+  /* Membuat AudioContext memakan puluhan sampai ratusan milidetik di thread
+     utama. Jadi percobaan ini ditunda sampai halaman sudah tampil dan
+     browser sedang senggang, bukan di tengah gambar pertama. */
+  const nanti = () => {
+    const jalan = () => cobaAutoplay();
+    if (window.requestIdleCallback) requestIdleCallback(jalan, { timeout: 2500 });
+    else setTimeout(jalan, 800);
+  };
+  if (document.readyState === "complete") setTimeout(nanti, 600);
+  else window.addEventListener("load", () => setTimeout(nanti, 600), { once: true });
 
 
   /* --- pemanasan ---
@@ -377,11 +385,16 @@ window.Sfx = (function () {
     s.start(0);
   }
 
-  if (window.requestIdleCallback) {
-    requestIdleCallback(prepare, { timeout: 1200 });
-  } else {
-    setTimeout(prepare, 400);
-  }
+  /* Rakitan disiapkan sesudah halaman selesai dimuat. Kalau disiapkan pada
+     waktu senggang pertama, itu masih di tengah gambar pertama, dan membuat
+     AudioContext menahan thread utama sampai 180 ms. Klik yang datang lebih
+     dulu tetap aman: unlock() membuat rakitannya sendiri. */
+  const siapkan = () => {
+    if (window.requestIdleCallback) requestIdleCallback(prepare, { timeout: 2000 });
+    else setTimeout(prepare, 400);
+  };
+  if (document.readyState === "complete") setTimeout(siapkan, 500);
+  else window.addEventListener("load", () => setTimeout(siapkan, 500), { once: true });
 
   ["pointerdown", "keydown", "touchstart"].forEach((type) => {
     window.addEventListener(type, unlock, { capture: true, once: true, passive: true });

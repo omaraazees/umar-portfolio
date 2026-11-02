@@ -82,7 +82,7 @@ const ld = {
       email: email ? email.replace("mailto:", "") : undefined,
       sameAs,
       address: { "@type": "PostalAddress", addressLocality: "Yogyakarta", addressCountry: "ID" },
-      knowsAbout: ["Product design", "UX design", "UI design", "Graphic design", "Interactive prototyping", "AI products", "Resume builders", "HR tech", "E-commerce", "Shopify", "Web3 dashboards"]
+      knowsAbout: ["Product design", "UX design", "UI design", "Design engineering", "Front-end development", "Interactive prototyping", "AI products", "Resume builders", "HR tech", "E-commerce", "Shopify", "Web3 dashboards"]
     },
     {
       "@type": "WebSite",
