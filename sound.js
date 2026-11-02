@@ -219,7 +219,11 @@ window.Sfx = (function () {
   const VOL = 0.42;
   const music = { el: null, gain: null, an: null, bins: null, on: false };
   music.on = true;
-  try { music.on = localStorage.getItem(MKEY) !== "off"; } catch (e) {}
+  /* Jeda hanya diingat selama sesi (tab) itu. Kunjungan berikutnya musik
+     mulai lagi, sesuai keinginan: setiap orang yang masuk disambut musik.
+     Pilihan lama di localStorage dibuang supaya tidak membisukan selamanya. */
+  try { localStorage.removeItem(MKEY); localStorage.removeItem("portfolio-music"); } catch (e) {}
+  try { music.on = sessionStorage.getItem(MKEY) !== "off"; } catch (e) {}
 
   function musicSrc() {
     const a = document.createElement("audio");
@@ -276,7 +280,7 @@ window.Sfx = (function () {
 
   function setMusic(v) {
     music.on = !!v;
-    try { localStorage.setItem(MKEY, music.on ? "on" : "off"); } catch (e) {}
+    try { sessionStorage.setItem(MKEY, music.on ? "on" : "off"); } catch (e) {}
     music.on ? musicPlay() : musicPause();
   }
 
