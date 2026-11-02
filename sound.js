@@ -316,7 +316,9 @@ window.Sfx = (function () {
      Gerakan yang mengenai tombol suara dilewati: tombol itu sendiri yang
      memutuskan. Kalau tidak, ketukan pertama ke tombol menyalakan musik di
      sini lalu langsung dimatikan lagi oleh tombolnya. */
-  const GERAK = ["pointerdown", "keydown", "touchend"];
+  /* di HP, ketukan baru dihitung "interaksi" oleh browser saat jari
+     diangkat, jadi pointerup dan click ikut didengarkan */
+  const GERAK = ["pointerdown", "pointerup", "click", "keydown", "touchend"];
   const lepas = () => GERAK.forEach((type) => window.removeEventListener(type, lanjut, true));
   const lanjut = (e) => {
     if (e.target && e.target.closest && e.target.closest("#sound-toggle")) return;
