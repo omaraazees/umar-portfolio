@@ -1016,6 +1016,53 @@ const CVL_TABS = ["Tromso", "Seoul", "Copenhagen", "Florence"];
 /* gulir halus antar titik berhenti: [detik, posisi gulir dalam piksel desain] */
 function gulir(keys, t) { return K(t, keys, E.io); }
 
+/* Carousel section penutup landing .cv, sama dengan skrip di halaman landing:
+   enam kartu, tengah ukuran penuh, samping versi kecil, bergeser satu langkah
+   ke kanan tiap ketukan (transform .8s cubic-bezier(.45,0,.15,1), opacity .8s ease).
+   Capture halaman membekukan carousel di tengah transisi, jadi area aslinya
+   ditutup lalu kartu digambar ulang dari render tiap kartu. */
+function bezier(x1, y1, x2, y2) {
+  const cx = 3 * x1, bx = 3 * (x2 - x1) - cx, ax = 1 - cx - bx, cy = 3 * y1, by = 3 * (y2 - y1) - cy, ay = 1 - cy - by;
+  const X = (s) => ((ax * s + bx) * s + cx) * s, Y = (s) => ((ay * s + by) * s + cy) * s, dX = (s) => (3 * ax * s + 2 * bx) * s + cx;
+  return (x) => { let s = x; for (let i = 0; i < 8; i++) { const d = dX(s); if (Math.abs(d) < 1e-6) break; s -= (X(s) - x) / d; } return Y(clamp(s)); };
+}
+const CTA_POS = {
+  1440: { left: { x: -100, y: 78, w: 470, h: 300 }, center: { x: 410, y: 30, w: 620, h: 396 }, right: { x: 1070, y: 78, w: 470, h: 300 }, W: 1440, H: 426 },
+  390: { left: { x: -232.161, y: 41.516, w: 250.161, h: 159.677 }, center: { x: 30, y: 15.968, w: 330, h: 210.774 }, right: { x: 372, y: 41.516, w: 250.161, h: 159.677 }, W: 390, H: 227 }
+};
+const CTA_META = {"cc-status-center-1440":{"ox":40,"oy":70,"w":700},"cc-status-side-1440":{"ox":40,"oy":62.078125,"w":550},"cc-website-center-1440":{"ox":40,"oy":69,"w":700},"cc-website-side-1440":{"ox":40,"oy":62.078125,"w":550},"cc-contact-center-1440":{"ox":40,"oy":70,"w":805},"cc-contact-side-1440":{"ox":40,"oy":62.078125,"w":630},"cc-status-center-390":{"ox":40,"oy":55.953125,"w":410},"cc-status-side-390":{"ox":40,"oy":51.75,"w":330.15625},"cc-website-center-390":{"ox":40,"oy":55.421875,"w":410},"cc-website-side-390":{"ox":40,"oy":51.75,"w":330.15625},"cc-contact-center-390":{"ox":40,"oy":55.953125,"w":465.8870849609375},"cc-contact-side-390":{"ox":40,"oy":51.75,"w":372.73602294921875}};
+const E_CTA = bezier(.45, 0, .15, 1), E_EASE = bezier(.25, .1, .25, 1);
+function karusel(layer, vp, y0, bg, ticks) {
+  const S = CTA_POS[vp], c = S.center, l = S.left, r = S.right, sc = l.w / c.w, gap = r.x - (c.x + c.w);
+  const tutup = ov(layer, "tutup", 0, y0 - 6, S.W, S.H + 12); tutup.style.background = bg;
+  const host = ov(layer, "", 0, y0, S.W, S.H);
+  const order = ["status", "website", "contact"];
+  const gbr = (id) => { const m = CTA_META[id]; return `<img src="${CVL}cta/${id}.png" style="position:absolute;left:${-m.ox}px;top:${-m.oy}px;width:${m.w}px;max-width:none">`; };
+  const items = [];
+  for (let i = -3; i < 3; i++) {
+    const k = order[((i + 1) % 3 + 3) % 3];
+    const el = mk("", host); Object.assign(el.style, { position: "absolute", left: 0, top: 0, width: c.w + "px", height: c.h + "px", transformOrigin: "0 0" });
+    const b = mk("", el); Object.assign(b.style, { position: "absolute", left: 0, top: 0, transformOrigin: "0 0", transform: `scale(${1 / sc})` }); b.innerHTML = gbr(`cc-${k}-side-${vp}`);
+    const a = mk("", el); Object.assign(a.style, { position: "absolute", left: 0, top: 0 }); a.innerHTML = gbr(`cc-${k}-center-${vp}`);
+    items.push({ el, a, b, i });
+  }
+  const pos = (s) => s === 0 ? [c.x, c.y, 1] : [s > 0 ? r.x + (s - 1) * (r.w + gap) : l.x + (s + 1) * (l.w + gap), r.y, sc];
+  const naik = (s) => (s + 1 > 2 ? -3 : s + 1);
+  return (t) => {
+    const n = ticks.filter((tk) => t >= tk).length, tk = n ? ticks[n - 1] : -1, p = n ? clamp((t - tk) / .8) : 1;
+    items.forEach((it) => {
+      let s = it.i; for (let j = 0; j < n - 1; j++) s = naik(s);
+      const sp = s, sn = n ? naik(s) : s, lompat = n && sp === 2 && sn === -3;
+      const A = pos(sp), B = pos(sn), q = lompat ? 1 : E_CTA(p), o = lompat ? 1 : E_EASE(p);
+      const x = lerp(A[0], B[0], q), y = lerp(A[1], B[1], q), z = lerp(A[2], B[2], q);
+      it.el.style.transform = `translate(${x}px,${y}px) scale(${z})`;
+      it.el.style.zIndex = sn === 0 ? 2 : 1;
+      it.a.style.opacity = lerp(sp === 0 ? 1 : 0, sn === 0 ? 1 : 0, o);
+      it.b.style.opacity = lerp(sp === 0 ? 0 : 1, sn === 0 ? 0 : 1, o);
+    });
+  };
+}
+
 /* LANDING .cv DESKTOP: hero, fitur, lalu di section template kursor mengklik
    empat tab dan pratinjau situs berganti, lalu FAQ dan penutup. */
 COMPS.cvland = {
@@ -1028,6 +1075,7 @@ COMPS.cvland = {
     const a = this.a = app("win", [["page", CVL + "full-d.jpg"]], 1200, this.VH, { dw: 1440 });
     this.page = page(a);
     this.tpl = CVL_TABS.map((n) => img(this.page, CVL + "tpl-d-" + n + ".png", 0, 4545, 1440, 1015));
+    this.cta = karusel(this.page, 1440, 6927.5, "#FBF8F3", [25.3, 27.5]);
     this.cur = mk("ov cur", a.fx); this.cur.innerHTML = ARROW; this.rip = mk("ov rip", a.fx);
     const ty = 4585.5 - 4400;
     this.PATH = [{ t: .9, x: 1100, y: 640, hover: 1 }, { t: 2.0, x: 584, y: 470, hover: 1 }, { t: 6.0, x: 1000, y: 560, hover: 1 },
@@ -1039,6 +1087,7 @@ COMPS.cvland = {
     const a = this.a;
     put(a, { s: K(t, [[0, .965], [.9, 1]], E.out), op: K(t, [[0, 0], [.6, 1], [28.8, 1], [29.6, 0]], E.sine) });
     this.page.style.transform = `translateY(${-gulir(this.SCROLL, t)}px)`;
+    this.cta(t);
     /* lapisan template: yang terakhir diklik tampil, berganti dengan pudar singkat */
     const aktif = this.TABS.filter(([tt]) => t >= tt + .05).length - 1;
     this.tpl.forEach((el, i) => fade(el, i === aktif ? on(t, this.TABS[i][0] + .05, .22) : i === aktif - 1 ? 1 : 0));
@@ -1050,21 +1099,23 @@ COMPS.cvland = {
 /* LANDING .cv HP: usapan dari hero sampai penutup; di section template jari
    mengetuk empat tab. */
 COMPS.cvlandm = {
-  W: 1440, H: 1440, DUR: 26.4,
+  W: 1440, H: 1440, DUR: 27.4,
   SCROLL: [[0, 0], [1.8, 0], [2.7, 1260], [4.1, 1260], [5.0, 2640], [6.4, 2640], [7.3, 3760], [8.7, 3760],
-    [9.6, 4830], [11.0, 4830], [11.9, 6050], [18.6, 6050], [19.5, 6740], [20.9, 6740], [21.8, 7740], [23.2, 7740], [24.1, 8278]],
+    [9.6, 4830], [11.0, 4830], [11.9, 6050], [18.6, 6050], [19.5, 6740], [20.9, 6740], [21.8, 7920], [25.3, 7920], [26.2, 8278]],
   TABS: [[13.0, 150.3], [14.4, 216.7], [15.8, 301.1], [17.2, 75.1]],
   build() {
     const a = this.a = app("phone", [["page", CVL + "full-m.jpg"]], 612);
     this.page = page(a); setUrl(a, "resumedone.com");
     this.tpl = CVL_TABS.map((n) => img(this.page, CVL + "tpl-m-" + n + ".png", 0, 6085, 390, 660));
+    this.cta = karusel(this.page, 390, 8252.5, "#FBF8F4", [22.5, 24.3]);
     this.tap = mk("ov tap", a.fx);
   },
   render(t) {
     const a = this.a;
-    put(a, { y: K(t, [[0, 60], [.9, 0]], E.out), op: K(t, [[0, 0], [.6, 1], [25.6, 1], [26.4, 0]], E.sine) });
+    put(a, { y: K(t, [[0, 60], [.9, 0]], E.out), op: K(t, [[0, 0], [.6, 1], [26.6, 1], [27.4, 0]], E.sine) });
     const y = K(t, this.SCROLL, E.out);
     this.page.style.transform = `translateY(${-y}px)`;
+    this.cta(t);
     const aktif = this.TABS.filter(([tt]) => t >= tt + .05).length - 1;
     this.tpl.forEach((el, i) => fade(el, i === aktif ? on(t, this.TABS[i][0] + .05, .22) : i === aktif - 1 ? 1 : 0));
     /* jari: usapan ke atas saat halaman bergulir, ketukan saat memilih tab */
