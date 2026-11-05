@@ -54,36 +54,36 @@ const PROJECTS = [
     "role": "Resumedone - Product Design",
     "credit": "Resumedone, 2026",
     "live": "",
-    "mandate": "Resumedone wanted a new paid add-on: a user buys their own name.cv domain and their resume goes live as a personal website on it. When I was brought in, the registrar backend was ready but there was no interface at all. I designed the whole experience inside the dashboard, from finding a name to managing the subscription, plus the website templates people publish.",
-    "challenge": "Buying a domain is a technical errand, and most job seekers have never done it. Pricing, name rules and payment were still being decided in chat while an early AI draft pointed the other way. The partner API offered one locked template, and a public site raised a real privacy question: how much contact detail should a resume show to the whole internet?",
-    "solution": "I turned the purchase into three short steps, Name, Details and Set up, with search results that show one clear price per domain per year and payment on the card already saved. The website editor reuses the resume builder's own components, so there is nothing new to learn. People pick from five templates that use their resume data exactly as written, and they decide what is public: email and phone are masked by default, with a contact form and an availability status instead.",
-    "results": "Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as 141 dashboard screens, a mobile editor and five templates, with a screen for every failure state.",
+    "mandate": "Resumedone wanted a new paid add-on: a user buys their own name.cv domain and their resume goes live as a personal website on it. When I was brought in, the registrar backend was ready but there was no interface at all. I designed the whole product: the purchase inside the dashboard, the website editor, five templates, the account and subscription screens, and after launch the landing page and the upsell that bring people to it.",
+    "challenge": "Buying a domain is a technical errand, and most job seekers have never done it. Pricing, name rules and payment were still being decided in chat while an early AI draft pointed the other way. The partner API offered one locked template, and a public site raised a real privacy question: how much contact detail should a resume show to the whole internet? Launch was only the start: the first weeks showed the offer had to reach people earlier, at the moment they finish a resume.",
+    "solution": "I turned the purchase into three short steps, Name, Details and Set up, with search results that show one clear price per domain per year and payment on the card already saved. The website editor reuses the resume builder's own components, so there is nothing new to learn, including the same font size controls. People pick from five templates, each in five colours, that use their resume data exactly as written, and they decide what is public: email and phone are masked by default, with a contact form and an availability status instead. After launch I designed three conversion experiments with the product lead: a six-step upsell right after someone buys a resume, a flow where people build their site first and pay only to publish, and a landing page for the feature.",
+    "results": "Shipped to production about a month after kickoff, in English across 12 markets. Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as more than 1,000 screens and states across four breakpoints, five templates with colour variants, and a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-01.mp4?v=202611022344",
-      "webm": "media/cv-media-01.webm?v=202611022344",
-      "poster": "media/cv-media-01-poster.webp?v=202611022344"
+      "mp4": "media/cv-media-01.mp4?v=202611051537",
+      "webm": "media/cv-media-01.webm?v=202611051537",
+      "poster": "media/cv-media-01-poster.webp?v=202611051537"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-01.mp4?v=202611022344",
-        "webm": "media/cv-media-01.webm?v=202611022344",
-        "poster": "media/cv-media-01-poster.webp?v=202611022344"
+        "mp4": "media/cv-media-01.mp4?v=202611051537",
+        "webm": "media/cv-media-01.webm?v=202611051537",
+        "poster": "media/cv-media-01-poster.webp?v=202611051537"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=202611022344",
-        "webm": "media/cv-media-02.webm?v=202611022344",
-        "poster": "media/cv-media-02-poster.webp?v=202611022344"
+        "mp4": "media/cv-media-02.mp4?v=202611051537",
+        "webm": "media/cv-media-02.webm?v=202611051537",
+        "poster": "media/cv-media-02-poster.webp?v=202611051537"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=202611022344",
-        "webm": "media/cv-media-03.webm?v=202611022344",
-        "poster": "media/cv-media-03-poster.webp?v=202611022344"
+        "mp4": "media/cv-media-03.mp4?v=202611051537",
+        "webm": "media/cv-media-03.webm?v=202611051537",
+        "poster": "media/cv-media-03-poster.webp?v=202611051537"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=202611022344",
-        "webm": "media/cv-media-04.webm?v=202611022344",
-        "poster": "media/cv-media-04-poster.webp?v=202611022344"
+        "mp4": "media/cv-media-04.mp4?v=202611051537",
+        "webm": "media/cv-media-04.webm?v=202611051537",
+        "poster": "media/cv-media-04-poster.webp?v=202611051537"
       }
     ]
   },
@@ -99,30 +99,30 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=202611022344",
-      "webm": "media/faq-media-01.webm?v=202611022344",
-      "poster": "media/faq-media-01-poster.webp?v=202611022344"
+      "mp4": "media/faq-media-01.mp4?v=202611051537",
+      "webm": "media/faq-media-01.webm?v=202611051537",
+      "poster": "media/faq-media-01-poster.webp?v=202611051537"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=202611022344",
-        "webm": "media/faq-media-01.webm?v=202611022344",
-        "poster": "media/faq-media-01-poster.webp?v=202611022344"
+        "mp4": "media/faq-media-01.mp4?v=202611051537",
+        "webm": "media/faq-media-01.webm?v=202611051537",
+        "poster": "media/faq-media-01-poster.webp?v=202611051537"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=202611022344",
-        "webm": "media/faq-media-02.webm?v=202611022344",
-        "poster": "media/faq-media-02-poster.webp?v=202611022344"
+        "mp4": "media/faq-media-02.mp4?v=202611051537",
+        "webm": "media/faq-media-02.webm?v=202611051537",
+        "poster": "media/faq-media-02-poster.webp?v=202611051537"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=202611022344",
-        "webm": "media/faq-media-03.webm?v=202611022344",
-        "poster": "media/faq-media-03-poster.webp?v=202611022344"
+        "mp4": "media/faq-media-03.mp4?v=202611051537",
+        "webm": "media/faq-media-03.webm?v=202611051537",
+        "poster": "media/faq-media-03-poster.webp?v=202611051537"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=202611022344",
-        "webm": "media/faq-media-04.webm?v=202611022344",
-        "poster": "media/faq-media-04-poster.webp?v=202611022344"
+        "mp4": "media/faq-media-04.mp4?v=202611051537",
+        "webm": "media/faq-media-04.webm?v=202611051537",
+        "poster": "media/faq-media-04-poster.webp?v=202611051537"
       }
     ]
   },
@@ -138,30 +138,30 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=202611022344",
-      "webm": "media/headshots-media-01.webm?v=202611022344",
-      "poster": "media/headshots-media-01-poster.webp?v=202611022344"
+      "mp4": "media/headshots-media-01.mp4?v=202611051537",
+      "webm": "media/headshots-media-01.webm?v=202611051537",
+      "poster": "media/headshots-media-01-poster.webp?v=202611051537"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=202611022344",
-        "webm": "media/headshots-media-01.webm?v=202611022344",
-        "poster": "media/headshots-media-01-poster.webp?v=202611022344"
+        "mp4": "media/headshots-media-01.mp4?v=202611051537",
+        "webm": "media/headshots-media-01.webm?v=202611051537",
+        "poster": "media/headshots-media-01-poster.webp?v=202611051537"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=202611022344",
-        "webm": "media/headshots-media-02.webm?v=202611022344",
-        "poster": "media/headshots-media-02-poster.webp?v=202611022344"
+        "mp4": "media/headshots-media-02.mp4?v=202611051537",
+        "webm": "media/headshots-media-02.webm?v=202611051537",
+        "poster": "media/headshots-media-02-poster.webp?v=202611051537"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=202611022344",
-        "webm": "media/headshots-media-03.webm?v=202611022344",
-        "poster": "media/headshots-media-03-poster.webp?v=202611022344"
+        "mp4": "media/headshots-media-03.mp4?v=202611051537",
+        "webm": "media/headshots-media-03.webm?v=202611051537",
+        "poster": "media/headshots-media-03-poster.webp?v=202611051537"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=202611022344",
-        "webm": "media/headshots-media-04.webm?v=202611022344",
-        "poster": "media/headshots-media-04-poster.webp?v=202611022344"
+        "mp4": "media/headshots-media-04.mp4?v=202611051537",
+        "webm": "media/headshots-media-04.webm?v=202611051537",
+        "poster": "media/headshots-media-04-poster.webp?v=202611051537"
       }
     ]
   },
@@ -177,35 +177,35 @@ const PROJECTS = [
     "results": "Targets set for launch: 30% more visitors reaching a template from the landing page, 20% more visitors scrolling past the hero, and a higher share of search visitors starting a CV. Delivered as one landing page at four widths, ready for development.",
     "awards": [],
     "card": {
-      "mp4": "media/ej-media-01.mp4?v=202611022344",
-      "webm": "media/ej-media-01.webm?v=202611022344",
-      "poster": "media/ej-media-01-poster.webp?v=202611022344"
+      "mp4": "media/ej-media-01.mp4?v=202611051537",
+      "webm": "media/ej-media-01.webm?v=202611051537",
+      "poster": "media/ej-media-01-poster.webp?v=202611051537"
     },
     "scenes": [
       {
-        "mp4": "media/ej-media-01.mp4?v=202611022344",
-        "webm": "media/ej-media-01.webm?v=202611022344",
-        "poster": "media/ej-media-01-poster.webp?v=202611022344"
+        "mp4": "media/ej-media-01.mp4?v=202611051537",
+        "webm": "media/ej-media-01.webm?v=202611051537",
+        "poster": "media/ej-media-01-poster.webp?v=202611051537"
       },
       {
-        "mp4": "media/ej-media-02.mp4?v=202611022344",
-        "webm": "media/ej-media-02.webm?v=202611022344",
-        "poster": "media/ej-media-02-poster.webp?v=202611022344"
+        "mp4": "media/ej-media-02.mp4?v=202611051537",
+        "webm": "media/ej-media-02.webm?v=202611051537",
+        "poster": "media/ej-media-02-poster.webp?v=202611051537"
       },
       {
-        "mp4": "media/ej-media-03.mp4?v=202611022344",
-        "webm": "media/ej-media-03.webm?v=202611022344",
-        "poster": "media/ej-media-03-poster.webp?v=202611022344"
+        "mp4": "media/ej-media-03.mp4?v=202611051537",
+        "webm": "media/ej-media-03.webm?v=202611051537",
+        "poster": "media/ej-media-03-poster.webp?v=202611051537"
       },
       {
-        "mp4": "media/ej-media-04.mp4?v=202611022344",
-        "webm": "media/ej-media-04.webm?v=202611022344",
-        "poster": "media/ej-media-04-poster.webp?v=202611022344"
+        "mp4": "media/ej-media-04.mp4?v=202611051537",
+        "webm": "media/ej-media-04.webm?v=202611051537",
+        "poster": "media/ej-media-04-poster.webp?v=202611051537"
       },
       {
-        "mp4": "media/ej-media-05.mp4?v=202611022344",
-        "webm": "media/ej-media-05.webm?v=202611022344",
-        "poster": "media/ej-media-05-poster.webp?v=202611022344"
+        "mp4": "media/ej-media-05.mp4?v=202611051537",
+        "webm": "media/ej-media-05.webm?v=202611051537",
+        "poster": "media/ej-media-05-poster.webp?v=202611051537"
       }
     ]
   }
@@ -278,18 +278,83 @@ const ICON = {
 const HP_MEDIA = "(max-width: 767px)";
 const kecil = (u) => u.replace(/(\.\w+)(\?|$)/, "-sm$1$2");
 
+/* Codec video dipilih sesuai kemampuan perangkat. WebM berisi AV1: lebih
+   kecil, tapi banyak perangkat (Mac M1 dan M2, Mac Intel, banyak HP) tidak
+   punya dekoder AV1 di hardware, jadi video 2160 px didekode CPU dan bisa
+   tersendat sampai terlihat macet. MP4 berisi H.264 yang didekode hardware
+   hampir di semua perangkat. AV1 hanya dipakai kalau browser menyatakannya
+   hemat daya. Hasil pengecekan disimpan di pakaiAv1 sebelum render pertama. */
+let pakaiAv1 = false;
+function cekCodec() {
+  const mc = navigator.mediaCapabilities;
+  if (!mc || !mc.decodingInfo) return Promise.resolve();
+  const uji = mc.decodingInfo({
+    type: "file",
+    video: { contentType: 'video/webm; codecs="av01.0.12M.08"', width: 2160, height: 2160, bitrate: 2000000, framerate: 30 }
+  }).then((r) => { pakaiAv1 = !!(r && r.supported && r.powerEfficient); }, () => {});
+  /* jangan menahan render pertama lebih dari 150 ms */
+  return Promise.race([uji, new Promise((ok) => setTimeout(ok, 150))]);
+}
+
 function videoTag(m, eager, auto = true, tundaPoster = false) {
   /* poster yang ditunda dipasang belakangan oleh pasangPosterTunda() */
   const poster = tundaPoster ? `data-poster="${m.poster || ""}"` : `poster="${m.poster || ""}"`;
+  const webm = m.webm ? `<source src="${kecil(m.webm)}" type="video/webm" media="${HP_MEDIA}">
+      <source src="${m.webm}" type="video/webm">` : "";
+  const mp4 = `<source src="${kecil(m.mp4)}" type="video/mp4" media="${HP_MEDIA}">
+      <source src="${m.mp4}" type="video/mp4">`;
   return `
     <video class="mock-media"${auto ? " autoplay" : ""} muted loop playsinline
            preload="${eager ? "auto" : "none"}" ${poster}>
-      ${m.webm ? `<source src="${kecil(m.webm)}" type="video/webm" media="${HP_MEDIA}">
-      <source src="${m.webm}" type="video/webm">` : ""}
-      <source src="${kecil(m.mp4)}" type="video/mp4" media="${HP_MEDIA}">
-      <source src="${m.mp4}" type="video/mp4">
+      ${pakaiAv1 ? webm + mp4 : mp4 + webm}
     </video>`;
 }
+
+/* Video yang tertahan (autoplay ditolak saat mode hemat daya, atau tab baru
+   kembali terlihat) diputar ulang pada interaksi berikutnya atau saat tab
+   tampil lagi. Hanya video yang memang sedang terlihat. */
+function putarYangTerlihat() {
+  if (document.hidden) return;
+  if (typeof syncDeckVideos === "function" && document.getElementById("deck")) syncDeckVideos();
+  document.querySelectorAll("#media video").forEach((v) => {
+    const r = v.getBoundingClientRect();
+    if (r.bottom > 0 && r.top < innerHeight && v.paused) {
+      const p = v.play();
+      if (p && p.catch) p.catch(() => {});
+    }
+  });
+}
+document.addEventListener("visibilitychange", putarYangTerlihat);
+
+/* Penjaga video: video yang terlihat dan seharusnya berjalan, tapi waktunya
+   tidak maju selama tiga detik (jaringan putus sebentar, dekoder tersangkut),
+   dimuat ulang lalu diputar dari posisi terakhir. Hanya memeriksa beberapa
+   video yang terlihat, tiap 1,5 detik, jadi bebannya kecil. */
+setInterval(() => {
+  if (document.hidden || morphJalan) return;
+  document.querySelectorAll("#deck .deck-card[data-pos='0'] video, #media video").forEach((v) => {
+    const r = v.getBoundingClientRect();
+    if (r.bottom <= 0 || r.top >= innerHeight || v.paused || v.ended) { v._diam = 0; return; }
+    /* hanya kalau datanya sudah ada (readyState 3 ke atas): video yang
+       masih mengunduh di jaringan lambat dibiarkan, tidak dimuat ulang terus */
+    if (v._t === v.currentTime && v.readyState >= 3) v._diam = (v._diam || 0) + 1;
+    else v._diam = 0;
+    v._t = v.currentTime;
+    if (v._diam >= 2) {
+      v._diam = 0;
+      const t = v.currentTime;
+      v.load();
+      v.addEventListener("loadedmetadata", () => {
+        try { v.currentTime = t; } catch (e) {}
+        const p = v.play();
+        if (p && p.catch) p.catch(() => {});
+      }, { once: true });
+    }
+  });
+}, 1500);
+["pointerdown", "keydown", "touchend"].forEach((t) =>
+  window.addEventListener(t, putarYangTerlihat, { capture: true, passive: true })
+);
 
 function scene(kind, tag, eager, auto = true, tundaPoster = false) {
   const label = tag ? `<span class="mock-tag">${tag}</span>` : "";
@@ -1756,4 +1821,4 @@ document.addEventListener("pointerdown", (e) => {
   if (e.target.closest(".pill, .dot")) Sfx.play("tap");
 });
 
-render();
+cekCodec().then(render);
