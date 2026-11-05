@@ -1083,6 +1083,182 @@ COMPS.cvlandm = {
   }
 };
 
+/* EDITOR WEBSITE .cv: langkah Content. Panel kiri digulir dari halaman Content
+   versi panjang; tiap state (pengaturan font, dropdown visibilitas, email,
+   status kustom) adalah layar pen yang ditumpuk tepat di posisi gulirnya,
+   jadi saat diklik yang berubah hanya bagian yang memang berubah. */
+const CVE = "screens/cv/editor/";
+COMPS.cvedit = {
+  W: 1440, H: 1440, DUR: 22,
+  /* offset tiap layar state di halaman panjang (piksel desain, diukur) */
+  ST: { lZkO5: [0, 1030], PgnBd: [797, 900], M8a6UI: [1126, 900], zO8KX: [572, 900], kBKrT: [572, 900] },
+  SCROLL: [[0, 0], [1.6, 0], [2.6, 340], [5.5, 340], [6.7, 797], [9.0, 797], [10.1, 1126], [12.4, 1126], [13.6, 692], [17.6, 692], [19.0, 0]],
+  /* kapan tiap state tampil: [masuk, keluar] */
+  ON: { lZkO5: [3.0, 5.0], PgnBd: [7.3, 8.5], M8a6UI: [10.6, 11.9], zO8KX: [14.2, 15.3], kBKrT: [15.3, 99] },
+  PATH: [{ t: .9, x: 1000, y: 520, hover: 1 }, { t: 2.4, x: 260, y: 520, hover: 1 }, { t: 3.0, x: 150, y: 466 },
+    { t: 4.0, x: 202, y: 546, hover: 1 }, { t: 5.0, x: 150, y: 464 }, { t: 6.6, x: 420, y: 420, hover: 1 },
+    { t: 7.3, x: 520, y: 360 }, { t: 8.0, x: 200, y: 470, hover: 1 }, { t: 8.5, x: 180, y: 414 },
+    { t: 10.0, x: 470, y: 420, hover: 1 }, { t: 10.6, x: 560, y: 362 }, { t: 11.3, x: 470, y: 472, hover: 1 }, { t: 11.9, x: 470, y: 416 },
+    { t: 13.6, x: 480, y: 330, hover: 1 }, { t: 14.2, x: 520, y: 284 }, { t: 15.3, x: 200, y: 560 },
+    { t: 17.4, x: 420, y: 430, hover: 1 }, { t: 19.6, x: 560, y: 690, hover: 1 }, { t: 20.3, x: 567, y: 708 }, { t: 22, x: 700, y: 640, hover: 1 }],
+  TYPE: [15.65, 16.95],
+  build() {
+    const a = this.a = app("win", [["base", CVE + "base.jpg"]], 1200, 760, { dw: 1440 });
+    const L = a.L.base;
+    const kol = ov(L, "crop", 0, 0, 720, 760);
+    this.gul = mk("lay", kol); this.gul.style.inset = "auto"; this.gul.style.width = "720px";
+    img(this.gul, CVE + "full.jpg", 0, 0, 720, 6225);
+    this.st = {};
+    for (const [n, [y, h]] of Object.entries(this.ST)) this.st[n] = img(this.gul, CVE + n + ".jpg", 0, y, 720, h);
+    /* status kustom diketik: penutup putih menyusut dari kiri ke kanan teks */
+    const ky = this.ST.kBKrT[0];
+    this.tx = 77; this.tw = 213;
+    this.cov = ov(this.gul, "tutup", this.tx - 1, ky + 476, this.tw + 6, 24);
+    this.car = ov(this.gul, "fill", this.tx, ky + 478, 1.5, 19); this.car.style.background = "#33334f"; this.car.style.borderRadius = "0";
+    this.cnt = ov(this.gul, "tutup", 560, ky + 515, 50, 18); this.cnt.style.background = "#F7F7FC";
+    /* tombol bawah menempel di panel kiri */
+    piece(L, L._src, 0, 660, 720, 100, 0, 660, 1440, 760);
+    this.cur = mk("ov cur", a.fx); this.cur.innerHTML = ARROW; this.rip = mk("ov rip", a.fx);
+    this.DUR_C = this.DUR;
+  },
+  render(t) {
+    const a = this.a;
+    put(a, { s: K(t, [[0, .965], [.9, 1]], E.out), op: K(t, [[0, 0], [.6, 1], [21.2, 1], [22, 0]], E.sine) });
+    this.gul.style.transform = `translateY(${-gulir(this.SCROLL, t)}px)`;
+    for (const [n, [t0, t1]] of Object.entries(this.ON)) fade(this.st[n], on(t, t0 + .04, .18) * (1 - on(t, t1 + .04, .18)));
+    /* ketik sekitar 23 huruf per detik */
+    const p = seg(t, ...this.TYPE), N = 30, k = Math.floor(p * N + 1e-6);
+    if (!this.pos && document.fonts.check("400 14px Gilroy")) {
+      const c = fit.c || (fit.c = document.createElement("canvas").getContext("2d"));
+      c.font = "400 100px Gilroy"; const txt = "Open to remote roles in Europe", tot = c.measureText(txt).width;
+      this.pos = Array.from({ length: N + 1 }, (_, j) => this.tw * c.measureText(txt.slice(0, j)).width / tot);
+    }
+    const ujung = this.tx + (this.pos ? this.pos[k] : this.tw * k / N);
+    const kiri = ujung - (k === 0 ? 2 : .5);
+    this.cov.style.left = kiri + "px"; this.cov.style.width = (k >= N ? 0 : this.tx + this.tw + 5 - kiri) + "px";
+    fade(this.cov, t < this.ON.kBKrT[0] ? 0 : 1);
+    this.car.style.left = ujung + 1 + "px";
+    const ketik = t >= this.ON.kBKrT[0] + .1 && t < this.TYPE[1] + .9;
+    fade(this.car, ketik && (k < N || Math.floor(t * 2.4) % 2 === 0) ? 1 : 0);
+    fade(this.cnt, t >= this.ON.kBKrT[0] && t < this.TYPE[1] ? 1 : 0);
+    cursor(this, this.PATH, t);
+    camTo(a, [[0, 1.0, 720, 380], [1.6, 1.0, 720, 380], [2.6, 1.32, 430, 400], [17.6, 1.32, 430, 400], [19.0, 1.0, 720, 380]], t);
+  }
+};
+
+/* UPSELL .cv 6 LANGKAH: sesudah membayar resume, pengguna ditanya punya
+   website atau belum, melihat nilai yang disesuaikan dengan industrinya,
+   memilih tujuan, gaya, visibilitas, lalu pratinjau dan bayar. */
+const CVU = "screens/cv/upsell/";
+COMPS.cvup = {
+  W: 1440, H: 1440, DUR: 21.6,
+  AT: { web: 0, value: 3.0, goal: 5.6, style: 8.6, vis: 11.6, pub: 14.4, pay: 17.4 },
+  SRC: { web: "WOajE", value: "aDQwo", goal: "DWNv8", style: "cJ65X", vis: "PWdBz", pub: "o5s0D8", pay: "p7a2q" },
+  PATH: [{ t: .9, x: 1100, y: 560, hover: 1 }, { t: 1.8, x: 854, y: 530 }, { t: 2.85, x: 806, y: 626 },
+    { t: 4.2, x: 700, y: 400, hover: 1 }, { t: 5.45, x: 720, y: 614 },
+    { t: 6.6, x: 640, y: 430, hover: 1 }, { t: 7.4, x: 600, y: 374 }, { t: 8.45, x: 756, y: 614 },
+    { t: 9.6, x: 860, y: 500, hover: 1 }, { t: 10.5, x: 560, y: 520 }, { t: 11.45, x: 756, y: 692 },
+    { t: 12.6, x: 640, y: 420, hover: 1 }, { t: 13.4, x: 720, y: 514 }, { t: 14.25, x: 756, y: 586 },
+    { t: 15.4, x: 1100, y: 470, hover: 1 }, { t: 16.2, x: 1126, y: 580 }, { t: 17.25, x: 1164, y: 656 },
+    { t: 18.6, x: 860, y: 420, hover: 1 }, { t: 19.6, x: 720, y: 302, hover: 1 }, { t: 21.6, x: 760, y: 360, hover: 1 }],
+  build() {
+    const a = this.a = app("win", Object.entries(this.SRC).map(([k, n]) => [k, CVU + n + ".jpg"]), 1200, 760, { dw: 1440 });
+    this.cur = mk("ov cur", a.fx); this.cur.innerHTML = ARROW; this.rip = mk("ov rip", a.fx);
+  },
+  render(t) {
+    const a = this.a;
+    put(a, { s: K(t, [[0, .965], [.9, 1]], E.out), op: K(t, [[0, 0], [.6, 1], [20.8, 1], [21.6, 0]], E.sine) });
+    lapis(a, this.AT, t, 1);
+    cursor(this, this.PATH, t);
+    camTo(a, [[0, 1.12, 720, 380], [1.2, 1.4, 720, 375], [14.2, 1.4, 720, 375], [14.9, 1.12, 720, 380], [21.6, 1.12, 720, 380]], t);
+  }
+};
+
+/* WARNA TEMPLATE .cv: di langkah Template pengguna memilih satu dari lima
+   template, lalu satu dari lima warna aksennya. Pratinjau di kanan memakai
+   render tiap varian warna dari pen, titik warna mengikuti palet template. */
+const CVC = "screens/cv/colours/";
+COMPS.cvcolor = {
+  W: 1440, H: 1440, DUR: 23.4,
+  TPL: [
+    ["Florence", [60, 285, 189, 179], [["Blue", "#2C56B8"], ["Burgundy", "#8B2E3C"], ["Forest", "#2F6B4F"], ["Plum", "#5B3A7A"], ["Ochre", "#9A6A12"]]],
+    ["Seoul", [265, 285, 189.5, 179], [["Lime", "#D4F36B"], ["Sky", "#8FD3FF"], ["Coral", "#FF8A70"], ["Lilac", "#C3A6FF"], ["Amber", "#FFC857"]]],
+    ["Copenhagen", [471, 285, 189, 179], [["Red", "#D1142B"], ["Cobalt", "#1F3FD1"], ["Emerald", "#0F7A4A"], ["Burntorange", "#C2410C"], ["Magenta", "#B0136E"]]],
+    ["Tromso", [60, 476, 188.5, 178], [["Violet", "#6A3DE8"], ["Teal", "#0E7C6B"], ["Rose", "#C0265E"], ["Ocean", "#1F5FD1"], ["Brick", "#B4442A"]]],
+    ["Marrakesh", [265, 476, 189.5, 178], [["Orange", "#F26A2E"], ["Majorelleblue", "#2F5BEA"], ["Emerald", "#1F9D6B"], ["Rose", "#E0457B"], ["Violet", "#8A5CF0"]]]
+  ],
+  dot: (i) => [76 + 42 * i, 245],
+  build() {
+    const a = this.a = app("win", [["base", CVC + "base.jpg"]], 1200, 760, { dw: 1440 });
+    const L = a.L.base;
+    /* urutan klik: warna 2 sampai 5 tiap template, lalu kartu template berikutnya */
+    const ev = this.EV = [{ t: 0, ti: 0, ci: 0 }];
+    let t = 1.5;
+    this.TPL.forEach((tp, ti) => {
+      if (ti) { ev.push({ t, ti, ci: 0, card: 1 }); t += 1.05; }
+      for (let ci = 1; ci < 5; ci++) { ev.push({ t, ti, ci }); t += .68; }
+      t += .25;
+    });
+    /* Florence tidak terpilih: tepi dari kartu Tromso, gambar mini tanpa centang */
+    this.flOff = tepiLepas(L, [60, 285, 189, 179], [60, 476, 188.5, 178], [61, 286, 188, 134], PT + "thumb-florence-v2.png", 760, 1440);
+    this.cards = this.TPL.map(([, c], ti) => ti ? kartuPilih(L, [...c, 9], [c[0] + 55, c[1] + 28, 80, 80], PT + "R20PV.png") : []);
+    /* pratinjau tiap varian */
+    this.pv = {};
+    this.TPL.forEach(([n, , cols]) => cols.forEach(([c]) => {
+      const e = ov(L, "crop", 736, 129, 682, 615, `<img src="${CVC}${n}-${c}.jpg" style="position:absolute;left:0;top:0;width:682px">`);
+      e.style.background = "#fff"; this.pv[n + c] = e;
+    }));
+    /* titik warna: palet template yang aktif, centang putih di titik terpilih */
+    const tutup = ov(L, "tutup", 56, 225, 212, 40); tutup.style.background = "#F7F7FC";
+    this.dots = this.TPL.map(([, , cols]) => cols.map(([, hex], i) => {
+      const [x, y] = this.dot(i), d = ov(L, "", x - 16, y - 16, 32, 32, `<div style="position:absolute;inset:8px;opacity:0">${CHECK}</div>`);
+      d.style.borderRadius = "50%"; d.style.background = hex; d._ck = d.firstChild;
+      if (hex === "#D4F36B" || hex === "#FFC857" || hex === "#8FD3FF") d._ck.querySelector("path").setAttribute("stroke", "#0E0F12");
+      return d;
+    }));
+    /* chip "Selected: <template>" rata kanan di 659.5 */
+    const chipBg = ov(L, "tutup", 500, 184, 162, 36); chipBg.style.background = "#F7F7FC";
+    this.chip = ov(L, "", 514, 187, 146, 29.5); Object.assign(this.chip.style, { background: "rgb(232,242,255)", borderRadius: "999px" });
+    this.chipIc = piece(L, L._src, 0, 0, 14, 14, 521, 195, 1440, 760);
+    this.chipTx = mk("span", L); Object.assign(this.chipTx.style, { position: "absolute", top: "187px", lineHeight: "29.5px", color: "#1688FE", fontWeight: 500, whiteSpace: "nowrap", fontFamily: "Gilroy" });
+    this.cur = mk("ov cur", a.fx); this.cur.innerHTML = ARROW; this.rip = mk("ov rip", a.fx);
+    this.PATH = [{ t: .8, x: 1000, y: 470, hover: 1 }].concat(ev.slice(1).map((e) => {
+      const [x, y] = e.card ? [this.TPL[e.ti][1][0] + 95, this.TPL[e.ti][1][1] + 90] : this.dot(e.ci);
+      return { t: e.t, x, y };
+    })).concat([{ t: this.DUR, x: 1060, y: 520, hover: 1 }]);
+  },
+  render(t) {
+    const a = this.a, ev = this.EV;
+    put(a, { s: K(t, [[0, .965], [.9, 1]], E.out), op: K(t, [[0, 0], [.6, 1], [22.6, 1], [23.4, 0]], E.sine) });
+    let k = 0; while (k + 1 < ev.length && ev[k + 1].t + .04 <= t) k++;
+    const cur = ev[k], prev = ev[Math.max(0, k - 1)], p = k ? on(t, cur.t + .04, .2) : 1;
+    const key = (e) => this.TPL[e.ti][0] + this.TPL[e.ti][2][e.ci][0];
+    for (const [n, el] of Object.entries(this.pv)) {
+      const isC = n === key(cur), isP = n === key(prev) && p < 1;
+      el.style.zIndex = isC ? 2 : 1; fade(el, isC ? p : isP ? 1 : 0);
+    }
+    const ti = cur.ti, tp = cur.card ? p : 1;
+    this.dots.forEach((g, i) => g.forEach((d, j) => {
+      fade(d, i === ti ? tp : (cur.card && i === prev.ti ? 1 - tp : 0));
+      fade(d._ck, i === ti && j === cur.ci ? (cur.card ? 1 : p) : i === ti && j === prev.ci && prev.ti === ti && !cur.card ? 1 - p : 0);
+    }));
+    tampil(this.flOff, ti ? 1 : 0);
+    this.cards.forEach((g, i) => tampil(g, i === ti ? tp : (i === prev.ti && cur.card ? 1 - tp : 0)));
+    /* teks chip */
+    const nama = "Selected: " + this.TPL[ti][0];
+    if (document.fonts.check("500 13px Gilroy")) {
+      if (!this.fs) this.fs = fit("Selected: Florence", 109, 500);
+      const c = fit.c; c.font = `500 ${this.fs}px Gilroy`; const w = c.measureText(nama).width;
+      const x0 = 659.5 - (8.5 + w + 7.5 + 12.5 + 8);
+      this.chip.style.left = x0 + "px"; this.chip.style.width = 659.5 - x0 + "px";
+      this.chipIc.style.left = x0 + 7 + "px"; this.chipIc.style.top = "194.5px";
+      this.chipTx.style.left = x0 + 28 + "px"; this.chipTx.style.fontSize = this.fs + "px"; this.chipTx.textContent = nama;
+    }
+    cursor(this, this.PATH, t);
+    camTo(a, [[0, 1.1, 720, 380], [23.4, 1.1, 720, 380]], t);
+  }
+};
+
 /* ---------- jalankan ---------- */
 const C = COMPS[COMP];
 stage.style.setProperty("--W", C.W + "px"); stage.style.setProperty("--H", C.H + "px");
