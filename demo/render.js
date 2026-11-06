@@ -12,7 +12,7 @@ const fs = require("fs");
   const mode = process.argv[3] || "30";
   const browser = await chromium.launch({
     headless: true,
-    args: ["--use-angle=metal", "--enable-gpu", "--ignore-gpu-blocklist"]
+    args: ["--use-angle=metal", "--enable-gpu", "--ignore-gpu-blocklist", "--allow-file-access-from-files"]
   });
   const page = await browser.newPage({ viewport: { width: 1440, height: 1440 }, deviceScaleFactor: +process.env.SCALE || 1 });
   await page.goto("file://" + path.join(__dirname, "stage.html") + `?comp=${comp}&render=1`);

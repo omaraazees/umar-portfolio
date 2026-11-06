@@ -1,5 +1,6 @@
 #!/bin/bash
-# Naikkan penanda ?v= di index.html, app.js, dan styles.css sekaligus.
+# Isi penanda ?v= di index.html, app.js, dan styles.css dengan sidik isi
+# tiap berkas (tools/versi.js), jadi aset yang tidak berubah tetap di cache.
 # Jalankan sebelum commit tiap kali kode atau media berubah:
 #   ./versi.sh
 # Hostinger menyimpan berkas statis 7 hari di browser, jadi tanpa ini
@@ -8,6 +9,4 @@ set -e
 cd "$(dirname "$0")"
 # isi statis, JSON-LD, llms.txt, robots.txt, sitemap.xml ikut data terbaru
 node tools/seo.js
-V=$(date +%Y%m%d%H%M)
-sed -i '' -E "s/\?v=[0-9]+/?v=$V/g" index.html app.js styles.css
-echo "versi $V ($(grep -o "?v=$V" index.html app.js styles.css | wc -l | tr -d ' ') tempat)"
+node tools/versi.js

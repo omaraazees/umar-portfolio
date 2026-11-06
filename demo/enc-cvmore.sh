@@ -19,5 +19,5 @@ enc () { # komposisi, nama berkas, detik poster
 }
 enc cvedit  cv-media-07 7.8
 enc cvcolor cv-media-08 5.4
-enc cvup    cv-media-09 9.9
+enc cvup    cv-media-09 11.3
 echo SELESAI

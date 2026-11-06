@@ -3,21 +3,21 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/inter-regular.woff2?v=202611052015") format("woff2");
+  src: url("fonts/inter-regular.woff2?v=e101ac0f64") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("fonts/inter-semibold.woff2?v=202611052015") format("woff2");
+  src: url("fonts/inter-semibold.woff2?v=d1e9f4c098") format("woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("fonts/inter-medium.woff2?v=202611052015") format("woff2");
+  src: url("fonts/inter-medium.woff2?v=e19b372fd9") format("woff2");
 }
 
 /* =========================================================
@@ -102,7 +102,10 @@ html {
   /* --- geometri, diambil dari pengukuran referensi di 1440px --- */
   --rail-x: 17.85vw;      /* 257px di 1440 */
   --deck-x: 70.5vw;       /* titik tengah kartu */
-  --deck-size: 33.5rem;   /* 335px di 1440 */
+  /* Kartu ikut lebar dan tinggi layar: 446px di 1440x900, 562px di
+     1920x1080. Tidak pernah lebih kecil dari ukuran lama (33.5rem), dan
+     dibatasi tinggi layar supaya petunjuk geser tetap terlihat. */
+  --deck-size: max(33.5rem, min(31vw, 52vh));
 
   --dots-x: 5.76vw;       /* jarak titik indikator dari tepi kanan */
   /* Batas kolom di halaman project. Video demo persegi, jadi kolomnya
