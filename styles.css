@@ -1104,7 +1104,7 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   z-index: 200;
   box-shadow: var(--shadow-md);
   pointer-events: none;
-  will-change: left, top, width, height, border-radius;
+  will-change: transform;
 }
 .morph-clip {
   position: absolute;

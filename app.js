@@ -60,19 +60,19 @@ const PROJECTS = [
     "results": "Shipped to production about a month after kickoff, in English across 12 markets. Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as more than 1,000 screens and states across four breakpoints, five templates with colour variants, and a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-05.mp4?v=6151d4796e",
-      "webm": "media/cv-media-05.webm?v=016a4221a8",
+      "mp4": "media/cv-media-05.mp4?v=dc46f2b96f",
+      "webm": "media/cv-media-05.webm?v=299a7b41ba",
       "poster": "media/cv-media-05-poster.webp?v=331f617335"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-05.mp4?v=6151d4796e",
-        "webm": "media/cv-media-05.webm?v=016a4221a8",
+        "mp4": "media/cv-media-05.mp4?v=dc46f2b96f",
+        "webm": "media/cv-media-05.webm?v=299a7b41ba",
         "poster": "media/cv-media-05-poster.webp?v=331f617335"
       },
       {
-        "mp4": "media/cv-media-06.mp4?v=ba966addd6",
-        "webm": "media/cv-media-06.webm?v=3bc3abe5ce",
+        "mp4": "media/cv-media-06.mp4?v=5149b4cc18",
+        "webm": "media/cv-media-06.webm?v=d1179662ae",
         "poster": "media/cv-media-06-poster.webp?v=3c293558bc"
       },
       {
@@ -1008,6 +1008,9 @@ function pasangPosterTunda() {
 }
 
 function syncDeckVideos() {
+  /* saat klon sedang mendarat di kartu, video kartu itu akan diganti video
+     klon, jadi jangan mulai mengunduhnya dulu */
+  if (morphJalan) return;
   if (!posterSiap) return tungguPosterAktif();
   document.querySelectorAll("#deck .deck-card").forEach((el) => {
     const v = el.querySelector("video");
@@ -1017,8 +1020,10 @@ function syncDeckVideos() {
       if (v.preload !== "auto") v.preload = "auto";
       const p = v.play();
       if (p && p.catch) p.catch(() => {});
-    } else if (!v.paused) {
-      v.pause();
+    } else {
+      if (!v.paused) v.pause();
+      /* kartu yang sudah digeser lewat berhenti mengunduh */
+      if (v.preload === "auto") v.preload = "metadata";
     }
   });
 }
@@ -1338,6 +1343,7 @@ function lapisKartu(ghost, nama, masuk) {
   lapis.className = "morph-kartu";
   lapis.innerHTML = '<div class="morph-kaca"></div><span class="card-name"></span>';
   lapis.lastChild.textContent = nama;
+  if (masuk) lapis.dataset.masuk = "1";
   ghost.firstElementChild.appendChild(lapis);
   Array.from(lapis.children).forEach((el) => {
     gerak(el, masuk ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }], {
@@ -1348,21 +1354,50 @@ function lapisKartu(ghost, nama, masuk) {
   });
 }
 
+/* Klon terbang lewat transform, bukan left/top/width/height. Animasi ukuran
+   memaksa layout dan menggambar ulang klon (video, kaca buram, bibir) di
+   tiap frame, dan itu yang membuat frame turun ke 25 sampai 57 ms saat
+   project dibuka dan ditutup. Kartu dan media sama-sama persegi, jadi cukup
+   satu skala.
+
+   Klon langsung dipasang di ukuran tujuan lalu diskalakan dari ukuran asal,
+   jadi saat mendarat semuanya pas dengan elemen tujuan. Radius ikut dibagi
+   skala supaya sudutnya terlihat sama dengan asalnya. Lapisan nama kartu
+   yang sedang memudar keluar diberi skala kebalikan, jadi di frame pertama
+   ukurannya tetap ukuran kartu. */
 function terbang(ghost, ke, radiusKe) {
   const ikutScroll = ghost.style.position === "absolute";
   const dx = ikutScroll ? window.scrollX : 0;
   const dy = ikutScroll ? window.scrollY : 0;
+  const fx = parseFloat(ghost.style.left);
+  const fy = parseFloat(ghost.style.top);
+  const fw = parseFloat(ghost.style.width);
+  const tx = ke.left + dx;
+  const ty = ke.top + dy;
+  const s = fw / ke.width;
+  const r0 = parseFloat(ghost.style.borderRadius) / s;
+
+  ghost.style.left = tx + "px";
+  ghost.style.top = ty + "px";
+  ghost.style.width = ke.width + "px";
+  ghost.style.height = ke.height + "px";
+  ghost.style.borderRadius = radiusKe;
+  ghost.style.transformOrigin = "0 0";
+
+  const lapis = ghost.querySelector(".morph-kartu");
+  if (lapis && !lapis.dataset.masuk) {
+    lapis.style.inset = "auto auto 0 0";
+    lapis.style.width = fw + "px";
+    lapis.style.height = fw + "px";
+    lapis.style.transformOrigin = "0 100%";
+    lapis.style.transform = `scale(${1 / s})`;
+  }
+
   const a = gerak(
     ghost,
     [
-      {},
-      {
-        left: ke.left + dx + "px",
-        top: ke.top + dy + "px",
-        width: ke.width + "px",
-        height: ke.height + "px",
-        borderRadius: radiusKe
-      }
+      { transform: `translate(${fx - tx}px, ${fy - ty}px) scale(${s})`, borderRadius: r0 + "px" },
+      { transform: "none", borderRadius: radiusKe }
     ],
     { duration: MORPH_MS, easing: MORPH_KURVA }
   );
@@ -1464,6 +1499,7 @@ function openProject(slug, cardEl) {
     ghost.remove();
     dekLama.remove();
     morphJalan = false;
+    lepasVideoTunda();
   });
 }
 
@@ -1533,8 +1569,8 @@ function closeProject() {
     card.style.visibility = "";
     ghost.remove();
     deck.classList.remove("is-instant");
-    syncDeckVideos();
     morphJalan = false;
+    syncDeckVideos();
   });
 }
 
@@ -1600,7 +1636,7 @@ function mediaHTML(p) {
   return p.scenes
     .map(
       (s, i) =>
-        `<div class="media-item" style="animation-delay:${i * 0.07}s">${scene(s, "", i === 0)}</div>`
+        `<div class="media-item" style="animation-delay:${i * 0.07}s">${scene(s, "", i === 0 && !morphJalan, i === 0 && !morphJalan)}</div>`
     )
     .join("");
 }
@@ -1806,10 +1842,18 @@ const videoWatcher = window.IntersectionObserver
       (entries) => {
         for (const e of entries) {
           if (e.isIntersecting) {
+            /* selama klon terbang, unduhan video lain menunggu supaya tidak
+               berebut jaringan dan dekoder dengan animasinya */
+            if (morphJalan) { videoTunda.add(e.target); continue; }
             const main = e.target.play();
             if (main && main.catch) main.catch(() => {});
           } else {
+            videoTunda.delete(e.target);
             e.target.pause();
+            /* video yang sudah lewat berhenti mengunduh. Kalau tetap auto,
+               Chrome terus mengisi buffernya selagi dijeda, dan di jaringan
+               HP itu merebut jatah video yang sedang dilihat */
+            if (e.target.preload === "auto") e.target.preload = "metadata";
           }
         }
       },
@@ -1817,9 +1861,58 @@ const videoWatcher = window.IntersectionObserver
     )
   : null;
 
+/* Muat awal: video yang sudah dekat (sampai satu setengah layar di bawah)
+   mulai mengisi buffer sebelum terlihat, jadi saat di-scroll ke sana
+   langsung jalan, tidak menunggu dari nol. Video yang dijeda dengan
+   preload auto hanya mengisi beberapa detik lalu berhenti, jadi tidak
+   mengunduh seluruh berkas. Antreannya satu per satu: selama ada video
+   terlihat yang masih menunggu data, video berikutnya menunggu dulu supaya
+   tidak merebut jaringannya. */
+const videoSiap = window.IntersectionObserver
+  ? new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          videoSiap.unobserve(e.target);
+          siapkanVideo(e.target);
+        }
+      },
+      { rootMargin: "50% 0px 150% 0px" }
+    )
+  : null;
+
+const siapTunda = new Set();
+function siapkanVideo(v) {
+  if (!v.isConnected || v.preload === "auto") return;
+  if (morphJalan) { siapTunda.add(v); return; }
+  const sibuk = Array.from(document.querySelectorAll("#media video")).find(
+    (x) => x !== v && !x.paused && x.readyState < 3
+  );
+  if (sibuk) {
+    sibuk.addEventListener("canplay", () => siapkanVideo(v), { once: true });
+    return;
+  }
+  v.preload = "auto";
+}
+
+const videoTunda = new Set();
+function lepasVideoTunda() {
+  videoTunda.forEach((v) => {
+    if (!v.isConnected) return;
+    const main = v.play();
+    if (main && main.catch) main.catch(() => {});
+  });
+  videoTunda.clear();
+  siapTunda.forEach(siapkanVideo);
+  siapTunda.clear();
+}
+
 function amatiVideo(scope) {
   if (!videoWatcher) return;
-  scope.querySelectorAll("video").forEach((v) => videoWatcher.observe(v));
+  scope.querySelectorAll("video").forEach((v) => {
+    videoWatcher.observe(v);
+    if (v.preload !== "auto") videoSiap.observe(v);
+  });
 }
 
 /* ---------------------------------------------------------
