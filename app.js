@@ -60,19 +60,19 @@ const PROJECTS = [
     "results": "Shipped to production about a month after kickoff, in English across 12 markets. Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as more than 1,000 screens and states across four breakpoints, five templates with colour variants, and a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-05.mp4?v=dc46f2b96f",
-      "webm": "media/cv-media-05.webm?v=299a7b41ba",
+      "mp4": "media/cv-media-05.mp4?v=33cede0da1",
+      "webm": "media/cv-media-05.webm?v=d7421ecaa8",
       "poster": "media/cv-media-05-poster.webp?v=331f617335"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-05.mp4?v=dc46f2b96f",
-        "webm": "media/cv-media-05.webm?v=299a7b41ba",
+        "mp4": "media/cv-media-05.mp4?v=33cede0da1",
+        "webm": "media/cv-media-05.webm?v=d7421ecaa8",
         "poster": "media/cv-media-05-poster.webp?v=331f617335"
       },
       {
-        "mp4": "media/cv-media-06.mp4?v=5149b4cc18",
-        "webm": "media/cv-media-06.webm?v=d1179662ae",
+        "mp4": "media/cv-media-06.mp4?v=a12caa2778",
+        "webm": "media/cv-media-06.webm?v=cdb66c4241",
         "poster": "media/cv-media-06-poster.webp?v=3c293558bc"
       },
       {
