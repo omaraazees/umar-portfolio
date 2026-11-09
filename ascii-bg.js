@@ -26,7 +26,34 @@
   cv.setAttribute("aria-hidden", "true");
   document.body.prepend(cv);
 
-  const ukuran = () => ({ w: window.innerWidth, h: window.innerHeight, dpr: window.devicePixelRatio || 1 });
+  /* Tinggi kanvas tidak ikut bilah alamat HP. Bilah itu muncul dan
+     tenggelam tiap kali halaman berganti atau di-scroll, dan tiap kali tinggi
+     layar berubah kanvas harus dikosongkan lalu digambar ulang penuh. Di
+     tengah transisi project itu terlihat sebagai kedipan dan frame patah.
+     Jadi tingginya diambil yang terbesar untuk lebar yang sama (CSS-nya
+     100lvh), dan ukur ulang hanya kalau lebarnya berubah atau layarnya
+     memang bertambah tinggi. */
+  let lebarLalu = 0, tinggiMaks = 0;
+  const ukuran = () => {
+    const w = window.innerWidth;
+    if (w !== lebarLalu) { lebarLalu = w; tinggiMaks = 0; }
+    tinggiMaks = Math.max(tinggiMaks, window.innerHeight, cv.clientHeight);
+    return { w, h: tinggiMaks, dpr: window.devicePixelRatio || 1 };
+  };
+  let ukuranLalu = "";
+  const berubah = () => {
+    const u = ukuran();
+    const k = u.w + "x" + u.h + "@" + u.dpr;
+    if (k === ukuranLalu) return null;
+    ukuranLalu = k;
+    return u;
+  };
+  let antre = 0;
+  const saatResize = (fn) =>
+    window.addEventListener("resize", () => {
+      cancelAnimationFrame(antre);
+      antre = requestAnimationFrame(() => { const u = berubah(); if (u) fn(u); });
+    });
   /* hanya untuk uji: ?ascii-t=5 membekukan latar di detik ke-5 */
   const beku = parseFloat(new URLSearchParams(location.search).get("ascii-t"));
 
@@ -47,8 +74,8 @@
   if (cv.transferControlToOffscreen && typeof Worker !== "undefined" && !isFinite(beku)) {
     const kerja = new Worker(MESIN);
     const kanvas = cv.transferControlToOffscreen();
-    kerja.postMessage({ tipe: "mulai", kanvas, sumber: SRC, diam, ...ukuran() }, [kanvas]);
-    window.addEventListener("resize", () => kerja.postMessage({ tipe: "ukur", ...ukuran() }));
+    kerja.postMessage({ tipe: "mulai", kanvas, sumber: SRC, diam, ...berubah() }, [kanvas]);
+    saatResize((u) => kerja.postMessage({ tipe: "ukur", ...u }));
     /* Selama transisi project (sekitar setengah detik) latar dijeda lewat
        window.__asciiJeda, supaya GPU dan CPU HP fokus ke klon yang terbang.
        Gelombangnya pelan, jadi jeda sesingkat itu tidak terlihat. */
@@ -66,7 +93,7 @@
   skrip.onload = () => {
     const mesin = AsciiMesin.buat(cv, cv.getContext("2d"));
     let bass = 0, t0 = performance.now(), raf = 0, lalu = 0;
-    const u = ukuran();
+    const u = berubah();
     mesin.ukur(u.w, u.h, u.dpr);
     const gambar = () => mesin.gambar(isFinite(beku) ? beku : diam ? 0 : (performance.now() - t0) / 1000, bass);
     const loop = (now) => {
@@ -77,7 +104,7 @@
     };
     const mulai = () => { if (!diam && !isFinite(beku) && !raf) raf = requestAnimationFrame(loop); };
     const henti = () => { cancelAnimationFrame(raf); raf = 0; };
-    window.addEventListener("resize", () => { const x = ukuran(); mesin.ukur(x.w, x.h, x.dpr); gambar(); });
+    saatResize((x) => { mesin.ukur(x.w, x.h, x.dpr); gambar(); });
     let jeda = false;
     const atur = () => (document.hidden || jeda ? henti() : mulai());
     window.__asciiJeda = (ya) => { jeda = !!ya; atur(); };

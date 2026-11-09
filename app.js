@@ -1370,7 +1370,7 @@ function lapisKartu(ghost, nama, masuk) {
    skala supaya sudutnya terlihat sama dengan asalnya. Lapisan nama kartu
    yang sedang memudar keluar diberi skala kebalikan, jadi di frame pertama
    ukurannya tetap ukuran kartu. */
-function terbang(ghost, ke, radiusKe) {
+function terbang(ghost, ke, radiusKe, wadah) {
   const ikutScroll = ghost.style.position === "absolute";
   const dx = ikutScroll ? window.scrollX : 0;
   const dy = ikutScroll ? window.scrollY : 0;
@@ -1383,7 +1383,15 @@ function terbang(ghost, ke, radiusKe) {
   const r0 = parseFloat(ghost.style.borderRadius) / s;
 
   ghost.style.left = tx + "px";
-  ghost.style.top = ty + "px";
+  /* Klon yang mendarat di dek ditambat ke tengah layar, sama seperti kartu
+     (top 50%). Di HP, halaman home tidak bisa di-scroll, jadi bilah alamat
+     muncul lagi di tengah transisi dan layar memendek. Kartu ikut naik
+     setengah tinggi bilah itu. Kalau klon ditambat piksel, dia mendarat
+     di tempat lama lalu kartunya meloncat. */
+  if (wadah) {
+    const tengah = wadah.getBoundingClientRect().height / 2;
+    ghost.style.top = `calc(50% + ${(ty - tengah).toFixed(2)}px)`;
+  } else ghost.style.top = ty + "px";
   ghost.style.width = ke.width + "px";
   ghost.style.height = ke.height + "px";
   ghost.style.borderRadius = radiusKe;
@@ -1576,7 +1584,7 @@ function closeProject() {
   const isi = satukanIsi(ghost, card);
   lapisKartu(ghost, card.querySelector(".card-name").textContent, true);
 
-  terbang(ghost, rectOf(card), getComputedStyle(card).borderRadius).then(() => {
+  terbang(ghost, rectOf(card), getComputedStyle(card).borderRadius, deck).then(() => {
     card.prepend(isi);
     card.style.visibility = "";
     ghost.remove();
