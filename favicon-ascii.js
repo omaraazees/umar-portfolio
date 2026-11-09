@@ -10,7 +10,7 @@
   /* potret kepala sampai bahu dari foto cutout, sudah dinormalkan kontrasnya.
      Siluet bahu yang membuat ikon tetap terbaca sebagai potret di 16 px. */
   /* ikut penanda versi skrip ini, supaya aman di-cache lama oleh browser */
-  const VER = ((document.currentScript && document.currentScript.src) || "").match(/\?v=\d+/)?.[0] || "";
+  const VER = ((document.currentScript && document.currentScript.src) || "").match(/\?v=\w+/)?.[0] || "";
   const SRC = ["media/ascii/fav-bust.webp"].map((s) => s + VER);
   const RAMP = " .:-+*#%@";
   const S = 64;            // ukuran kanvas, tampil 16 sampai 32 px di tab

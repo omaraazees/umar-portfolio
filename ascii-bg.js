@@ -13,7 +13,7 @@
    gerakan, yang tampil satu frame diam.
    ========================================================= */
 (() => {
-  const VER = ((document.currentScript && document.currentScript.src) || "").match(/\?v=\d+/)?.[0] || "";
+  const VER = ((document.currentScript && document.currentScript.src) || "").match(/\?v=\w+/)?.[0] || "";
   const SRC = ["media/ascii/pose-a.webp", "media/ascii/pose-b.webp", "media/ascii/pose-c.webp"].map(
     (s) => new URL(s + VER, location.href).href
   );
