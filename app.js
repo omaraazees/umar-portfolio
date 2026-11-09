@@ -1247,7 +1247,7 @@ function moveBy(d) {
 const MORPH_MS = 560;
 const MORPH_KURVA = "cubic-bezier(0.3, 0, 0.08, 1)";
 const KELUAR_MS = 130;
-const MASUK_JEDA = 150;
+const MASUK_JEDA = 90;
 const MASUK_MS = 300;
 
 function prefersReduced() {
@@ -1260,6 +1260,11 @@ function rectOf(el) {
 }
 
 let morphJalan = false;
+
+/* latar ASCII berhenti selama klon terbang, lihat ascii-bg.js */
+function jedaLatar(ya) {
+  if (window.__asciiJeda) window.__asciiJeda(ya);
+}
 
 function gerak(el, keyframes, opsi) {
   const a = el.animate(keyframes, { easing: "linear", fill: "both", ...opsi });
@@ -1454,6 +1459,7 @@ function openProject(slug, cardEl) {
     return;
   }
   morphJalan = true;
+  jedaLatar(true);
 
   Sfx.play("open");
   const from = rectOf(cardEl);
@@ -1485,6 +1491,7 @@ function openProject(slug, cardEl) {
     ghost.remove();
     dekLama.remove();
     morphJalan = false;
+    jedaLatar(false);
     return;
   }
   target.classList.add("is-morph-target");
@@ -1499,6 +1506,7 @@ function openProject(slug, cardEl) {
     ghost.remove();
     dekLama.remove();
     morphJalan = false;
+    jedaLatar(false);
     lepasVideoTunda();
   });
 }
@@ -1515,6 +1523,7 @@ function closeProject() {
     return;
   }
   morphJalan = true;
+  jedaLatar(true);
 
   /* yang jadi titik berangkat adalah media yang paling banyak terlihat,
      bukan selalu yang pertama, karena halaman bisa sedang di-scroll */
@@ -1541,6 +1550,9 @@ function closeProject() {
   mediaLama.removeAttribute("id");
   mediaLama.classList.add("is-exiting");
   mediaLama.style.top = atas + "px";
+  /* video lain berhenti sekarang juga. Selama memudar mereka tidak perlu
+     jalan, dan di HP dekodernya merebut jatah klon yang sedang terbang. */
+  mediaLama.querySelectorAll("video").forEach((v) => v.pause());
   document.body.appendChild(mediaLama);
   gerak(mediaLama, [{ opacity: 1 }, { opacity: 0 }], { duration: KELUAR_MS, easing: "ease-out" }).onfinish =
     () => mediaLama.remove();
@@ -1570,6 +1582,7 @@ function closeProject() {
     ghost.remove();
     deck.classList.remove("is-instant");
     morphJalan = false;
+    jedaLatar(false);
     syncDeckVideos();
   });
 }

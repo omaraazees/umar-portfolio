@@ -155,7 +155,7 @@
     let mesin = null, kanvas = null, t0 = 0, bass = 0, timer = 0, diam = false, sumber = [];
     const detik = () => (performance.now() - t0) / 1000;
     const putar = () => {
-      if (timer || diam) return;
+      if (timer || diam || !mesin) return;
       const langkah = () => {
         timer = setTimeout(langkah, 1000 / FPS);
         mesin.gambar(detik(), bass);

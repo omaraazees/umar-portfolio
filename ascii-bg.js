@@ -49,7 +49,13 @@
     const kanvas = cv.transferControlToOffscreen();
     kerja.postMessage({ tipe: "mulai", kanvas, sumber: SRC, diam, ...ukuran() }, [kanvas]);
     window.addEventListener("resize", () => kerja.postMessage({ tipe: "ukur", ...ukuran() }));
-    document.addEventListener("visibilitychange", () => kerja.postMessage({ tipe: "tampil", ya: !document.hidden }));
+    /* Selama transisi project (sekitar setengah detik) latar dijeda lewat
+       window.__asciiJeda, supaya GPU dan CPU HP fokus ke klon yang terbang.
+       Gelombangnya pelan, jadi jeda sesingkat itu tidak terlihat. */
+    let jeda = false;
+    const kirimTampil = () => kerja.postMessage({ tipe: "tampil", ya: !document.hidden && !jeda });
+    window.__asciiJeda = (ya) => { jeda = !!ya; kirimTampil(); };
+    document.addEventListener("visibilitychange", kirimTampil);
     if (!diam) ikutBass((v) => kerja.postMessage({ tipe: "bass", v }));
     return;
   }
@@ -72,7 +78,10 @@
     const mulai = () => { if (!diam && !isFinite(beku) && !raf) raf = requestAnimationFrame(loop); };
     const henti = () => { cancelAnimationFrame(raf); raf = 0; };
     window.addEventListener("resize", () => { const x = ukuran(); mesin.ukur(x.w, x.h, x.dpr); gambar(); });
-    document.addEventListener("visibilitychange", () => (document.hidden ? henti() : mulai()));
+    let jeda = false;
+    const atur = () => (document.hidden || jeda ? henti() : mulai());
+    window.__asciiJeda = (ya) => { jeda = !!ya; atur(); };
+    document.addEventListener("visibilitychange", atur);
     if (!diam) ikutBass((v) => (bass = v));
     Promise.all(SRC.map((src) => new Promise((ok) => {
       const im = new Image();

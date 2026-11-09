@@ -259,10 +259,12 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
 .is-salinan * { animation: none !important; }
 .is-salinan * { pointer-events: none !important; }
 
-/* Kolom kiri yang masuk lewat transisi project cukup memudar, sesudah
-   salinan lamanya habis. Jedanya sama dengan MASUK_JEDA di app.js. */
-.rail--morph .title-line > span { animation: fade-in 0.3s ease-out 0.15s both; }
-.rail--morph .actions { animation: fade-in 0.3s ease-out 0.15s both; }
+/* Kolom kiri yang masuk lewat transisi project cukup memudar, mulai saat
+   salinan lamanya hampir habis (salinan 130 ms). Kalau menunggu salinan habis
+   betul, ada jeda kosong sekitar 100 ms tanpa judul dan tombol, dan di HP itu
+   terbaca sebagai kedipan. Jedanya sama dengan MASUK_JEDA di app.js. */
+.rail--morph .title-line > span { animation: fade-in 0.3s ease-out 0.09s both; }
+.rail--morph .actions { animation: fade-in 0.3s ease-out 0.09s both; }
 
 /* --- tombol ikon yang melebar jadi pil saat hover --- */
 
