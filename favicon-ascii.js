@@ -20,7 +20,12 @@
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const cv = document.createElement("canvas");
   cv.width = cv.height = S;
-  const ctx = cv.getContext("2d");
+  /* Kanvas di CPU, bukan GPU. toDataURL di kanvas GPU memaksa thread utama
+     menunggu GPU menyalin pikselnya kembali. Biasanya cuma beberapa ms, tapi
+     saat GPU sibuk (klon terbang, video besar, blur kaca) tunggunya sampai
+     170 sampai 320 ms, dan itu yang membuat transisi project tersendat.
+     Kanvas 64 px di CPU cukup cepat dan tidak pernah menunggu GPU. */
+  const ctx = cv.getContext("2d", { willReadFrequently: true });
 
   let link = document.querySelector('link[rel="icon"][type="image/png"]');
   if (!link) { link = document.createElement("link"); link.rel = "icon"; link.type = "image/png"; document.head.appendChild(link); }
@@ -84,6 +89,8 @@
 
   let t0 = performance.now(), timer = 0;
   function loop() {
+    /* selama transisi project ikonnya diam dulu, supaya tidak berebut frame */
+    if (document.querySelector(".morph")) return;
     draw((performance.now() - t0) / 1000);
     pasang();
   }
