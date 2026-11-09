@@ -46,6 +46,10 @@
     const k = u.w + "x" + u.h + "@" + u.dpr;
     if (k === ukuranLalu) return null;
     ukuranLalu = k;
+    /* tinggi CSS ikut angka piksel yang sama, bukan 100lvh. Di WebView
+       (browser bawaan Instagram dan sejenisnya) lvh ikut menyusut saat
+       bilah aplikasinya muncul, dan kanvasnya jadi tergencet. */
+    cv.style.height = u.h + "px";
     return u;
   };
   let antre = 0;
