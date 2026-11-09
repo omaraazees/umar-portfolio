@@ -947,6 +947,29 @@ button { font: inherit; color: inherit; border: 0; background: none; cursor: poi
   mask-image: linear-gradient(0deg, #000 0%, #000 20%, rgba(0, 0, 0, 0.6) 30%, transparent 42%);
 }
 
+/* Layar sentuh: kaca tanpa backdrop-filter. Di WebView Android (browser
+   bawaan Instagram dan sejenisnya) masker di atas backdrop-filter kadang
+   lepas beberapa frame, dan blurnya menutup seluruh kartu. Blur di atas
+   video juga harus dihitung ulang tiap frame video, berat untuk GPU HP.
+   Gradasinya dibuat sedikit lebih padat sebagai ganti blurnya, dan sudah
+   memuat bentuk maskernya sendiri. */
+@media (pointer: coarse) {
+  .deck-card .mock.has-media::after,
+  .morph-kaca {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+    background: linear-gradient(
+      0deg,
+      rgba(246, 246, 246, 0.9) 0%,
+      rgba(246, 246, 246, 0.8) 18%,
+      rgba(246, 246, 246, 0.3) 30%,
+      rgba(246, 246, 246, 0) 42%
+    );
+  }
+}
+
 /* label harus di atas peredamnya, dan warnanya dinaikkan karena abu muda
    kalah kontras di atas video */
 .mock-tag {

@@ -1338,6 +1338,68 @@ function satukanIsi(ghost, slot) {
   return tujuan;
 }
 
+/* Versi satukanIsi untuk kembali ke home. Bedanya, kartu tujuan tidak
+   pernah kehilangan isinya sendiri: video klon tidak dipindah ke kartu saat
+   mendarat. Di HP (terutama WebView Android, misalnya browser bawaan
+   Instagram) kartu yang baru muncul di frame yang sama dengan klon dibuang
+   belum selesai digambar GPU, jadi kartunya hilang beberapa frame. Karena
+   itu kartu dimunculkan lebih dulu di bawah klon (lihat closeProject), dan
+   isinya disiapkan di sini.
+   - Video sama: video kartu dimuat dari cache dan diarahkan ke detik yang
+     akan dicapai video klon saat kartu dimunculkan, lalu diputar saat itu.
+   - Video beda: salinan diam (poster) isi kartu memudar di atas klon,
+     sementara video kartu sudah diputar dari awal sejak klon berangkat.
+     Banyak video demo dibuka dengan fade dari putih selama setengah detik;
+     kalau baru diputar saat kartu muncul, fade itu terlihat sebagai kartu
+     yang pudar lalu menyala.
+   Mengembalikan fungsi yang dipanggil saat kartu dimunculkan. */
+function siapkanKartu(ghost, card, saatMuncul) {
+  const potong = ghost.firstElementChild;
+  const asal = potong.querySelector(".mock");
+  const tujuan = card.querySelector(".mock");
+  const vAsal = asal && asal.querySelector("video");
+  const vTujuan = tujuan && tujuan.querySelector("video");
+  const sama = !!(tujuan && kunciVideo(asal) && kunciVideo(asal) === kunciVideo(tujuan));
+
+  if (vTujuan && vTujuan.dataset.poster) {
+    vTujuan.setAttribute("poster", vTujuan.dataset.poster);
+    vTujuan.removeAttribute("data-poster");
+  }
+  if (sama && vTujuan && vAsal) {
+    vTujuan.preload = "auto";
+    const d = vAsal.duration;
+    let t = vAsal.currentTime + saatMuncul / 1000;
+    if (d && isFinite(d)) t %= d;
+    try { vTujuan.currentTime = t; } catch (e) {}
+  } else if (tujuan) {
+    const salin = tujuan.cloneNode(true);
+    const v = salin.querySelector("video");
+    if (v) {
+      v.removeAttribute("autoplay");
+      v.preload = "none";
+    }
+    potong.appendChild(salin);
+    if (vTujuan) {
+      vTujuan.preload = "auto";
+      const p = vTujuan.play();
+      if (p && p.catch) p.catch(() => {});
+    }
+    const a = gerak(salin, [{ opacity: 0 }, { opacity: 1 }], {
+      duration: MORPH_MS * 0.5,
+      delay: MORPH_MS * 0.12,
+      easing: "ease-out"
+    });
+    a.onfinish = () => a.cancel();
+  }
+
+  return () => {
+    if (!vTujuan) return;
+    if (vTujuan.preload !== "auto") vTujuan.preload = "auto";
+    const p = vTujuan.play();
+    if (p && p.catch) p.catch(() => {});
+  };
+}
+
 /* Bagian bawah kartu (kaca buram dan nama project) tidak ada di media
    halaman project, jadi di klon bagian ini dipasang terpisah lalu memudar.
    Opacity diberikan ke tiap anak, bukan ke pembungkusnya: pembungkus yang
@@ -1581,17 +1643,32 @@ function closeProject() {
   card.style.visibility = "hidden";
   geserTetangga(deck, true);
 
-  const isi = satukanIsi(ghost, card);
+  /* Kartu dimunculkan di bawah klon saat klon sudah 98% sampai (82% waktu
+     terbang), jadi GPU punya sekitar 100 ms untuk menggambarnya sebelum
+     klon dibuang. Bayangan klon dilepas saat itu supaya bayangannya tidak
+     dobel. Selisih posisi yang tersisa cuma satu dua piksel. */
+  const SAAT_MUNCUL = MORPH_MS * 0.82;
+  const mulaiKartu = siapkanKartu(ghost, card, SAAT_MUNCUL);
   lapisKartu(ghost, card.querySelector(".card-name").textContent, true);
+  let sudahMuncul = false;
+  const munculkanKartu = () => {
+    if (sudahMuncul) return;
+    sudahMuncul = true;
+    card.style.visibility = "";
+    ghost.style.boxShadow = "none";
+    mulaiKartu();
+  };
+  const timerMuncul = setTimeout(munculkanKartu, SAAT_MUNCUL);
 
   terbang(ghost, rectOf(card), getComputedStyle(card).borderRadius, deck).then(() => {
-    card.prepend(isi);
-    card.style.visibility = "";
+    clearTimeout(timerMuncul);
+    munculkanKartu();
     ghost.remove();
     deck.classList.remove("is-instant");
     morphJalan = false;
-    jedaLatar(false);
     syncDeckVideos();
+    /* latar ASCII menyusul sesudah kartu tenang, bukan di frame mendarat */
+    setTimeout(() => { if (!morphJalan) jedaLatar(false); }, 250);
   });
 }
 
