@@ -60,53 +60,53 @@ const PROJECTS = [
     "results": "Shipped to production about a month after kickoff, in English across 12 markets. Targets set for launch: 8% of paid users adding a .cv domain in the first quarter, 70% of buyers publishing their site within a day, and 12% higher annual retention among users with a live site. Delivered as more than 1,000 screens and states across four breakpoints, five templates with colour variants, and a screen for every failure state.",
     "awards": [],
     "card": {
-      "mp4": "media/cv-media-05.mp4?v=33cede0da1",
+      "mp4": "media/cv-media-05.mp4?v=d9e068d528",
       "webm": "media/cv-media-05.webm?v=d7421ecaa8",
       "poster": "media/cv-media-05-poster.webp?v=331f617335"
     },
     "scenes": [
       {
-        "mp4": "media/cv-media-05.mp4?v=33cede0da1",
+        "mp4": "media/cv-media-05.mp4?v=d9e068d528",
         "webm": "media/cv-media-05.webm?v=d7421ecaa8",
         "poster": "media/cv-media-05-poster.webp?v=331f617335"
       },
       {
-        "mp4": "media/cv-media-06.mp4?v=a12caa2778",
+        "mp4": "media/cv-media-06.mp4?v=abee831336",
         "webm": "media/cv-media-06.webm?v=cdb66c4241",
         "poster": "media/cv-media-06-poster.webp?v=3c293558bc"
       },
       {
-        "mp4": "media/cv-media-01.mp4?v=387b16439c",
+        "mp4": "media/cv-media-01.mp4?v=1e4d89fc81",
         "webm": "media/cv-media-01.webm?v=9c97e44018",
         "poster": "media/cv-media-01-poster.webp?v=8a1b05b11e"
       },
       {
-        "mp4": "media/cv-media-02.mp4?v=54113c71bd",
+        "mp4": "media/cv-media-02.mp4?v=a2a2d267a6",
         "webm": "media/cv-media-02.webm?v=ac82075d6c",
         "poster": "media/cv-media-02-poster.webp?v=fb14cbc1c6"
       },
       {
-        "mp4": "media/cv-media-07.mp4?v=bfedb8a688",
+        "mp4": "media/cv-media-07.mp4?v=8bd80ecd0b",
         "webm": "media/cv-media-07.webm?v=afc3cd44ed",
         "poster": "media/cv-media-07-poster.webp?v=c92ae46677"
       },
       {
-        "mp4": "media/cv-media-03.mp4?v=755b6537d1",
+        "mp4": "media/cv-media-03.mp4?v=5f4acd2c05",
         "webm": "media/cv-media-03.webm?v=7ff783e830",
         "poster": "media/cv-media-03-poster.webp?v=6557d3f991"
       },
       {
-        "mp4": "media/cv-media-08.mp4?v=aefe16e8ff",
+        "mp4": "media/cv-media-08.mp4?v=7c74044cf9",
         "webm": "media/cv-media-08.webm?v=c8d59a1af9",
         "poster": "media/cv-media-08-poster.webp?v=afb6beb1e6"
       },
       {
-        "mp4": "media/cv-media-04.mp4?v=995280d214",
+        "mp4": "media/cv-media-04.mp4?v=5cb063f953",
         "webm": "media/cv-media-04.webm?v=396b5aab06",
         "poster": "media/cv-media-04-poster.webp?v=33526f82a8"
       },
       {
-        "mp4": "media/cv-media-09.mp4?v=143681ac76",
+        "mp4": "media/cv-media-09.mp4?v=237fdccfff",
         "webm": "media/cv-media-09.webm?v=35ef6db56d",
         "poster": "media/cv-media-09-poster.webp?v=49ff6cdb27"
       }
@@ -124,28 +124,28 @@ const PROJECTS = [
     "results": "Targets set for launch: 25% fewer support tickets about the 13 most asked questions, 60% of visitors finding their answer within two clicks, and over 80% of article ratings marked helpful. Delivered as 24 boards across four widths, 32 article pages and a working coded prototype.",
     "awards": [],
     "card": {
-      "mp4": "media/faq-media-01.mp4?v=4cd8527ce1",
+      "mp4": "media/faq-media-01.mp4?v=01ea400798",
       "webm": "media/faq-media-01.webm?v=699b39991b",
       "poster": "media/faq-media-01-poster.webp?v=9f378a136a"
     },
     "scenes": [
       {
-        "mp4": "media/faq-media-01.mp4?v=4cd8527ce1",
+        "mp4": "media/faq-media-01.mp4?v=01ea400798",
         "webm": "media/faq-media-01.webm?v=699b39991b",
         "poster": "media/faq-media-01-poster.webp?v=9f378a136a"
       },
       {
-        "mp4": "media/faq-media-02.mp4?v=d8174fcba3",
+        "mp4": "media/faq-media-02.mp4?v=c5519e500b",
         "webm": "media/faq-media-02.webm?v=66194b618f",
         "poster": "media/faq-media-02-poster.webp?v=41a7fcc695"
       },
       {
-        "mp4": "media/faq-media-03.mp4?v=ba685e2887",
+        "mp4": "media/faq-media-03.mp4?v=bcfa9c49d4",
         "webm": "media/faq-media-03.webm?v=0387911b9c",
         "poster": "media/faq-media-03-poster.webp?v=3205e574ee"
       },
       {
-        "mp4": "media/faq-media-04.mp4?v=f5b3100d98",
+        "mp4": "media/faq-media-04.mp4?v=bebc663cb5",
         "webm": "media/faq-media-04.webm?v=8c82c93b85",
         "poster": "media/faq-media-04-poster.webp?v=4bafeef3e7"
       }
@@ -163,28 +163,28 @@ const PROJECTS = [
     "results": "Targets set for the A/B test: 20% more visitors reaching the selfie upload, 15% higher paywall conversion, and a third fewer checkout drop-offs by showing the price up front. Built on 75 screens, 65 of them reworked so the main action never needs a scroll.",
     "awards": [],
     "card": {
-      "mp4": "media/headshots-media-01.mp4?v=266c89d977",
+      "mp4": "media/headshots-media-01.mp4?v=f816bcaf85",
       "webm": "media/headshots-media-01.webm?v=c0d8c704e7",
       "poster": "media/headshots-media-01-poster.webp?v=590cb10b8d"
     },
     "scenes": [
       {
-        "mp4": "media/headshots-media-01.mp4?v=266c89d977",
+        "mp4": "media/headshots-media-01.mp4?v=f816bcaf85",
         "webm": "media/headshots-media-01.webm?v=c0d8c704e7",
         "poster": "media/headshots-media-01-poster.webp?v=590cb10b8d"
       },
       {
-        "mp4": "media/headshots-media-02.mp4?v=83d005a3a3",
+        "mp4": "media/headshots-media-02.mp4?v=0938736ee6",
         "webm": "media/headshots-media-02.webm?v=c1ad03fd80",
         "poster": "media/headshots-media-02-poster.webp?v=936e62670b"
       },
       {
-        "mp4": "media/headshots-media-03.mp4?v=b63e983709",
+        "mp4": "media/headshots-media-03.mp4?v=41140e9f61",
         "webm": "media/headshots-media-03.webm?v=b0258490fd",
         "poster": "media/headshots-media-03-poster.webp?v=cf66e0c8ae"
       },
       {
-        "mp4": "media/headshots-media-04.mp4?v=df1025a0a3",
+        "mp4": "media/headshots-media-04.mp4?v=3fca914882",
         "webm": "media/headshots-media-04.webm?v=e45a24c8d9",
         "poster": "media/headshots-media-04-poster.webp?v=668bd6bcdd"
       }
@@ -202,33 +202,33 @@ const PROJECTS = [
     "results": "Targets set for launch: 30% more visitors reaching a template from the landing page, 20% more visitors scrolling past the hero, and a higher share of search visitors starting a CV. Delivered as one landing page at four widths, ready for development.",
     "awards": [],
     "card": {
-      "mp4": "media/ej-media-01.mp4?v=5244d63bc5",
+      "mp4": "media/ej-media-01.mp4?v=d5c7f609ee",
       "webm": "media/ej-media-01.webm?v=8106bcd80e",
       "poster": "media/ej-media-01-poster.webp?v=65c25a0950"
     },
     "scenes": [
       {
-        "mp4": "media/ej-media-01.mp4?v=5244d63bc5",
+        "mp4": "media/ej-media-01.mp4?v=d5c7f609ee",
         "webm": "media/ej-media-01.webm?v=8106bcd80e",
         "poster": "media/ej-media-01-poster.webp?v=65c25a0950"
       },
       {
-        "mp4": "media/ej-media-02.mp4?v=c45f99e156",
+        "mp4": "media/ej-media-02.mp4?v=a8676aea1d",
         "webm": "media/ej-media-02.webm?v=05a0a80a65",
         "poster": "media/ej-media-02-poster.webp?v=4e949809eb"
       },
       {
-        "mp4": "media/ej-media-03.mp4?v=88eb6088d4",
+        "mp4": "media/ej-media-03.mp4?v=903137ef71",
         "webm": "media/ej-media-03.webm?v=15eaadb67f",
         "poster": "media/ej-media-03-poster.webp?v=7ee233cbdc"
       },
       {
-        "mp4": "media/ej-media-04.mp4?v=29c8a90966",
+        "mp4": "media/ej-media-04.mp4?v=ce189a0061",
         "webm": "media/ej-media-04.webm?v=2596c3ef90",
         "poster": "media/ej-media-04-poster.webp?v=34f96015b5"
       },
       {
-        "mp4": "media/ej-media-05.mp4?v=5448f190a3",
+        "mp4": "media/ej-media-05.mp4?v=366bcafa54",
         "webm": "media/ej-media-05.webm?v=460e23609b",
         "poster": "media/ej-media-05-poster.webp?v=ed04453ab3"
       }
@@ -297,9 +297,12 @@ const ICON = {
    yang memutuskan. Atribut autoplay membuat browser mengunduh semua video
    kartu sekaligus, termasuk kartu tetangga yang cuma mengintip. */
 /* Di HP dipakai versi 1080 px (nama berakhiran -sm). Layar HP menampilkan
-   video sekitar 800 sampai 1100 piksel, jadi versi 2160 px hanya menambah
+   video sekitar 800 sampai 1100 piksel, jadi versi besar hanya menambah
    unduhan, beban dekoder, dan baterai tanpa beda yang terlihat. Browser
-   memilih sumber pertama yang cocok, jadi versi HP ditulis lebih dulu. */
+   memilih sumber pertama yang cocok, jadi versi HP ditulis lebih dulu.
+   MP4 desktop di-encode 1440 px (CRF 26, sekitar 2,3 MB per video), bukan
+   2160 px: kartu di layar laptop tidak pernah tampil selebar itu, dan versi
+   2160 px rata-rata 5,5 MB sehingga video pertama lama mulai. */
 const HP_MEDIA = "(max-width: 767px)";
 const kecil = (u) => u.replace(/(\.\w+)(\?|$)/, "-sm$1$2");
 
